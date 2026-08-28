@@ -1,0 +1,91 @@
+{
+ "ablation": {
+  "A_holdout_WildType": {
+   "frac_splits_changed": 1.0,
+   "n_splits": 1,
+   "n_splits_attribution_changed": 1,
+   "priors_compared": [
+    "binding",
+    "flat",
+    "weighted"
+   ],
+   "test_type": "vsOthers"
+  },
+  "A_primary_WildType": {
+   "frac_splits_changed": 0.5,
+   "n_splits": 6,
+   "n_splits_attribution_changed": 3,
+   "priors_compared": [
+    "binding",
+    "flat",
+    "weighted"
+   ],
+   "test_type": "2way"
+  },
+  "A_primary_sog1-1": {
+   "frac_splits_changed": 1.0,
+   "n_splits": 1,
+   "n_splits_attribution_changed": 1,
+   "priors_compared": [
+    "binding",
+    "flat",
+    "weighted"
+   ],
+   "test_type": "vsOthers"
+  },
+  "B_primary_pooled": {
+   "frac_splits_changed": 1.0,
+   "n_splits": 1,
+   "n_splits_attribution_changed": 1,
+   "priors_compared": [
+    "binding",
+    "flat",
+    "weighted"
+   ],
+   "test_type": "vsOthers"
+  }
+ },
+ "generated": "2026-08-28",
+ "genotype_contrast": {
+  "note": "SOG1 edges come from OSD-496/GSE112529 ChIP-seq (04b), not DAP-seq, which does not assay SOG1. Without 04b this contrast is undefined.",
+  "rows": 18,
+  "sog1_present_in_prior": true,
+  "sog1_rank_worsens_in_mutant": [
+   true,
+   true,
+   true
+  ]
+ },
+ "reproduction": {
+  "interpretation": "Our series pools OSD-498/508/510 and adds the 10 and 45 min timepoints the published model did not use, so node counts are not expected to match exactly. Reported for calibration.",
+  "ours": {
+   "n_nodes": 15,
+   "n_splits": 7,
+   "run": "A_primary_WildType__flat",
+   "timepoints_used": [
+    0,
+    10,
+    20,
+    45,
+    90,
+    180,
+    360,
+    720,
+    1440
+   ]
+  },
+  "published": {
+   "doi": "10.1073/pnas.1810582115",
+   "reported_gene_groups": 11,
+   "timepoints_used": [
+    20,
+    90,
+    180,
+    360,
+    720,
+    1440
+   ]
+  }
+ },
+ "score_direction": "lower Score = more significant"
+}

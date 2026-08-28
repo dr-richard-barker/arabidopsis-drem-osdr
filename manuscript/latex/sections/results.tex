@@ -1,0 +1,182 @@
+\section{Results}
+
+\subsection{OSDR contains an interlocking irradiation series, not a set of disjoint studies}
+
+Of the \NumArabidopsisStudiesScreened{} \textit{Arabidopsis} studies in OSDR, most carry
+no parsable time axis. Those that do fall into two families. The
+$\gamma$-irradiation family yields \NumCohortATimedSamples{} timed samples across
+\NumCohortATimepoints{} timepoints from 10~min to 72~h, plus
+\NumCohortAAnchorSamples{} untreated samples that anchor $t=0$
+(Table~\ref{tab:cohorts}).
+
+The series interlocks rather than butt-joining. OSD-508 and OSD-510 share six timepoints
+and OSD-498 shares four with OSD-508, giving \NumSeriesSharedTimepoints{} timepoints
+measured by more than one accession --- enough to fit and remove a residual per-study
+offset without extrapolation. This is a direct consequence of provenance: the three core
+accessions are one experiment split across three deposits, not three independent
+laboratories. We state this explicitly because it bounds the claim. The cross-study
+element of cohort~A is OSD-782, and OSD-782 alone.
+
+The spaceflight cohort is thinner: \NumCohortBSamples{} samples over only
+\NumCohortBTimepoints{} timepoints (4, 6 and 8~d) across four ecotypes. It is reported as
+a generalisation test, not as a co-equal result.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig1_cohort_design}
+\caption{Pseudo-time-series coverage. Each marker is a timepoint measured by one
+accession; marker area is the replicate count. Cohort A's accessions overlap at
+\NumSeriesSharedTimepoints{} timepoints, which is what allows a residual between-study
+offset to be fitted without extrapolation.}
+\label{fig:design}
+\end{figure}
+
+\subsection{Batch harmonisation preserves the DNA-damage response and its genetic dependency}
+
+After within-study referencing and offset removal, all \NumSentinelsResponding{} canonical
+DNA-damage sentinel genes exceed 2-fold induction in the wild-type arm, tracing a clean
+rise--peak--decay kinetic: SMR7, for example, rises from $1.34$ at 10~min to a maximum of
+$7.62$ ($\log_2$) at 3~h before decaying to $4.42$ at 24~h.
+
+In \textit{sog1-1} the same genes are flat, with only
+\NumSentinelsRespondingMutant{} reaching 2-fold and RAD51 falling from $5.95$ to $0.60$.
+The pipeline therefore recovers the central genetic finding of
+\citet{bourbousse2018sog1} --- that the response is SOG1-dependent --- before any
+regulatory model is fitted. This is the strongest available evidence that the
+cross-study assembly is measuring biology rather than batch structure, because no step in
+the harmonisation has access to genotype.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig2_sentinel_kinetics}
+\caption{DNA-damage sentinel kinetics after cross-study harmonisation. All
+\NumSentinelsResponding{} sentinels exceed 2-fold induction in wild type and trace a
+rise--peak--decay curve; the same genes are flat in \textit{sog1-1}. No step in the
+harmonisation has access to genotype.}
+\label{fig:sentinels}
+\end{figure}
+
+The held-out OSD-782 arm shows no sentinel induction (maximum $|\log_2| = 1.0$). This is
+the expected biology, not a failure: at 10--100~cGy the dose is two to three orders of
+magnitude below that of the core experiment, and the source study reports ethylene
+signalling rather than a canonical DNA-damage response. The sentinel gate is therefore
+enforced only on the wild-type primary arm.
+
+\subsection{The prior is incomplete in exactly the place that matters}
+
+The DAP-seq prior covers \NumPriorTFs{} TFs and \NumPriorEdges{} edges, but does not
+contain SOG1: DAP-seq never assayed it. A DREM model built on DAP-seq alone therefore
+cannot attribute any bifurcation to the master regulator of the response being modelled,
+and would do so silently. Calling SOG1 peaks from the same experiment's ChIP-seq recovers
+\NumSogOneTargets{} target genes and closes the gap. We report this because the failure
+mode generalises: a regulatory prior's absences are invisible in its outputs, and any
+DREM analysis should check that the regulators its conclusions depend on are actually
+present in the prior.
+
+\subsection{Cell-type weighting}
+
+Deconvolution places the irradiation cohort predominantly in rosette and seedling
+clusters, consistent with whole-seedling material.
+\NumWeightedEdgesInformed{} edges (\PctWeightedEdgesInformed{}\%) are atlas-informed and
+\PctWeightedEdgesChanged{}\% change by more than $0.01$ under weighting. The
+auto-decoder's \NumLatentDims{}-dimensional latent code moves monotonically away from the
+untreated state over pseudo-time (Figure~\ref{fig:latent}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{../figures/fig3_latent_trajectory}
+\caption{Displacement of the auto-decoder latent code from the earliest timepoint, per
+arm. One interpretable scalar summarising the \NumLatentDims{}-dimensional trajectory.}
+\label{fig:latent}
+\end{figure}
+
+Across \NumAblationSplits{} bifurcations in the wild-type model, compared on the
+\AblationTestType{} test all three priors produced,
+\NumAblationSplitsChanged{} (\PctAblationSplitsChanged{}\%) change their top-ranked TF
+between the flat, binding and cell-type-weighted priors.
+
+The split is not random. The bifurcations whose attribution is \emph{stable} across all
+three priors are the biologically canonical ones: two are attributed to SOG1
+(AT1G25580) and one to MYB3R1 (AT4G32730) --- the activator and repressor arms the source
+study identified. The bifurcations that \emph{move} are the weaker ones, reassigned among
+MYB-related, WRKY, TCP, NAC and bZIP regulators (WRKY33, TCP15, ANAC071, bZIP3, MYB49).
+The prior therefore does not overturn well-supported attributions; it changes the calls
+that were marginal to begin with, which is the behaviour a prior ought to have.
+
+The wild-type arm is the only one with enough resolved bifurcations to read an ablation
+from. The remaining three arms each resolved a single split shared by all three priors,
+so their apparent 100\% change rate rests on one comparison and is reported in
+Figure~\ref{fig:ablation} with its denominator rather than as a rate.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{../figures/fig4_prior_ablation}
+\caption{Proportion of bifurcations whose top-ranked transcription factor changes with
+the prior. Labels give changed/total splits; pale bars rest on fewer than four
+bifurcations and should not be read as rates.}
+\label{fig:ablation}
+\end{figure}
+
+\subsection{The genotype contrast recovers the published regulatory logic}
+
+The cohort's built-in positive control is decisive. Under all three priors, SOG1 ranks
+\textbf{first} of the \NumPriorTFs{} scored TFs in the wild-type model. In
+\textit{sog1-1} it collapses --- to rank \SogOneRankMutFlat{} under the flat prior and
+\SogOneRankMutWeighted{} under the cell-type-weighted prior (Table~\ref{tab:genotype}).
+MYB3R1 ranks \MybThreeRRankWTFlat{} in wild type and is retained in the mutant, as
+expected for a repressor whose activity does not depend on SOG1.
+
+This reproduces the regulatory logic \citet{bourbousse2018sog1} reported --- SOG1 as the
+major activator, MYB3R as the major repressors --- from an independently reconstructed
+pipeline, and it does so through the TF attribution rather than through expression alone.
+Note that the attribution is only possible because SOG1 edges were added from ChIP-seq:
+with the DAP-seq prior alone, SOG1 has no edges and could not have been ranked at all.
+
+\begin{table}[t]
+\centering
+\caption{SOG1 rank among \NumPriorTFs{} scored transcription factors. Lower is more
+significant; the mutant is the negative control.}
+\label{tab:genotype}
+\begin{tabular}{lrr}
+\toprule
+Prior & Wild type & \textit{sog1-1} \\
+\midrule
+flat     & \SogOneRankWTFlat{}     & \SogOneRankMutFlat{} \\
+weighted & \SogOneRankWTWeighted{} & \SogOneRankMutWeighted{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Independent corroboration from a different method}
+
+The sibling analysis in \texttt{Plant\_response\_to\_radiation} models an overlapping set
+of OSDR studies with a Gaussian-process autoencoder and WGCNA co-expression modules, with
+no DREM and no TF attribution anywhere in it. Over the
+\NumSharedGenesWithSibling{} genes both analyses modelled,
+\NumNodesEnrichingModule{} of \NumSiblingNodes{} DREM nodes enrich one of the
+\NumSiblingModules{} WGCNA modules at Bonferroni-corrected $p < 0.05$. The two methods
+share raw data but almost no methodology, so the agreement is external corroboration
+rather than a restatement.
+
+\subsection{Comparison with the published model}
+
+\citet{bourbousse2018sog1} reported \NumPublishedGroups{} co-expressed gene groups from
+six timepoints of OSD-510. Our flat-prior wild-type model over the pooled, denser series
+yields \NumWTNodes{} nodes across \NumWTSplits{} splits from
+\NumWTGenesAssigned{} assigned genes. These counts are not expected to be identical: the
+pooled series adds the 10 and 45~min timepoints and draws on three accessions rather than
+one, and DREM's node count responds to both. The comparison is reported for calibration.
+
+\begin{table}[t]
+\centering
+\caption{Cohort composition, measured from the OSDR metadata API.}
+\label{tab:cohorts}
+\begin{tabular}{llrl}
+\toprule
+Cohort & Studies & Timepoints & Span \\
+\midrule
+A ($\gamma$-irradiation) & \NumCohortAStudies{} & \NumCohortATimepoints{} & 10 min -- 72 h \\
+B (spaceflight)          & \NumCohortBStudies{} & \NumCohortBTimepoints{} & 4 -- 8 d \\
+\bottomrule
+\end{tabular}
+\end{table}

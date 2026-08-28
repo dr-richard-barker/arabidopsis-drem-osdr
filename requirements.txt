@@ -1,0 +1,6 @@
+# Pipeline runtime. Acquisition (00-02) is stdlib-only so it runs in a bare container;
+# these are needed from 03 onward.
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7

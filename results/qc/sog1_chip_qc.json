@@ -1,0 +1,40 @@
+{
+ "generated": "2026-08-28",
+ "merged_into_main_prior": true,
+ "n_target_genes": 1720,
+ "note": "Peaks require enrichment over both the matched input and the no-FLAG wild-type IP, so accessibility and antibody-background artefacts are excluded by construction.",
+ "parameters": {
+  "bin_bp": 200,
+  "min_fold": 2.0,
+  "pseudocount": 1.0,
+  "window_bp": 1000
+ },
+ "per_timepoint": {
+  "1h": {
+   "bins_over_both": 4443,
+   "bins_over_input": 38347,
+   "bins_tested": 598350,
+   "n_peaks": 3101,
+   "n_target_genes": 1104
+  },
+  "20min": {
+   "bins_over_both": 4428,
+   "bins_over_input": 50969,
+   "bins_tested": 598350,
+   "n_peaks": 3310,
+   "n_target_genes": 1000
+  }
+ },
+ "source": {
+  "geo": "GSE112529",
+  "osdr": "OSD-496",
+  "tracks": {
+   "input_1h": "GSM3072265_input_SOG1-3xFLAG_1h.bedGraph.gz",
+   "input_20min": "GSM3072264_input_SOG1-3xFLAG_20min.bedGraph.gz",
+   "ip_1h": "GSM3072267_IP_SOG1-3xFLAG_1h.bedGraph.gz",
+   "ip_20min": "GSM3072266_IP_SOG1-3xFLAG_20min.bedGraph.gz",
+   "wt_1h": "GSM3072269_IP_wt_1h.bedGraph.gz",
+   "wt_20min": "GSM3072268_IP_wt_20min.bedGraph.gz"
+  }
+ }
+}

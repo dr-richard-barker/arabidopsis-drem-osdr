@@ -1,0 +1,226 @@
+{
+ "generated": "2026-08-28",
+ "parameters": {
+  "max_abs_log_ratio": 6.0,
+  "max_paths": 3,
+  "min_abs_log_ratio": 1.0,
+  "node_penalty": 40,
+  "seed": 1260,
+  "target_genes": 1200
+ },
+ "runs": {
+  "A_holdout_WildType__binding": {
+   "arm": "A_holdout_WildType",
+   "expression_filter_log2": 1.0,
+   "n_genes": 18313,
+   "n_genes_past_filter": 1072,
+   "n_replicate_files": 6,
+   "prior": "binding",
+   "prior_file": "data/tf_prior/weighted/prior_binding.tsv",
+   "timepoints": [
+    "0",
+    "60",
+    "180",
+    "1440",
+    "4320"
+   ]
+  },
+  "A_holdout_WildType__flat": {
+   "arm": "A_holdout_WildType",
+   "expression_filter_log2": 1.0,
+   "n_genes": 18313,
+   "n_genes_past_filter": 1072,
+   "n_replicate_files": 6,
+   "prior": "flat",
+   "prior_file": "data/tf_prior/weighted/prior_flat.tsv",
+   "timepoints": [
+    "0",
+    "60",
+    "180",
+    "1440",
+    "4320"
+   ]
+  },
+  "A_holdout_WildType__weighted": {
+   "arm": "A_holdout_WildType",
+   "expression_filter_log2": 1.0,
+   "n_genes": 18313,
+   "n_genes_past_filter": 1072,
+   "n_replicate_files": 6,
+   "prior": "weighted",
+   "prior_file": "data/tf_prior/weighted/prior_weighted_A_holdout_WildType.tsv",
+   "timepoints": [
+    "0",
+    "60",
+    "180",
+    "1440",
+    "4320"
+   ]
+  },
+  "A_primary_WildType__binding": {
+   "arm": "A_primary_WildType",
+   "expression_filter_log2": 1.54,
+   "n_genes": 19566,
+   "n_genes_past_filter": 1201,
+   "n_replicate_files": 2,
+   "prior": "binding",
+   "prior_file": "data/tf_prior/weighted/prior_binding.tsv",
+   "timepoints": [
+    "0",
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ]
+  },
+  "A_primary_WildType__flat": {
+   "arm": "A_primary_WildType",
+   "expression_filter_log2": 1.54,
+   "n_genes": 19566,
+   "n_genes_past_filter": 1201,
+   "n_replicate_files": 2,
+   "prior": "flat",
+   "prior_file": "data/tf_prior/weighted/prior_flat.tsv",
+   "timepoints": [
+    "0",
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ]
+  },
+  "A_primary_WildType__weighted": {
+   "arm": "A_primary_WildType",
+   "expression_filter_log2": 1.54,
+   "n_genes": 19566,
+   "n_genes_past_filter": 1201,
+   "n_replicate_files": 2,
+   "prior": "weighted",
+   "prior_file": "data/tf_prior/weighted/prior_weighted_A_primary_WildType.tsv",
+   "timepoints": [
+    "0",
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ]
+  },
+  "A_primary_sog1-1__binding": {
+   "arm": "A_primary_sog1-1",
+   "expression_filter_log2": 1.385,
+   "n_genes": 19566,
+   "n_genes_past_filter": 1200,
+   "n_replicate_files": 2,
+   "prior": "binding",
+   "prior_file": "data/tf_prior/weighted/prior_binding.tsv",
+   "timepoints": [
+    "0",
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ]
+  },
+  "A_primary_sog1-1__flat": {
+   "arm": "A_primary_sog1-1",
+   "expression_filter_log2": 1.385,
+   "n_genes": 19566,
+   "n_genes_past_filter": 1200,
+   "n_replicate_files": 2,
+   "prior": "flat",
+   "prior_file": "data/tf_prior/weighted/prior_flat.tsv",
+   "timepoints": [
+    "0",
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ]
+  },
+  "A_primary_sog1-1__weighted": {
+   "arm": "A_primary_sog1-1",
+   "expression_filter_log2": 1.385,
+   "n_genes": 19566,
+   "n_genes_past_filter": 1200,
+   "n_replicate_files": 2,
+   "prior": "weighted",
+   "prior_file": "data/tf_prior/weighted/prior_weighted_A_primary_sog1-1.tsv",
+   "timepoints": [
+    "0",
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ]
+  },
+  "B_primary_pooled__binding": {
+   "arm": "B_primary_pooled",
+   "expression_filter_log2": 1.0,
+   "n_genes": 17319,
+   "n_genes_past_filter": 870,
+   "n_replicate_files": 8,
+   "prior": "binding",
+   "prior_file": "data/tf_prior/weighted/prior_binding.tsv",
+   "timepoints": [
+    "0",
+    "5760",
+    "8640",
+    "11520"
+   ]
+  },
+  "B_primary_pooled__flat": {
+   "arm": "B_primary_pooled",
+   "expression_filter_log2": 1.0,
+   "n_genes": 17319,
+   "n_genes_past_filter": 870,
+   "n_replicate_files": 8,
+   "prior": "flat",
+   "prior_file": "data/tf_prior/weighted/prior_flat.tsv",
+   "timepoints": [
+    "0",
+    "5760",
+    "8640",
+    "11520"
+   ]
+  },
+  "B_primary_pooled__weighted": {
+   "arm": "B_primary_pooled",
+   "expression_filter_log2": 1.0,
+   "n_genes": 17319,
+   "n_genes_past_filter": 870,
+   "n_replicate_files": 8,
+   "prior": "weighted",
+   "prior_file": "data/tf_prior/weighted/prior_weighted_B_primary_pooled.tsv",
+   "timepoints": [
+    "0",
+    "5760",
+    "8640",
+    "11520"
+   ]
+  }
+ }
+}

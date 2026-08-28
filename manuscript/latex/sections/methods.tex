@@ -1,0 +1,122 @@
+\section{Methods}
+
+\subsection{Study selection}
+
+All \textit{Arabidopsis thaliana} studies in OSDR were retrieved through the
+\texttt{biodata} v2 metadata API, returning sample-level factor values for
+\NumArabidopsisStudiesScreened{} studies. Studies were admitted to a cohort only where a
+numeric time axis could be parsed from a factor-value field and the assay was Illumina
+RNA-seq. Cohort~A ($\gamma$-irradiation) comprises \NumCohortAStudies{} studies and
+cohort~B (spaceflight development) \NumCohortBStudies{}.
+\NumExcludedStudies{} studies were excluded with a recorded reason
+(\texttt{scripts/cohorts.py}).
+
+Two exclusions matter. OSD-219 re-deposits all 32 of OSD-218's BioSample identifiers
+verbatim; including both would double-count every sample. This is re-detected each run
+from sample-name overlap rather than hard-coded, so the exclusion cannot outlive the
+condition that justifies it. The microarray irradiation studies (OSD-46, OSD-320,
+OSD-329) were held out of the primary analysis because pooling them with RNA-seq would
+confound platform with timepoint.
+
+\subsection{Pseudo-time-series construction}
+
+Raw RSEM counts and GeneLab runsheets were retrieved from the OSDR file API. Counts were
+converted to CPM and $\log_2$-transformed \emph{within} each study, then expressed as a
+$\log_2$ ratio against that study's own untreated controls. This within-study referencing
+removes most between-study offset by construction, because a per-study additive term
+cancels between numerator and denominator. A residual per-study offset was then fitted as
+the median gene-wise difference from the cross-study consensus, computed only at the
+\NumSeriesSharedTimepoints{} timepoints more than one study measured; a study sharing no
+timepoint with any other is left unadjusted rather than shifted against a reference it
+never overlaps.
+
+Because every value is already a ratio against the untreated state, an explicit $t=0$
+column of zeros is prepended and DREM is run with
+\texttt{No normalization/add 0}. Omitting either would make DREM re-anchor on the 10-min
+timepoint, which is already strongly induced, and the entire early response would vanish
+from the model.
+
+OSD-782 is held out rather than pooled. It is an independent laboratory \emph{and} a
+different dose regime (10--100~cGy against the core's high-dose $\gamma$), so fitting it a
+shared offset would remove real biology.
+
+Batch correction was verified against six canonical DNA-damage-response genes
+(BRCA1, RAD51, PARP2, SMR7, GMI1, XRI1). The pipeline fails if fewer than three remain
+2-fold responsive in the wild-type arm --- the check exists to catch a correction that has
+flattened the signal it was meant to preserve.
+
+\subsection{TF--gene prior}
+
+A binding prior was built from the \textit{Arabidopsis} DAP-seq cistrome
+\citep{omalley2016cistrome}, retrieved as GEO GSE60143. Of \NumDapseqPeakFiles{} peak
+files, \NumDapseqResolvedByAGI{} name the assayed TF by AGI locus and
+\NumDapseqResolvedBySymbol{} by gene symbol; symbols were resolved through a map built
+from the Ensembl Plants release-54 annotation, TAIR gene aliases
+\citep{berardini2015tair} and ConnecTF \citep{brooks2021connectf}.
+\NumDapseqUnresolved{} files remain unresolved (ChIP-seq controls, non-\textit{Arabidopsis}
+orthologue assays, and post-2014 symbols) and are listed in the run report. Resolving
+symbols is not cosmetic: the unresolved set is dominated by the NAC, MYB, WRKY and bZIP
+families, which is where the DNA-damage regulators are.
+
+Peaks were assigned to genes within 1~kb of a TSS using the same Ensembl release-54
+TAIR10 annotation GeneLab used to produce the count matrices, so binding and expression
+share one coordinate system and one locus vocabulary. Edge scores were rank-normalised
+within each TF, so a score encodes binding confidence relative to that TF's other sites
+rather than its sequencing depth. The prior contains \NumPriorEdges{} edges over
+\NumPriorTFs{} TFs, with a median of \NumPriorMedianTargets{} targets per TF.
+
+\paragraph{SOG1.} DAP-seq does not assay SOG1, so the DAP-seq prior cannot attribute any
+bifurcation to the very regulator this cohort is about. SOG1 edges were therefore called
+from the ChIP-seq of the same experiment (OSD-496 / GEO GSE112529), in which
+SOG1-3xFLAG was immunoprecipitated 20~min and 1~h after irradiation. OSDR holds only raw
+reads for OSD-496, so coverage was taken from GEO. A 200~bp bin was retained where IP
+exceeded \emph{both} its matched input and the no-FLAG wild-type IP two-fold, which
+removes chromatin-accessibility and antibody-background artefacts that either control
+alone would miss. This yielded \NumSogOnePeaksTwentyMin{} and \NumSogOnePeaksOneHour{}
+peaks at the two timepoints, and \NumSogOneTargets{} target genes after the same
+TSS-proximity assignment used for DAP-seq.
+
+\subsection{The auto-decoder lever}
+
+Cell-type context comes from an auto-decoder trained on the GSE226097 single-nucleus
+\textit{Arabidopsis} atlas \citep{lee2023atlas}, which provides
+\NumAtlasSignatureGenes{} signature genes across \NumAtlasClusters{} clusters and a
+\NumLatentDims{}-dimensional latent code per cluster.
+
+Each timepoint's mean linear CPM profile was deconvolved against the signature matrix by
+non-negative least squares, with both sides scaled to unit norm and the atlas signatures
+returned to linear space beforehand. Deconvolution uses absolute expression, never the
+$\log$-ratio series: a fraction is a statement about composition, and a fold-change has
+already divided composition out. \NumDeconvGenesMatched{} signature genes matched, with a
+median relative residual of \NumDeconvMedianResidual{}.
+
+Writing $\bar f_c$ for the timepoint-averaged fraction of cluster $c$ and $\hat e(g,c)$
+for gene $g$'s cluster profile scaled to its own maximum, the context of a gene is
+$\mathrm{ctx}(g) = \sum_c \bar f_c\, \hat e(g,c)$, and each edge is re-weighted as
+\[
+  w(\mathrm{TF}, g) \;=\; \mathrm{binding}(\mathrm{TF}, g)\;
+  \cdot\; \mathrm{ctx}(\mathrm{TF})^{\alpha}\;\cdot\;\mathrm{ctx}(g)^{\beta},
+\]
+with $\alpha = 1$ and $\beta = 0.5$: the TF side dominates because DREM's attribution
+asks which regulator explains a split, not which target. Weights are renormalised to
+$[0,1]$ within each TF and floored at $0.05$ where binding evidence exists, so context can
+down-weight an edge but never silently delete it.
+
+Genes outside the atlas signature set are, by construction, genes whose expression varies
+little across the \NumAtlasClusters{} clusters; their context is therefore close to
+uniform and their edges are passed through unchanged. \NumWeightedEdgesInformed{} edges
+(\PctWeightedEdgesInformed{}\%) are atlas-informed and
+\PctWeightedEdgesChanged{}\% move by more than $0.01$.
+
+\subsection{Model fitting and comparison}
+
+Models were fitted with DREM~2.0.7 \citep{dremsoftware} in batch mode
+(\texttt{java -jar drem.jar -b}), with a pinned random seed, node penalty 40, at most
+three paths out of a split, and a $|\log_2| \ge 1$ expression filter. Replicates were
+supplied as separate full matrices rather than pre-medianed. The wrapper was validated
+against DREM's own bundled example before any study data was fitted.
+
+Each arm was fitted three times under identical settings, differing only in the prior:
+\emph{flat} (all edges 1.0), \emph{binding} (DAP-seq/ChIP score), and \emph{weighted}
+(cell-type-weighted). Because seed and data are held constant, any difference in TF
+attribution is attributable to the prior alone.

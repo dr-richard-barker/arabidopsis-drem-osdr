@@ -1,0 +1,15 @@
+$ /opt/homebrew/opt/openjdk@21/bin/java -Xmx14g -jar /Users/drb_laptop/Documents/arabidopsis-drem-osdr/vendor/drem.jar -b /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/inputs/A_holdout_WildType__binding/settings.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_holdout_WildType__binding/model.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_holdout_WildType__binding/geneassign.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_holdout_WildType__binding/tfscores
+
+--- stdout ---
+The directory TFInput was not found.Directory not found
+java.lang.NullPointerException: Cannot load from object array because "<parameter2>.dpvals" is null
+	at edu.cmu.cs.sb.drem.DREMGui_SplitTable.splitTableTableData2WAY(DREMGui_SplitTable.java:208)
+	at edu.cmu.cs.sb.drem.DREM_IO_Batch.printSplitTables(DREM_IO_Batch.java:1426)
+	at edu.cmu.cs.sb.drem.DREM_IO_Batch.printSplitTables(DREM_IO_Batch.java:1486)
+	at edu.cmu.cs.sb.drem.DREM_IO_Batch.clusterscript(DREM_IO_Batch.java:1312)
+	at edu.cmu.cs.sb.drem.DREM_IO_Batch.<init>(DREM_IO_Batch.java:252)
+	at edu.cmu.cs.sb.drem.DREM_IO.main(DREM_IO.java:4998)
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true
+

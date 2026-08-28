@@ -1,0 +1,99 @@
+{
+ "generated": "2026-08-28",
+ "key_regulators": {
+  "ANAC044": {
+   "note": "not assayed in DAP-seq; no edges available from this source",
+   "present": false
+  },
+  "ANAC085": {
+   "note": "not assayed in DAP-seq; no edges available from this source",
+   "present": false
+  },
+  "ERF115": {
+   "note": "not assayed in DAP-seq; no edges available from this source",
+   "present": false
+  },
+  "MYB3R1": {
+   "n_targets": 3911,
+   "present": true
+  },
+  "MYB3R3": {
+   "note": "not assayed in DAP-seq; no edges available from this source",
+   "present": false
+  },
+  "MYB3R4": {
+   "note": "not assayed in DAP-seq; no edges available from this source",
+   "present": false
+  },
+  "SOG1": {
+   "note": "not assayed in DAP-seq; no edges available from this source",
+   "present": false
+  }
+ },
+ "measured": {
+  "annotated_genes": 32833,
+  "genes_with_any_edge": 31864,
+  "max_targets_per_tf": 5221,
+  "median_targets_per_tf": 2467,
+  "narrowpeak_files": 814,
+  "planttfdb_tf_loci": 1717,
+  "tar_members": 814,
+  "tf_identified_by": {
+   "agi_in_filename": 194,
+   "symbol_map": 557,
+   "symbol_map_basename": 0,
+   "unresolved": 63
+  },
+  "tfs_also_in_planttfdb": 441,
+  "tfs_with_edges": 478,
+  "total_edges": 976588,
+  "unresolved_examples": [
+   "GSM1466341_ChIPSeq-ABI5_Ab.chr1-5_macs02_peaks.narrowPeak.gz",
+   "GSM1925000_DAPSeq-ARF_ecoli-ZmARF5_col_4-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925008_DAPSeq-ABI3VP1_tnt-REM16_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925088_DAPSeq-AP2EREBP_tnt-ERF105_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925091_DAPSeq-AP2EREBP_tnt-ERF115_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925092_DAPSeq-AP2EREBP_tnt-ERF115_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925103_DAPSeq-AP2EREBP_tnt-ERF48_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925124_DAPSeq-AP2EREBP_tnt-RAP21_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925125_DAPSeq-AP2EREBP_tnt-RAP21_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925126_DAPSeq-AP2EREBP_tnt-RAP211_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925127_DAPSeq-AP2EREBP_tnt-RAP211_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925128_DAPSeq-AP2EREBP_tnt-RAP212_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925129_DAPSeq-AP2EREBP_tnt-RAP26_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925130_DAPSeq-AP2EREBP_tnt-RAP26_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925133_DAPSeq-AP2EREBP_tnt-Rap210_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925134_DAPSeq-AP2EREBP_tnt-Rap210_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925136_DAPSeq-AP2EREBP_tnt-TINY_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925198_DAPSeq-C2C2dof_tnt-dof24_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925199_DAPSeq-C2C2dof_tnt-dof24_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925200_DAPSeq-C2C2dof_tnt-dof42_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925201_DAPSeq-C2C2dof_tnt-dof43_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925202_DAPSeq-C2C2dof_tnt-dof43_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925203_DAPSeq-C2C2dof_tnt-dof45_colamp_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925204_DAPSeq-C2C2dof_tnt-dof45_col_a-chr1-5_GEM_events.narrowPeak.gz",
+   "GSM1925255_DAPSeq-C2H2_tnt-TF3A_col_a-chr1-5_GEM_events.narrowPeak.gz"
+  ]
+ },
+ "output": "data/tf_prior/tf_gene_edges.tsv",
+ "parameters": {
+  "max_peaks_per_tf": 5000,
+  "min_score": 0.0,
+  "window_bp": 1000
+ },
+ "sources": {
+  "aliases": "https://www.arabidopsis.org/api/download-files/download?filePath=Public_Data_Releases/TAIR_Data_20140331/gene_aliases_20140331.txt",
+  "annotation": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-54/gtf/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.54.gtf.gz",
+  "binding": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE60nnn/GSE60143/suppl/GSE60143_RAW.tar",
+  "tf_list": "https://planttfdb.gao-lab.org/download/TF_list/Ath_TF_list.txt.gz",
+  "tf_symbols": "https://connectf.org/api/tfs/"
+ },
+ "symbol_map": {
+  "n_aliases": 41414,
+  "provenance": {
+   "connectf": 11,
+   "ensembl_gtf": 31704,
+   "tair_aliases": 9699
+  }
+ }
+}

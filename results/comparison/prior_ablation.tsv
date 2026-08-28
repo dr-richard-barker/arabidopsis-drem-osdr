@@ -1,0 +1,10 @@
+arm	test_type	split	top_flat	score_flat	top_binding	score_binding	top_weighted	score_weighted	attribution_changed
+A_holdout_WildType	vsOthers	1	AT4G23550	0.0	AT4G18170	0.0	AT3G09600	0.0	True
+A_primary_WildType	2way	0	AT1G25580	0.0	AT1G25580	0.0	AT1G25580	0.0	False
+A_primary_WildType	2way	1	AT5G61620	0.0	AT1G74840	0.0005	AT2G38470	0.039	True
+A_primary_WildType	2way	3	AT1G25580	0.0	AT1G25580	0.0	AT1G25580	0.0034	False
+A_primary_WildType	2way	4	AT4G32730	0.0	AT4G32730	0.0	AT4G32730	0.0001	False
+A_primary_WildType	2way	5	AT5G05550	0.0	AT5G54230	0.0	AT1G69690	0.043	True
+A_primary_WildType	2way	6	AT4G17980	0.0	AT5G08520	0.0005	AT5G15830	0.0	True
+A_primary_sog1-1	vsOthers	1	AT4G32730	0.0	AT4G32730	0.0	AT4G31800	0.0	True
+B_primary_pooled	vsOthers	1	AT5G61620	0.0	AT3G11280	0.0	AT1G49010	0.0	True

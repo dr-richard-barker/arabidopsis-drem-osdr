@@ -1,0 +1,138 @@
+{
+ "arms": {
+  "A_holdout_WildType": {
+   "median_relative_residual": 0.3948,
+   "n_clusters_with_latent_code": 183,
+   "n_clusters_without_latent_code": 0,
+   "n_signature_genes_matched": 3834,
+   "relative_residual": {
+    "1440": 0.3464,
+    "180": 0.3383,
+    "4320": 0.4432,
+    "60": 0.4506
+   },
+   "timepoints": [
+    "60",
+    "180",
+    "1440",
+    "4320"
+   ],
+   "top_cell_types_mean_fraction": {
+    "rosette_21d_10": 0.2534,
+    "rosette_21d_15": 0.0882,
+    "rosette_21d_17": 0.2165,
+    "rosette_21d_4": 0.3011,
+    "rosette_21d_7": 0.104,
+    "seed_425d_7": 0.0095,
+    "seedling_15d_14": 0.0086,
+    "seedling_15d_18": 0.0075
+   }
+  },
+  "A_primary_WildType": {
+   "median_relative_residual": 0.3388,
+   "n_clusters_with_latent_code": 183,
+   "n_clusters_without_latent_code": 0,
+   "n_signature_genes_matched": 3834,
+   "relative_residual": {
+    "10": 0.3301,
+    "1440": 0.3464,
+    "180": 0.3383,
+    "20": 0.3392,
+    "360": 0.3102,
+    "45": 0.3637,
+    "720": 0.2958,
+    "90": 0.3752
+   },
+   "timepoints": [
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ],
+   "top_cell_types_mean_fraction": {
+    "rosette_21d_10": 0.1501,
+    "rosette_21d_15": 0.0457,
+    "rosette_21d_17": 0.0386,
+    "rosette_21d_3": 0.0636,
+    "rosette_21d_4": 0.3532,
+    "rosette_21d_7": 0.1198,
+    "seed_425d_7": 0.0443,
+    "seedling_6d_16": 0.0556
+   }
+  },
+  "A_primary_sog1-1": {
+   "median_relative_residual": 0.2896,
+   "n_clusters_with_latent_code": 183,
+   "n_clusters_without_latent_code": 0,
+   "n_signature_genes_matched": 3834,
+   "relative_residual": {
+    "10": 0.3275,
+    "1440": 0.2935,
+    "180": 0.2972,
+    "20": 0.2571,
+    "360": 0.2389,
+    "45": 0.3197,
+    "720": 0.2856,
+    "90": 0.2681
+   },
+   "timepoints": [
+    "10",
+    "20",
+    "45",
+    "90",
+    "180",
+    "360",
+    "720",
+    "1440"
+   ],
+   "top_cell_types_mean_fraction": {
+    "rosette_21d_10": 0.2191,
+    "rosette_21d_3": 0.0952,
+    "rosette_21d_4": 0.2413,
+    "rosette_21d_7": 0.1414,
+    "seed_3d_9": 0.0425,
+    "seed_425d_7": 0.0436,
+    "seedling_15d_14": 0.0302,
+    "seedling_6d_16": 0.0568
+   }
+  },
+  "B_primary_pooled": {
+   "median_relative_residual": 0.4787,
+   "n_clusters_with_latent_code": 183,
+   "n_clusters_without_latent_code": 0,
+   "n_signature_genes_matched": 3834,
+   "relative_residual": {
+    "11520": 0.5401,
+    "5760": 0.4787,
+    "8640": 0.4202
+   },
+   "timepoints": [
+    "5760",
+    "8640",
+    "11520"
+   ],
+   "top_cell_types_mean_fraction": {
+    "rosette_21d_10": 0.2789,
+    "rosette_21d_17": 0.0525,
+    "rosette_21d_3": 0.0906,
+    "rosette_21d_7": 0.0265,
+    "seed_425d_5": 0.2755,
+    "seedling_15d_14": 0.137,
+    "seedling_15d_18": 0.0392,
+    "silique_25": 0.031
+   }
+  }
+ },
+ "atlas": "/Users/drb_laptop/Documents/tropism_atlas",
+ "atlas_shape": {
+  "clusters": 183,
+  "latent_dims": 32,
+  "signature_genes": 4000
+ },
+ "caveat": "The Salk atlas (GSE226097) is a developmental whole-plant atlas, not an irradiated one. Deconvolution assumes cell-type signatures are stable under the treatment. This is an assumption, not a result.",
+ "generated": "2026-08-28"
+}

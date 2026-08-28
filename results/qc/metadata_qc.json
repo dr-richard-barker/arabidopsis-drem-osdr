@@ -1,0 +1,273 @@
+{
+ "balance": {
+  "min_replicates": 2,
+  "n_cells": 23,
+  "pass": true,
+  "under_replicated": {}
+ },
+ "cohort_shape": {
+  "pass": true,
+  "per_cohort": {
+   "A": {
+    "expected_timepoints": [
+     10.0,
+     20.0,
+     45.0,
+     60.0,
+     90.0,
+     180.0,
+     360.0,
+     720.0,
+     1440.0,
+     4320.0
+    ],
+    "match": true,
+    "n_samples": 144,
+    "n_timed_samples": 108,
+    "n_untimed_anchor_samples": 36,
+    "name": "gamma_irradiation",
+    "observed_timepoints": [
+     10.0,
+     20.0,
+     45.0,
+     60.0,
+     90.0,
+     180.0,
+     360.0,
+     720.0,
+     1440.0,
+     4320.0
+    ]
+   },
+   "B": {
+    "expected_timepoints": [
+     5760.0,
+     8640.0,
+     11520.0
+    ],
+    "match": true,
+    "n_samples": 115,
+    "n_timed_samples": 115,
+    "n_untimed_anchor_samples": 0,
+    "name": "spaceflight_development",
+    "observed_timepoints": [
+     5760.0,
+     8640.0,
+     11520.0
+    ]
+   }
+  }
+ },
+ "duplicates": {
+  "declared_but_not_detected": [],
+  "declared_duplicate_exclusions": [
+   "OSD-219"
+  ],
+  "detected_but_not_declared": [],
+  "detected_duplicate_pairs": [
+   {
+    "dropped": "OSD-219",
+    "kept": "OSD-218",
+    "n_samples": 32
+   }
+  ],
+  "pass": true
+ },
+ "generated": "2026-08-28",
+ "n_samples": 259,
+ "pass": true,
+ "sample_joins": {
+  "pass": true,
+  "per_study": {
+   "OSD-193": {
+    "matched": 32,
+    "n_matrix_columns": 32,
+    "n_metadata": 32,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-218": {
+    "matched": 32,
+    "n_matrix_columns": 32,
+    "n_metadata": 32,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-281": {
+    "matched": 32,
+    "n_matrix_columns": 32,
+    "n_metadata": 32,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-437": {
+    "matched": 19,
+    "n_matrix_columns": 19,
+    "n_metadata": 19,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-498": {
+    "matched": 16,
+    "n_matrix_columns": 16,
+    "n_metadata": 16,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-502": {
+    "matched": 8,
+    "n_matrix_columns": 8,
+    "n_metadata": 8,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-508": {
+    "matched": 36,
+    "n_matrix_columns": 36,
+    "n_metadata": 36,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-510": {
+    "matched": 48,
+    "n_matrix_columns": 48,
+    "n_metadata": 48,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   },
+   "OSD-782": {
+    "matched": 36,
+    "n_matrix_columns": 36,
+    "n_metadata": 36,
+    "unmatched_columns": [],
+    "unmatched_metadata": []
+   }
+  }
+ },
+ "timepoints": {
+  "pass": true,
+  "per_study": {
+   "OSD-193": {
+    "expected_minutes": [
+     5760.0,
+     11520.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     5760.0,
+     11520.0
+    ]
+   },
+   "OSD-218": {
+    "expected_minutes": [
+     5760.0,
+     11520.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     5760.0,
+     11520.0
+    ]
+   },
+   "OSD-281": {
+    "expected_minutes": [
+     5760.0,
+     11520.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     5760.0,
+     11520.0
+    ]
+   },
+   "OSD-437": {
+    "expected_minutes": [
+     5760.0,
+     8640.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     5760.0,
+     8640.0
+    ]
+   },
+   "OSD-498": {
+    "expected_minutes": [
+     10.0,
+     20.0,
+     90.0,
+     1440.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     10.0,
+     20.0,
+     90.0,
+     1440.0
+    ]
+   },
+   "OSD-502": {
+    "expected_minutes": [],
+    "match": true,
+    "observed_minutes": []
+   },
+   "OSD-508": {
+    "expected_minutes": [
+     10.0,
+     20.0,
+     45.0,
+     90.0,
+     180.0,
+     360.0,
+     720.0,
+     1440.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     10.0,
+     20.0,
+     45.0,
+     90.0,
+     180.0,
+     360.0,
+     720.0,
+     1440.0
+    ]
+   },
+   "OSD-510": {
+    "expected_minutes": [
+     20.0,
+     90.0,
+     180.0,
+     360.0,
+     720.0,
+     1440.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     20.0,
+     90.0,
+     180.0,
+     360.0,
+     720.0,
+     1440.0
+    ]
+   },
+   "OSD-782": {
+    "expected_minutes": [
+     60.0,
+     180.0,
+     1440.0,
+     4320.0
+    ],
+    "match": true,
+    "observed_minutes": [
+     60.0,
+     180.0,
+     1440.0,
+     4320.0
+    ]
+   }
+  }
+ }
+}

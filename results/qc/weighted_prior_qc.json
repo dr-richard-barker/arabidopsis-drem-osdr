@@ -1,0 +1,104 @@
+{
+ "arms": {
+  "A_holdout_WildType": {
+   "frac_edges_atlas_informed": 0.2381,
+   "frac_edges_changed_by_0.01": 0.1639,
+   "n_clusters_used": 183,
+   "n_edges_atlas_informed": 232931,
+   "n_tfs_with_atlas_context": 57,
+   "prior_file": "prior_weighted_A_holdout_WildType.tsv",
+   "top_context_cell_types": {
+    "rosette_21d_10": 0.2534,
+    "rosette_21d_15": 0.0882,
+    "rosette_21d_17": 0.2165,
+    "rosette_21d_4": 0.3011,
+    "rosette_21d_7": 0.104,
+    "seed_425d_7": 0.0095,
+    "seedling_15d_14": 0.0086,
+    "seedling_15d_18": 0.0075
+   },
+   "weight_summary": {
+    "mean": 0.4531,
+    "median": 0.4334,
+    "p90": 0.8922
+   }
+  },
+  "A_primary_WildType": {
+   "frac_edges_atlas_informed": 0.2381,
+   "frac_edges_changed_by_0.01": 0.1639,
+   "n_clusters_used": 183,
+   "n_edges_atlas_informed": 232931,
+   "n_tfs_with_atlas_context": 57,
+   "prior_file": "prior_weighted_A_primary_WildType.tsv",
+   "top_context_cell_types": {
+    "rosette_21d_10": 0.1501,
+    "rosette_21d_15": 0.0457,
+    "rosette_21d_17": 0.0386,
+    "rosette_21d_3": 0.0636,
+    "rosette_21d_4": 0.3532,
+    "rosette_21d_7": 0.1198,
+    "seed_425d_7": 0.0443,
+    "seedling_6d_16": 0.0556
+   },
+   "weight_summary": {
+    "mean": 0.4544,
+    "median": 0.4335,
+    "p90": 0.8922
+   }
+  },
+  "A_primary_sog1-1": {
+   "frac_edges_atlas_informed": 0.2381,
+   "frac_edges_changed_by_0.01": 0.1639,
+   "n_clusters_used": 183,
+   "n_edges_atlas_informed": 232931,
+   "n_tfs_with_atlas_context": 57,
+   "prior_file": "prior_weighted_A_primary_sog1-1.tsv",
+   "top_context_cell_types": {
+    "rosette_21d_10": 0.2191,
+    "rosette_21d_3": 0.0952,
+    "rosette_21d_4": 0.2413,
+    "rosette_21d_7": 0.1414,
+    "seed_3d_9": 0.0425,
+    "seed_425d_7": 0.0436,
+    "seedling_15d_14": 0.0302,
+    "seedling_6d_16": 0.0568
+   },
+   "weight_summary": {
+    "mean": 0.4551,
+    "median": 0.4341,
+    "p90": 0.8922
+   }
+  },
+  "B_primary_pooled": {
+   "frac_edges_atlas_informed": 0.2381,
+   "frac_edges_changed_by_0.01": 0.164,
+   "n_clusters_used": 183,
+   "n_edges_atlas_informed": 232931,
+   "n_tfs_with_atlas_context": 57,
+   "prior_file": "prior_weighted_B_primary_pooled.tsv",
+   "top_context_cell_types": {
+    "rosette_21d_10": 0.2789,
+    "rosette_21d_17": 0.0525,
+    "rosette_21d_3": 0.0906,
+    "rosette_21d_7": 0.0265,
+    "seed_425d_5": 0.2755,
+    "seedling_15d_14": 0.137,
+    "seedling_15d_18": 0.0392,
+    "silique_25": 0.031
+   },
+   "weight_summary": {
+    "mean": 0.4583,
+    "median": 0.4383,
+    "p90": 0.8922
+   }
+  }
+ },
+ "atlas": "/Users/drb_laptop/Documents/tropism_atlas",
+ "generated": "2026-08-28",
+ "n_edges": 978308,
+ "parameters": {
+  "alpha": 1.0,
+  "beta": 0.5,
+  "floor": 0.05
+ }
+}

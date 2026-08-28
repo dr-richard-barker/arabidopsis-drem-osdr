@@ -1,0 +1,22 @@
+$ /opt/homebrew/opt/openjdk@21/bin/java -Xmx8g -jar /Users/drb_laptop/Documents/arabidopsis-drem-osdr/vendor/drem.jar -b /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/inputs/A_primary_WildType__weighted/settings.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_primary_WildType__weighted/model.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_primary_WildType__weighted/geneassign.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_primary_WildType__weighted/tfscores
+
+--- stdout ---
+The directory TFInput was not found.Directory not found
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4248)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)
+	at edu.cmu.cs.sb.drem.DREM_Timeiohmm.<init>(DREM_Timeiohmm.java:673)
+	at edu.cmu.cs.sb.drem.DREM_IO_Batch.clusterscript(DREM_IO_Batch.java:1256)
+	at edu.cmu.cs.sb.drem.DREM_IO_Batch.<init>(DREM_IO_Batch.java:252)
+	at edu.cmu.cs.sb.drem.DREM_IO.main(DREM_IO.java:4998)
+

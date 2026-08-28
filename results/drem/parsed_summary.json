@@ -1,0 +1,939 @@
+{
+ "generated": "2026-08-28",
+ "runs": {
+  "A_holdout_WildType__binding": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1087,
+   "n_model_sections": 6,
+   "n_nodes": 7,
+   "n_splits": 3,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 0,
+    "empty": 1,
+    "path": 0,
+    "vsOthers": 9
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT4G18170",
+      "diff": -0.174,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G30250",
+      "diff": -0.192,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G18170",
+      "diff": 0.199,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G01250",
+      "diff": -0.134,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G23320",
+      "diff": -0.141,
+      "score": 0.0
+     }
+    ],
+    "2": [
+     {
+      "TF": "AT3G09600",
+      "diff": 0.168,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G09600",
+      "diff": -0.173,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G01060",
+      "diff": -0.166,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT2G45680",
+      "diff": 0.058,
+      "score": 5e-05
+     },
+     {
+      "TF": "AT4G00250",
+      "diff": 0.086,
+      "score": 0.000194
+     }
+    ],
+    "4": [
+     {
+      "TF": "AT3G50260",
+      "diff": 0.44,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G22810",
+      "diff": 0.286,
+      "score": 0.000249
+     },
+     {
+      "TF": "AT1G36060",
+      "diff": 0.217,
+      "score": 0.000483
+     },
+     {
+      "TF": "AT4G28140",
+      "diff": 0.161,
+      "score": 0.000698
+     },
+     {
+      "TF": "AT1G08320",
+      "diff": 0.143,
+      "score": 0.000755
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_holdout_WildType__flat": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1087,
+   "n_model_sections": 8,
+   "n_nodes": 9,
+   "n_splits": 4,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 2,
+    "empty": 0,
+    "path": 12,
+    "vsOthers": 9
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT4G23550",
+      "diff": 0.171,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G30250",
+      "diff": 0.18,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G30650",
+      "diff": 0.171,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G52830",
+      "diff": 0.162,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G38470",
+      "diff": 0.158,
+      "score": 0.0
+     }
+    ],
+    "2": [
+     {
+      "TF": "AT5G52660",
+      "diff": 0.173,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G22830",
+      "diff": 0.154,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G09600",
+      "diff": 0.147,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT1G18330",
+      "diff": 0.137,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT5G02840",
+      "diff": 0.111,
+      "score": 2e-06
+     }
+    ],
+    "4": [
+     {
+      "TF": "AT1G78700",
+      "diff": 0.335,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G52830",
+      "diff": 0.187,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT4G34410",
+      "diff": 0.289,
+      "score": 2e-06
+     },
+     {
+      "TF": "AT5G41570",
+      "diff": -0.186,
+      "score": 2.7e-05
+     },
+     {
+      "TF": "AT1G30650",
+      "diff": -0.174,
+      "score": 3.6e-05
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_holdout_WildType__weighted": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1087,
+   "n_model_sections": 4,
+   "n_nodes": 5,
+   "n_splits": 2,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 2,
+    "empty": 0,
+    "path": 7,
+    "vsOthers": 3
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT3G09600",
+      "diff": 0.167,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G01060",
+      "diff": 0.164,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G30250",
+      "diff": 0.181,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G09600",
+      "diff": -0.142,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G18170",
+      "diff": 0.145,
+      "score": 0.0
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_primary_WildType__binding": {
+   "attribution_basis": "2way",
+   "n_genes_assigned": 1410,
+   "n_model_sections": 10,
+   "n_nodes": 11,
+   "n_splits": 7,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 9,
+    "empty": 0,
+    "path": 19,
+    "vsOthers": 0
+   },
+   "top_tfs_per_split": {
+    "0": [
+     {
+      "TF": "AT1G25580",
+      "diff": -0.11,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G30250",
+      "diff": -0.106,
+      "score": 3e-06
+     },
+     {
+      "TF": "AT2G38470",
+      "diff": -0.097,
+      "score": 4e-06
+     },
+     {
+      "TF": "AT1G73730",
+      "diff": 0.025,
+      "score": 2.1e-05
+     },
+     {
+      "TF": "AT5G26170",
+      "diff": -0.081,
+      "score": 0.000195
+     }
+    ],
+    "1": [
+     {
+      "TF": "AT1G74840",
+      "diff": -0.141,
+      "score": 0.000532
+     },
+     {
+      "TF": "AT5G61620",
+      "diff": -0.137,
+      "score": 0.000948
+     },
+     {
+      "TF": "AT5G47390",
+      "diff": -0.132,
+      "score": 0.00133
+     },
+     {
+      "TF": "AT5G56840",
+      "diff": -0.136,
+      "score": 0.00192
+     },
+     {
+      "TF": "AT1G19000",
+      "diff": -0.116,
+      "score": 0.00422
+     }
+    ],
+    "2": [
+     {
+      "TF": "AT1G25580",
+      "diff": -0.28,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G64060",
+      "diff": -0.161,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G32730",
+      "diff": 0.188,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": 0.108,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT4G29230",
+      "diff": -0.135,
+      "score": 1e-06
+     }
+    ],
+    "3": [
+     {
+      "TF": "AT1G25580",
+      "diff": -0.307,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G28370",
+      "diff": 0.103,
+      "score": 0.023
+     },
+     {
+      "TF": "AT4G29230",
+      "diff": -0.11,
+      "score": 0.03
+     },
+     {
+      "TF": "AT3G47600",
+      "diff": -0.017,
+      "score": 0.042
+     },
+     {
+      "TF": "AT4G36620",
+      "diff": -0.021,
+      "score": 0.042
+     }
+    ],
+    "4": [
+     {
+      "TF": "AT4G32730",
+      "diff": 0.597,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": 0.351,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G58850",
+      "diff": 0.286,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G27785",
+      "diff": 0.232,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G18770",
+      "diff": 0.177,
+      "score": 3.7e-05
+     }
+    ],
+    "5": [
+     {
+      "TF": "AT5G54230",
+      "diff": -0.194,
+      "score": 8e-06
+     },
+     {
+      "TF": "AT3G10500",
+      "diff": -0.096,
+      "score": 0.00134
+     },
+     {
+      "TF": "AT3G02940",
+      "diff": -0.115,
+      "score": 0.01
+     },
+     {
+      "TF": "AT1G09540",
+      "diff": -0.109,
+      "score": 0.011
+     },
+     {
+      "TF": "AT1G34670",
+      "diff": -0.112,
+      "score": 0.011
+     }
+    ],
+    "6": [
+     {
+      "TF": "AT5G08520",
+      "diff": 0.202,
+      "score": 0.000507
+     },
+     {
+      "TF": "AT5G47390",
+      "diff": 0.191,
+      "score": 0.000699
+     },
+     {
+      "TF": "AT1G19000",
+      "diff": 0.192,
+      "score": 0.000822
+     },
+     {
+      "TF": "AT1G73730",
+      "diff": -0.097,
+      "score": 0.000931
+     },
+     {
+      "TF": "AT5G25190",
+      "diff": 0.17,
+      "score": 0.00149
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_primary_WildType__flat": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1410,
+   "n_model_sections": 14,
+   "n_nodes": 15,
+   "n_splits": 7,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 10,
+    "empty": 0,
+    "path": 25,
+    "vsOthers": 6
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT1G25580",
+      "diff": 0.293,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G32730",
+      "diff": 0.392,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G09410",
+      "diff": 0.283,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": 0.232,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G32730",
+      "diff": -0.187,
+      "score": 0.0
+     }
+    ],
+    "6": [
+     {
+      "TF": "AT3G26790",
+      "diff": -0.094,
+      "score": 0.000122
+     },
+     {
+      "TF": "AT3G12720",
+      "diff": 0.116,
+      "score": 0.000286
+     },
+     {
+      "TF": "AT5G25830",
+      "diff": -0.13,
+      "score": 0.00068
+     },
+     {
+      "TF": "AT3G53200",
+      "diff": 0.191,
+      "score": 0.00214
+     },
+     {
+      "TF": "AT2G46590",
+      "diff": 0.134,
+      "score": 0.00224
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_primary_WildType__weighted": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1410,
+   "n_model_sections": 9,
+   "n_nodes": 10,
+   "n_splits": 6,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 7,
+    "empty": 0,
+    "path": 16,
+    "vsOthers": 3
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT1G25580",
+      "diff": 0.257,
+      "score": 0.0
+     },
+     {
+      "TF": "AT2G30250",
+      "diff": -0.187,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G31800",
+      "diff": 0.155,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G26170",
+      "diff": 0.145,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT4G32730",
+      "diff": 0.177,
+      "score": 1e-06
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_primary_sog1-1__binding": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1530,
+   "n_model_sections": 11,
+   "n_nodes": 12,
+   "n_splits": 6,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 9,
+    "empty": 0,
+    "path": 20,
+    "vsOthers": 3
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT4G32730",
+      "diff": 0.188,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G32730",
+      "diff": -0.15,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": 0.11,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G31800",
+      "diff": 0.12,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": -0.09,
+      "score": 2e-06
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_primary_sog1-1__flat": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1530,
+   "n_model_sections": 11,
+   "n_nodes": 12,
+   "n_splits": 5,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 7,
+    "empty": 1,
+    "path": 0,
+    "vsOthers": 6
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT4G32730",
+      "diff": 0.242,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": 0.149,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G20770",
+      "diff": -0.088,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G32730",
+      "diff": -0.126,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G18170",
+      "diff": 0.095,
+      "score": 0.0
+     }
+    ],
+    "6": [
+     {
+      "TF": "AT5G61620",
+      "diff": 0.194,
+      "score": 1.8e-05
+     },
+     {
+      "TF": "AT2G40740",
+      "diff": 0.163,
+      "score": 3.6e-05
+     },
+     {
+      "TF": "AT2G38470",
+      "diff": 0.168,
+      "score": 3.7e-05
+     },
+     {
+      "TF": "AT4G18170",
+      "diff": -0.207,
+      "score": 4.6e-05
+     },
+     {
+      "TF": "AT4G23550",
+      "diff": -0.189,
+      "score": 0.000125
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "A_primary_sog1-1__weighted": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1530,
+   "n_model_sections": 8,
+   "n_nodes": 9,
+   "n_splits": 5,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 6,
+    "empty": 0,
+    "path": 14,
+    "vsOthers": 3
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT4G31800",
+      "diff": 0.102,
+      "score": 4e-06
+     },
+     {
+      "TF": "AT3G49530",
+      "diff": 0.08,
+      "score": 8e-06
+     },
+     {
+      "TF": "AT4G22070",
+      "diff": 0.081,
+      "score": 1.2e-05
+     },
+     {
+      "TF": "AT2G38470",
+      "diff": 0.089,
+      "score": 2.4e-05
+     },
+     {
+      "TF": "AT5G13080",
+      "diff": 0.086,
+      "score": 0.000116
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "B_primary_pooled__binding": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1041,
+   "n_model_sections": 5,
+   "n_nodes": 6,
+   "n_splits": 3,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 1,
+    "empty": 0,
+    "path": 8,
+    "vsOthers": 6
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT3G11280",
+      "diff": 0.101,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G49010",
+      "diff": 0.132,
+      "score": 0.0
+     },
+     {
+      "TF": "AT3G02940",
+      "diff": 0.141,
+      "score": 1e-06
+     },
+     {
+      "TF": "AT1G34670",
+      "diff": 0.129,
+      "score": 3e-06
+     },
+     {
+      "TF": "AT1G49010",
+      "diff": -0.127,
+      "score": 1.5e-05
+     }
+    ],
+    "2": [
+     {
+      "TF": "AT4G31800",
+      "diff": 0.117,
+      "score": 5e-05
+     },
+     {
+      "TF": "AT1G75390",
+      "diff": 0.054,
+      "score": 0.000938
+     },
+     {
+      "TF": "AT3G01970",
+      "diff": 0.088,
+      "score": 0.00175
+     },
+     {
+      "TF": "AT5G25830",
+      "diff": 0.081,
+      "score": 0.00333
+     },
+     {
+      "TF": "AT5G60850",
+      "diff": 0.089,
+      "score": 0.00565
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "B_primary_pooled__flat": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1041,
+   "n_model_sections": 11,
+   "n_nodes": 12,
+   "n_splits": 3,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 1,
+    "empty": 0,
+    "path": 17,
+    "vsOthers": 15
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT5G61620",
+      "diff": 0.21,
+      "score": 0.0
+     },
+     {
+      "TF": "AT5G08520",
+      "diff": 0.197,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G74840",
+      "diff": 0.162,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G34670",
+      "diff": 0.178,
+      "score": 0.0
+     },
+     {
+      "TF": "AT4G00250",
+      "diff": 0.151,
+      "score": 0.0
+     }
+    ],
+    "2": [
+     {
+      "TF": "AT1G75390",
+      "diff": 0.07,
+      "score": 0.000153
+     },
+     {
+      "TF": "AT2G47070",
+      "diff": -0.09,
+      "score": 0.000209
+     },
+     {
+      "TF": "AT4G38000",
+      "diff": -0.121,
+      "score": 0.000349
+     },
+     {
+      "TF": "AT3G45610",
+      "diff": 0.109,
+      "score": 0.000442
+     },
+     {
+      "TF": "AT4G31800",
+      "diff": 0.097,
+      "score": 0.000665
+     }
+    ],
+    "3": [
+     {
+      "TF": "AT3G02940",
+      "diff": 0.256,
+      "score": 1.9e-05
+     },
+     {
+      "TF": "AT3G02940",
+      "diff": -0.271,
+      "score": 0.000212
+     },
+     {
+      "TF": "AT1G34670",
+      "diff": 0.211,
+      "score": 0.000356
+     },
+     {
+      "TF": "AT1G26960",
+      "diff": 0.163,
+      "score": 0.000554
+     },
+     {
+      "TF": "AT2G23320",
+      "diff": 0.423,
+      "score": 0.000562
+     }
+    ]
+   },
+   "unrecognised_files": []
+  },
+  "B_primary_pooled__weighted": {
+   "attribution_basis": "vsOthers",
+   "n_genes_assigned": 1041,
+   "n_model_sections": 3,
+   "n_nodes": 4,
+   "n_splits": 2,
+   "n_tfs_scored": 479,
+   "tfscore_files": {
+    "2way": 1,
+    "empty": 0,
+    "path": 5,
+    "vsOthers": 3
+   },
+   "top_tfs_per_split": {
+    "1": [
+     {
+      "TF": "AT1G49010",
+      "diff": 0.113,
+      "score": 0.0
+     },
+     {
+      "TF": "AT1G49010",
+      "diff": -0.122,
+      "score": 1.3e-05
+     },
+     {
+      "TF": "AT5G25830",
+      "diff": -0.084,
+      "score": 8.9e-05
+     },
+     {
+      "TF": "AT3G11280",
+      "diff": 0.057,
+      "score": 0.000153
+     },
+     {
+      "TF": "AT5G25830",
+      "diff": 0.068,
+      "score": 0.000198
+     }
+    ]
+   },
+   "unrecognised_files": []
+  }
+ },
+ "score_direction": "lower Score = more significant (DREM convention)"
+}

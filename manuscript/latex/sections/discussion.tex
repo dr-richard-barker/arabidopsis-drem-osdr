@@ -1,0 +1,53 @@
+\section{Discussion}
+
+We set out to make a single-cell atlas act on a DREM model rather than on its
+annotation. The mechanism turns out to require no change to the engine: DREM's TF--gene
+input already accepts a score, and cell-type context is a legitimate thing to put there.
+That keeps the result citable as DREM rather than as a reimplementation, and it means the
+same lever is available to any DREM or iDREM user with a matching atlas.
+
+Three findings are worth separating from the method.
+
+First, provenance discipline changes what a ``cross-study'' claim means. The densest part
+of our irradiation series is one experiment deposited under three accessions. Assembling
+it is useful --- it is how the 10 and 45~min timepoints join the 24-h course --- but it is
+re-assembly, not integration, and describing it otherwise would overstate the result.
+Genuine cross-study integration here is OSD-782, and OSD-782 is where the design is
+weakest, because it crosses a dose regime.
+
+Second, a regulatory prior's gaps are invisible in its output. DAP-seq is the standard
+\textit{Arabidopsis} binding resource and does not contain SOG1. A DREM model of the
+DNA-damage response built on it would have produced a complete, plausible, entirely
+SOG1-free attribution. Nothing in the model would have signalled the omission. We now
+check the presence of the regulators a conclusion depends on as a routine step, and we
+suggest others do the same.
+
+Third, the atlas informs a minority of edges, and that is the correct behaviour rather
+than a shortfall. The signature matrix covers highly variable genes --- the genes whose
+expression distinguishes cell types. A TF outside that set has a near-uniform profile
+across the \NumAtlasClusters{} clusters, so cell-type context has nothing to say about it
+and its edge should be left alone. The lever moves exactly the edges where cell-type
+information exists.
+
+\subsection*{Limitations}
+
+The single-nucleus atlas is developmental and unirradiated, so deconvolution assumes
+cell-type signatures are stable under $\gamma$-irradiation. The design cannot test that
+assumption, and it is an assumption, not a finding.
+
+Replication is modest: two biological replicates per genotype--timepoint cell in OSD-508
+and OSD-510.
+
+Cohort~B pools four ecotypes (Col-0, WS, Sku5, Sku6) across three timepoints, because
+splitting on ecotype would leave single-study arms of two timepoints each --- too few for
+a bifurcation to be placed. Ecotype is therefore uncontrolled within that cohort.
+
+SOG1 binding was called from bedGraph coverage with a binned enrichment test rather than
+from a dedicated peak caller, because GEO distributes coverage rather than called peaks
+for GSE112529. The dual-control requirement makes the calls conservative, but they are
+not equivalent to a MACS analysis of the raw reads.
+
+Finally, the atlas signature matrix covers \NumAtlasSignatureGenes{} highly variable
+genes. Regenerating per-cluster means across all genes would widen the lever's reach;
+\texttt{scripts/build\_full\_signatures.R} does this for users with the atlas object and
+an R installation.

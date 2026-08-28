@@ -1,0 +1,39 @@
+\section{Introduction}
+
+Time-series transcriptomics answers \emph{when} a response happens, but not \emph{who}
+drives it. The Dynamic Regulatory Events Miner (DREM) closes that gap by fitting an
+input--output hidden Markov model in which co-expressed genes travel together until a
+\emph{bifurcation}, and by attributing each bifurcation to the transcription factors
+(TFs) whose targets are enriched along one branch \citep{ernst2007drem}. DREM~2.0 added
+model-selection and scoring improvements \citep{schulz2012drem2}, and iDREM extended the
+framework to multi-omic inputs and interactive exploration \citep{ding2018idrem}.
+
+The attribution step depends entirely on a second input: a static TF--gene interaction
+table. In practice that table is binary and tissue-blind. An edge asserts that a TF
+\emph{can} bind a promoter, not that the TF is present in the cells generating the
+measured signal. For a bulk time-series drawn from a whole organism this is a real
+limitation, because the transcriptome is a mixture and the mixture changes.
+
+Single-cell data is the obvious remedy, and iDREM already accepts it --- but only after
+the fact. Its documentation is explicit that the cell-type data ``is not used when
+predicting the iDREM model''; it annotates finished nodes rather than informing them.
+The contribution of this work is to move that information upstream, into the model
+itself, without modifying the engine. DREM reads the third column of its TF--gene file as
+a score in $[0,1]$ rather than as a binary flag, and that column is a sufficient channel:
+an edge whose TF is absent from the responding cell types can be down-weighted before the
+search begins.
+
+We test this on \textit{Arabidopsis thaliana} data from NASA's Open Science Data
+Repository (OSDR). Screening all \NumArabidopsisStudiesScreened{} OSDR
+\textit{Arabidopsis} studies for compatible genotype and treatment metadata yields two
+cross-study pseudo-time-series. The first is a $\gamma$-irradiation series of
+\NumCohortATimepoints{} timepoints spanning 10~min to 72~h. Its core --- OSD-498, OSD-508
+and OSD-510 --- is a re-assembly of one experiment deposited under three accessions, that
+of \citet{bourbousse2018sog1}, who built their own DREM model over these data and
+reported \NumPublishedGroups{} co-expressed gene groups. That gives this work an unusual
+advantage: a published DREM analysis of the same material to calibrate against, and a
+genetic positive control, since the series contains both wild type and \textit{sog1-1},
+a knockout of the NAC master regulator of the plant DNA-damage response
+\citep{yoshiyama2009sog1}. The second series follows spaceflight seedling development
+across \NumCohortBTimepoints{} timepoints and tests whether the method generalises to a
+different stress.

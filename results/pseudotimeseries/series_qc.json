@@ -1,0 +1,509 @@
+{
+ "cohorts": {
+  "A": {
+   "arms": {
+    "A_holdout_WildType": {
+     "batch": {
+      "n_genes_common": 18313,
+      "note": "single study — no cross-study offset to fit",
+      "per_study_offset": {},
+      "shared_timepoints": []
+     },
+     "expression_file": "A_holdout_WildType_expression.tsv",
+     "genotype": "Wild Type",
+     "genotypes_pooled": [
+      "Wild Type"
+     ],
+     "group": "holdout",
+     "n_genes": 18313,
+     "n_samples": 24,
+     "repeats_file": "A_holdout_WildType_repeats.tsv",
+     "sentinels": {
+      "enforced": false,
+      "genes": {
+       "BRCA1": {
+        "locus": "AT4G21070",
+        "max_abs_log2fc": 0.226,
+        "trajectory_log2fc": {
+         "1440": -0.152,
+         "180": 0.226,
+         "4320": 0.092,
+         "60": -0.149
+        }
+       },
+       "GMI1": {
+        "locus": "AT5G24280",
+        "max_abs_log2fc": 0.567,
+        "trajectory_log2fc": {
+         "1440": 0.077,
+         "180": 0.567,
+         "4320": 0.328,
+         "60": -0.145
+        }
+       },
+       "PARP2": {
+        "locus": "AT4G02390",
+        "max_abs_log2fc": 0.997,
+        "trajectory_log2fc": {
+         "1440": -0.118,
+         "180": 0.997,
+         "4320": -0.104,
+         "60": 0.899
+        }
+       },
+       "RAD51": {
+        "locus": "AT5G20850",
+        "max_abs_log2fc": 0.324,
+        "trajectory_log2fc": {
+         "1440": -0.18,
+         "180": 0.324,
+         "4320": -0.15,
+         "60": 0.301
+        }
+       },
+       "SMR7": {
+        "locus": "AT3G27630",
+        "status": "not measured in the common gene set"
+       },
+       "XRI1": {
+        "locus": "AT5G48720",
+        "max_abs_log2fc": 0.801,
+        "trajectory_log2fc": {
+         "1440": 0.124,
+         "180": 0.401,
+         "4320": 0.041,
+         "60": 0.801
+        }
+       }
+      },
+      "n_responding_at_2fold": 0,
+      "pass": true,
+      "responding": []
+     },
+     "studies": [
+      "OSD-782"
+     ],
+     "timepoints": [
+      60.0,
+      180.0,
+      1440.0,
+      4320.0
+     ]
+    },
+    "A_primary_WildType": {
+     "batch": {
+      "n_genes_common": 19566,
+      "per_study_offset": {
+       "OSD-498": {
+        "fitted_on_timepoints": [
+         10.0,
+         20.0,
+         90.0,
+         1440.0
+        ],
+        "offset": 0.009939616302873567
+       },
+       "OSD-508": {
+        "fitted_on_timepoints": [
+         10.0,
+         20.0,
+         90.0,
+         180.0,
+         360.0,
+         720.0,
+         1440.0
+        ],
+        "offset": -0.049299308705254924
+       },
+       "OSD-510": {
+        "fitted_on_timepoints": [
+         20.0,
+         90.0,
+         180.0,
+         360.0,
+         720.0,
+         1440.0
+        ],
+        "offset": 0.03873169011334199
+       }
+      },
+      "shared_timepoints": [
+       10.0,
+       20.0,
+       90.0,
+       180.0,
+       360.0,
+       720.0,
+       1440.0
+      ]
+     },
+     "expression_file": "A_primary_WildType_expression.tsv",
+     "genotype": "Wild Type",
+     "genotypes_pooled": [
+      "Wild Type"
+     ],
+     "group": "primary",
+     "n_genes": 19566,
+     "n_samples": 36,
+     "repeats_file": "A_primary_WildType_repeats.tsv",
+     "sentinels": {
+      "enforced": true,
+      "genes": {
+       "BRCA1": {
+        "locus": "AT4G21070",
+        "max_abs_log2fc": 6.364,
+        "trajectory_log2fc": {
+         "10": 0.932,
+         "1440": 2.934,
+         "180": 5.807,
+         "20": 3.114,
+         "360": 4.782,
+         "45": 5.874,
+         "720": 3.358,
+         "90": 6.364
+        }
+       },
+       "GMI1": {
+        "locus": "AT5G24280",
+        "max_abs_log2fc": 6.184,
+        "trajectory_log2fc": {
+         "10": 0.619,
+         "1440": 3.401,
+         "180": 6.184,
+         "20": 0.567,
+         "360": 5.819,
+         "45": 3.719,
+         "720": 4.054,
+         "90": 5.93
+        }
+       },
+       "PARP2": {
+        "locus": "AT4G02390",
+        "max_abs_log2fc": 6.245,
+        "trajectory_log2fc": {
+         "10": -0.007,
+         "1440": 3.014,
+         "180": 5.608,
+         "20": 2.3,
+         "360": 5.072,
+         "45": 5.731,
+         "720": 3.922,
+         "90": 6.245
+        }
+       },
+       "RAD51": {
+        "locus": "AT5G20850",
+        "max_abs_log2fc": 5.948,
+        "trajectory_log2fc": {
+         "10": 0.661,
+         "1440": 2.013,
+         "180": 5.159,
+         "20": 3.151,
+         "360": 3.917,
+         "45": 5.642,
+         "720": 2.575,
+         "90": 5.948
+        }
+       },
+       "SMR7": {
+        "locus": "AT3G27630",
+        "max_abs_log2fc": 7.617,
+        "trajectory_log2fc": {
+         "10": 1.342,
+         "1440": 4.416,
+         "180": 7.617,
+         "20": 4.328,
+         "360": 6.769,
+         "45": 7.191,
+         "720": 5.254,
+         "90": 7.489
+        }
+       },
+       "XRI1": {
+        "locus": "AT5G48720",
+        "max_abs_log2fc": 6.769,
+        "trajectory_log2fc": {
+         "10": 1.117,
+         "1440": 2.996,
+         "180": 6.018,
+         "20": 4.298,
+         "360": 5.253,
+         "45": 6.675,
+         "720": 3.697,
+         "90": 6.769
+        }
+       }
+      },
+      "n_responding_at_2fold": 6,
+      "pass": true,
+      "responding": [
+       "BRCA1",
+       "RAD51",
+       "PARP2",
+       "SMR7",
+       "GMI1",
+       "XRI1"
+      ]
+     },
+     "studies": [
+      "OSD-498",
+      "OSD-508",
+      "OSD-510"
+     ],
+     "timepoints": [
+      10.0,
+      20.0,
+      45.0,
+      90.0,
+      180.0,
+      360.0,
+      720.0,
+      1440.0
+     ]
+    },
+    "A_primary_sog1-1": {
+     "batch": {
+      "n_genes_common": 19566,
+      "per_study_offset": {
+       "OSD-498": {
+        "fitted_on_timepoints": [
+         10.0,
+         20.0,
+         90.0,
+         1440.0
+        ],
+        "offset": 0.009939616302873567
+       },
+       "OSD-508": {
+        "fitted_on_timepoints": [
+         10.0,
+         20.0,
+         90.0,
+         180.0,
+         360.0,
+         720.0,
+         1440.0
+        ],
+        "offset": -0.049299308705254924
+       },
+       "OSD-510": {
+        "fitted_on_timepoints": [
+         20.0,
+         90.0,
+         180.0,
+         360.0,
+         720.0,
+         1440.0
+        ],
+        "offset": 0.03873169011334199
+       }
+      },
+      "shared_timepoints": [
+       10.0,
+       20.0,
+       90.0,
+       180.0,
+       360.0,
+       720.0,
+       1440.0
+      ]
+     },
+     "expression_file": "A_primary_sog1-1_expression.tsv",
+     "genotype": "sog1-1",
+     "genotypes_pooled": [
+      "sog1-1"
+     ],
+     "group": "primary",
+     "n_genes": 19566,
+     "n_samples": 28,
+     "repeats_file": "A_primary_sog1-1_repeats.tsv",
+     "sentinels": {
+      "enforced": false,
+      "genes": {
+       "BRCA1": {
+        "locus": "AT4G21070",
+        "max_abs_log2fc": 1.319,
+        "trajectory_log2fc": {
+         "10": 0.573,
+         "1440": 1.319,
+         "180": 0.46,
+         "20": 0.119,
+         "360": 0.134,
+         "45": -0.364,
+         "720": 0.366,
+         "90": -0.419
+        }
+       },
+       "GMI1": {
+        "locus": "AT5G24280",
+        "max_abs_log2fc": 2.122,
+        "trajectory_log2fc": {
+         "10": 0.666,
+         "1440": 2.122,
+         "180": 0.597,
+         "20": 0.159,
+         "360": -0.063,
+         "45": 0.053,
+         "720": 0.515,
+         "90": 0.216
+        }
+       },
+       "PARP2": {
+        "locus": "AT4G02390",
+        "max_abs_log2fc": 1.505,
+        "trajectory_log2fc": {
+         "10": -0.214,
+         "1440": 1.505,
+         "180": 0.36,
+         "20": -0.493,
+         "360": 0.161,
+         "45": -0.254,
+         "720": 0.442,
+         "90": -0.211
+        }
+       },
+       "RAD51": {
+        "locus": "AT5G20850",
+        "max_abs_log2fc": 0.595,
+        "trajectory_log2fc": {
+         "10": -0.017,
+         "1440": 0.595,
+         "180": 0.394,
+         "20": -0.025,
+         "360": 0.304,
+         "45": -0.04,
+         "720": 0.228,
+         "90": -0.31
+        }
+       },
+       "SMR7": {
+        "locus": "AT3G27630",
+        "max_abs_log2fc": 1.876,
+        "trajectory_log2fc": {
+         "10": -0.094,
+         "1440": 1.876,
+         "180": 0.376,
+         "20": 0.076,
+         "360": 0.383,
+         "45": -0.051,
+         "720": 0.666,
+         "90": 0.368
+        }
+       },
+       "XRI1": {
+        "locus": "AT5G48720",
+        "max_abs_log2fc": 0.952,
+        "trajectory_log2fc": {
+         "10": -0.116,
+         "1440": 0.952,
+         "180": 0.345,
+         "20": -0.058,
+         "360": -0.059,
+         "45": 0.033,
+         "720": 0.234,
+         "90": 0.311
+        }
+       }
+      },
+      "n_responding_at_2fold": 4,
+      "pass": true,
+      "responding": [
+       "BRCA1",
+       "PARP2",
+       "SMR7",
+       "GMI1"
+      ]
+     },
+     "studies": [
+      "OSD-498",
+      "OSD-508",
+      "OSD-510"
+     ],
+     "timepoints": [
+      10.0,
+      20.0,
+      45.0,
+      90.0,
+      180.0,
+      360.0,
+      720.0,
+      1440.0
+     ]
+    }
+   },
+   "cohort": "A",
+   "name": "gamma_irradiation"
+  },
+  "B": {
+   "arms": {
+    "B_primary_pooled": {
+     "batch": {
+      "n_genes_common": 17319,
+      "per_study_offset": {
+       "OSD-193": {
+        "fitted_on_timepoints": [
+         5760,
+         11520
+        ],
+        "offset": 0.019189970041677468
+       },
+       "OSD-218": {
+        "fitted_on_timepoints": [
+         5760,
+         11520
+        ],
+        "offset": 0.0272168508922635
+       },
+       "OSD-281": {
+        "fitted_on_timepoints": [
+         5760,
+         11520
+        ],
+        "offset": 0.06274026348328024
+       },
+       "OSD-437": {
+        "fitted_on_timepoints": [
+         5760
+        ],
+        "offset": -0.11085184623318928
+       }
+      },
+      "shared_timepoints": [
+       5760,
+       11520
+      ]
+     },
+     "expression_file": "B_primary_pooled_expression.tsv",
+     "genotype": "pooled",
+     "genotypes_pooled": [
+      "Col-0",
+      "Sku5",
+      "Sku6",
+      "WS",
+      "Wild Type"
+     ],
+     "group": "primary",
+     "n_genes": 17319,
+     "n_samples": 64,
+     "repeats_file": "B_primary_pooled_repeats.tsv",
+     "sentinels": null,
+     "studies": [
+      "OSD-193",
+      "OSD-218",
+      "OSD-281",
+      "OSD-437"
+     ],
+     "timepoints": [
+      5760.0,
+      8640.0,
+      11520.0
+     ]
+    }
+   },
+   "cohort": "B",
+   "name": "spaceflight_development"
+  }
+ },
+ "generated": "2026-08-28",
+ "min_cpm": 1.0
+}

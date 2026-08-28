@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% Numbers used in the prose are generated from results/ by
+% scripts/13_manuscript_numbers.py. A value the pipeline has not produced renders as a
+% visible TODO rather than as a plausible stale figure.
+\input{generated_numbers}
+
+\title{A cell-type-weighted regulatory prior resolves the transcription factors
+driving bifurcations in a cross-study \textit{Arabidopsis} irradiation
+pseudo-time-series}
+
+\author{Richard J. Barker\thanks{Center of Space Exploration (CoSE).
+Correspondence: \texttt{dr.richard.barker@gmail.com}} \\
+\small \textbf{TODO: co-author list}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Dynamic Regulatory Events Miner (DREM) reconstructs when transcription factors (TFs)
+act by finding bifurcations in time-series expression and attributing each to a
+regulator, using a static TF--gene interaction prior \citep{ernst2007drem,schulz2012drem2}.
+That prior is normally binary and tissue-blind: an edge either exists or it does not,
+regardless of whether the TF is expressed in the cells producing the signal. We show
+that a single-cell atlas can be made to act on the model itself rather than on its
+annotation, by writing cell-type context into the score column DREM already reads.
+Screening all \NumArabidopsisStudiesScreened{} \textit{Arabidopsis thaliana} studies in
+NASA's Open Science Data Repository (OSDR), we assemble a
+\NumCohortATimepoints{}-point $\gamma$-irradiation pseudo-time-series spanning 10~min to
+72~h from \NumCohortATimedSamples{} samples, and a second
+\NumCohortBTimepoints{}-point spaceflight series from \NumCohortBSamples{} samples. We
+deconvolve each timepoint against a \NumAtlasClusters{}-cluster single-nucleus atlas,
+weight \NumPriorEdges{} DAP-seq and ChIP-seq TF--gene edges by the cell types actually
+present, and compare the resulting models against flat and binding-only priors under an
+otherwise identical search. The wild-type/\textit{sog1-1} design provides an internal
+positive control: the canonical DNA-damage response is induced across all
+\NumSentinelsResponding{} sentinel genes in wild type and collapses in the mutant.
+Of \NumAblationSplits{} bifurcations in the wild-type model,
+\NumAblationSplitsChanged{} change their top-ranked regulator with the prior --- but not
+the canonical ones: SOG1 ranks first of \NumPriorTFs{} TFs in wild type under every
+prior and falls to rank \SogOneRankMutWeighted{} in \textit{sog1-1}. Attribution moves
+where the evidence was marginal and holds where it was strong.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+
+\section*{Data and code availability}
+All analysis code, harmonised metadata and derived tables are at
+\url{https://github.com/dr-richard-barker/arabidopsis-drem-osdr} and archived at Zenodo
+(\textbf{TODO: DOI}). Primary data are NASA OSDR studies OSD-193, 218, 281, 437, 498,
+502, 508, 510 and 782 \citep{osdr}; DAP-seq binding from GEO GSE60143
+\citep{geo_gse60143,omalley2016cistrome}; SOG1 ChIP-seq from GSE112529
+\citep{geo_gse112529,bourbousse2018sog1}; the single-nucleus atlas from GSE226097
+\citep{geo_gse226097,lee2023atlas}. DREM 2.0.7 is distributed by the Ernst laboratory
+under GPL-3.0 \citep{dremsoftware} and is downloaded, not redistributed, by this
+pipeline.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

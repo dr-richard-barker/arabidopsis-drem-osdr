@@ -1,0 +1,136 @@
+{
+ "engine": {
+  "expected_sha256": "16312a6a713238a829abb0e1bf3929f8378216ddb17b57fe30e038e892739530",
+  "licence": "GPL-3.0 (Ernst lab, jernst98/STEM_DREM) — downloaded, not redistributed",
+  "matches_expected": true,
+  "path": "vendor/drem.jar",
+  "sha256": "16312a6a713238a829abb0e1bf3929f8378216ddb17b57fe30e038e892739530",
+  "url": "https://raw.githubusercontent.com/jernst98/STEM_DREM/master/drem.jar"
+ },
+ "generated": "2026-08-28",
+ "java": "/opt/homebrew/opt/openjdk@21/bin/java",
+ "runs": {
+  "A_holdout_WildType__binding": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 50251,
+   "model_written": true,
+   "n_tfscore_files": 10,
+   "ok": true,
+   "seconds": 11.5,
+   "timed_out": false
+  },
+  "A_holdout_WildType__flat": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 73000,
+   "model_written": true,
+   "n_tfscore_files": 23,
+   "ok": true,
+   "seconds": 16.4,
+   "timed_out": false
+  },
+  "A_holdout_WildType__weighted": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 34512,
+   "model_written": true,
+   "n_tfscore_files": 12,
+   "ok": true,
+   "seconds": 7.3,
+   "timed_out": false
+  },
+  "A_primary_WildType__binding": {
+   "exit_code": 1,
+   "geneassign_written": false,
+   "model_bytes": 0,
+   "model_written": false,
+   "n_tfscore_files": 0,
+   "ok": false,
+   "seconds": 573.0,
+   "stderr_tail": "cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4288)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.computeStats(DREM_Timeiohmm.java:4405)\n\tat edu.cmu.cs.sb.drem.DREM_Timeiohmm.<init>(DREM_Timeiohmm.java:673)\n\tat edu.cmu.cs.sb.drem.DREM_IO_Batch.clusterscript(DREM_IO_Batch.java:1256)\n\tat edu.cmu.cs.sb.drem.DREM_IO_Batch.<init>(DREM_IO_Batch.java:252)\n\tat edu.cmu.cs.sb.drem.DREM_IO.main(DREM_IO.java:4998)\n",
+   "timed_out": false
+  },
+  "A_primary_WildType__flat": {
+   "exit_code": 143,
+   "geneassign_written": false,
+   "model_bytes": 0,
+   "model_written": false,
+   "n_tfscore_files": 0,
+   "ok": false,
+   "seconds": 20.8,
+   "stderr_tail": "Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true\n",
+   "timed_out": false
+  },
+  "A_primary_WildType__weighted": {
+   "exit_code": 1,
+   "geneassign_written": true,
+   "model_bytes": 74480,
+   "model_written": true,
+   "n_tfscore_files": 26,
+   "ok": true,
+   "seconds": 441.4,
+   "timed_out": false
+  },
+  "A_primary_sog1-1__binding": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 93624,
+   "model_written": true,
+   "n_tfscore_files": 32,
+   "ok": true,
+   "seconds": 51.2,
+   "timed_out": false
+  },
+  "A_primary_sog1-1__flat": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 102315,
+   "model_written": true,
+   "n_tfscore_files": 14,
+   "ok": true,
+   "seconds": 70.1,
+   "timed_out": false
+  },
+  "A_primary_sog1-1__weighted": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 68266,
+   "model_written": true,
+   "n_tfscore_files": 23,
+   "ok": true,
+   "seconds": 33.5,
+   "timed_out": false
+  },
+  "B_primary_pooled__binding": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 43459,
+   "model_written": true,
+   "n_tfscore_files": 15,
+   "ok": true,
+   "seconds": 7.3,
+   "timed_out": false
+  },
+  "B_primary_pooled__flat": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 94417,
+   "model_written": true,
+   "n_tfscore_files": 33,
+   "ok": true,
+   "seconds": 15.1,
+   "timed_out": false
+  },
+  "B_primary_pooled__weighted": {
+   "exit_code": 0,
+   "geneassign_written": true,
+   "model_bytes": 26426,
+   "model_written": true,
+   "n_tfscore_files": 9,
+   "ok": true,
+   "seconds": 4.3,
+   "timed_out": false
+  }
+ }
+}

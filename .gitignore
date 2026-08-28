@@ -1,0 +1,34 @@
+# Large re-fetchable inputs. Every one is listed in MANIFEST.tsv with its source URL
+# and SHA-256, and scripts/run_all.sh reconstructs them, so they are catalogued but
+# not redistributed.
+data/counts/
+data/runsheets/
+data/chip/
+data/tf_prior/*.tar
+data/tf_prior/*.gtf.gz
+data/tf_prior/*.txt.gz
+data/tf_prior/tair_gene_aliases.txt
+data/tf_prior/tf_gene_edges.tsv
+data/tf_prior/weighted/
+data/osdr/arabidopsis_factor_values.csv
+vendor/*.jar
+
+# DREM run products: model.txt and the parsed tables are versioned, the bulky
+# intermediates are not.
+results/drem/inputs/
+results/drem/smoke/
+results/drem/runs/*/tfscores/
+
+# Build and environment
+__pycache__/
+*.pyc
+.java_path
+manuscript/latex/*.aux
+manuscript/latex/*.bbl
+manuscript/latex/*.blg
+manuscript/latex/*.log
+manuscript/latex/*.out
+manuscript/latex/*.fdb_latexmk
+manuscript/latex/*.fls
+manuscript/latex/*.toc
+.DS_Store

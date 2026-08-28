@@ -1,0 +1,260 @@
+accession,sample_name,cohort,cohort_name,role,genotype,arm,time_minutes,time_days,dose,radiation,spaceflight,altered_gravity,organism_part
+OSD-498,GSM3072467,A,gamma_irradiation,core,Wild Type,treated,10,0.00694444,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072468,A,gamma_irradiation,core,Wild Type,treated,10,0.00694444,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072469,A,gamma_irradiation,core,Wild Type,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072470,A,gamma_irradiation,core,Wild Type,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072471,A,gamma_irradiation,core,Wild Type,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072472,A,gamma_irradiation,core,Wild Type,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072473,A,gamma_irradiation,core,Wild Type,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072474,A,gamma_irradiation,core,Wild Type,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-498,GSM3072475,A,gamma_irradiation,core,Wild Type,control,10,0.00694444,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072476,A,gamma_irradiation,core,Wild Type,control,10,0.00694444,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072477,A,gamma_irradiation,core,Wild Type,control,20,0.0138889,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072478,A,gamma_irradiation,core,Wild Type,control,20,0.0138889,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072479,A,gamma_irradiation,core,Wild Type,control,90,0.0625,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072480,A,gamma_irradiation,core,Wild Type,control,90,0.0625,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072481,A,gamma_irradiation,core,Wild Type,control,1440,1,NaN,non-irradiated,NaN,NaN,NaN
+OSD-498,GSM3072482,A,gamma_irradiation,core,Wild Type,control,1440,1,NaN,non-irradiated,NaN,NaN,NaN
+OSD-508,GSM3082835,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-508,GSM3082836,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-508,GSM3082837,A,gamma_irradiation,core,Wild Type,treated,10,0.00694444,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082838,A,gamma_irradiation,core,Wild Type,treated,10,0.00694444,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082839,A,gamma_irradiation,core,Wild Type,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082840,A,gamma_irradiation,core,Wild Type,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082841,A,gamma_irradiation,core,Wild Type,treated,45,0.03125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082842,A,gamma_irradiation,core,Wild Type,treated,45,0.03125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082843,A,gamma_irradiation,core,Wild Type,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082844,A,gamma_irradiation,core,Wild Type,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082845,A,gamma_irradiation,core,Wild Type,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082846,A,gamma_irradiation,core,Wild Type,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082847,A,gamma_irradiation,core,Wild Type,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082848,A,gamma_irradiation,core,Wild Type,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082849,A,gamma_irradiation,core,Wild Type,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082850,A,gamma_irradiation,core,Wild Type,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082851,A,gamma_irradiation,core,Wild Type,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082852,A,gamma_irradiation,core,Wild Type,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082853,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-508,GSM3082854,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-508,GSM3082855,A,gamma_irradiation,core,sog1-1,treated,10,0.00694444,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082856,A,gamma_irradiation,core,sog1-1,treated,10,0.00694444,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082857,A,gamma_irradiation,core,sog1-1,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082858,A,gamma_irradiation,core,sog1-1,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082859,A,gamma_irradiation,core,sog1-1,treated,45,0.03125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082860,A,gamma_irradiation,core,sog1-1,treated,45,0.03125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082861,A,gamma_irradiation,core,sog1-1,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082862,A,gamma_irradiation,core,sog1-1,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082863,A,gamma_irradiation,core,sog1-1,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082864,A,gamma_irradiation,core,sog1-1,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082865,A,gamma_irradiation,core,sog1-1,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082866,A,gamma_irradiation,core,sog1-1,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082867,A,gamma_irradiation,core,sog1-1,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082868,A,gamma_irradiation,core,sog1-1,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082869,A,gamma_irradiation,core,sog1-1,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-508,GSM3082870,A,gamma_irradiation,core,sog1-1,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072302,A,gamma_irradiation,core,Wild Type,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072303,A,gamma_irradiation,core,Wild Type,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072304,A,gamma_irradiation,core,Wild Type,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072305,A,gamma_irradiation,core,Wild Type,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072306,A,gamma_irradiation,core,Wild Type,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072307,A,gamma_irradiation,core,Wild Type,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072308,A,gamma_irradiation,core,Wild Type,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072309,A,gamma_irradiation,core,Wild Type,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072310,A,gamma_irradiation,core,Wild Type,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072311,A,gamma_irradiation,core,Wild Type,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072312,A,gamma_irradiation,core,Wild Type,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072313,A,gamma_irradiation,core,Wild Type,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072314,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072315,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072316,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072317,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072318,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072319,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072320,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072321,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072322,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072323,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072324,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072325,A,gamma_irradiation,core,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072326,A,gamma_irradiation,core,sog1-1,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072327,A,gamma_irradiation,core,sog1-1,treated,20,0.0138889,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072328,A,gamma_irradiation,core,sog1-1,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072329,A,gamma_irradiation,core,sog1-1,treated,90,0.0625,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072330,A,gamma_irradiation,core,sog1-1,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072331,A,gamma_irradiation,core,sog1-1,treated,180,0.125,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072332,A,gamma_irradiation,core,sog1-1,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072333,A,gamma_irradiation,core,sog1-1,treated,360,0.25,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072334,A,gamma_irradiation,core,sog1-1,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072335,A,gamma_irradiation,core,sog1-1,treated,720,0.5,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072336,A,gamma_irradiation,core,sog1-1,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072337,A,gamma_irradiation,core,sog1-1,treated,1440,1,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-510,GSM3072338,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072339,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072340,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072341,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072342,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072343,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072344,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072345,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072346,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072347,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072348,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-510,GSM3072349,A,gamma_irradiation,core,sog1-1,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623649,A,gamma_irradiation,extension_holdout,Wild Type,control,60,0.0416667,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623650,A,gamma_irradiation,extension_holdout,Wild Type,control,60,0.0416667,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623651,A,gamma_irradiation,extension_holdout,Wild Type,control,60,0.0416667,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623652,A,gamma_irradiation,extension_holdout,Wild Type,treated,60,0.0416667,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623653,A,gamma_irradiation,extension_holdout,Wild Type,treated,60,0.0416667,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623654,A,gamma_irradiation,extension_holdout,Wild Type,treated,60,0.0416667,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623655,A,gamma_irradiation,extension_holdout,Wild Type,treated,60,0.0416667,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623656,A,gamma_irradiation,extension_holdout,Wild Type,treated,60,0.0416667,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623657,A,gamma_irradiation,extension_holdout,Wild Type,treated,60,0.0416667,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623658,A,gamma_irradiation,extension_holdout,Wild Type,control,180,0.125,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623659,A,gamma_irradiation,extension_holdout,Wild Type,control,180,0.125,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623660,A,gamma_irradiation,extension_holdout,Wild Type,control,180,0.125,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623661,A,gamma_irradiation,extension_holdout,Wild Type,treated,180,0.125,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623662,A,gamma_irradiation,extension_holdout,Wild Type,treated,180,0.125,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623663,A,gamma_irradiation,extension_holdout,Wild Type,treated,180,0.125,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623664,A,gamma_irradiation,extension_holdout,Wild Type,treated,180,0.125,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623665,A,gamma_irradiation,extension_holdout,Wild Type,treated,180,0.125,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623666,A,gamma_irradiation,extension_holdout,Wild Type,treated,180,0.125,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623667,A,gamma_irradiation,extension_holdout,Wild Type,control,1440,1,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623668,A,gamma_irradiation,extension_holdout,Wild Type,control,1440,1,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623669,A,gamma_irradiation,extension_holdout,Wild Type,control,1440,1,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623670,A,gamma_irradiation,extension_holdout,Wild Type,treated,1440,1,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623671,A,gamma_irradiation,extension_holdout,Wild Type,treated,1440,1,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623672,A,gamma_irradiation,extension_holdout,Wild Type,treated,1440,1,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623673,A,gamma_irradiation,extension_holdout,Wild Type,treated,1440,1,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623674,A,gamma_irradiation,extension_holdout,Wild Type,treated,1440,1,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623675,A,gamma_irradiation,extension_holdout,Wild Type,treated,1440,1,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623676,A,gamma_irradiation,extension_holdout,Wild Type,control,4320,3,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623677,A,gamma_irradiation,extension_holdout,Wild Type,control,4320,3,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623678,A,gamma_irradiation,extension_holdout,Wild Type,control,4320,3,0 {centigray},non-irradiated,NaN,NaN,NaN
+OSD-782,GSM7623679,A,gamma_irradiation,extension_holdout,Wild Type,treated,4320,3,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623680,A,gamma_irradiation,extension_holdout,Wild Type,treated,4320,3,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623681,A,gamma_irradiation,extension_holdout,Wild Type,treated,4320,3,10 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623682,A,gamma_irradiation,extension_holdout,Wild Type,treated,4320,3,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623683,A,gamma_irradiation,extension_holdout,Wild Type,treated,4320,3,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-782,GSM7623684,A,gamma_irradiation,extension_holdout,Wild Type,treated,4320,3,100 {centigray},cesium-137 gamma radiation,NaN,NaN,NaN
+OSD-502,GSM3072483,A,gamma_irradiation,anchor,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-502,GSM3072484,A,gamma_irradiation,anchor,Wild Type,treated,,,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-502,GSM3072485,A,gamma_irradiation,anchor,myb3r135,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-502,GSM3072486,A,gamma_irradiation,anchor,myb3r135,treated,,,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-502,GSM3072487,A,gamma_irradiation,anchor,Wild Type,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-502,GSM3072488,A,gamma_irradiation,anchor,Wild Type,treated,,,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-502,GSM3072489,A,gamma_irradiation,anchor,myb3r135,control,,,NaN,non-irradiated,NaN,NaN,NaN
+OSD-502,GSM3072490,A,gamma_irradiation,anchor,myb3r135,treated,,,NaN,Cobalt-60 gamma radiation,NaN,NaN,NaN
+OSD-193,GSM2516735,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516736,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516737,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516738,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516739,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516740,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516741,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516742,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516743,B,spaceflight_development,core,Sku6,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516744,B,spaceflight_development,core,Sku6,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516745,B,spaceflight_development,core,Sku6,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516746,B,spaceflight_development,core,Sku6,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516747,B,spaceflight_development,core,Sku6,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516748,B,spaceflight_development,core,Sku6,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516749,B,spaceflight_development,core,Sku6,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516750,B,spaceflight_development,core,Sku6,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516751,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516752,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516753,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516754,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516755,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516756,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516757,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516758,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516759,B,spaceflight_development,core,Sku6,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516760,B,spaceflight_development,core,Sku6,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516761,B,spaceflight_development,core,Sku6,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516762,B,spaceflight_development,core,Sku6,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-193,GSM2516763,B,spaceflight_development,core,Sku6,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516764,B,spaceflight_development,core,Sku6,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516765,B,spaceflight_development,core,Sku6,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-193,GSM2516766,B,spaceflight_development,core,Sku6,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465142,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465144,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465146,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465148,B,spaceflight_development,core,Col-0,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465150,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465152,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465155,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465157,B,spaceflight_development,core,Col-0,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465160,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465163,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465165,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465168,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465170,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465172,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465174,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465177,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465179,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465181,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465183,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465187,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465190,B,spaceflight_development,core,Col-0,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465194,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465197,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465201,B,spaceflight_development,core,Col-0,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465267,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465268,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465269,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465270,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-218,SAMN06465272,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465273,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465275,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-218,SAMN06465276,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468812,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468813,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468814,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468815,B,spaceflight_development,core,WS,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468816,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468817,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468818,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468819,B,spaceflight_development,core,Sku5,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468820,B,spaceflight_development,core,Sku5,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468821,B,spaceflight_development,core,WS,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468822,B,spaceflight_development,core,Sku5,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468823,B,spaceflight_development,core,Sku5,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468824,B,spaceflight_development,core,Sku5,treated,11520,8,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468825,B,spaceflight_development,core,Sku5,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468826,B,spaceflight_development,core,Sku5,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468827,B,spaceflight_development,core,Sku5,control,11520,8,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468828,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468829,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468830,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468831,B,spaceflight_development,core,Sku5,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468832,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468833,B,spaceflight_development,core,WS,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468834,B,spaceflight_development,core,Sku5,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468835,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468836,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468837,B,spaceflight_development,core,Sku5,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468838,B,spaceflight_development,core,WS,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468839,B,spaceflight_development,core,Sku5,treated,5760,4,NaN,NaN,Space Flight,NaN,NaN
+OSD-281,SAMN06468840,B,spaceflight_development,core,Sku5,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468841,B,spaceflight_development,core,Sku5,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468842,B,spaceflight_development,core,Sku5,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-281,SAMN06468844,B,spaceflight_development,core,Sku5,control,5760,4,NaN,NaN,Ground Control,NaN,NaN
+OSD-437,A4Ex_248,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A4_208,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A4_223,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A4_258,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A6Ex_243,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A6_203,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A6_213,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,A6_253,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,1G by centrifugation,NaN
+OSD-437,B4Ex_236,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B4_237,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B4_238,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B4_269,B,spaceflight_development,core,Wild Type,treated,5760,4,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B6Ex_220,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B6_219,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B6_232,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,uG,NaN
+OSD-437,B6_233,B,spaceflight_development,core,Wild Type,treated,8640,6,NaN,NaN,Space Flight,uG,NaN
+OSD-437,G6_283,B,spaceflight_development,core,Wild Type,control,8640,6,NaN,NaN,Ground Control,1G on Earth,NaN
+OSD-437,G6_284,B,spaceflight_development,core,Wild Type,control,8640,6,NaN,NaN,Ground Control,1G on Earth,NaN
+OSD-437,G6_286,B,spaceflight_development,core,Wild Type,control,8640,6,NaN,NaN,Ground Control,1G on Earth,NaN

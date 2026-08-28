@@ -1,0 +1,9 @@
+$ /opt/homebrew/opt/openjdk@21/bin/java -Xmx8g -jar /Users/drb_laptop/Documents/arabidopsis-drem-osdr/vendor/drem.jar -b /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/inputs/A_primary_sog1-1__weighted/settings.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_primary_sog1-1__weighted/model.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_primary_sog1-1__weighted/geneassign.txt /Users/drb_laptop/Documents/arabidopsis-drem-osdr/results/drem/runs/A_primary_sog1-1__weighted/tfscores
+
+--- stdout ---
+The directory TFInput was not found.Directory not found
+Time: 32743ms
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true
+

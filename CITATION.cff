@@ -1,0 +1,98 @@
+cff-version: 1.2.0
+message: "If you use this pipeline or its results, please cite it as below, and cite the original data depositors listed in MANIFEST.tsv."
+title: "arabidopsis-drem-osdr: a cell-type-weighted regulatory prior for DREM over NASA OSDR Arabidopsis pseudo-time-series"
+abstract: >-
+  A FAIR, reproducible pipeline that assembles cross-study pseudo-time-series from NASA
+  Open Science Data Repository Arabidopsis thaliana studies and fits Dynamic Regulatory
+  Events Miner (DREM 2.0.7) models over them, with a single-cell atlas acting on the
+  model rather than on its annotation. iDREM can annotate finished nodes with cell-type
+  data but does not use it when predicting the model; here cell-type context is written
+  into the score column of DREM's TF-gene interaction input, so a transcription factor
+  absent from the responding cell types is down-weighted before the search begins.
+  Screening all 62 OSDR Arabidopsis studies yields a 10-timepoint gamma-irradiation
+  series (10 min to 72 h, 108 timed samples, wild type and sog1-1) whose core is a
+  re-assembly of one experiment deposited under three accessions, and a 3-timepoint
+  spaceflight developmental series. The binding prior is built from the Arabidopsis
+  DAP-seq cistrome, extended with SOG1 target edges called from the source study's own
+  ChIP-seq because DAP-seq does not assay SOG1 -- without which no model could attribute
+  any bifurcation to the master regulator of the response being modelled. Includes
+  acquisition and analysis code, harmonised metadata, quality-control reports for every
+  stage, a Crossref-verified bibliography, and a manuscript built to PDF and Word from
+  one LaTeX source.
+type: software
+authors:
+  - family-names: Barker
+    given-names: Richard
+    name-particle: J.
+    alias: dr-richard-barker
+    email: dr.richard.barker@gmail.com
+keywords:
+  - DREM
+  - dynamic regulatory events miner
+  - gene regulatory networks
+  - transcription factors
+  - time-series transcriptomics
+  - single-cell deconvolution
+  - Arabidopsis thaliana
+  - DNA damage response
+  - SOG1
+  - ionizing radiation
+  - spaceflight
+  - NASA OSDR
+  - GeneLab
+  - space biology
+  - reproducible research
+  - FAIR data
+license: MIT
+license-url: "https://github.com/dr-richard-barker/arabidopsis-drem-osdr/blob/main/LICENSE_NOTES.md"
+repository-code: "https://github.com/dr-richard-barker/arabidopsis-drem-osdr"
+references:
+  - type: article
+    title: "SOG1 activator and MYB3R repressors regulate a complex DNA damage network in Arabidopsis"
+    authors:
+      - family-names: Bourbousse
+        given-names: Clara
+      - family-names: Vegesna
+        given-names: Neeraja
+      - family-names: Law
+        given-names: Julie
+        name-particle: A.
+    journal: "Proceedings of the National Academy of Sciences"
+    year: 2018
+    volume: "115"
+    issue: "52"
+    doi: "10.1073/pnas.1810582115"
+    notes: "The source study for OSD-498/508/510; built its own DREM model over these data."
+  - type: article
+    title: "DREM 2.0: Improved reconstruction of dynamic regulatory networks from time-series expression data"
+    authors:
+      - family-names: Schulz
+        given-names: Marcel
+        name-particle: H.
+    journal: "BMC Systems Biology"
+    year: 2012
+    volume: "6"
+    doi: "10.1186/1752-0509-6-104"
+    notes: "The engine this pipeline wraps."
+  - type: article
+    title: "Cistrome and Epicistrome Features Shape the Regulatory DNA Landscape"
+    authors:
+      - family-names: O'Malley
+        given-names: Ronan
+        name-particle: C.
+    journal: "Cell"
+    year: 2016
+    doi: "10.1016/j.cell.2016.04.038"
+    notes: "Source of the DAP-seq binding prior (GEO GSE60143)."
+  - type: data
+    title: "NASA Open Science Data Repository"
+    url: "https://osdr.nasa.gov/bio/repo/"
+    notes: "Primary data source; see MANIFEST.tsv for the nine studies used."
+  - type: software
+    title: "Tropism_autodecoder_2026"
+    authors:
+      - family-names: Barker
+        given-names: Richard
+        name-particle: J.
+    url: "https://github.com/dr-richard-barker/Tropism_autodecoder_2026"
+    notes: "Source of the trained single-cell auto-decoder artefacts."

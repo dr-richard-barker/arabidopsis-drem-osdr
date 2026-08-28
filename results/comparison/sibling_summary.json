@@ -1,0 +1,92 @@
+{
+ "best_module_per_node": [
+  {
+   "class": "DDR-core",
+   "fold": 4.243,
+   "module": "grey",
+   "node": 0,
+   "overlap": 12,
+   "p_bonferroni": 3.7e-05
+  },
+  {
+   "class": "DDR-core",
+   "fold": 8.486,
+   "module": "grey",
+   "node": 81,
+   "overlap": 14,
+   "p_bonferroni": 0.0
+  },
+  {
+   "class": "early-response",
+   "fold": 1.484,
+   "module": "blue",
+   "node": 729,
+   "overlap": 19,
+   "p_bonferroni": 0.037501
+  },
+  {
+   "class": "early-response",
+   "fold": 1.25,
+   "module": "blue",
+   "node": 756,
+   "overlap": 12,
+   "p_bonferroni": 1.0
+  },
+  {
+   "class": "sustained",
+   "fold": 4.132,
+   "module": "turquoise",
+   "node": 6561,
+   "overlap": 2,
+   "p_bonferroni": 1.0
+  },
+  {
+   "class": "sustained",
+   "fold": 2.892,
+   "module": "turquoise",
+   "node": 6804,
+   "overlap": 7,
+   "p_bonferroni": 0.073152
+  },
+  {
+   "class": "early-response",
+   "fold": 1.485,
+   "module": "blue",
+   "node": 13122,
+   "overlap": 58,
+   "p_bonferroni": 0.0
+  },
+  {
+   "class": "early-response",
+   "fold": 1.515,
+   "module": "blue",
+   "node": 19683,
+   "overlap": 96,
+   "p_bonferroni": 0.0
+  },
+  {
+   "class": "sustained",
+   "fold": 3.808,
+   "module": "turquoise",
+   "node": 19710,
+   "overlap": 47,
+   "p_bonferroni": 0.0
+  },
+  {
+   "class": "sustained",
+   "fold": 2.525,
+   "module": "turquoise",
+   "node": 26244,
+   "overlap": 11,
+   "p_bonferroni": 0.019118
+  }
+ ],
+ "generated": "2026-08-28",
+ "n_modules": 3,
+ "n_nodes": 10,
+ "n_nodes_with_significant_module": 7,
+ "n_shared_genes": 314,
+ "note": "DREM partitions on trajectory shape under a regulatory prior and WGCNA on pairwise co-expression. Agreement is external corroboration; disagreement is not by itself evidence against either.",
+ "run": "A_primary_WildType__weighted",
+ "sibling": "/Users/drb_laptop/Documents/Plant_response_to_radiation"
+}

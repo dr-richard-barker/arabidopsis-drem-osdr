@@ -1,0 +1,19 @@
+prior	test_type	TF	locus	wt_best_rank	wt_best_score	wt_splits_scored	sog1_best_rank	sog1_best_score	sog1_splits_scored	rank_worsens_in_mutant
+flat	vsOthers	SOG1	AT1G25580	1.0	0.0	6	404.0	0.14	6	True
+flat	vsOthers	MYB3R1	AT4G32730	2.0	0.0	6	1.0	0.0	6	False
+flat	vsOthers	MYB3R3	AT3G09370			0			0	
+flat	vsOthers	MYB3R4	AT5G11510			0			0	
+flat	vsOthers	ANAC043	AT2G46770	91.0	0.005	6	153.0	0.017	6	True
+flat	vsOthers	ERF115	AT5G13330			0			0	
+binding	2way	SOG1	AT1G25580	1.0	0.0	9	6.0	0.005	9	True
+binding	2way	MYB3R1	AT4G32730	1.0	0.0	9	1.0	0.0	9	False
+binding	2way	MYB3R3	AT3G09370			0			0	
+binding	2way	MYB3R4	AT5G11510			0			0	
+binding	2way	ANAC043	AT2G46770	52.0	0.14	9	92.0	0.23	9	True
+binding	2way	ERF115	AT5G13330			0			0	
+weighted	vsOthers	SOG1	AT1G25580	1.0	0.0	3	574.0	0.527	3	True
+weighted	vsOthers	MYB3R1	AT4G32730	5.0	0.0	3	7.0	0.0003	3	True
+weighted	vsOthers	MYB3R3	AT3G09370			0			0	
+weighted	vsOthers	MYB3R4	AT5G11510			0			0	
+weighted	vsOthers	ANAC043	AT2G46770	170.0	0.179	3	143.0	0.166	3	False
+weighted	vsOthers	ERF115	AT5G13330			0			0	

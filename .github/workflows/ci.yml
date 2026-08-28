@@ -1,0 +1,68 @@
+name: pipeline checks
+
+# Runs the parts of the pipeline that do not need hours of DREM search or hundreds of
+# megabytes of downloads: the environment check, a dry-run acquisition that resolves
+# every OSDR URL, the DREM wrapper smoke test against DREM's own example, and the
+# citation/bibliography checks.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Environment check
+        run: python3 scripts/00_env_check.py
+
+      - name: Acquisition dry run (resolves every OSDR URL, downloads nothing)
+        run: python3 scripts/01_fetch_osdr.py --dry-run
+
+      - name: DREM wrapper smoke test
+        run: python3 scripts/08_run_drem.py --smoke-test --timeout 900
+
+      - name: Bibliography resolves to the right works
+        run: python3 scripts/check_references.py --check
+
+      - name: No undefined citations
+        run: python3 scripts/check_citations.py
+
+  manuscript:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install TeX Live and pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-science pandoc
+      - name: Build PDF and DOCX
+        run: cd manuscript && make pdf docx
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manuscript
+          path: |
+            manuscript/manuscript.pdf
+            manuscript/manuscript.docx

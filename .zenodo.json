@@ -1,0 +1,96 @@
+{
+  "title": "arabidopsis-drem-osdr: a cell-type-weighted regulatory prior for DREM over NASA OSDR Arabidopsis pseudo-time-series",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "description": "<p>A FAIR, reproducible pipeline that assembles cross-study pseudo-time-series from NASA Open Science Data Repository (OSDR) <em>Arabidopsis thaliana</em> studies and fits Dynamic Regulatory Events Miner (DREM 2.0.7) models over them, with a single-cell atlas acting <strong>on the model</strong> rather than on its annotation.</p><p><strong>The method.</strong> DREM attributes each bifurcation in a time-series to the transcription factors whose targets are enriched along one branch, using a static TF&ndash;gene prior that is normally binary and tissue-blind. iDREM accepts single-cell data but its documentation states it &ldquo;is not used when predicting the iDREM model&rdquo;. Here cell-type context is written into the score column DREM already reads: each timepoint is deconvolved by non-negative least squares against a 183-cluster single-nucleus atlas, and every TF&ndash;gene edge is re-weighted by whether its regulator is expressed in the cell types actually present. Each arm is then fitted three times under an identical search and pinned seed &mdash; flat, binding-only and cell-type-weighted priors &mdash; so any difference in attribution is attributable to the prior alone.</p><p><strong>The data.</strong> Screening all 62 OSDR <em>Arabidopsis</em> studies yields a 10-timepoint &gamma;-irradiation series (10 min to 72 h, 108 timed samples plus 36 untreated anchors, wild type and <em>sog1-1</em>) and a 3-timepoint spaceflight developmental series (115 samples). The irradiation core is stated plainly as a re-assembly of one experiment deposited under three accessions (OSD-498/508/510, Bourbousse et al. 2018), not as cross-study integration; the genuinely cross-study arm, OSD-782, crosses a dose regime and is held out. OSD-219 is excluded as a verbatim duplicate of OSD-218, re-detected from sample-name overlap on every run.</p><p><strong>Two findings from building it.</strong> After harmonisation all six canonical DNA-damage sentinels exceed 2-fold induction in wild type and collapse in <em>sog1-1</em> &mdash; recovering the source study's central genetic result before any model is fitted, from a pipeline no step of which sees genotype. And the standard <em>Arabidopsis</em> binding atlas, DAP-seq, does not assay SOG1: a DREM model built on it would produce a complete, plausible, entirely SOG1-free attribution with nothing in the output signalling the omission. SOG1 edges are therefore called from the source study's own ChIP-seq (OSD-496 / GSE112529) requiring enrichment over both the matched input and the no-FLAG control.</p><p><strong>Contents.</strong> Numbered acquisition and analysis code reproducible end to end via <code>scripts/run_all.sh</code>, harmonised metadata, a quality-control report for every stage with gates that fail the run, figures, and a manuscript built to PDF and Word from one LaTeX source. Every manuscript number is generated from <code>results/</code> rather than typed, and every citation is resolved against Crossref with an asserted first author and year. Provenance, licence and SHA-256 for every file are in <code>MANIFEST.tsv</code>; large re-fetchable inputs are catalogued but not redistributed.</p><p><strong>Licensing.</strong> Code MIT; data, figures and prose CC-BY-4.0. DREM is GPL-3.0 and is downloaded at run time, not redistributed. NASA OSDR and NCBI GEO data retain their own terms &mdash; cite the original investigators.</p>",
+  "keywords": [
+    "DREM",
+    "dynamic regulatory events miner",
+    "gene regulatory networks",
+    "transcription factors",
+    "time-series transcriptomics",
+    "pseudo-time-series",
+    "single-cell deconvolution",
+    "Arabidopsis thaliana",
+    "DNA damage response",
+    "SOG1",
+    "ionizing radiation",
+    "spaceflight",
+    "NASA OSDR",
+    "GeneLab",
+    "space biology",
+    "reproducible research",
+    "FAIR data"
+  ],
+  "creators": [
+    {
+      "name": "Barker, Richard John",
+      "affiliation": "Center of Space Exploration (CoSE)"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/dr-richard-barker/arabidopsis-drem-osdr",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1073/pnas.1810582115",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1186/1752-0509-6-104",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1371/journal.pcbi.1006019",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.cell.2016.04.038",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://osdr.nasa.gov/bio/repo/",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE112529",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60143",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/dr-richard-barker/Tropism_autodecoder_2026",
+      "relation": "isDerivedFrom",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/dr-richard-barker/Plant_response_to_radiation",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "communities": [],
+  "notes": "Large re-fetchable inputs (OSDR count matrices, the 77 MB DAP-seq peak archive, 265 MB of ChIP-seq coverage, the Ensembl annotation, and the DREM jar) are catalogued in MANIFEST.tsv with source URL and SHA-256 but are not included in this archive. Run scripts/run_all.sh to reconstruct them. DREM 2.0.7 is GPL-3.0 and is invoked as an external program, never redistributed here."
+}

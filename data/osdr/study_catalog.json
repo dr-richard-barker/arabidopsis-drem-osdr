@@ -1,0 +1,226 @@
+{
+ "cohorts": {
+  "A": {
+   "holdout_studies": [
+    "OSD-782"
+   ],
+   "label": "γ-irradiation DNA damage response",
+   "name": "gamma_irradiation",
+   "primary_studies": [
+    "OSD-498",
+    "OSD-508",
+    "OSD-510"
+   ],
+   "time_unit": "minute"
+  },
+  "B": {
+   "holdout_studies": [],
+   "label": "Spaceflight seedling development",
+   "name": "spaceflight_development",
+   "primary_studies": [
+    "OSD-193",
+    "OSD-218",
+    "OSD-281",
+    "OSD-437"
+   ],
+   "time_unit": "day"
+  }
+ },
+ "exclusions": {
+  "OSD-219": "Duplicate deposit: all 32 BioSample IDs are identical to OSD-218's (assay named gse95373). Including both would double-count every sample. Verified against the biodata sample-name listing, not assumed.",
+  "OSD-320": "Affymetrix microarray gamma/Fe-56 time course (atm-1). Cross-platform.",
+  "OSD-329": "Microarray gamma time course (atm, atr mutants). Cross-platform.",
+  "OSD-45": "Affymetrix microarray (4/8/12 d). Would extend Cohort B to a fourth timepoint but crosses platforms; available via --include-microarray.",
+  "OSD-46": "Affymetrix microarray gamma/Fe-56 time course (atm-1). Cross-platform; reserved for the optional validation arm.",
+  "OSD-496": "SOG1 ChIP-seq from the same Bourbousse system, but OSDR holds raw files and ISA only — no processed peaks. Used as an optional TF-prior refinement, not as a cohort member.",
+  "OSD-615": "Glycomic ELISA profiling, not transcriptomic — no gene-level matrix to feed DREM."
+ },
+ "failed": [],
+ "generated": "2026-08-28",
+ "studies": [
+  {
+   "accession": "OSD-193",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "B",
+   "counts_bytes": 4029024,
+   "counts_file": "GLDS-193_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-193_counts.csv",
+   "n_files_total": 579,
+   "publication": {
+    "authorList": "Califar B, Sng NJ, Zupanska AK, Paul A-L, Ferl RJ",
+    "doi": "10.3389/fpls.2020.00239",
+    "pubMedID": "32194611",
+    "title": "Root skewing-associated genes impact the spaceflight response of Arabidopsis thaliana"
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 12274,
+   "runsheet_file": "GLDS-193_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-193_runsheet.csv",
+   "title": "During development, the Sku6 mutant roots engage different genes than wild type Col-0 roots, either on the ground or in spaceflight",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-193"
+  },
+  {
+   "accession": "OSD-218",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "B",
+   "counts_bytes": 3982550,
+   "counts_file": "GLDS-218_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-218_counts.csv",
+   "n_files_total": 652,
+   "publication": null,
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 11617,
+   "runsheet_file": "GLDS-218_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-218_runsheet.csv",
+   "title": "Plant development on ISS differs from the development on the ground and is influenced by the genetic background",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-218"
+  },
+  {
+   "accession": "OSD-281",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "B",
+   "counts_bytes": 3964768,
+   "counts_file": "GLDS-281_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-281_counts.csv",
+   "n_files_total": 468,
+   "publication": {
+    "authorList": "Anna-Lisa Paul, Natasha J. Sng, Agata K. Zupanska, Aparna Krishnamurthy, Eric R. Schultz, Robert J. Ferl",
+    "doi": "10.1371/journal.pone.0180186",
+    "pubMedID": "28662188",
+    "title": "Genetic dissection of the Arabidopsis spaceflight transcriptome: Are some responses dispensable for the physiological adaptation of plants to spaceflight?"
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 11799,
+   "runsheet_file": "GLDS-281_rna_seq_bulkRNASeq_v1_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-281_runsheet.csv",
+   "title": "During development, the Sku5 mutant roots engage different genes than wild type WS roots, either on the ground or in spaceflight.",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-281"
+  },
+  {
+   "accession": "OSD-437",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "B",
+   "counts_bytes": 2435855,
+   "counts_file": "GLDS-437_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-437_counts.csv",
+   "n_files_total": 376,
+   "publication": {
+    "authorList": "Land Eric S., Sheppard James, Doherty Colleen J., Perera Imara Y.",
+    "doi": "10.3389/fpls.2023.1308713",
+    "pubMedID": "",
+    "title": "Conserved plant transcriptional responses to microgravity from two consecutive spaceflight experiments"
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 6614,
+   "runsheet_file": "GLDS-437_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-437_runsheet.csv",
+   "title": "Transcriptional and Post transcriptional Regulation of Seedling Development in Microgravity",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-437"
+  },
+  {
+   "accession": "OSD-498",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "A",
+   "counts_bytes": 2224874,
+   "counts_file": "GLDS-498_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-498_counts.csv",
+   "n_files_total": 240,
+   "publication": {
+    "authorList": "Bourbousse C, Vegesna N, Law JA.",
+    "doi": "10.1073/pnas.1810582115",
+    "pubMedID": "30541889",
+    "title": "SOG1 activator and MYB3R repressors regulate a complex DNA damage network in Arabidopsis."
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 4108,
+   "runsheet_file": "GLDS-498_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-498_runsheet.csv",
+   "title": "The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq gIR vs mock wt]",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-498"
+  },
+  {
+   "accession": "OSD-502",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "A",
+   "counts_bytes": 1309714,
+   "counts_file": "GLDS-502_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-502_counts.csv",
+   "n_files_total": 136,
+   "publication": {
+    "authorList": "Bourbousse C, Vegesna N, Law JA.",
+    "doi": "10.1073/pnas.1810582115",
+    "pubMedID": "30541889",
+    "title": "SOG1 activator and MYB3R repressors regulate a complex DNA damage network in Arabidopsis."
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 2011,
+   "runsheet_file": "GLDS-502_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-502_runsheet.csv",
+   "title": "The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq myb3r135 vs wt]",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-502"
+  },
+  {
+   "accession": "OSD-508",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "A",
+   "counts_bytes": 4654079,
+   "counts_file": "GLDS-508_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-508_counts.csv",
+   "n_files_total": 501,
+   "publication": {
+    "authorList": "Bourbousse C, Vegesna N, Law JA.",
+    "doi": "10.1073/pnas.1810582115",
+    "pubMedID": "30541889",
+    "title": "SOG1 activator and MYB3R repressors regulate a complex DNA damage network in Arabidopsis."
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 9285,
+   "runsheet_file": "GLDS-508_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-508_runsheet.csv",
+   "title": "The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq t vs t0]",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-508"
+  },
+  {
+   "accession": "OSD-510",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "A",
+   "counts_bytes": 5933829,
+   "counts_file": "GLDS-510_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-510_counts.csv",
+   "n_files_total": 656,
+   "publication": {
+    "authorList": "Bourbousse C, Vegesna N, Law JA.",
+    "doi": "10.1073/pnas.1810582115",
+    "pubMedID": "30541889",
+    "title": "SOG1 activator and MYB3R repressors regulate a complex DNA damage network in Arabidopsis."
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 13007,
+   "runsheet_file": "GLDS-510_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-510_runsheet.csv",
+   "title": "The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq DREMmodel]",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-510"
+  },
+  {
+   "accession": "OSD-782",
+   "assay_technology": "RNA Sequencing (RNA-Seq)",
+   "cohort": "A",
+   "counts_bytes": 4527540,
+   "counts_file": "GLDS-679_rna_seq_RSEM_Unnormalized_Counts_GLbulkRNAseq.csv",
+   "counts_path": "data/counts/OSD-782_counts.csv",
+   "n_files_total": 554,
+   "publication": {
+    "authorList": "Newman Jeremy R B, Zhou Mingqi, Pires J. Chris, Bacher Rhonda L, Kladde Michael, Concannon Patrick",
+    "doi": "10.1101/2023.10.14.562363",
+    "pubMedID": "",
+    "title": "Multi-omics profiling reveals ethylene signalling as a key pathway underlying both genetic and epigenetic responses to low-dose ionizing radiation in Arabidopsis"
+   },
+   "retrieved": "2026-08-28",
+   "runsheet_bytes": 13503,
+   "runsheet_file": "GLDS-679_rna_seq_bulkRNASeq_v2_runsheet.csv",
+   "runsheet_path": "data/runsheets/OSD-782_runsheet.csv",
+   "title": "Multi-omics profiling reveals ethylene signalling as a key pathway underlying both genetic and epigenetic responses to low-dose ionizing radiation in Arabidopsis",
+   "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-782"
+  }
+ ]
+}

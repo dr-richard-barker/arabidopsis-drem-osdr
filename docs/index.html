@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A cell-type-weighted regulatory prior for DREM</title>
+<meta name="description" content="Cross-study Arabidopsis pseudo-time-series from NASA OSDR, modelled with DREM 2.0.7, with a single-cell atlas acting on the model rather than on its annotation.">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body data-site-id="arabidopsis-drem-osdr">
+<header>
+  <div class="wrap">
+    <p class="eyebrow">arabidopsis-drem-osdr · NASA OSDR</p>
+    <h1>A cell-type-weighted regulatory prior for DREM</h1>
+    <p class="lede">DREM attributes each bifurcation in a time-series to a transcription factor,
+      using a prior that is normally binary and tissue-blind. This pipeline lets a single-cell
+      atlas act <em>on the model</em> rather than on its annotation — by writing cell-type context
+      into the score column DREM already reads.</p>
+    <p class="meta">Richard Barker · Arabidopsis thaliana · 9 OSDR studies · DREM 2.0.7</p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/dr-richard-barker/arabidopsis-drem-osdr">Code &amp; data (GitHub)</a>
+      <a class="btn" href="https://github.com/dr-richard-barker/arabidopsis-drem-osdr/blob/main/manuscript/manuscript.pdf">Manuscript (PDF)</a>
+      <a class="btn" href="https://osdr.nasa.gov">NASA OSDR</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The idea</h2>
+    <p class="sub">A single-cell atlas that informs the model, not just its labels.</p>
+    <p>The Dynamic Regulatory Events Miner finds where co-expressed genes diverge and asks which
+      transcription factor explains each split. That question is answered against a static TF–gene
+      interaction prior, and that prior normally says only whether a TF <em>can</em> bind a
+      promoter — not whether it is present in the cells producing the signal.</p>
+    <p>iDREM accepts single-cell data, but its own documentation states the cell-type data
+      &ldquo;is not used when predicting the iDREM model&rdquo;. It annotates finished nodes.
+      Here the information moves upstream without touching the engine: <strong>DREM reads the third
+      column of its TF–gene file as a score in [0,1]</strong>, so each timepoint is deconvolved
+      against a 183-cluster single-nucleus atlas and every edge is re-weighted by whether its
+      regulator is expressed in the cell types actually present.</p>
+    <div class="cards" style="margin-top:22px">
+      <div class="card"><div class="stat">10</div><h3>Timepoints</h3>
+        <p>10 min to 72 h of γ-irradiation, from 108 timed samples across four OSDR accessions.</p></div>
+      <div class="card"><div class="stat">183</div><h3>Atlas clusters</h3>
+        <p>Deconvolved per timepoint, each carrying a 32-dimensional auto-decoder latent code.</p></div>
+      <div class="card"><div class="stat">3</div><h3>Priors compared</h3>
+        <p>Flat, binding-only and cell-type-weighted — identical search, identical seed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The response is SOG1-dependent</h2>
+    <p class="sub">Recovered before any regulatory model is fitted.</p>
+    <p>After cross-study harmonisation, all six canonical DNA-damage sentinel genes exceed 2-fold
+      induction in wild type and trace a clean rise–peak–decay kinetic. In <em>sog1-1</em>, a
+      knockout of the master regulator, the same genes are flat. No step in the harmonisation sees
+      genotype, so this is the strongest available evidence that the assembled series measures
+      biology rather than batch structure.</p>
+    <p style="margin-top:18px"><img src="fig2_sentinel_kinetics.png" alt="DNA-damage sentinel gene trajectories in wild type and sog1-1" style="max-width:100%;height:auto;border-radius:8px"></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>An honest account of the data</h2>
+    <p class="sub">What is re-assembly, and what is genuinely cross-study.</p>
+    <p>OSD-498, OSD-508 and OSD-510 are three accessions of <em>one</em> experiment — that of
+      Bourbousse, Vegesna &amp; Law (<em>PNAS</em> 2018), who built their own DREM model over these
+      data and reported 11 co-expressed gene groups. Assembling them is useful, because it is how
+      the 10 and 45 minute timepoints join the 24-hour course, but it is re-assembly rather than
+      integration. The genuinely cross-study arm is OSD-782 — which is also where the design is
+      weakest, since it crosses a dose regime, and is therefore held out rather than pooled.</p>
+    <p>OSD-219 is excluded outright: all 32 of its BioSample identifiers are identical to
+      OSD-218&rsquo;s. The duplicate is re-detected from sample-name overlap on every run rather than
+      hard-coded, so the exclusion cannot outlive the condition that justifies it.</p>
+    <div class="disc"><strong>DAP-seq does not contain SOG1.</strong> The standard
+      <em>Arabidopsis</em> binding atlas never assayed the master regulator of the DNA-damage
+      response. A DREM model built on it would produce a complete, plausible, entirely SOG1-free
+      attribution, and nothing in the output would signal the omission. SOG1 edges are therefore
+      called from the source study&rsquo;s own ChIP-seq (OSD-496 / GEO GSE112529), requiring
+      enrichment over both the matched input and the no-FLAG control.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Reproducing it</h2>
+    <table>
+      <tr><th>What</th><th>Where</th></tr>
+      <tr><td>Whole pipeline, end to end</td><td><code>bash scripts/run_all.sh</code></td></tr>
+      <tr><td>Resolve every URL, download nothing</td><td><code>bash scripts/run_all.sh --dry-run</code></td></tr>
+      <tr><td>Numbered acquisition &amp; analysis steps</td><td><code>scripts/00_</code>–<code>14_</code></td></tr>
+      <tr><td>Quality-control report per stage</td><td><code>results/qc/</code></td></tr>
+      <tr><td>Manuscript, PDF and Word from one source</td><td><code>cd manuscript &amp;&amp; make pdf docx</code></td></tr>
+      <tr><td>Provenance, licence and SHA-256 per file</td><td><code>MANIFEST.tsv</code></td></tr>
+    </table>
+    <div class="disc">Every number in the manuscript is generated from <code>results/</code> rather
+      than typed, and every citation is resolved against Crossref with an asserted first author and
+      year. Large inputs — OSDR count matrices, the DAP-seq archive, ChIP-seq coverage and the DREM
+      jar — are catalogued but not redistributed; <code>run_all.sh</code> reconstructs them.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Richard Barker · <a href="https://github.com/dr-richard-barker/arabidopsis-drem-osdr">github.com/dr-richard-barker/arabidopsis-drem-osdr</a><br>
+    Data: NASA OSDR (<a href="https://osdr.nasa.gov">osdr.nasa.gov</a>) and NCBI GEO. DREM 2.0.7 is
+    GPL-3.0, distributed by the Ernst laboratory, and is downloaded at run time rather than
+    redistributed here.</p>
+  </div>
+</footer>
+
+<script src="assets/sites.js"></script>
+<script src="assets/theme.js"></script>
+</body>
+</html>
