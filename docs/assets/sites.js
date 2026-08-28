@@ -25,13 +25,13 @@ window.BARKER_SITES = {
         ids:["veg05-integrated-omics","TICTOC","fungal-bgc-atlas"] },
       { name:"Tools", blurb:"Interactive decoders, simulators & reusable analysis pipelines.",
         ids:["Tropism_autodecoder_2026","germinator-ai","Seed_sowing_simulator","Physics-simulator-for-statolith-modelling-","smallRNAseq-DREAM",
-             "astroroot","AstroBotany_calibration_image_sharing_and_analysis","Anthocyanin-Image-analysis","AstroRegolith","AstroMycology","Lunar_Red_Alert"] },
+             "astroroot","AstroBotany_calibration_image_sharing_and_analysis","Anthocyanin-Image-analysis","AstroRegolith","AstroMycology","Lunar_Red_Alert","biosim-nextgen"] },
       { name:"Education", blurb:"Courses & classroom-facing astrobotany outreach.",
         ids:["AIRI","madwest-astrobotany"] }
     ]},
     deepspaceag: { label: "Deep Space Agriculture", sections: [
       { name:"Plant systems & crops", blurb:"Growth-chamber gas transport, radiation, germination and crop physiology off Earth.",
-        ids:["LunarLeaf-CFD","Airflow_omics","Aero-leaf-CFD-analysis-adapted-from-blender-ish","spaceflight-plant-hardware-cfd","Plant_response_to_radiation","B_rappa_LLGCSS","PhysioSpace_stress_decoding_VEG05","germinator-ai","Seed_sowing_simulator","lunar-magnetic-biology","AstroRegolith","AstroMycology","microgreen-chamber-cfd","fungal-bgc-atlas"] },
+        ids:["LunarLeaf-CFD","Airflow_omics","Aero-leaf-CFD-analysis-adapted-from-blender-ish","spaceflight-plant-hardware-cfd","Plant_response_to_radiation","B_rappa_LLGCSS","PhysioSpace_stress_decoding_VEG05","germinator-ai","Seed_sowing_simulator","lunar-magnetic-biology","AstroRegolith","AstroMycology","microgreen-chamber-cfd","fungal-bgc-atlas","biosim-nextgen"] },
       { name:"Planetary environment", blurb:"Magnetic fields, radiation, and environmental conditions on the Moon and Mars.",
         ids:["mars-magnetic-biology","clpds-planetary-visualization","earth-magnetosphere-4d-viz"] },
       { name:"Stress & biomarker decoders", blurb:"Machine-learning decoders of spaceflight and radiation stress signatures.",
@@ -58,7 +58,7 @@ window.BARKER_SITES = {
         { id:"deepspace-seed-stress-decoder", emoji:"🌰", title:"DeepSpace Seed Stress Decoder",
           desc:"Decoding seed stress signatures for deep-space conditions",
           url:"https://dr-richard-barker.github.io/deepspace-seed-stress-decoder/" },
-        { id:"arabidopsis-drem-osdr", emoji:"\U0001F9EC", title:"DREM cell-type prior",
+        { id:"arabidopsis-drem-osdr", emoji:"🧬", title:"DREM cell-type prior",
           desc:"Cell-type-weighted DREM over OSDR Arabidopsis pseudo-time-series",
           url:"https://dr-richard-barker.github.io/arabidopsis-drem-osdr/" },
         { id:"Plant_response_to_radiation", emoji:"☢️", title:"OSDR Radiation Review",
@@ -201,6 +201,9 @@ window.BARKER_SITES = {
         { id:"Lunar_Red_Alert", emoji:"🚀", title:"Lunar Red Alert",
           desc:"Libre Blazor WebAssembly real-time strategy (RTS) space game engine clone",
           url:"https://dr-richard-barker.github.io/Lunar_Red_Alert/", thumb_ext:"gif" },
+        { id:"biosim-nextgen", emoji:"🚀", title:"BioSim Next-Gen",
+          desc:"4K HLS Rocket Habitat Simulation: dynamic Three.js canvas, agent mind, and environmental controls",
+          url:"https://dr-richard-barker.github.io/biosim-nextgen/", thumb_ext:"gif" },
       ]
     },
     {
