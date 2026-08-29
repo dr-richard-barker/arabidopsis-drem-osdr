@@ -140,6 +140,30 @@ median relative change in fraction between adjacent timepoints, restricted to co
 carrying at least 2\% mass, and the time-averaged composition was bootstrapped over
 timepoints.
 
+\subsection{Spaceflight TF activity, statistics and machine learning}
+
+TF activity is the rank statistic above applied to each transcription factor's target set
+(edges scoring $\ge 0.5$, at least 20 targets), giving \NumTFFeatures{} features per
+contrast. The null is analytic rather than permuted: for a size-$n$ subset of $N$ ranks the
+subset mean has variance $\frac{\sigma^2}{n}\cdot\frac{N-n}{N-1}$, the finite-population
+correction, which is exact. Agreement with permutation was verified across set sizes from
+20 to 3{,}000 (\texttt{--verify-null}); differences were within Monte-Carlo error.
+
+Per-TF tests average contrasts within a mission before testing, so the unit of analysis is
+the mission. Flight effects are one-sample $t$ tests over mission means; flight-versus-
+radiation uses Welch's $t$; both are Benjamini--Hochberg corrected across TFs.
+
+Classification is L2-regularised logistic regression ($C = 0.1$, balanced classes) and a
+random forest, under leave-one-mission-out cross-validation, with radiation studies each
+forming their own group. Significance comes from permuting the group-to-label assignment,
+not the contrast labels. A platform classifier trained on identical features under
+identical cross-validation serves as the confound control.
+
+Trajectory projection correlates each contrast's TF-activity vector (Spearman) against the
+same vector computed at each DREM timepoint. Because an argmax over eight profiles always
+exists, the reported statistics are the shape of the mean correlation profile and the
+fraction of per-contrast argmaxes falling at or beside its peak.
+
 \subsection{Model fitting and comparison}
 
 Models were fitted with DREM~2.0.7 \citep{dremsoftware} in batch mode

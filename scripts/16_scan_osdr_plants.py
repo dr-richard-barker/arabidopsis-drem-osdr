@@ -55,6 +55,10 @@ CONTROL_PATTERNS = [
     r"^ground\s*control", r"\bground control\b", r"\bnon[- ]?irradiat", r"\bmock\b",
     r"\buntreated\b", r"\bcontrol\b", r"^0\s*\{", r"^0\s*(gray|gy|cgy)\b",
     r"\bwild\s*type\b", r"\b1G on Earth\b", r"\bunexposed\b", r"\bno treatment\b",
+    # Onboard centrifuge. OSD-251 and OSD-346 are all-flight g-gradient studies whose
+    # only control is a 1G centrifuge on orbit; without this they contribute nothing,
+    # and they are the only studies carrying a within-flight gravity dose-response.
+    r"\b1\s*G by centrifugation\b",
 ]
 CONTROL_RE = re.compile("|".join(CONTROL_PATTERNS), re.I)
 
@@ -89,7 +93,13 @@ def factor_table(organism: str) -> pd.DataFrame:
 
 
 def fetch_counts(acc: str) -> Path | None:
-    """Unnormalized counts if the study has them, else the normalized table."""
+    """Unnormalized counts if the study has them, else normalized, else microarray.
+
+    GeneLab's Affymetrix tables are usable without a probeset map: they carry a `TAIR`
+    column of AGI loci alongside the probeset ID, so they join the same gene vocabulary
+    as the RNA-seq matrices. Mixing platforms is safe here only because the downstream
+    statistic is a within-contrast rank, which carries no platform-specific scale.
+    """
     dest = SCAN_COUNTS / f"{acc}_counts.csv"
     if dest.exists() and dest.stat().st_size > 1000:
         return dest
@@ -103,6 +113,7 @@ def fetch_counts(acc: str) -> Path | None:
         lambda n: bool(re.search(r"Unnormalized_Counts.*\.csv$", n)) and "rRNArm" not in n,
         lambda n: bool(re.search(r"Normalized_Counts.*\.csv$", n)) and "rRNArm" not in n,
         lambda n: bool(re.search(r"(Unnormalized|Normalized)_Counts.*\.csv$", n)),
+        lambda n: bool(re.search(r"array_normalized_expression_probeset.*\.csv$", n)),
     ]
     for pred in prefs:
         hits = sorted((n, u) for n, u in pairs if pred(n))
@@ -112,6 +123,28 @@ def fetch_counts(acc: str) -> Path | None:
             except RuntimeError:
                 return None
     return None
+
+
+# Annotation columns carried by GeneLab microarray tables ahead of the sample columns.
+ARRAY_ANNOTATION = {"TAIR", "SYMBOL", "GENENAME", "REFSEQ", "ENTREZID", "STRING_id",
+                    "GOSLIM_IDS", "ProbesetID", "count_ENSEMBL_mappings"}
+
+
+def read_expression(path: Path) -> pd.DataFrame | None:
+    """Load an RNA-seq count matrix or a GeneLab microarray table into gene x sample."""
+    df = pd.read_csv(path)
+    if "TAIR" in df.columns:
+        # Microarray: index on the AGI locus and drop every annotation column, or the
+        # gene-name strings would be read as samples.
+        df = df[df["TAIR"].notna()].copy()
+        df = df.set_index("TAIR")
+        df = df.drop(columns=[c for c in df.columns if c in ARRAY_ANNOTATION],
+                     errors="ignore")
+        # Several probesets can map to one locus; keep their mean rather than an
+        # arbitrary first, which would depend on file ordering.
+        df = df.apply(pd.to_numeric, errors="coerce")
+        return df.groupby(level=0).mean()
+    return df.set_index(df.columns[0])
 
 
 def contrasts_for(acc: str, factors: pd.DataFrame) -> list[tuple[str, str, list[str], list[str]]]:
@@ -181,18 +214,28 @@ def main() -> int:
             skipped[acc] = "no expression matrix in the OSDR file listing"
             continue
         try:
-            counts = pd.read_csv(path, index_col=0)
+            counts = read_expression(path)
         except Exception as e:  # noqa: BLE001 - a malformed table is a skip, not a crash
             skipped[acc] = f"unreadable count matrix ({type(e).__name__})"
+            continue
+        if counts is None or counts.empty:
+            skipped[acc] = "expression table had no usable gene index"
             continue
         counts.index = counts.index.astype(str).str.strip().str.upper()
         counts = counts.loc[~counts.index.duplicated(keep="first")]
         counts = counts.apply(pd.to_numeric, errors="coerce").dropna(how="all")
 
-        lib = counts.sum(axis=0).replace(0, np.nan)
-        cpm = counts.divide(lib, axis=1) * 1e6
-        keep = (cpm >= args.min_cpm).sum(axis=1) >= max(2, cpm.shape[1] // 4)
-        logx = np.log2(cpm.loc[keep] + 1.0)
+        # GeneLab microarray tables are already normalised log2 intensities (values in
+        # roughly 2-14). Applying CPM and a second log to them would be nonsense, so the
+        # scale is detected rather than assumed.
+        is_log_scale = float(np.nanmax(counts.to_numpy())) < 100
+        if is_log_scale:
+            logx = counts.loc[counts.notna().sum(axis=1) >= 2]
+        else:
+            lib = counts.sum(axis=0).replace(0, np.nan)
+            cpm = counts.divide(lib, axis=1) * 1e6
+            keep = (cpm >= args.min_cpm).sum(axis=1) >= max(2, cpm.shape[1] // 4)
+            logx = np.log2(cpm.loc[keep] + 1.0)
 
         scored_any = False
         for factor, level, treated, control in cons:

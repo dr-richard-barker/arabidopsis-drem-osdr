@@ -1,11 +1,11 @@
 {
  "call_counts": {
-  "G2/M repressed, no DDR (proliferation slowing)": 16,
-  "inverse (DDR suppressed)": 7,
-  "no signal": 19,
-  "radiation-like": 7
+  "G2/M repressed, no DDR (proliferation slowing)": 23,
+  "inverse (DDR suppressed)": 9,
+  "no signal": 40,
+  "radiation-like": 11
  },
- "generated": "2026-08-28",
+ "generated": "2026-08-29",
  "index": "min( z(sog1_dependent), -z(myb3r_repressed) )",
  "index_rejected": {
   "form": "z(sog1_dependent) - z(myb3r_repressed)",
@@ -15,49 +15,61 @@
   {
    "accession": "OSD-510",
    "call": "radiation-like",
-   "index": 20.33,
+   "index": 20.77,
    "level": "Cobalt-60 gamma radiation"
   },
   {
    "accession": "OSD-502",
    "call": "radiation-like",
-   "index": 18.69,
+   "index": 19.41,
    "level": "Cobalt-60 gamma radiation"
   },
   {
    "accession": "OSD-508",
    "call": "radiation-like",
-   "index": 18.27,
+   "index": 18.3,
    "level": "Cobalt-60 gamma radiation"
   },
   {
    "accession": "OSD-498",
    "call": "radiation-like",
-   "index": 16.75,
+   "index": 16.56,
    "level": "Cobalt-60 gamma radiation"
+  },
+  {
+   "accession": "OSD-320",
+   "call": "radiation-like",
+   "index": 14.29,
+   "level": "Cesium-137 gamma radiation"
+  },
+  {
+   "accession": "OSD-320",
+   "call": "radiation-like",
+   "index": 14.01,
+   "level": "Fe-56 ion radiation"
   },
   {
    "accession": "OSD-658",
    "call": "radiation-like",
-   "index": 7.8,
+   "index": 7.71,
    "level": "mixed radiation"
   },
   {
    "accession": "OSD-782",
    "call": "radiation-like",
-   "index": 5.15,
+   "index": 5.23,
    "level": "100 {centigray}"
   },
   {
    "accession": "OSD-782",
    "call": "radiation-like",
-   "index": 2.58,
+   "index": 2.63,
    "level": "cesium-137 gamma radiation"
   },
   {
    "accession": "OSD-782",
    "call": "G2/M repressed, no DDR (proliferation slowing)",
-   "index": -0.74,
+   "index": -0.77,
    "level": "10 {centigray}"
   }
  ],
@@ -65,152 +77,218 @@
   {
    "accession": "OSD-502",
    "call": "inverse (DDR suppressed)",
-   "index": -13.15,
+   "index": -13.14,
    "level": "myb3r135"
   },
   {
    "accession": "OSD-510",
    "call": "inverse (DDR suppressed)",
-   "index": -20.3,
+   "index": -19.8,
    "level": "sog1-1"
   },
   {
    "accession": "OSD-508",
    "call": "inverse (DDR suppressed)",
-   "index": -21.25,
+   "index": -21.15,
    "level": "sog1-1"
   }
  ],
- "novel_predictions": [],
+ "novel_predictions": [
+  {
+   "accession": "OSD-346",
+   "factor": "altered gravity",
+   "index": 3.53,
+   "level": "0.38G by centrifugation",
+   "myb3r_arm_z": 6.4,
+   "sog1_arm_z": 3.53
+  },
+  {
+   "accession": "OSD-147",
+   "factor": "genotype",
+   "index": 3.23,
+   "level": "ARG1 KO",
+   "myb3r_arm_z": 3.23,
+   "sog1_arm_z": 3.92
+  }
+ ],
  "performance": {
-  "auc_vs_all_contrasts": 0.9482,
+  "auc_vs_all_contrasts": 0.9521,
   "labelled_positive_index_range": [
-   -0.74,
-   20.33
+   -0.77,
+   20.77
   ],
-  "labelled_positives_detected": 7,
+  "labelled_positives_detected": 9,
   "labelled_positives_missed": 1,
-  "n_labelled_positive": 8,
-  "n_other_exposure": 23,
+  "n_labelled_positive": 10,
+  "n_other_exposure": 49,
   "other_exposure_index_range": [
-   -10.36,
-   1.63
+   -11.46,
+   3.53
   ],
-  "other_exposures_above_threshold": 0,
+  "other_exposures_above_threshold": 1,
   "positive_definition": "factor in ('ionizing radiation', 'absorbed radiation dose')"
  },
  "proliferation_only": [
   {
+   "accession": "OSD-428",
+   "factor": "time",
+   "level": "actuated immediately after the microgravity exposure ",
+   "myb3r_arm_z": 4.8,
+   "sog1_arm_z": 1.77
+  },
+  {
+   "accession": "OSD-428",
+   "factor": "altered gravity",
+   "level": "Gravity, Altered",
+   "myb3r_arm_z": 4.96,
+   "sog1_arm_z": 1.7
+  },
+  {
    "accession": "OSD-314",
    "factor": "altered gravity",
    "level": "uG",
-   "myb3r_arm_z": 8.52,
-   "sog1_arm_z": 1.63
+   "myb3r_arm_z": 8.47,
+   "sog1_arm_z": 1.65
+  },
+  {
+   "accession": "OSD-7",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 6.54,
+   "sog1_arm_z": 1.36
   },
   {
    "accession": "OSD-281",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 3.25,
-   "sog1_arm_z": 1.13
+   "myb3r_arm_z": 3.23,
+   "sog1_arm_z": 1.11
   },
   {
    "accession": "OSD-314",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 11.4,
-   "sog1_arm_z": 1.11
+   "myb3r_arm_z": 11.64,
+   "sog1_arm_z": 1.08
   },
   {
    "accession": "OSD-427",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 12.41,
+   "myb3r_arm_z": 12.25,
    "sog1_arm_z": 1.03
+  },
+  {
+   "accession": "OSD-282",
+   "factor": "treatment",
+   "level": "Anoxia-treated",
+   "myb3r_arm_z": 3.41,
+   "sog1_arm_z": 0.99
+  },
+  {
+   "accession": "OSD-282",
+   "factor": "treatment",
+   "level": "Heat and anoxia-treated",
+   "myb3r_arm_z": 7.37,
+   "sog1_arm_z": 0.94
+  },
+  {
+   "accession": "OSD-428",
+   "factor": "time",
+   "level": "actuated after level flight had been maintained for about a minute and a half after the parabola",
+   "myb3r_arm_z": 3.47,
+   "sog1_arm_z": 0.9
   },
   {
    "accession": "OSD-678",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 12.22,
+   "myb3r_arm_z": 12.28,
    "sog1_arm_z": 0.49
   },
   {
    "accession": "OSD-314",
    "factor": "altered gravity",
    "level": "0.34G by centrifugation",
-   "myb3r_arm_z": 11.65,
-   "sog1_arm_z": 0.34
+   "myb3r_arm_z": 11.34,
+   "sog1_arm_z": 0.36
   },
   {
    "accession": "OSD-223",
    "factor": "altered gravity",
    "level": "0.76G by centrifugation",
-   "myb3r_arm_z": 4.73,
-   "sog1_arm_z": 0.16
+   "myb3r_arm_z": 4.62,
+   "sog1_arm_z": 0.15
+  },
+  {
+   "accession": "OSD-296",
+   "factor": "genotype",
+   "level": "cop-1",
+   "myb3r_arm_z": 3.15,
+   "sog1_arm_z": -0.01
   },
   {
    "accession": "OSD-223",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 3.89,
-   "sog1_arm_z": -0.06
+   "myb3r_arm_z": 4.0,
+   "sog1_arm_z": -0.09
   },
   {
    "accession": "OSD-406",
    "factor": "altered gravity",
    "level": "Suborbital Flight",
-   "myb3r_arm_z": 2.38,
+   "myb3r_arm_z": 2.34,
    "sog1_arm_z": -0.15
+  },
+  {
+   "accession": "OSD-282",
+   "factor": "treatment",
+   "level": "heat-treated",
+   "myb3r_arm_z": 7.78,
+   "sog1_arm_z": -0.37
   },
   {
    "accession": "OSD-223",
    "factor": "altered gravity",
    "level": "uG",
    "myb3r_arm_z": 2.47,
-   "sog1_arm_z": -0.39
+   "sog1_arm_z": -0.46
   },
   {
    "accession": "OSD-624",
    "factor": "altered gravity",
    "level": "Suborbital Flight",
-   "myb3r_arm_z": 8.3,
-   "sog1_arm_z": -0.54
+   "myb3r_arm_z": 8.23,
+   "sog1_arm_z": -0.48
   },
   {
    "accession": "OSD-782",
    "factor": "absorbed radiation dose",
    "level": "10 {centigray}",
    "myb3r_arm_z": 10.14,
-   "sog1_arm_z": -0.74
-  },
-  {
-   "accession": "OSD-437",
-   "factor": "altered gravity",
-   "level": "1G by centrifugation",
-   "myb3r_arm_z": 13.24,
-   "sog1_arm_z": -0.81
+   "sog1_arm_z": -0.77
   },
   {
    "accession": "OSD-120",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 5.69,
-   "sog1_arm_z": -0.9
+   "myb3r_arm_z": 5.71,
+   "sog1_arm_z": -0.86
   },
   {
    "accession": "OSD-437",
    "factor": "spaceflight",
    "level": "Space Flight",
-   "myb3r_arm_z": 13.18,
-   "sog1_arm_z": -1.1
+   "myb3r_arm_z": 13.09,
+   "sog1_arm_z": -1.06
   },
   {
-   "accession": "OSD-437",
-   "factor": "altered gravity",
-   "level": "uG",
-   "myb3r_arm_z": 12.61,
-   "sog1_arm_z": -1.4
+   "accession": "OSD-44",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 5.36,
+   "sog1_arm_z": -1.44
   }
  ],
  "rationale": "Acute irradiation moves the SOG1-activated and MYB3R-repressed arms in opposite directions. A constitutive DNA-damage state raises the SOG1 arm without repressing the G2/M arm, so the difference separates exposure from chronic stress.",

@@ -1,0 +1,125 @@
+{
+ "auc_logistic": 0.9927,
+ "auc_random_forest": 0.822,
+ "caveat": "Feature values are TF target-set activities and the sets overlap heavily (median 2,467 targets), so a coefficient identifies a target set, not a transcription factor acting alone.",
+ "cv": "leave-one-mission-out",
+ "generated": "2026-08-29",
+ "n_contrasts": 51,
+ "n_features": 473,
+ "n_flight": 41,
+ "n_groups": 22,
+ "n_radiation": 10,
+ "null_mean": 0.4482,
+ "null_sd": 0.1662,
+ "p_permutation": 0.00498,
+ "platform_confounded": false,
+ "platform_control_auc": 0.4463,
+ "task": "flight vs radiation exposure, on 474-dim TF activity",
+ "top_stable_coefficients": [
+  {
+   "TF": "AT1G25580",
+   "mean_coefficient": 0.1264,
+   "name": "SOG1",
+   "sd_across_folds": 0.0073,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT4G29230",
+   "mean_coefficient": 0.0966,
+   "name": "",
+   "sd_across_folds": 0.0052,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT3G20770",
+   "mean_coefficient": -0.0831,
+   "name": "",
+   "sd_across_folds": 0.0051,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT1G10720",
+   "mean_coefficient": -0.0789,
+   "name": "",
+   "sd_across_folds": 0.005,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT1G71696",
+   "mean_coefficient": -0.0755,
+   "name": "",
+   "sd_across_folds": 0.0055,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT5G18090",
+   "mean_coefficient": -0.0741,
+   "name": "",
+   "sd_across_folds": 0.0048,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT4G32730",
+   "mean_coefficient": -0.0731,
+   "name": "MYB3R1",
+   "sd_across_folds": 0.0034,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT1G02250",
+   "mean_coefficient": 0.071,
+   "name": "",
+   "sd_across_folds": 0.0039,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT4G14770",
+   "mean_coefficient": -0.0689,
+   "name": "",
+   "sd_across_folds": 0.006,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT1G02230",
+   "mean_coefficient": 0.0667,
+   "name": "",
+   "sd_across_folds": 0.004,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT1G32510",
+   "mean_coefficient": -0.0649,
+   "name": "",
+   "sd_across_folds": 0.0056,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT2G03340",
+   "mean_coefficient": 0.0645,
+   "name": "",
+   "sd_across_folds": 0.0033,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT4G24020",
+   "mean_coefficient": -0.0636,
+   "name": "",
+   "sd_across_folds": 0.0051,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT4G01550",
+   "mean_coefficient": 0.0604,
+   "name": "",
+   "sd_across_folds": 0.0053,
+   "sign_stability": 1.0
+  },
+  {
+   "TF": "AT4G25480",
+   "mean_coefficient": 0.0598,
+   "name": "",
+   "sd_across_folds": 0.003,
+   "sign_stability": 1.0
+  }
+ ]
+}

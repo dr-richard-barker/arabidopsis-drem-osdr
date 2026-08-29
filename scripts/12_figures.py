@@ -164,12 +164,119 @@ def fig_ablation() -> None:
     save(fig, "fig4_prior_ablation")
 
 
+def fig_tf_flight() -> None:
+    """Figures 7-10: the spaceflight TF analysis."""
+    act_dir = RESULTS / "tf_activity"
+    if not (act_dir / "tf_activity.tsv").exists():
+        log("  figs 7-10 skipped: run 19-22 first")
+        return
+    act = pd.read_csv(act_dir / "tf_activity.tsv", sep="\t", index_col=0)
+    meta = pd.read_csv(act_dir / "contrast_meta.tsv", sep="\t", index_col=0)
+    stats_df = pd.read_csv(act_dir / "tf_statistics.tsv", sep="\t")
+
+    # ---- Fig 7: TF activity heatmap, contrasts x most variable TFs
+    sub = meta[meta["is_flight"] | meta["is_radiation"]].copy()
+    sub = sub.sort_values(["is_radiation", "mission", "accession"])
+    top = act.loc[sub.index].std().nlargest(40).index
+    M = act.loc[sub.index, top].to_numpy(dtype=float)
+    fig, ax = plt.subplots(figsize=(11, 6.4), constrained_layout=True)
+    v = np.nanpercentile(np.abs(M), 98)
+    im = ax.imshow(M, aspect="auto", cmap="RdBu_r", vmin=-v, vmax=v)
+    ax.set_xticks(range(len(top)))
+    ax.set_xticklabels(top, rotation=90, fontsize=5)
+    ax.set_yticks(range(len(sub)))
+    ax.set_yticklabels([f"{r.accession} {str(r.level)[:22]}" for r in sub.itertuples()],
+                       fontsize=5)
+    # Mark where radiation contrasts begin, so the two blocks are visually separable.
+    nrad = int((~sub["is_radiation"]).sum())
+    ax.axhline(nrad - 0.5, color="black", lw=1.2)
+    ax.text(len(top) * 0.5, nrad - 1.2, "flight  /  radiation", ha="center",
+            fontsize=7, color="black")
+    fig.colorbar(im, ax=ax, shrink=0.6, label="TF activity (z)")
+    ax.set_title("TF activity across flight and radiation contrasts "
+                 "(40 most variable TFs)", fontsize=10)
+    save(fig, "fig7_tf_activity_heatmap")
+
+    # ---- Fig 8: per-TF flight effect vs flight-vs-radiation difference
+    fig, ax = plt.subplots(figsize=(6.6, 4.4), constrained_layout=True)
+    d = stats_df.dropna(subset=["flight_mean_z", "radiation_mean_z"])
+    sig = d["flight_vs_radiation_q"] < 0.05
+    ax.scatter(d.loc[~sig, "radiation_mean_z"], d.loc[~sig, "flight_mean_z"],
+               s=14, color="#a0aec0", alpha=0.7, label="not different (q>=0.05)")
+    ax.scatter(d.loc[sig, "radiation_mean_z"], d.loc[sig, "flight_mean_z"],
+               s=20, color="#c53030", alpha=0.85, label="differs, q<0.05")
+    for r in d[d["name"].astype(str).str.len() > 0].itertuples():
+        ax.annotate(r.name, (r.radiation_mean_z, r.flight_mean_z), fontsize=6.5,
+                    xytext=(4, 3), textcoords="offset points")
+    lim = float(np.nanmax(np.abs(d[["radiation_mean_z", "flight_mean_z"]].to_numpy()))) * 1.1
+    ax.plot([-lim, lim], [-lim, lim], ls=":", lw=1, color="0.6", zorder=0)
+    ax.axhline(0, color="0.85", lw=0.8, zorder=0)
+    ax.axvline(0, color="0.85", lw=0.8, zorder=0)
+    ax.set_xlabel("TF activity under irradiation (mean z)")
+    ax.set_ylabel("TF activity in spaceflight (mean z, per mission)")
+    ax.set_title("The same TFs respond to radiation but not to flight", fontsize=10)
+    ax.legend(fontsize=7, frameon=False, loc="upper left")
+    save(fig, "fig8_tf_flight_vs_radiation")
+
+    # ---- Fig 9: classifier
+    rep_path = act_dir / "classifier_report.json"
+    if rep_path.exists():
+        rep = json.loads(rep_path.read_text())
+        fig, ax = plt.subplots(figsize=(6.2, 3.8), constrained_layout=True)
+        labels = ["flight vs\nradiation\n(logistic)", "random\nforest",
+                  "permutation\nnull", "platform\ncontrol"]
+        vals = [rep.get("auc_logistic"), rep.get("auc_random_forest"),
+                rep.get("null_mean"), rep.get("platform_control_auc")]
+        cols = ["#2b6cb0", "#4a7fb5", "#a0aec0", "#805ad5"]
+        bars = ax.bar(labels, [v or 0 for v in vals], color=cols, width=0.6)
+        if rep.get("null_sd"):
+            ax.errorbar(2, rep["null_mean"], yerr=rep["null_sd"], color="0.3",
+                        capsize=4, lw=1.2)
+        ax.axhline(0.5, ls="--", lw=1, color="0.5")
+        for b, v in zip(bars, vals):
+            if v is not None:
+                ax.text(b.get_x() + b.get_width() / 2, v + 0.02, f"{v:.3f}",
+                        ha="center", fontsize=8)
+        ax.set_ylim(0, 1.12)
+        ax.set_ylabel("AUC (leave-one-mission-out)")
+        ax.set_title(f"Flight and radiation are separable; platform is not a confound\n"
+                     f"(p = {rep.get('p_permutation')})", fontsize=9.5)
+        save(fig, "fig9_classifier")
+
+    # ---- Fig 10: DREM trajectory projection
+    proj_path = act_dir / "drem_projection.tsv"
+    if proj_path.exists():
+        pr = pd.read_csv(proj_path, sep="\t")
+        rho_cols = [c for c in pr.columns if c.startswith("rho_")]
+        times = [float(c[4:]) for c in rho_cols]
+        fig, ax = plt.subplots(figsize=(6.6, 4.0), constrained_layout=True)
+        for lab, mask, col in (("irradiation", pr["is_radiation"], "#c53030"),
+                               ("spaceflight", pr["is_flight"], "#2b6cb0")):
+            sub2 = pr[mask]
+            if sub2.empty:
+                continue
+            m = [sub2[c].mean() for c in rho_cols]
+            sd = [sub2[c].std() / max(np.sqrt(len(sub2)), 1) for c in rho_cols]
+            ax.plot(times, m, marker="o", ms=4, lw=1.6, color=col, label=lab)
+            ax.fill_between(times, np.array(m) - np.array(sd), np.array(m) + np.array(sd),
+                            color=col, alpha=0.18)
+        ax.set_xscale("log")
+        ax.axhline(0, color="0.7", lw=0.8)
+        ax.set_xlabel("DREM trajectory timepoint (min, log scale)")
+        ax.set_ylabel("Spearman rho with the timepoint's TF profile")
+        ax.set_title("Irradiation traces the radiation trajectory; spaceflight is flat",
+                     fontsize=10)
+        ax.legend(fontsize=8, frameon=False)
+        save(fig, "fig10_drem_projection")
+
+
 def main() -> int:
     log("rendering figures")
     fig_cohort_design()
     fig_sentinels()
     fig_latent()
     fig_ablation()
+    fig_tf_flight()
     return 0
 
 

@@ -1,0 +1,87 @@
+{
+ "generated": "2026-08-29",
+ "missions": [
+  "(unknown)",
+  "STS-129",
+  "STS-131",
+  "STS-135",
+  "SpaceX-10",
+  "SpaceX-12",
+  "SpaceX-13",
+  "SpaceX-2",
+  "SpaceX-3",
+  "SpaceX-4",
+  "SpaceX-5",
+  "SpaceX-9",
+  "Unity 22",
+  "VSS Unity"
+ ],
+ "n_contrasts": 83,
+ "n_flight_contrasts": 41,
+ "n_missions": 14,
+ "n_radiation_contrasts": 10,
+ "n_studies": 39,
+ "n_tfs": 474,
+ "null": "analytic (finite-population correction), verified against permutation via --verify-null",
+ "platforms": {
+  "microarray": 23,
+  "rna-seq": 60
+ },
+ "positive_control_pass": true,
+ "positive_control_sog1_in_gamma": {
+  "OSD-320|ionizing radiation|Cesium-137 gamma radiation": {
+   "of": 474,
+   "sog1_rank": 1,
+   "sog1_z": 10.54
+  },
+  "OSD-498|ionizing radiation|Cobalt-60 gamma radiation": {
+   "of": 474,
+   "sog1_rank": 1,
+   "sog1_z": 14.54
+  },
+  "OSD-502|ionizing radiation|Cobalt-60 gamma radiation": {
+   "of": 474,
+   "sog1_rank": 1,
+   "sog1_z": 14.21
+  },
+  "OSD-508|ionizing radiation|Cobalt-60 gamma radiation": {
+   "of": 474,
+   "sog1_rank": 1,
+   "sog1_z": 9.64
+  },
+  "OSD-510|ionizing radiation|Cobalt-60 gamma radiation": {
+   "of": 474,
+   "sog1_rank": 4,
+   "sog1_z": 12.88
+  },
+  "OSD-782|ionizing radiation|cesium-137 gamma radiation": {
+   "of": 474,
+   "sog1_rank": 233,
+   "sog1_z": 1.45
+  }
+ },
+ "skipped": {
+  "OSD-134": "no factor with an identifiable control level",
+  "OSD-136": "no factor with an identifiable control level",
+  "OSD-144": "no expression matrix",
+  "OSD-16": "no expression matrix",
+  "OSD-208": "no factor with an identifiable control level",
+  "OSD-210": "no factor with an identifiable control level",
+  "OSD-219": "no expression matrix",
+  "OSD-22": "no expression matrix",
+  "OSD-329": "no expression matrix",
+  "OSD-416": "no expression matrix",
+  "OSD-436": "no factor with an identifiable control level",
+  "OSD-45": "no factor with an identifiable control level",
+  "OSD-450": "no factor with an identifiable control level",
+  "OSD-476": "no factor with an identifiable control level",
+  "OSD-480": "no expression matrix",
+  "OSD-496": "no expression matrix",
+  "OSD-520": "no expression matrix",
+  "OSD-531": "no factor with an identifiable control level",
+  "OSD-565": "no factor with an identifiable control level",
+  "OSD-615": "no expression matrix",
+  "OSD-625": "no expression matrix",
+  "OSD-8": "no expression matrix"
+ }
+}

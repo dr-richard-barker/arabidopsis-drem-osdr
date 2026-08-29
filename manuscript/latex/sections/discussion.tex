@@ -29,6 +29,21 @@ across the \NumAtlasClusters{} clusters, so cell-type context has nothing to say
 and its edge should be left alone. The lever moves exactly the edges where cell-type
 information exists.
 
+The spaceflight analysis sharpens what the decoder could only suggest. No DREM
+transcription factor is significantly altered in flight, while \NumTFsSigFlightVsRad{}
+differ significantly between flight and irradiation and a classifier separates the two at
+AUC \ClfAUC{} --- so the absence is a measurement, not a limit of power. Nor is flight a
+time-shifted radiation response: irradiation traces the DREM trajectory to a peak at
+\ProjRadPeakTime{}~min while flight is flat across it.
+
+That matters for how spaceflight radiation risk is inferred from transcriptomics. The
+ionising dose accumulated in low Earth orbit over these missions does not produce the
+transcriptional signature that acute $\gamma$-irradiation produces in the same species and
+the same tissue, at any point on a trajectory spanning 10 minutes to 24 hours. Absence of
+the signature is not absence of damage --- transcription is a poor dosimeter at low dose
+rates, and our own decoder fails to detect 10~cGy delivered acutely --- but it does bound
+what a transcriptomic radiation biomarker can be expected to report from a LEO mission.
+
 \subsection*{Limitations}
 
 The single-nucleus atlas is developmental and unirradiated, so deconvolution assumes
@@ -46,6 +61,16 @@ SOG1 binding was called from bedGraph coverage with a binned enrichment test rat
 from a dedicated peak caller, because GEO distributes coverage rather than called peaks
 for GSE112529. The dual-control requirement makes the calls conservative, but they are
 not equivalent to a MACS analysis of the raw reads.
+
+The spaceflight corpus is Arabidopsis-only, and not by choice: Ensembl returns no
+Arabidopsis-to-mouse orthologues for SOG1, MYB3R1 or E2F3, plant and vertebrate Compara
+being separate databases, and SOG1 is a plant-specific NAC with no animal homolog. The
+132 mouse and 29 human spaceflight studies in OSDR cannot be scored on these regulators.
+
+The effective sample size for the flight analysis is \NumMissionObservations{} missions,
+several contributing a single study. TF target sets also overlap heavily, so a coefficient
+or an activity score identifies a target set rather than a transcription factor acting
+alone.
 
 Finally, the atlas signature matrix covers \NumAtlasSignatureGenes{} highly variable
 genes. Regenerating per-cluster means across all genes would widen the lever's reach;

@@ -59,6 +59,10 @@ def main() -> int:
     dec = load(RESULTS / "decoder" / "decoder_report.json")
     sigqc = load(RESULTS / "decoder" / "signature_qc.json")
     tis = load(RESULTS / "qc" / "tissue_association_qc.json")
+    tfa = load(RESULTS / "qc" / "tf_activity_qc.json")
+    tfs_qc = load(RESULTS / "qc" / "tf_statistics_qc.json")
+    clf = load(RESULTS / "tf_activity" / "classifier_report.json")
+    proj = load(RESULTS / "qc" / "drem_projection_qc.json")
 
     v: dict[str, object] = {}
 
@@ -173,6 +177,36 @@ def main() -> int:
     rw = dig(tis, "reweighting", default={}) or {}
     v["NumTFsAtlasInformed"] = rw.get("n_atlas_informed")
     v["NumTFsTotal"] = rw.get("n_tfs")
+
+    # ---- spaceflight TF analysis
+    v["NumTFFeatures"] = dig(tfa, "n_tfs")
+    v["NumTFContrasts"] = dig(tfa, "n_contrasts")
+    v["NumTFStudies"] = dig(tfa, "n_studies")
+    v["NumFlightContrasts"] = dig(tfa, "n_flight_contrasts")
+    v["NumMissions"] = dig(tfa, "n_missions")
+    plat = dig(tfa, "platforms", default={}) or {}
+    v["NumRnaSeqContrasts"] = plat.get("rna-seq")
+    v["NumMicroarrayContrasts"] = plat.get("microarray")
+    v["NumTFsSigFlight"] = dig(tfs_qc, "n_significant_flight")
+    v["NumTFsSigFlightVsRad"] = dig(tfs_qc, "n_significant_flight_vs_radiation")
+    v["NumTFsTested"] = dig(tfs_qc, "n_tfs_tested")
+    v["NumMissionObservations"] = dig(tfs_qc, "n_missions")
+    v["ClfAUC"] = dig(clf, "auc_logistic")
+    v["ClfNullMean"] = dig(clf, "null_mean")
+    v["ClfNullSD"] = dig(clf, "null_sd")
+    v["ClfP"] = dig(clf, "p_permutation")
+    v["ClfPlatformAUC"] = dig(clf, "platform_control_auc")
+    v["ClfGroups"] = dig(clf, "n_groups")
+    cal = dig(proj, "calibration_radiation", default={}) or {}
+    fl = dig(proj, "flight", default={}) or {}
+    v["ProjRadPeakRho"] = cal.get("peak_mean_rho")
+    v["ProjRadPeakTime"] = cal.get("peak_timepoint_min")
+    v["ProjRadNearPeak"] = (round(100 * cal["frac_argmax_near_peak"])
+                            if cal.get("frac_argmax_near_peak") is not None else None)
+    v["ProjFlightPeakRho"] = fl.get("peak_mean_rho")
+    v["ProjFlightRange"] = fl.get("profile_range")
+    v["ProjFlightNearPeak"] = (round(100 * fl["frac_argmax_near_peak"])
+                               if fl.get("frac_argmax_near_peak") is not None else None)
 
     defined = sum(1 for x in v.values() if x is not None)
     lines = [

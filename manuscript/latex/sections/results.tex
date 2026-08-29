@@ -265,6 +265,131 @@ biologically unremarkable; read as a methodological result it is the whole argum
 the conjunctive index, because a decoder scoring the repressed arm alone would have
 reported all of it as radiation.
 
+\subsection{Transcription-factor activity across the spaceflight corpus}
+
+The decoder scored a fixed gene signature. A stronger test is to ask what the model's
+\emph{regulators} are doing, one at a time, across every flight dataset the repository
+holds. Two changes to the acquisition widened the corpus first: admitting the onboard
+1G-centrifuge control (which recovers OSD-251 and OSD-346, the only studies with a
+within-flight gravity gradient) and reading GeneLab's Affymetrix tables, which carry AGI
+loci in a \texttt{TAIR} column and so need no probeset mapping. That yields
+\NumTFContrasts{} contrasts from \NumTFStudies{} studies ---
+\NumRnaSeqContrasts{} RNA-seq and \NumMicroarrayContrasts{} microarray --- of which
+\NumFlightContrasts{} are flight or altered-gravity contrasts spanning
+\NumMissions{} missions.
+
+Each of \NumTFFeatures{} DREM transcription factors becomes a feature: its target set
+scored against the contrast's fold-change ranking. Mixing platforms is admissible only
+because the statistic is a within-contrast rank, which carries no platform-specific scale;
+the classifier below tests that assumption rather than resting on it.
+
+The recovered microarray studies also supply an independent check on the decoder. OSD-320
+--- Affymetrix, never used to build the signature, and excluded from the DREM cohort as
+cross-platform --- scores 14.3 (Cs-137 $\gamma$) and 14.0 (Fe-56 ion) on the radiation
+index, placing it firmly in the radiation-like class. A signature derived entirely from
+RNA-seq transfers to an unseen platform.
+
+\subsection{No DREM transcription factor is altered in spaceflight}
+
+Studies sharing a mission share hardware, launch and ground handling, so contrasts were
+averaged within mission before testing: the effective $n$ is \NumMissionObservations{}
+missions, not \NumFlightContrasts{} contrasts.
+
+Of \NumTFsTested{} transcription factors, \textbf{\NumTFsSigFlight{}} show a significant
+shift in spaceflight at 5\% FDR. The result is not an artefact of a powerless test: the
+same data, same features, same correction find \NumTFsSigFlightVsRad{} TFs that differ
+significantly between flight and irradiation. The assay can detect a difference; there is
+simply no flight effect to detect (Figure~\ref{fig:tfvolcano}).
+
+SOG1 makes the point most sharply. Its activity under irradiation is $z = 8.34$; in
+spaceflight it is $-0.27$ ($q = 0.90$). MYB3R1 runs $-3.77$ under irradiation against
+$-0.32$ in flight.
+
+One nuance deserves stating, because it looks like a contradiction and is not. The decoder
+found the \emph{MYB3R-repressed signature set} suppressed in flight, while MYB3R1's
+activity here is flat. These are different quantities: the signature set is the
+\NumSignatureMybRep{} genes that irradiation represses \emph{and} MYB3R1 binds, whereas the
+TF-activity feature spans MYB3R1's entire binding repertoire. Spaceflight represses the
+specific G2/M genes that radiation also represses, without engaging MYB3R1's broader
+target set.
+
+\subsection{Flight and irradiation are separable, and platform is not the reason}
+
+A classifier tests whether a multivariate pattern exists that single-TF tests would miss.
+Under leave-one-mission-out cross-validation across \ClfGroups{} groups, L2-regularised
+logistic regression separates flight from irradiation contrasts at
+AUC \ClfAUC{}, against a null of \ClfNullMean{} $\pm$ \ClfNullSD{}
+($p = \ClfP{}$).
+
+That null had to be rebuilt. Permuting labels \emph{within} each mission returned a null
+AUC of $0.993 \pm 0.000$ --- identical to the observed value --- because a mission's label is
+constant within it, so shuffling inside a group changes nothing. The exchangeable unit in
+a grouped design with group-constant labels is the group, and permuting the group-to-label
+assignment gives the null quoted above.
+
+The platform control settles the confound: predicting microarray-versus-RNA-seq from the
+same features under the same cross-validation gives AUC \ClfPlatformAUC{}, at or below
+chance (Figure~\ref{fig:classifier}). The separation is biological, not technical.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\linewidth]{../figures/fig9_classifier}
+\caption{Leave-one-mission-out classification of flight versus irradiation on TF activity,
+with the group-permutation null and the platform control.}
+\label{fig:classifier}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{../figures/fig8_tf_flight_vs_radiation}
+\caption{Per-TF activity under irradiation against spaceflight. Points on the diagonal
+would respond equally to both; the DREM regulators sit far off it, responding to radiation
+and not to flight.}
+\label{fig:tfvolcano}
+\end{figure}
+
+\subsection{Spaceflight is not a time-shifted radiation response}
+
+The last question is whether flight resembles \emph{any} phase of the radiation
+trajectory. Each of the eight DREM timepoints has a TF-activity profile built exactly as
+the query contrasts are, and every contrast is correlated against all eight.
+
+The irradiation contrasts calibrate the method and pass: their mean correlation rises to a
+clear peak of \ProjRadPeakRho{} at \ProjRadPeakTime{}~min and decays either side, with
+\ProjRadNearPeak{}\% of individual best-matching timepoints falling at or beside that peak
+(Figure~\ref{fig:projection}).
+
+Flight contrasts are flat. Their mean profile peaks at \ProjFlightPeakRho{} with a total
+range of \ProjFlightRange{} across the whole trajectory, and only
+\ProjFlightNearPeak{}\% of their best-matching timepoints land near that nominal peak ---
+the signature of an argmax taken over noise.
+
+A per-contrast shuffle test would have reported this differently, passing 26 of 35 flight
+contrasts, because a single noisy contrast can beat its own shuffled null by chance. It is
+reported here as too permissive to be read alone; what separates signal from noise is the
+height and shape of the mean profile, and whether the argmaxes concentrate at its peak.
+
+Spaceflight, in this corpus, is not an attenuated or delayed radiation response. It is a
+different transcriptional state.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.68\linewidth]{../figures/fig10_drem_projection}
+\caption{Projection onto the DREM radiation trajectory. Irradiation contrasts trace a
+peaked profile; spaceflight contrasts are flat across the whole time course. Bands are
+standard errors.}
+\label{fig:projection}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig7_tf_activity_heatmap}
+\caption{TF activity across flight and irradiation contrasts for the 40 most variable
+transcription factors, ordered with flight contrasts above the rule and irradiation
+below.}
+\label{fig:tfheatmap}
+\end{figure}
+
 \subsection{Comparison with the published model}
 
 \citet{bourbousse2018sog1} reported \NumPublishedGroups{} co-expressed gene groups from

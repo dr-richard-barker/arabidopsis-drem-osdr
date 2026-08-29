@@ -1,0 +1,110 @@
+{
+ "alpha": 0.05,
+ "design": "contrasts averaged within mission; tests run over missions, so the effective n is the number of missions, not contrasts",
+ "generated": "2026-08-29",
+ "gravity_dose_response_top": [
+  {
+   "TF": "AT1G65620",
+   "accession": "OSD-251",
+   "name": "",
+   "q": 1.6640545251344252e-22,
+   "spearman_rho": 1.0
+  },
+  {
+   "TF": "AT3G10113",
+   "accession": "OSD-251",
+   "name": "",
+   "q": 1.6640545251344252e-22,
+   "spearman_rho": 1.0
+  },
+  {
+   "TF": "AT5G06839",
+   "accession": "OSD-251",
+   "name": "",
+   "q": 1.6640545251344252e-22,
+   "spearman_rho": 1.0
+  },
+  {
+   "TF": "AT5G14960",
+   "accession": "OSD-251",
+   "name": "",
+   "q": 1.6640545251344252e-22,
+   "spearman_rho": -1.0
+  },
+  {
+   "TF": "AT1G08010",
+   "accession": "OSD-346",
+   "name": "",
+   "q": 0.3585118702039306,
+   "spearman_rho": -0.929
+  },
+  {
+   "TF": "AT1G45249",
+   "accession": "OSD-346",
+   "name": "",
+   "q": 0.3585118702039306,
+   "spearman_rho": 0.929
+  },
+  {
+   "TF": "AT1G06850",
+   "accession": "OSD-346",
+   "name": "",
+   "q": 0.3585118702039306,
+   "spearman_rho": -0.893
+  },
+  {
+   "TF": "AT1G43700",
+   "accession": "OSD-346",
+   "name": "",
+   "q": 0.3585118702039306,
+   "spearman_rho": -0.893
+  },
+  {
+   "TF": "AT1G63040",
+   "accession": "OSD-346",
+   "name": "",
+   "q": 0.3585118702039306,
+   "spearman_rho": -0.893
+  },
+  {
+   "TF": "AT3G13810",
+   "accession": "OSD-346",
+   "name": "",
+   "q": 0.3585118702039306,
+   "spearman_rho": 0.893
+  }
+ ],
+ "key_tfs": [
+  {
+   "TF": "AT2G46770",
+   "flight_mean_z": 0.8385,
+   "flight_q": 0.6431185744466628,
+   "flight_vs_radiation_q": 0.3880054181987476,
+   "name": "ANAC043",
+   "radiation_mean_z": 2.0632
+  },
+  {
+   "TF": "AT4G32730",
+   "flight_mean_z": -0.3231,
+   "flight_q": 0.8887665029420206,
+   "flight_vs_radiation_q": 0.031096178277351148,
+   "name": "MYB3R1",
+   "radiation_mean_z": -3.7724
+  },
+  {
+   "TF": "AT1G25580",
+   "flight_mean_z": -0.268,
+   "flight_q": 0.898294878792177,
+   "flight_vs_radiation_q": 0.012006032756377245,
+   "name": "SOG1",
+   "radiation_mean_z": 8.3446
+  }
+ ],
+ "n_flight_contrasts": 41,
+ "n_missions": 14,
+ "n_radiation_contrasts": 10,
+ "n_significant_flight": 0,
+ "n_significant_flight_vs_radiation": 54,
+ "n_tfs_tested": 474,
+ "top_flight_tfs": []
+}

@@ -1,0 +1,72 @@
+{
+ "calibration_radiation": {
+  "best_timepoint_counts": {
+   "10": 0,
+   "1440": 0,
+   "180": 0,
+   "20": 0,
+   "360": 0,
+   "45": 4,
+   "720": 1,
+   "90": 3
+  },
+  "frac_argmax_near_peak": 0.875,
+  "mean_rho_profile": {
+   "10": 0.0711,
+   "1440": 0.1226,
+   "180": 0.389,
+   "20": 0.3543,
+   "360": 0.328,
+   "45": 0.4955,
+   "720": 0.2152,
+   "90": 0.4756
+  },
+  "n": 8,
+  "n_matched_per_contrast_shuffle": 8,
+  "peak_mean_rho": 0.4955,
+  "peak_timepoint_min": 45.0,
+  "profile_range": 0.4244
+ },
+ "flight": {
+  "best_timepoint_counts": {
+   "10": 8,
+   "1440": 3,
+   "180": 0,
+   "20": 0,
+   "360": 8,
+   "45": 8,
+   "720": 0,
+   "90": 8
+  },
+  "frac_argmax_near_peak": 0.457,
+  "mean_rho_profile": {
+   "10": -0.031,
+   "1440": 0.0001,
+   "180": 0.0272,
+   "20": -0.0333,
+   "360": 0.0172,
+   "45": 0.0,
+   "720": -0.0031,
+   "90": 0.0824
+  },
+  "n": 35,
+  "n_matched_per_contrast_shuffle": 26,
+  "peak_mean_rho": 0.0824,
+  "peak_timepoint_min": 90.0,
+  "profile_range": 0.1157
+ },
+ "generated": "2026-08-29",
+ "interpretation": "Irradiation contrasts trace the trajectory with a clear peak (mean rho 0.4955 at 45 min, profile range 0.4244, 88% of argmaxes at or beside that peak). Flight contrasts do not: their mean profile is essentially flat (peak 0.0824, range 0.1157) and only 46% of their best-matching timepoints fall near it, so the argmax is arbitrary. Spaceflight is NOT a time-shifted radiation response. The per-contrast shuffle test passes 26 of 35 contrasts and is too permissive to be read on its own.",
+ "n_tfs": 474,
+ "reference_arm": "A_primary_WildType",
+ "timepoints_min": [
+  10.0,
+  20.0,
+  45.0,
+  90.0,
+  180.0,
+  360.0,
+  720.0,
+  1440.0
+ ]
+}

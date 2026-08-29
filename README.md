@@ -183,6 +183,37 @@ SOG1-arm z = −0.07): proliferation slowing without DNA damage.
 
 ![Radiation decoder](figures/fig5_decoder.png)
 
+### Are the DREM transcription factors altered in spaceflight? No.
+
+Two acquisition fixes widened the corpus first — admitting the **onboard 1G-centrifuge
+control** (recovers OSD-251/346, the only within-flight gravity gradients) and reading
+GeneLab's **Affymetrix tables**, which carry AGI loci in a `TAIR` column. Result: 83
+contrasts from 39 studies (60 RNA-seq + 23 microarray), 41 flight contrasts over 14
+missions. Each of 474 DREM TFs becomes a feature — its target set scored against the
+contrast's fold-change ranking, with an **exact analytic null** (finite-population
+correction) verified against permutation.
+
+| Test | Result |
+|---|---|
+| TFs significantly altered in flight (5% FDR, mission-level) | **0 / 474** |
+| TFs differing significantly between flight and radiation | **54 / 474** |
+| SOG1 activity: radiation vs flight | **+8.34** vs **−0.27** (q=0.90) |
+| Flight-vs-radiation classifier, leave-one-mission-out | **AUC 0.993** (null 0.448 ± 0.166, p=0.005) |
+| Platform confound control | AUC 0.446 — at chance, **not** confounded |
+
+The zero is a measurement, not weak power: the same features and correction detect 54 TFs
+separating flight from radiation, and a classifier separates them near-perfectly.
+
+**Spaceflight is not a time-shifted radiation response.** Projecting every contrast onto
+the eight DREM timepoints, irradiation traces a clean peak (ρ 0.50 at 45 min, 88% of
+argmaxes at the peak) while flight is flat (peak ρ 0.082, range 0.116, 46% near peak).
+
+![DREM projection](figures/fig10_drem_projection.png)
+
+**A bonus validation.** OSD-320 — Affymetrix, never used to build the signature, previously
+excluded as cross-platform — scores 14.3 (Cs-137 γ) and 14.0 (Fe-56) on the radiation
+index. The signature transfers to an unseen platform.
+
 ---
 
 ## Layout
@@ -217,6 +248,8 @@ bash scripts/run_all.sh             # full run
 | `11_crossvalidate_sibling.py` | DREM paths vs the sibling repo's WGCNA modules |
 | `15`–`16` | Radiation signature from the WT/`sog1-1` contrast; scan every OSDR plant study |
 | `17`–`18` | Decoder calibration + predictions; tissue attribution and reweighting |
+| `19`–`20` | TF-activity matrix (analytic null); per-TF mission-level tests with FDR |
+| `21`–`22` | Mission-grouped classifier + platform control; DREM trajectory projection |
 | `12`–`14` | Figures, manuscript macros, `MANIFEST.tsv` |
 
 ---
@@ -246,6 +279,11 @@ bash scripts/run_all.sh             # full run
 - SOG1 peaks are called from bedGraph coverage by binned enrichment, because GEO
   distributes coverage rather than called peaks for GSE112529. The dual-control
   requirement makes the calls conservative but they are not a MACS analysis of raw reads.
+- The spaceflight analysis is *Arabidopsis*-only **and not by choice**: Ensembl returns
+  zero Arabidopsis→mouse orthologues for SOG1, MYB3R1 or E2F3 (plant and vertebrate
+  Compara are separate databases; SOG1 is a plant-specific NAC). The 132 mouse and 29
+  human spaceflight studies in OSDR cannot be scored on these regulators.
+- Effective n for the flight analysis is **14 missions**, several contributing one study.
 - The decoder is *Arabidopsis*-only. Of 73 OSDR plant studies, 33 have expression matrices
   and only two are non-*Arabidopsis* (one *B. rapa*, one tomato); the sibling repo's
   `ortholog_map.csv` turns out to be 32,834 Arabidopsis-to-itself identity rows, so it

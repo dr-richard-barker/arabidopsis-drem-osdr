@@ -177,10 +177,26 @@ def osdr_publication(accession: str) -> dict | None:
 
 # --------------------------------------------------------------------------- misc
 
+def _json_default(o):
+    """Coerce numpy scalars the JSON encoder refuses.
+
+    numpy types reach here constantly and invisibly: `bool(x) and np.median(...) <= 20`
+    evaluates to np.bool_, not bool, because Python's `and` returns the operand rather
+    than a coerced truth value, and `.value_counts().to_dict()` yields np.int64 keys and
+    values. Handling it once here beats casting at every call site and forgetting one.
+    """
+    if hasattr(o, "item"):          # numpy scalar
+        return o.item()
+    if hasattr(o, "tolist"):        # numpy array
+        return o.tolist()
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+
+
 def write_json(path: Path, obj) -> Path:
     """Write pretty, key-sorted JSON so re-runs produce byte-identical files."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
+    path.write_text(json.dumps(obj, indent=1, sort_keys=True, ensure_ascii=False,
+                               default=_json_default) + "\n")
     return path
 
 

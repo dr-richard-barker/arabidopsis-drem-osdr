@@ -67,6 +67,12 @@ python3 scripts/16_scan_osdr_plants.py
 python3 scripts/17_decoder_report.py
 python3 scripts/18_tissue_association.py
 
+step "19-22 spaceflight TF activity, statistics, ML and DREM projection"
+python3 scripts/19_tf_activity_matrix.py
+python3 scripts/20_tf_statistics.py
+python3 scripts/21_tf_classifier.py
+python3 scripts/22_drem_projection.py
+
 step "11 cross-validate against the sibling analysis"
 python3 scripts/11_crossvalidate_sibling.py || echo "  (sibling repo not present — skipped)"
 
