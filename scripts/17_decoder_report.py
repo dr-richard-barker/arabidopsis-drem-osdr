@@ -94,7 +94,10 @@ def main() -> int:
     d["radiation_index"] = np.minimum(d["sog1_dependent"], -d["myb3r_repressed"])
     d["sog1_arm"] = d["sog1_dependent"]
     d["myb3r_arm"] = -d["myb3r_repressed"]
-    d["is_radiation_factor"] = d["factor"].isin(RADIATION_FACTORS)
+    # A trailing '*' marks a cross-factor control (see contrasts_for); strip it before
+    # matching or OSD-658's recovered 40/80 cGy arms are misfiled as "other exposures".
+    d["cross_factor_control"] = d["factor"].str.endswith("*", na=False)
+    d["is_radiation_factor"] = d["factor"].str.rstrip("*").isin(RADIATION_FACTORS)
     # A mutant-vs-wildtype contrast is not an exposure. sog1-1 in an irradiation study
     # is the negative control, and calling it "irradiated" would be a category error.
     d["is_genotype_contrast"] = d["factor"] == "genotype"

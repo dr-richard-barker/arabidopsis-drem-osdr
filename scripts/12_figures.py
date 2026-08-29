@@ -270,6 +270,49 @@ def fig_tf_flight() -> None:
         save(fig, "fig10_drem_projection")
 
 
+def fig_dose_response() -> None:
+    """Figure 11: the detection floor against the ISS dose."""
+    qc = RESULTS / "qc" / "dose_response_qc.json"
+    dr_path = RESULTS / "decoder" / "dose_response.tsv"
+    if not (qc.exists() and dr_path.exists()):
+        log("  fig11 skipped: run 23_dose_response.py first")
+        return
+    rep = json.loads(qc.read_text())
+    dr = pd.read_csv(dr_path, sep="\t").sort_values("dose_cgy")
+
+    fig, ax = plt.subplots(figsize=(7.4, 4.4), constrained_layout=True)
+    iss_lo, iss_hi = rep["iss"]["mission_dose_range_cgy"]
+    ax.axvspan(iss_lo, iss_hi, color="#2b6cb0", alpha=0.16, zorder=0)
+    ax.text(np.sqrt(iss_lo * iss_hi), ax.get_ylim()[1], " ISS missions\n (11-70 d)",
+            fontsize=7.5, color="#2b6cb0", ha="center", va="top")
+
+    br = rep["observed_bracket_cgy"]
+    ax.axvspan(br["highest_dose_not_detected"], br["lowest_dose_detected"],
+               color="0.85", alpha=0.6, zorder=0)
+    ax.axhline(rep["z_threshold"], ls="--", lw=1, color="#c53030")
+    ax.text(dr["dose_cgy"].max(), rep["z_threshold"] + 0.35, "z = 1.96",
+            fontsize=7.5, color="#c53030", ha="right")
+    ax.axhline(0, color="0.85", lw=0.8, zorder=0)
+
+    for arm, col, lab in (("sog1_arm", "#c53030", "SOG1 / DNA-damage arm"),
+                          ("myb3r_arm", "#2f855a", "MYB3R / G2-M arm")):
+        ax.plot(dr["dose_cgy"], dr[arm], marker="o", ms=6, lw=1.8, color=col, label=lab)
+    for r in dr.itertuples():
+        ax.annotate(r.accession.replace("OSD-", ""), (r.dose_cgy, r.sog1_arm),
+                    fontsize=6, xytext=(0, -12), textcoords="offset points",
+                    ha="center", color="0.4")
+
+    ax.set_xscale("log")
+    ax.set_xlim(iss_lo * 0.5, dr["dose_cgy"].max() * 1.6)
+    ax.set_xlabel("absorbed dose (cGy, log scale)")
+    ax.set_ylabel("arm activity (z)")
+    ax.set_title("The assay is blind at ISS doses: the DNA-damage arm needs "
+                 f"{br['lowest_dose_detected']:g} cGy,\nISS delivers "
+                 f"{iss_lo:.2f}-{iss_hi:.2f} cGy", fontsize=9.5)
+    ax.legend(fontsize=7.5, frameon=False, loc="upper left")
+    save(fig, "fig11_dose_response")
+
+
 def main() -> int:
     log("rendering figures")
     fig_cohort_design()
@@ -277,6 +320,7 @@ def main() -> int:
     fig_latent()
     fig_ablation()
     fig_tf_flight()
+    fig_dose_response()
     return 0
 
 

@@ -44,6 +44,33 @@ the signature is not absence of damage --- transcription is a poor dosimeter at 
 rates, and our own decoder fails to detect 10~cGy delivered acutely --- but it does bound
 what a transcriptomic radiation biomarker can be expected to report from a LEO mission.
 
+\subsection*{Do ISS plants carry radiation-damage biomarkers?}
+
+On the evidence assembled here, no. Across \NumFlightContrasts{} flight and
+altered-gravity contrasts spanning \NumMissions{} missions, no contrast engages the
+coordinated SOG1/MYB3R response, no DREM transcription factor is altered at 5\% FDR, and
+the TF-activity profile of flight matches no phase of the radiation trajectory. Current
+ISS plant transcriptomes carry no detectable radiation-damage biomarker as this analysis
+defines one.
+
+The reach of that statement is set by the dose it was measured at, and stating it makes
+the claim stronger rather than weaker. The assay's diagnostic arm requires
+\DoseDetected{}~cGy and fails at \DoseNotDetected{}~cGy; ISS missions in this corpus
+deliver \IssDoseLo{}--\IssDoseHi{}~cGy, \FoldBelowFloor{}$\times$ below the dose that
+already produces nothing, at a dose rate some \DoseRateRatio{} times lower. A
+transcriptional null at that exposure is what the assay predicts, and it therefore bounds
+the ISS radiation effect below our floor rather than demonstrating that no damage occurs.
+Transcription is a poor dosimeter at ISS dose rates, where repair keeps pace with damage
+and no acute programme is triggered.
+
+Two consequences follow for practice. A transcriptomic radiation biomarker developed on
+acute ground irradiation should not be expected to report LEO exposure, and its absence in
+flight data should not be read as evidence of radiation safety. And if a radiation
+signature is ever wanted from flight material, it will have to come from an assay with a
+floor two orders of magnitude below this one --- direct damage markers such as
+$\gamma$-H2AX foci or mutation accumulation, rather than steady-state transcript
+abundance.
+
 \subsection*{Limitations}
 
 The single-nucleus atlas is developmental and unirradiated, so deconvolution assumes
@@ -66,6 +93,16 @@ The spaceflight corpus is Arabidopsis-only, and not by choice: Ensembl returns n
 Arabidopsis-to-mouse orthologues for SOG1, MYB3R1 or E2F3, plant and vertebrate Compara
 being separate databases, and SOG1 is a plant-specific NAC with no animal homolog. The
 132 mouse and 29 human spaceflight studies in OSDR cannot be scored on these regulators.
+
+The detection floor is measured for acute exposure delivered in seconds. ISS exposure is
+chronic and roughly \DoseRateRatio{} times slower, where repair keeps pace, so the true
+chronic floor is plausibly higher still --- which widens the gap rather than narrowing it.
+The ISS dose rate is crew-module dosimetry, not a dosimeter inside the plant hardware, and
+local shielding will differ. The dose points also come from two studies using different
+material (dry seeds for the GCR arm, 4-week-old plants for the $^{137}$Cs arm), so the
+fitted floor is a cross-study estimate rather than a single titration; the observed
+bracket of \DoseNotDetected{}--\DoseDetected{}~cGy, read directly off the data, is the more
+reliable quantity.
 
 The effective sample size for the flight analysis is \NumMissionObservations{} missions,
 several contributing a single study. TF target sets also overlap heavily, so a coefficient

@@ -1,0 +1,93 @@
+{
+ "claim_supported": true,
+ "dose_points": [
+  {
+   "accession": "OSD-782",
+   "dose_cgy": 10.0,
+   "myb3r_arm": 10.141,
+   "sog1_arm": -0.72
+  },
+  {
+   "accession": "OSD-658",
+   "dose_cgy": 40.0,
+   "myb3r_arm": 6.911,
+   "sog1_arm": 5.942
+  },
+  {
+   "accession": "OSD-658",
+   "dose_cgy": 80.0,
+   "myb3r_arm": 7.813,
+   "sog1_arm": 7.803
+  },
+  {
+   "accession": "OSD-782",
+   "dose_cgy": 100.0,
+   "myb3r_arm": 11.128,
+   "sog1_arm": 5.156
+  }
+ ],
+ "fitted_floor": {
+  "myb3r_arm": {
+   "ci95_cgy": [
+    0.0,
+    53.95
+   ],
+   "floor_cgy": null,
+   "n_bootstrap": 2578,
+   "slope_per_log10_dose": -0.324
+  },
+  "sog1_arm": {
+   "ci95_cgy": [
+    0.0,
+    28.58
+   ],
+   "floor_cgy": 18.53,
+   "n_bootstrap": 4126,
+   "slope_per_log10_dose": 7.213
+  }
+ },
+ "gap": {
+  "acute_dose_rate_cgy_per_s": 1.4,
+  "dose_rate_ratio": 3407000.0,
+  "fold_below_non_detection": 4.0,
+  "fold_below_range": [
+   4.0,
+   25.6
+  ],
+  "iss_dose_rate_cgy_per_s": 4.1088e-07,
+  "iss_max_dose_cgy": 2.485,
+  "lowest_tested_non_detection_cgy": 10.0
+ },
+ "generated": "2026-08-29",
+ "iss": {
+  "dose_rate_mgy_per_day": 0.355,
+  "dose_rate_sd": 0.04,
+  "mission_categories": {
+   "orbital": 10,
+   "orbital, duration unknown": 3,
+   "suborbital": 2
+  },
+  "mission_dose_range_cgy": [
+   0.39,
+   2.485
+  ],
+  "n_orbital_missions": 10,
+  "orbital_duration_unknown": [
+   "SpaceX-13 + SpaceX-14",
+   "SpaceX-2 + SpaceX-4",
+   "SpaceX-4 + SpaceX-6"
+  ],
+  "source": "Yoshida et al., Heliyon 2022;8(8):e10266 (Bio-PADLES, ISS MELFI, 1,584 days): 0.355 +/- 0.04 mGy/day",
+  "suborbital": [
+   "Unity 22",
+   "VSS Unity"
+  ]
+ },
+ "observed_bracket_cgy": {
+  "highest_dose_not_detected": 10.0,
+  "lowest_dose_detected": 40.0,
+  "note": "read directly off the data; more trustworthy than the fit, which rests on four points from two studies with different material"
+ },
+ "verdict": "The SOG1/DNA-damage arm is undetected at 10 cGy and detected at 40 cGy. ISS missions in this corpus deliver 0.39-2.48 cGy, 4.0x below the highest dose that already fails to register, at a dose rate ~3e+06 times lower. The absence of a radiation-damage signature in flight is therefore what this assay predicts at ISS doses, whether or not damage occurred.",
+ "z_threshold": 1.96
+}

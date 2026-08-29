@@ -1,0 +1,5 @@
+accession	level	dose_cgy	sog1_arm	myb3r_arm	radiation_index	call
+OSD-782	10 {centigray}	10.0	-0.72	10.141	-0.72	G2/M repressed, no DDR (proliferation slowing)
+OSD-658	40 {centigray}	40.0	5.942	6.911	5.942	radiation-like
+OSD-658	80 {centigray}	80.0	7.803	7.813	7.803	radiation-like
+OSD-782	100 {centigray}	100.0	5.156	11.128	5.156	radiation-like

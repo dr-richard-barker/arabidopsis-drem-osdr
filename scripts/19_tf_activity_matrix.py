@@ -213,8 +213,10 @@ def main() -> int:
                 "mission": mission or "(unknown)", "space_program": program,
                 "platform": platform, "n_treated": len(t), "n_control": len(c),
                 "n_genes": int(len(lfc)),
-                "is_flight": factor in ("spaceflight", "altered gravity"),
-                "is_radiation": factor in ("ionizing radiation", "absorbed radiation dose"),
+                "cross_factor_control": factor.endswith("*"),
+                "is_flight": factor.rstrip("*") in ("spaceflight", "altered gravity"),
+                "is_radiation": factor.rstrip("*") in ("ionizing radiation",
+                                                       "absorbed radiation dose"),
             })
         log(f"  {acc}: {platform}, mission {mission or '?'}, "
             f"{sum(1 for m in meta_rows if m['accession'] == acc)} contrasts")

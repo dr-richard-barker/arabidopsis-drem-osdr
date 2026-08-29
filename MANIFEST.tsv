@@ -52,10 +52,11 @@ results/celltypes/B_primary_pooled_latent.tsv	Cell-type fractions and latent tra
 results/celltypes/tf_reweighting.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	34422	54156d76693eb152a107500adf518ef2ad3cd48bcdb1032d0c51c11de16d0396	2026-08-29
 results/celltypes/tissue_enrichment.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	34470	08acf3b80a5865a772fc06b1e61a3933b274d7ff8745bffe2a4df88b834d09f6	2026-08-29
 results/qc/deconvolution_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	3149	b0e771cefbdf4646e3b9d621b2c47d31964d64f5f1a7f7c33d347b6238b586a2	2026-08-29
+results/qc/dose_response_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2240	73ec96bc9dc268db44072d504d4ced278f9be7199d2b37f3b13d58206893ed1a	2026-08-29
 results/qc/drem_projection_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	1675	f78368e86589556a447a64ba34965eb3e8ddc1ffcb412695f0619ee55a0100f9	2026-08-29
 results/qc/metadata_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	4380	01e9188958f3ac89ba6c8bddb149572a784f0c120d366f0673eccf1de6dc9821	2026-08-29
 results/qc/sog1_chip_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	1101	333bed6814e2ba6c09965ea29f0fb1952ca7938501996e3828ca57d39d129480	2026-08-29
-results/qc/tf_activity_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2374	d112cfe520f5f5f58d454526eccb75c6ad4884a658612800ee004198315a3f81	2026-08-29
+results/qc/tf_activity_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2374	93a70c8f6c990651394e8df0d3434a0291608d4864e1983bf0eb92fd6a0703cc	2026-08-29
 results/qc/tf_prior_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	4083	b7516b9abd82c381ca6ddd306f0050d878b56829154b2f2aa05cb8ffa7fd5bd3	2026-08-29
 results/qc/tf_statistics_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2280	3c0b505b11b1ed9fb4ca5de3aa5d98d95d20b23cf2a7a9cdd13e514a28b2b5f6	2026-08-29
 results/qc/tissue_association_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	5444	935abcbc81b316371e60b25e13e559f56906360a4110e8533add299a5032c3ce	2026-08-29
@@ -100,5 +101,5 @@ results/comparison/genotype_contrast.tsv	Prior ablation and genotype contrast ta
 results/comparison/prior_ablation.tsv	Prior ablation and genotype contrast tables	derived by scripts/10_compare_models.py	CC-BY-4.0	yes	798	0ee95ba920f667145f3ead90b393d9c4bfc46db8a83b11cea6048175b9a37045	2026-08-29
 results/comparison/sibling_crossvalidation.tsv	Prior ablation and genotype contrast tables	derived by scripts/10_compare_models.py	CC-BY-4.0	yes	2981	e796641ceafce81f817c8d07b7c8800a0dfa3a230b422b3e0df03a90696b8cc7	2026-08-29
 vendor/drem.jar	DREM 2.0.7 engine	https://github.com/jernst98/STEM_DREM	GPL-3.0 (downloaded at run time, not redistributed)	no	3310260	16312a6a713238a829abb0e1bf3929f8378216ddb17b57fe30e038e892739530	2026-08-29
-manuscript/manuscript.pdf	Manuscript, PDF	built from manuscript/latex	CC-BY-4.0	yes	582151	489b43f6a5012b818fd1a808e769d8206a05130bbca3ad6a43eaf69f9b0139de	2026-08-29
-manuscript/manuscript.docx	Manuscript, Word	built from manuscript/latex	CC-BY-4.0	yes	1202547	1a8e26bcd8b1f8b3b2db4369b4b023db0a7bf20ec65f8c415d8e6d661fc91de6	2026-08-29
+manuscript/manuscript.pdf	Manuscript, PDF	built from manuscript/latex	CC-BY-4.0	yes	605797	d46f5fbf8b38c80f4d52a64159453f53f974d45bad753415837b5b509803ea90	2026-08-29
+manuscript/manuscript.docx	Manuscript, Word	built from manuscript/latex	CC-BY-4.0	yes	1295436	63dbc88b9b0fbe66db5b4fd37a6882d68055ed118bf1c5331ed3f27751e35074	2026-08-29

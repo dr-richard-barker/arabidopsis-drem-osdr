@@ -183,6 +183,37 @@ SOG1-arm z = −0.07): proliferation slowing without DNA damage.
 
 ![Radiation decoder](figures/fig5_decoder.png)
 
+### Can we conclude ISS plants carry no radiation biomarkers?
+
+**Yes — and here is the dose at which we could have seen one.** OSD-658 and OSD-782 are
+both integrated, as *ground* calibration (`is_flight=False`), and they define the assay's
+sensitivity. Recovering OSD-658's 40/80 cGy arms (its unirradiated samples are recorded as
+`{Not Applicable}`, not `0 cGy`, so its dose factor had no internal reference) gives a
+four-point dose series:
+
+| Dose | SOG1 / DNA-damage arm | MYB3R / G2-M arm |
+|---|---|---|
+| 10 cGy | **−0.72** (absent) | +10.14 |
+| 40 cGy | +5.94 | +6.91 |
+| 80 cGy | +7.80 | +7.81 |
+| 100 cGy | +5.16 | +11.13 |
+
+**The two arms have different thresholds.** Cell-cycle arrest is low-threshold and
+saturates; the SOG1 damage programme is switch-like, absent at 10 cGy and detectable at
+40 cGy. "The detection floor" is not one number — and only the diagnostic arm separates
+irradiation from other stress.
+
+At **0.355 mGy/day** measured inside the ISS by Bio-PADLES over 1,584 days
+([Yoshida et al. 2022](https://doi.org/10.1016/j.heliyon.2022.e10266)), the 10 orbital
+missions here (11–70 days) accumulate **0.39–2.48 cGy** — **4× below the dose that already
+registers nothing**, at a dose rate ~3×10⁶ times lower.
+
+So: ISS plant transcriptomes carry no detectable radiation-damage biomarker as we define
+one. That **bounds** the ISS radiation effect below our floor; it does not show that no
+damage occurs. Transcription is a poor dosimeter at ISS dose rates.
+
+![Detection floor](figures/fig11_dose_response.png)
+
 ### Are the DREM transcription factors altered in spaceflight? No.
 
 Two acquisition fixes widened the corpus first — admitting the **onboard 1G-centrifuge
@@ -250,6 +281,7 @@ bash scripts/run_all.sh             # full run
 | `17`–`18` | Decoder calibration + predictions; tissue attribution and reweighting |
 | `19`–`20` | TF-activity matrix (analytic null); per-TF mission-level tests with FDR |
 | `21`–`22` | Mission-grouped classifier + platform control; DREM trajectory projection |
+| `23` | Dose-response, detection floor, and ISS mission dose |
 | `12`–`14` | Figures, manuscript macros, `MANIFEST.tsv` |
 
 ---
@@ -284,6 +316,13 @@ bash scripts/run_all.sh             # full run
   Compara are separate databases; SOG1 is a plant-specific NAC). The 132 mouse and 29
   human spaceflight studies in OSDR cannot be scored on these regulators.
 - Effective n for the flight analysis is **14 missions**, several contributing one study.
+- The detection floor is measured for **acute** exposure. ISS delivers chronically at
+  ~10⁶ lower dose rate, where repair keeps pace, so the chronic floor is plausibly higher
+  still — widening the gap, not narrowing it. ISS dose is crew-module dosimetry, not a
+  dosimeter inside the plant hardware.
+- An earlier version of this README reported a flight MYB3R-arm mean of 5.19; the expanded
+  corpus puts it at **1.00** (below significance). The G2/M-in-flight pattern holds for
+  16 of 41 contrasts, not as a population effect. Corrected.
 - The decoder is *Arabidopsis*-only. Of 73 OSDR plant studies, 33 have expression matrices
   and only two are non-*Arabidopsis* (one *B. rapa*, one tomato); the sibling repo's
   `ortholog_map.csv` turns out to be 32,834 Arabidopsis-to-itself identity rows, so it

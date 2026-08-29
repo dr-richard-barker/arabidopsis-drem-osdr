@@ -1,84 +1,86 @@
-contrast	accession	factor	level	mission	space_program	platform	n_treated	n_control	n_genes	is_flight	is_radiation
-OSD-7|spaceflight|Space Flight	OSD-7	spaceflight	Space Flight	STS-129	NASA	microarray	18	18	21267	True	False
-OSD-17|spaceflight|Space Flight	OSD-17	spaceflight	Space Flight	STS-131	NASA	microarray	12	12	21267	True	False
-OSD-37|spaceflight|Space Flight	OSD-37	spaceflight	Space Flight	SpaceX-4	NASA	rna-seq	28	28	18731	True	False
-OSD-38|spaceflight|Space Flight	OSD-38	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	3	9	20352	True	False
-OSD-44|genotype|act2-3	OSD-44	genotype	act2-3	STS-131	NASA	microarray	6	6	21267	False	False
-OSD-44|spaceflight|Space Flight	OSD-44	spaceflight	Space Flight	STS-131	NASA	microarray	6	6	21267	True	False
-OSD-120|spaceflight|Space Flight	OSD-120	spaceflight	Space Flight	SpaceX-3	NASA	rna-seq	36	36	19402	True	False
-OSD-121|spaceflight|Space Flight	OSD-121	spaceflight	Space Flight	STS-131	NASA	microarray	9	9	21267	True	False
-OSD-147|genotype|ARG1 KO	OSD-147	genotype	ARG1 KO	SpaceX-2	NASA	microarray	8	10	21267	False	False
-OSD-147|spaceflight|Space Flight	OSD-147	spaceflight	Space Flight	SpaceX-2	NASA	microarray	9	9	21267	True	False
-OSD-193|spaceflight|Space Flight	OSD-193	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	16	16	20053	True	False
-OSD-205|genotype|HSFA2 KO	OSD-205	genotype	HSFA2 KO	SpaceX-2	NASA	microarray	6	10	21267	False	False
-OSD-205|spaceflight|Space Flight	OSD-205	spaceflight	Space Flight	SpaceX-2	NASA	microarray	8	8	21267	True	False
-OSD-217|spaceflight|Space Flight	OSD-217	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	6	6	20201	True	False
-OSD-218|spaceflight|Space Flight	OSD-218	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	16	16	20171	True	False
-OSD-223|altered gravity|0.76G by centrifugation	OSD-223	altered gravity	0.76G by centrifugation	STS-135	NASA	rna-seq	14	10	20261	True	False
-OSD-223|altered gravity|uG	OSD-223	altered gravity	uG	STS-135	NASA	rna-seq	16	10	20261	True	False
-OSD-223|genotype|InsP 5-ptase Transgenic	OSD-223	genotype	InsP 5-ptase Transgenic	STS-135	NASA	rna-seq	20	20	20261	False	False
-OSD-223|spaceflight|Space Flight	OSD-223	spaceflight	Space Flight	STS-135	NASA	rna-seq	30	10	20261	True	False
-OSD-251|altered gravity|0.09G by centrifugation	OSD-251	altered gravity	0.09G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	3	19773	True	False
-OSD-251|altered gravity|0.18G by centrifugation	OSD-251	altered gravity	0.18G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	3	19773	True	False
-OSD-251|altered gravity|0.36G by centrifugation	OSD-251	altered gravity	0.36G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	3	19773	True	False
-OSD-251|altered gravity|0.57G by centrifugation	OSD-251	altered gravity	0.57G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	4	3	19773	True	False
-OSD-251|altered gravity|uG	OSD-251	altered gravity	uG	SpaceX-2	NASA, ESA	rna-seq	4	3	19773	True	False
-OSD-281|spaceflight|Space Flight	OSD-281	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	16	16	20083	True	False
-OSD-282|treatment|Heat and anoxia-treated	OSD-282	treatment	Heat and anoxia-treated	(unknown)		microarray	2	2	21267	False	False
-OSD-282|treatment|heat-treated	OSD-282	treatment	heat-treated	(unknown)		microarray	2	2	21267	False	False
-OSD-282|treatment|Anoxia-treated	OSD-282	treatment	Anoxia-treated	(unknown)		microarray	2	2	21267	False	False
-OSD-296|genotype|cop-1	OSD-296	genotype	cop-1	(unknown)		microarray	12	12	21267	False	False
-OSD-296|genotype|uvr-8	OSD-296	genotype	uvr-8	(unknown)		microarray	12	12	21267	False	False
-OSD-313|genotype|Nuc1-2 Mutant	OSD-313	genotype	Nuc1-2 Mutant	(unknown)	ESA, NASA	rna-seq	6	6	20059	False	False
-OSD-313|genotype|Nuc2-2 Mutant	OSD-313	genotype	Nuc2-2 Mutant	(unknown)	ESA, NASA	rna-seq	6	6	20059	False	False
-OSD-314|altered gravity|0.34G by centrifugation	OSD-314	altered gravity	0.34G by centrifugation	SpaceX-4	ESA, NASA	rna-seq	6	6	20146	True	False
-OSD-314|altered gravity|uG	OSD-314	altered gravity	uG	SpaceX-4	ESA, NASA	rna-seq	5	6	20146	True	False
-OSD-314|spaceflight|Space Flight	OSD-314	spaceflight	Space Flight	SpaceX-4	ESA, NASA	rna-seq	11	6	20146	True	False
-OSD-320|genotype|atm-1	OSD-320	genotype	atm-1	(unknown)		microarray	20	24	21267	False	False
-OSD-320|ionizing radiation|Cesium-137 gamma radiation	OSD-320	ionizing radiation	Cesium-137 gamma radiation	(unknown)		microarray	18	8	21267	False	True
-OSD-320|ionizing radiation|Fe-56 ion radiation	OSD-320	ionizing radiation	Fe-56 ion radiation	(unknown)		microarray	18	8	21267	False	True
-OSD-321|genotype|bzip28-2	OSD-321	genotype	bzip28-2	SpaceX-12	NASA	rna-seq	8	10	19267	False	False
-OSD-321|genotype|bzip60-2	OSD-321	genotype	bzip60-2	SpaceX-12	NASA	rna-seq	8	10	19267	False	False
-OSD-321|genotype|bzip28-2 bzip60-1	OSD-321	genotype	bzip28-2 bzip60-1	SpaceX-12	NASA	rna-seq	10	10	19267	False	False
-OSD-321|genotype|ire1a-4 ire1b-2	OSD-321	genotype	ire1a-4 ire1b-2	SpaceX-12	NASA	rna-seq	8	10	19267	False	False
-OSD-321|spaceflight|Space Flight	OSD-321	spaceflight	Space Flight	SpaceX-12	NASA	rna-seq	22	22	19267	True	False
-OSD-346|altered gravity|uG	OSD-346	altered gravity	uG	SpaceX-2	NASA, ESA	rna-seq	6	14	18910	True	False
-OSD-346|altered gravity|0.25G by centrifugation	OSD-346	altered gravity	0.25G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	2	14	18910	True	False
-OSD-346|altered gravity|0.38G by centrifugation	OSD-346	altered gravity	0.38G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	4	14	18910	True	False
-OSD-346|altered gravity|0.65G by centrifugation	OSD-346	altered gravity	0.65G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	14	18910	True	False
-OSD-346|altered gravity|0.64G by centrifugation	OSD-346	altered gravity	0.64G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	14	18910	True	False
-OSD-346|altered gravity|0.3G by centrifugation	OSD-346	altered gravity	0.3G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	2	14	18910	True	False
-OSD-346|altered gravity|0.5G by centrifugation	OSD-346	altered gravity	0.5G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	2	14	18910	True	False
-OSD-406|altered gravity|Suborbital Flight	OSD-406	altered gravity	Suborbital Flight	VSS Unity		rna-seq	12	12	19795	True	False
-OSD-406|genotype|sku5	OSD-406	genotype	sku5	VSS Unity		rna-seq	6	18	19795	False	False
-OSD-411|genotype|pgm-1	OSD-411	genotype	pgm-1	(unknown)	NASA	rna-seq	32	32	23385	False	False
-OSD-411|treatment|Reoriented	OSD-411	treatment	Reoriented	(unknown)	NASA	rna-seq	32	32	23385	False	False
-OSD-427|genotype|elp2-5	OSD-427	genotype	elp2-5	SpaceX-10	NASA	rna-seq	16	16	20295	False	False
-OSD-427|genotype|met1-7	OSD-427	genotype	met1-7	SpaceX-10	NASA	rna-seq	16	16	20295	False	False
-OSD-427|spaceflight|Space Flight	OSD-427	spaceflight	Space Flight	SpaceX-10	NASA	rna-seq	24	24	20295	True	False
-OSD-428|altered gravity|Gravity, Altered	OSD-428	altered gravity	Gravity, Altered	(unknown)		microarray	6	3	27500	True	False
-OSD-428|time|actuated immediately after the microgravity exposure 	OSD-428	time	actuated immediately after the microgravity exposure 	(unknown)		microarray	3	3	27500	False	False
-OSD-428|time|actuated after level flight had been maintained for about a minute and a half after the parabola	OSD-428	time	actuated after level flight had been maintained for about a minute and a half after the parabola	(unknown)		microarray	3	3	27500	False	False
-OSD-434|altered gravity|Gravity, Altered	OSD-434	altered gravity	Gravity, Altered	(unknown)		microarray	6	3	27500	True	False
-OSD-434|time|first-actuated KFT	OSD-434	time	first-actuated KFT	(unknown)		microarray	3	3	27500	False	False
-OSD-434|time|last-actuated KFT	OSD-434	time	last-actuated KFT	(unknown)		microarray	3	3	27500	False	False
-OSD-437|altered gravity|uG	OSD-437	altered gravity	uG	SpaceX-9	NASA	rna-seq	8	11	18732	True	False
-OSD-437|spaceflight|Space Flight	OSD-437	spaceflight	Space Flight	SpaceX-9	NASA	rna-seq	16	3	18732	True	False
-OSD-498|ionizing radiation|Cobalt-60 gamma radiation	OSD-498	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	8	8	19955	False	True
-OSD-502|genotype|myb3r135	OSD-502	genotype	myb3r135	(unknown)		rna-seq	4	4	20452	False	False
-OSD-502|ionizing radiation|Cobalt-60 gamma radiation	OSD-502	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	4	4	20452	False	True
-OSD-508|genotype|sog1-1	OSD-508	genotype	sog1-1	(unknown)		rna-seq	18	18	20387	False	False
-OSD-508|ionizing radiation|Cobalt-60 gamma radiation	OSD-508	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	32	4	20387	False	True
-OSD-510|genotype|sog1-1	OSD-510	genotype	sog1-1	(unknown)		rna-seq	24	24	20044	False	False
-OSD-510|ionizing radiation|Cobalt-60 gamma radiation	OSD-510	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	24	24	20044	False	True
-OSD-518|genotype|lazy1 mutant	OSD-518	genotype	lazy1 mutant	(unknown)		rna-seq	7	7	20031	False	False
-OSD-518|genotype|tac1 mutant	OSD-518	genotype	tac1 mutant	(unknown)		rna-seq	7	7	20031	False	False
-OSD-519|genotype|puchi-1 mutant	OSD-519	genotype	puchi-1 mutant	(unknown)		rna-seq	18	18	19181	False	False
-OSD-522|spaceflight|Space Flight	OSD-522	spaceflight	Space Flight	SpaceX-13	NASA	rna-seq	6	6	16021	True	False
-OSD-624|altered gravity|Suborbital Flight	OSD-624	altered gravity	Suborbital Flight	Unity 22	NASA	rna-seq	18	18	20029	True	False
-OSD-658|ionizing radiation|mixed radiation	OSD-658	ionizing radiation	mixed radiation	(unknown)	NASA	rna-seq	8	6	18424	False	True
-OSD-678|genotype|phyD mutant	OSD-678	genotype	phyD mutant	SpaceX-3	NASA	rna-seq	12	24	19356	False	False
-OSD-678|spaceflight|Space Flight	OSD-678	spaceflight	Space Flight	SpaceX-3	NASA	rna-seq	18	18	19356	True	False
-OSD-782|absorbed radiation dose|10 {centigray}	OSD-782	absorbed radiation dose	10 {centigray}	(unknown)		rna-seq	12	12	18313	False	True
-OSD-782|absorbed radiation dose|100 {centigray}	OSD-782	absorbed radiation dose	100 {centigray}	(unknown)		rna-seq	12	12	18313	False	True
-OSD-782|ionizing radiation|cesium-137 gamma radiation	OSD-782	ionizing radiation	cesium-137 gamma radiation	(unknown)		rna-seq	24	12	18313	False	True
+contrast	accession	factor	level	mission	space_program	platform	n_treated	n_control	n_genes	cross_factor_control	is_flight	is_radiation
+OSD-7|spaceflight|Space Flight	OSD-7	spaceflight	Space Flight	STS-129	NASA	microarray	18	18	21267	False	True	False
+OSD-17|spaceflight|Space Flight	OSD-17	spaceflight	Space Flight	STS-131	NASA	microarray	12	12	21267	False	True	False
+OSD-37|spaceflight|Space Flight	OSD-37	spaceflight	Space Flight	SpaceX-4	NASA	rna-seq	28	28	18731	False	True	False
+OSD-38|spaceflight|Space Flight	OSD-38	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	3	9	20352	False	True	False
+OSD-44|genotype|act2-3	OSD-44	genotype	act2-3	STS-131	NASA	microarray	6	6	21267	False	False	False
+OSD-44|spaceflight|Space Flight	OSD-44	spaceflight	Space Flight	STS-131	NASA	microarray	6	6	21267	False	True	False
+OSD-120|spaceflight|Space Flight	OSD-120	spaceflight	Space Flight	SpaceX-3	NASA	rna-seq	36	36	19402	False	True	False
+OSD-121|spaceflight|Space Flight	OSD-121	spaceflight	Space Flight	STS-131	NASA	microarray	9	9	21267	False	True	False
+OSD-147|genotype|ARG1 KO	OSD-147	genotype	ARG1 KO	SpaceX-2	NASA	microarray	8	10	21267	False	False	False
+OSD-147|spaceflight|Space Flight	OSD-147	spaceflight	Space Flight	SpaceX-2	NASA	microarray	9	9	21267	False	True	False
+OSD-193|spaceflight|Space Flight	OSD-193	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	16	16	20053	False	True	False
+OSD-205|genotype|HSFA2 KO	OSD-205	genotype	HSFA2 KO	SpaceX-2	NASA	microarray	6	10	21267	False	False	False
+OSD-205|spaceflight|Space Flight	OSD-205	spaceflight	Space Flight	SpaceX-2	NASA	microarray	8	8	21267	False	True	False
+OSD-217|spaceflight|Space Flight	OSD-217	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	6	6	20201	False	True	False
+OSD-218|spaceflight|Space Flight	OSD-218	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	16	16	20171	False	True	False
+OSD-223|altered gravity|0.76G by centrifugation	OSD-223	altered gravity	0.76G by centrifugation	STS-135	NASA	rna-seq	14	10	20261	False	True	False
+OSD-223|altered gravity|uG	OSD-223	altered gravity	uG	STS-135	NASA	rna-seq	16	10	20261	False	True	False
+OSD-223|genotype|InsP 5-ptase Transgenic	OSD-223	genotype	InsP 5-ptase Transgenic	STS-135	NASA	rna-seq	20	20	20261	False	False	False
+OSD-223|spaceflight|Space Flight	OSD-223	spaceflight	Space Flight	STS-135	NASA	rna-seq	30	10	20261	False	True	False
+OSD-251|altered gravity|0.09G by centrifugation	OSD-251	altered gravity	0.09G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	3	19773	False	True	False
+OSD-251|altered gravity|0.18G by centrifugation	OSD-251	altered gravity	0.18G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	3	19773	False	True	False
+OSD-251|altered gravity|0.36G by centrifugation	OSD-251	altered gravity	0.36G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	3	19773	False	True	False
+OSD-251|altered gravity|0.57G by centrifugation	OSD-251	altered gravity	0.57G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	4	3	19773	False	True	False
+OSD-251|altered gravity|uG	OSD-251	altered gravity	uG	SpaceX-2	NASA, ESA	rna-seq	4	3	19773	False	True	False
+OSD-281|spaceflight|Space Flight	OSD-281	spaceflight	Space Flight	SpaceX-5	NASA	rna-seq	16	16	20083	False	True	False
+OSD-282|treatment|Heat and anoxia-treated	OSD-282	treatment	Heat and anoxia-treated	(unknown)		microarray	2	2	21267	False	False	False
+OSD-282|treatment|heat-treated	OSD-282	treatment	heat-treated	(unknown)		microarray	2	2	21267	False	False	False
+OSD-282|treatment|Anoxia-treated	OSD-282	treatment	Anoxia-treated	(unknown)		microarray	2	2	21267	False	False	False
+OSD-296|genotype|cop-1	OSD-296	genotype	cop-1	(unknown)		microarray	12	12	21267	False	False	False
+OSD-296|genotype|uvr-8	OSD-296	genotype	uvr-8	(unknown)		microarray	12	12	21267	False	False	False
+OSD-313|genotype|Nuc1-2 Mutant	OSD-313	genotype	Nuc1-2 Mutant	(unknown)	ESA, NASA	rna-seq	6	6	20059	False	False	False
+OSD-313|genotype|Nuc2-2 Mutant	OSD-313	genotype	Nuc2-2 Mutant	(unknown)	ESA, NASA	rna-seq	6	6	20059	False	False	False
+OSD-314|altered gravity|0.34G by centrifugation	OSD-314	altered gravity	0.34G by centrifugation	SpaceX-4	ESA, NASA	rna-seq	6	6	20146	False	True	False
+OSD-314|altered gravity|uG	OSD-314	altered gravity	uG	SpaceX-4	ESA, NASA	rna-seq	5	6	20146	False	True	False
+OSD-314|spaceflight|Space Flight	OSD-314	spaceflight	Space Flight	SpaceX-4	ESA, NASA	rna-seq	11	6	20146	False	True	False
+OSD-320|genotype|atm-1	OSD-320	genotype	atm-1	(unknown)		microarray	20	24	21267	False	False	False
+OSD-320|ionizing radiation|Cesium-137 gamma radiation	OSD-320	ionizing radiation	Cesium-137 gamma radiation	(unknown)		microarray	18	8	21267	False	False	True
+OSD-320|ionizing radiation|Fe-56 ion radiation	OSD-320	ionizing radiation	Fe-56 ion radiation	(unknown)		microarray	18	8	21267	False	False	True
+OSD-321|genotype|bzip28-2	OSD-321	genotype	bzip28-2	SpaceX-12	NASA	rna-seq	8	10	19267	False	False	False
+OSD-321|genotype|bzip60-2	OSD-321	genotype	bzip60-2	SpaceX-12	NASA	rna-seq	8	10	19267	False	False	False
+OSD-321|genotype|bzip28-2 bzip60-1	OSD-321	genotype	bzip28-2 bzip60-1	SpaceX-12	NASA	rna-seq	10	10	19267	False	False	False
+OSD-321|genotype|ire1a-4 ire1b-2	OSD-321	genotype	ire1a-4 ire1b-2	SpaceX-12	NASA	rna-seq	8	10	19267	False	False	False
+OSD-321|spaceflight|Space Flight	OSD-321	spaceflight	Space Flight	SpaceX-12	NASA	rna-seq	22	22	19267	False	True	False
+OSD-346|altered gravity|uG	OSD-346	altered gravity	uG	SpaceX-2	NASA, ESA	rna-seq	6	14	18910	False	True	False
+OSD-346|altered gravity|0.25G by centrifugation	OSD-346	altered gravity	0.25G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	2	14	18910	False	True	False
+OSD-346|altered gravity|0.38G by centrifugation	OSD-346	altered gravity	0.38G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	4	14	18910	False	True	False
+OSD-346|altered gravity|0.65G by centrifugation	OSD-346	altered gravity	0.65G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	14	18910	False	True	False
+OSD-346|altered gravity|0.64G by centrifugation	OSD-346	altered gravity	0.64G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	3	14	18910	False	True	False
+OSD-346|altered gravity|0.3G by centrifugation	OSD-346	altered gravity	0.3G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	2	14	18910	False	True	False
+OSD-346|altered gravity|0.5G by centrifugation	OSD-346	altered gravity	0.5G by centrifugation	SpaceX-2	NASA, ESA	rna-seq	2	14	18910	False	True	False
+OSD-406|altered gravity|Suborbital Flight	OSD-406	altered gravity	Suborbital Flight	VSS Unity		rna-seq	12	12	19795	False	True	False
+OSD-406|genotype|sku5	OSD-406	genotype	sku5	VSS Unity		rna-seq	6	18	19795	False	False	False
+OSD-411|genotype|pgm-1	OSD-411	genotype	pgm-1	(unknown)	NASA	rna-seq	32	32	23385	False	False	False
+OSD-411|treatment|Reoriented	OSD-411	treatment	Reoriented	(unknown)	NASA	rna-seq	32	32	23385	False	False	False
+OSD-427|genotype|elp2-5	OSD-427	genotype	elp2-5	SpaceX-10	NASA	rna-seq	16	16	20295	False	False	False
+OSD-427|genotype|met1-7	OSD-427	genotype	met1-7	SpaceX-10	NASA	rna-seq	16	16	20295	False	False	False
+OSD-427|spaceflight|Space Flight	OSD-427	spaceflight	Space Flight	SpaceX-10	NASA	rna-seq	24	24	20295	False	True	False
+OSD-428|altered gravity|Gravity, Altered	OSD-428	altered gravity	Gravity, Altered	(unknown)		microarray	6	3	27500	False	True	False
+OSD-428|time|actuated immediately after the microgravity exposure 	OSD-428	time	actuated immediately after the microgravity exposure 	(unknown)		microarray	3	3	27500	False	False	False
+OSD-428|time|actuated after level flight had been maintained for about a minute and a half after the parabola	OSD-428	time	actuated after level flight had been maintained for about a minute and a half after the parabola	(unknown)		microarray	3	3	27500	False	False	False
+OSD-434|altered gravity|Gravity, Altered	OSD-434	altered gravity	Gravity, Altered	(unknown)		microarray	6	3	27500	False	True	False
+OSD-434|time|first-actuated KFT	OSD-434	time	first-actuated KFT	(unknown)		microarray	3	3	27500	False	False	False
+OSD-434|time|last-actuated KFT	OSD-434	time	last-actuated KFT	(unknown)		microarray	3	3	27500	False	False	False
+OSD-437|altered gravity|uG	OSD-437	altered gravity	uG	SpaceX-9	NASA	rna-seq	8	11	18732	False	True	False
+OSD-437|spaceflight|Space Flight	OSD-437	spaceflight	Space Flight	SpaceX-9	NASA	rna-seq	16	3	18732	False	True	False
+OSD-498|ionizing radiation|Cobalt-60 gamma radiation	OSD-498	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	8	8	19955	False	False	True
+OSD-502|genotype|myb3r135	OSD-502	genotype	myb3r135	(unknown)		rna-seq	4	4	20452	False	False	False
+OSD-502|ionizing radiation|Cobalt-60 gamma radiation	OSD-502	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	4	4	20452	False	False	True
+OSD-508|genotype|sog1-1	OSD-508	genotype	sog1-1	(unknown)		rna-seq	18	18	20387	False	False	False
+OSD-508|ionizing radiation|Cobalt-60 gamma radiation	OSD-508	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	32	4	20387	False	False	True
+OSD-510|genotype|sog1-1	OSD-510	genotype	sog1-1	(unknown)		rna-seq	24	24	20044	False	False	False
+OSD-510|ionizing radiation|Cobalt-60 gamma radiation	OSD-510	ionizing radiation	Cobalt-60 gamma radiation	(unknown)		rna-seq	24	24	20044	False	False	True
+OSD-518|genotype|lazy1 mutant	OSD-518	genotype	lazy1 mutant	(unknown)		rna-seq	7	7	20031	False	False	False
+OSD-518|genotype|tac1 mutant	OSD-518	genotype	tac1 mutant	(unknown)		rna-seq	7	7	20031	False	False	False
+OSD-519|genotype|puchi-1 mutant	OSD-519	genotype	puchi-1 mutant	(unknown)		rna-seq	18	18	19181	False	False	False
+OSD-522|spaceflight|Space Flight	OSD-522	spaceflight	Space Flight	SpaceX-13	NASA	rna-seq	6	6	16021	False	True	False
+OSD-624|altered gravity|Suborbital Flight	OSD-624	altered gravity	Suborbital Flight	Unity 22	NASA	rna-seq	18	18	20029	False	True	False
+OSD-658|absorbed radiation dose*|40 {centigray}	OSD-658	absorbed radiation dose*	40 {centigray}	(unknown)	NASA	rna-seq	4	6	18424	True	False	True
+OSD-658|absorbed radiation dose*|80 {centigray}	OSD-658	absorbed radiation dose*	80 {centigray}	(unknown)	NASA	rna-seq	4	6	18424	True	False	True
+OSD-658|ionizing radiation|mixed radiation	OSD-658	ionizing radiation	mixed radiation	(unknown)	NASA	rna-seq	8	6	18424	False	False	True
+OSD-678|genotype|phyD mutant	OSD-678	genotype	phyD mutant	SpaceX-3	NASA	rna-seq	12	24	19356	False	False	False
+OSD-678|spaceflight|Space Flight	OSD-678	spaceflight	Space Flight	SpaceX-3	NASA	rna-seq	18	18	19356	False	True	False
+OSD-782|absorbed radiation dose|10 {centigray}	OSD-782	absorbed radiation dose	10 {centigray}	(unknown)		rna-seq	12	12	18313	False	False	True
+OSD-782|absorbed radiation dose|100 {centigray}	OSD-782	absorbed radiation dose	100 {centigray}	(unknown)		rna-seq	12	12	18313	False	False	True
+OSD-782|ionizing radiation|cesium-137 gamma radiation	OSD-782	ionizing radiation	cesium-137 gamma radiation	(unknown)		rna-seq	24	12	18313	False	False	True

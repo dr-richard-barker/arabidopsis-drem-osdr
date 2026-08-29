@@ -73,6 +73,15 @@ SKIP_FACTORS = {
 }
 NA = {"NaN", "nan", "", "{Not Applicable}", "Not Applicable", None}
 
+# The cross-factor control fallback applies ONLY to factors describing an exposure
+# magnitude. Applied to any factor it does real damage: on OSD-508/510/320 it paired each
+# post-irradiation timepoint against the mock controls, generating 26 extra contrasts that
+# are genuine irradiation responses (they score 4-21) but duplicate the study's pooled
+# radiation contrast and are not labelled as radiation, so they enter the decoder's
+# calibration as false positives and dropped its AUC from 0.95 to 0.85. The fallback
+# exists to recover a dose axis; restricting it to dose factors is the scope it earns.
+DOSE_FACTOR_RE = re.compile(r"absorbed.*dose|radiation dose|\bdose\b", re.I)
+
 
 def load_signature() -> dict[str, list[str]]:
     if not SIGNATURE.exists():
@@ -148,25 +157,56 @@ def read_expression(path: Path) -> pd.DataFrame | None:
 
 
 def contrasts_for(acc: str, factors: pd.DataFrame) -> list[tuple[str, str, list[str], list[str]]]:
-    """(factor, level, treated_samples, control_samples) for every scoreable contrast."""
+    """(factor, level, treated_samples, control_samples) for every scoreable contrast.
+
+    A dose factor often has no control level of its own: OSD-658 records
+    `{Not Applicable}` for its unirradiated samples rather than `0 cGy`, so its 40 and 80
+    cGy arms have no within-factor reference and the whole dose axis is lost -- the study
+    collapses to a single pooled "mixed radiation" contrast. Where that happens the
+    controls are still identifiable, just from a different factor (`non-irradiated` under
+    `ionizing radiation`), so fall back to the study's controls found in any other factor.
+    That recovers the dose series without inventing a reference.
+    """
     rows = factors[factors["id.accession"] == acc]
-    out = []
-    for col in [c for c in factors.columns
-                if c.startswith("study.factor value.") and c not in SKIP_FACTORS]:
+    cols = [c for c in factors.columns
+            if c.startswith("study.factor value.") and c not in SKIP_FACTORS]
+
+    # Controls identifiable anywhere in this study, for the cross-factor fallback.
+    study_controls: set[str] = set()
+    for col in cols:
         levels = [v for v in rows[col].unique() if v not in NA]
         if len(levels) < 2:
             continue
-        controls = [v for v in levels if CONTROL_RE.search(v)]
-        if not controls:
+        for lv in levels:
+            if CONTROL_RE.search(lv):
+                study_controls.update(rows[rows[col] == lv]["id.sample name"])
+
+    out = []
+    for col in cols:
+        levels = [v for v in rows[col].unique() if v not in NA]
+        if len(levels) < 2:
             continue
-        ctrl_samples = list(rows[rows[col].isin(controls)]["id.sample name"])
+        controls = [v for v in levels if CONTROL_RE.search(lv := v)]
+        if controls:
+            ctrl_samples = list(rows[rows[col].isin(controls)]["id.sample name"])
+            cross = False
+        elif not DOSE_FACTOR_RE.search(col):
+            continue
+        else:
+            # No control level in this factor: use the study's controls, minus anything
+            # this factor itself assigns a non-control level (a sample cannot be both).
+            treated_any = set(rows[rows[col].isin(levels)]["id.sample name"])
+            ctrl_samples = sorted(study_controls - treated_any)
+            cross = True
+            if len(ctrl_samples) < 2:
+                continue
         for lv in levels:
             if lv in controls:
                 continue
             treated = list(rows[rows[col] == lv]["id.sample name"])
             if len(treated) >= 2 and len(ctrl_samples) >= 2:
-                out.append((col.replace("study.factor value.", ""), lv,
-                            treated, ctrl_samples))
+                out.append((col.replace("study.factor value.", "")
+                            + ("*" if cross else ""), lv, treated, ctrl_samples))
     return out
 
 

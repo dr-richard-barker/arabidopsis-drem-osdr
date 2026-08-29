@@ -35,11 +35,10 @@ offset to be fitted without extrapolation.}
 
 After within-study referencing and offset removal, all \NumSentinelsResponding{} canonical
 DNA-damage sentinel genes exceed 2-fold induction in the wild-type arm, tracing a clean
-rise--peak--decay kinetic: SMR7, for example, rises from $1.34$ at 10~min to a maximum of
-$7.62$ ($\log_2$) at 3~h before decaying to $4.42$ at 24~h.
+rise--peak--decay kinetic, peaking at 3~h and decaying by 24~h (Figure~\ref{fig:sentinels}).
 
 In \textit{sog1-1} the same genes are flat, with only
-\NumSentinelsRespondingMutant{} reaching 2-fold and RAD51 falling from $5.95$ to $0.60$.
+\NumSentinelsRespondingMutant{} reaching 2-fold and RAD51 losing almost all of its induction.
 The pipeline therefore recovers the central genetic finding of
 \citet{bourbousse2018sog1} --- that the response is SOG1-dependent --- before any
 regulatory model is fitted. This is the strongest available evidence that the
@@ -192,9 +191,10 @@ compositional dynamics, and none is.
 
 Testing the gene sets against the atlas expression matrix directly --- no deconvolution ---
 gives a clear split. The MYB3R-repressed arm is strongly and coherently tissue-restricted,
-reaching $z = 26.2$ in silique, $23.3$ in 6-day seedling and $23.2$ in 21-day rosette
-clusters, with 35 of 183 clusters significant. The SOG1-dependent arm is far more diffuse:
-20 of 183 clusters, topping out at $z = 8.7$.
+reaching $z = \TissueMybTop{}$ in \TissueMybTopOrgan{} and comparable values in 6-day
+seedling and 21-day rosette clusters, with \TissueMybSigClusters{} of \NumAtlasClusters{}
+clusters significant. The SOG1-dependent arm is far more diffuse:
+\TissueSogSigClusters{} of \NumAtlasClusters{} clusters, topping out at $z = \TissueSogTop{}$.
 
 The asymmetry is interpretable and, we think, expected. Only a dividing cell has a G2/M
 programme to shut down, so the repressed arm can only be read where proliferation is
@@ -235,10 +235,10 @@ At a fixed threshold of $1.96$ --- each arm individually significant, not fitted
 data --- the decoder recovers \NumPositivesDetected{} of \NumLabelledPositives{} labelled
 irradiation contrasts with \NumFalsePositives{} false positives among
 \NumOtherExposures{} other exposures (AUC \DecoderAUC{}), and its scores order by dose:
-Co-60 $\gamma$ at $16.8$--$20.3$, mixed radiation $7.8$, 100~cGy $5.2$, and 10~cGy not
+Co-60 $\gamma$ highest, then mixed radiation, then 100~cGy, and 10~cGy not
 detected. The single miss is that 10~cGy arm, two orders of magnitude below the dose the
 signature was derived at. The \textit{sog1-1} and \textit{myb3r135} genotype contrasts
-score at the opposite extreme ($-20.3$, $-21.3$, $-13.2$), which is the decoder
+score at the opposite extreme, which is the decoder
 recognising the knockouts as the inverse of the response it was built on.
 
 \begin{figure}[t]
@@ -257,13 +257,18 @@ gravity, and every mutant and treatment contrast in the repository fail it. On t
 evidence, and within the limits set out below, spaceflight in these datasets does not
 elicit the acute SOG1-dependent DNA-damage transcriptional programme.
 
-That is not the same as finding nothing. \NumProliferationOnly{} contrasts show a distinct
-and consistent pattern: the MYB3R/G2/M arm repressed with the SOG1 arm flat --- across
-spaceflight and altered-gravity contrasts, a mean MYB3R-arm $z$ of $5.19$ against a mean
-SOG1-arm $z$ of $-0.07$. Read as proliferation slowing without DNA damage, it is
-biologically unremarkable; read as a methodological result it is the whole argument for
-the conjunctive index, because a decoder scoring the repressed arm alone would have
-reported all of it as radiation.
+A weaker pattern is present in a minority of contrasts and should be stated as such.
+\NumFlightProliferationOnly{} of \NumFlightArmContrasts{} flight and altered-gravity contrasts show
+the MYB3R/G2-M arm repressed with the SOG1 arm flat. Across the flight population as a
+whole, however, the mean MYB3R-arm $z$ is only \FlightMybArmMean{} against a mean SOG1-arm
+$z$ of \FlightSogArmMean{}: below significance, and not a population-level effect.
+
+An earlier version of this analysis, run before the corpus was widened to include the
+Affymetrix studies and the onboard-centrifuge gravity series, reported a flight MYB3R-arm
+mean of $5.19$. That value did not survive the larger corpus and is corrected here. The
+methodological point it was used to make does survive and is independent of it: a decoder
+scoring the repressed arm alone would call these contrasts radiation, which is the whole
+argument for requiring both arms.
 
 \subsection{Transcription-factor activity across the spaceflight corpus}
 
@@ -302,8 +307,8 @@ significantly between flight and irradiation. The assay can detect a difference;
 simply no flight effect to detect (Figure~\ref{fig:tfvolcano}).
 
 SOG1 makes the point most sharply. Its activity under irradiation is $z = 8.34$; in
-spaceflight it is $-0.27$ ($q = 0.90$). MYB3R1 runs $-3.77$ under irradiation against
-$-0.32$ in flight.
+spaceflight it is \SogFlightZ{} ($q = \SogFlightQ{}$). MYB3R1 runs \MybRadZ{} under
+irradiation against \MybFlightZ{} in flight.
 
 One nuance deserves stating, because it looks like a contradiction and is not. The decoder
 found the \emph{MYB3R-repressed signature set} suppressed in flight, while MYB3R1's
@@ -388,6 +393,50 @@ standard errors.}
 transcription factors, ordered with flight contrasts above the rule and irradiation
 below.}
 \label{fig:tfheatmap}
+\end{figure}
+
+\subsection{The two arms have different dose thresholds}
+
+The ground irradiation studies define what the assay can see. OSD-782 exposed 4-week-old
+plants in a $^{137}$Cs irradiator at 1.4~cGy~s$^{-1}$ (10 and 100~cGy); OSD-658 exposed dry
+seeds to simulated galactic cosmic rays at NSRL (40 and 80~cGy). OSD-658's dose arms were
+initially invisible to the pipeline because it records its unirradiated samples as
+\texttt{\{Not Applicable\}} rather than 0~cGy, leaving its dose factor with no internal
+reference; a cross-factor control fallback recovers them.
+
+Across the resulting series the two arms behave quite differently
+(Figure~\ref{fig:dose}). At the lowest dose tested, \DoseNotDetected{}~cGy, the
+MYB3R/G2-M arm is already strongly engaged ($z = \LowDoseMybArm{}$) while the
+SOG1/DNA-damage arm is absent ($z = \LowDoseSogArm{}$). The DNA-damage arm becomes
+detectable only at \DoseDetected{}~cGy and rises steeply thereafter.
+
+The asymmetry is interpretable. Arresting the cell cycle is a graded, low-threshold
+response that saturates; mounting a SOG1-dependent damage programme is a
+high-threshold, switch-like one. It also means "the detection floor" is not one number:
+the diagnostic arm and the sensitive arm are different arms, and only the diagnostic arm
+distinguishes irradiation from other stresses.
+
+\subsection{ISS doses fall below the assay's floor}
+
+Placing the spaceflight corpus against that floor requires a dose, not a duration. At
+\IssDoseRate{}~mGy~day$^{-1}$ measured inside the ISS by Bio-PADLES over 1{,}584 days
+\citep{yoshida2022iss}, the \NumOrbitalMissions{} orbital missions in this corpus
+(11--70 days) accumulate \IssDoseLo{}--\IssDoseHi{}~cGy in total. Two suborbital flights
+(VSS~Unity, Unity~22) and three studies spanning two resupply flights with no resolvable
+duration are excluded and reported separately rather than pooled.
+
+The highest ISS mission dose is therefore \FoldBelowFloor{}$\times$ below
+\DoseNotDetected{}~cGy --- the dose at which the DNA-damage arm already fails to register
+--- and is delivered at a dose rate roughly \DoseRateRatio{} times lower, chronically
+rather than in seconds.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\linewidth]{../figures/fig11_dose_response}
+\caption{Detection floor against ISS exposure. The MYB3R/G2-M arm is engaged at the lowest
+dose tested; the SOG1/DNA-damage arm requires \DoseDetected{}~cGy. The shaded band at left
+is the total mission dose accumulated by the ISS missions in this corpus.}
+\label{fig:dose}
 \end{figure}
 
 \subsection{Comparison with the published model}

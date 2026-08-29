@@ -133,7 +133,8 @@ def main() -> int:
     # not, which is what an isolated blip looks like.
     dose_rows = []
     for acc in meta["accession"].unique():
-        sub = meta[(meta["accession"] == acc) & (meta["factor"] == "altered gravity")]
+        sub = meta[(meta["accession"] == acc)
+                   & (meta["factor"].str.rstrip("*") == "altered gravity")]
         if len(sub) < 4:
             continue
         g = sub["level"].map(g_level)

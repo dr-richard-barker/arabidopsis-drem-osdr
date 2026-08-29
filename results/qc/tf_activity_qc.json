@@ -16,16 +16,16 @@
   "Unity 22",
   "VSS Unity"
  ],
- "n_contrasts": 83,
+ "n_contrasts": 85,
  "n_flight_contrasts": 41,
  "n_missions": 14,
- "n_radiation_contrasts": 10,
+ "n_radiation_contrasts": 12,
  "n_studies": 39,
  "n_tfs": 474,
  "null": "analytic (finite-population correction), verified against permutation via --verify-null",
  "platforms": {
   "microarray": 23,
-  "rna-seq": 60
+  "rna-seq": 62
  },
  "positive_control_pass": true,
  "positive_control_sog1_in_gamma": {

@@ -1,0 +1,16 @@
+mission	duration_days	category	orbital	iss_dose_cgy
+STS-129	11.0	orbital	True	0.39
+STS-135	13.0	orbital	True	0.462
+STS-131	15.0	orbital	True	0.532
+SpaceX-2	25.0	orbital	True	0.887
+SpaceX-10	28.0	orbital	True	0.994
+SpaceX-3	30.0	orbital	True	1.065
+SpaceX-5	32.0	orbital	True	1.136
+SpaceX-4	34.0	orbital	True	1.207
+SpaceX-12	34.0	orbital	True	1.207
+SpaceX-9	70.0	orbital	True	2.485
+SpaceX-2 + SpaceX-4		orbital, duration unknown	False	
+SpaceX-4 + SpaceX-6		orbital, duration unknown	False	
+VSS Unity	0.0	suborbital	False	
+SpaceX-13 + SpaceX-14		orbital, duration unknown	False	
+Unity 22	0.0	suborbital	False	

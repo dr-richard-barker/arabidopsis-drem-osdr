@@ -73,6 +73,9 @@ python3 scripts/20_tf_statistics.py
 python3 scripts/21_tf_classifier.py
 python3 scripts/22_drem_projection.py
 
+step "23 dose-response and detection floor"
+python3 scripts/23_dose_response.py
+
 step "11 cross-validate against the sibling analysis"
 python3 scripts/11_crossvalidate_sibling.py || echo "  (sibling repo not present — skipped)"
 
