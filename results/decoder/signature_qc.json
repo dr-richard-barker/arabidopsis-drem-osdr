@@ -1,0 +1,49 @@
+{
+ "generated": "2026-08-28",
+ "median_mutant_over_wt": {
+  "ddr_core": 0.246,
+  "myb3r_repressed": 0.702,
+  "phase_early": 0.752,
+  "phase_late": 0.862,
+  "phase_mid": 0.615,
+  "sog1_dependent": 0.243,
+  "sog1_independent": 0.617
+ },
+ "n_genes_considered": 19566,
+ "n_induced": 1846,
+ "n_repressed": 1227,
+ "n_responsive_wt": 3073,
+ "n_sog1_dependent_any": 308,
+ "overlaps": {
+  "ddr_core|phase_early": 6,
+  "ddr_core|phase_late": 0,
+  "ddr_core|phase_mid": 2,
+  "myb3r_repressed|ddr_core": 0,
+  "myb3r_repressed|phase_early": 11,
+  "myb3r_repressed|phase_late": 47,
+  "myb3r_repressed|phase_mid": 114,
+  "phase_early|phase_late": 0,
+  "phase_early|phase_mid": 0,
+  "phase_mid|phase_late": 0,
+  "sog1_dependent|ddr_core": 8,
+  "sog1_dependent|myb3r_repressed": 0,
+  "sog1_dependent|phase_early": 75,
+  "sog1_dependent|phase_late": 0,
+  "sog1_dependent|phase_mid": 39,
+  "sog1_dependent|sog1_independent": 0,
+  "sog1_independent|ddr_core": 0,
+  "sog1_independent|myb3r_repressed": 0,
+  "sog1_independent|phase_early": 28,
+  "sog1_independent|phase_late": 6,
+  "sog1_independent|phase_mid": 22
+ },
+ "set_sizes": {
+  "ddr_core": 11,
+  "myb3r_repressed": 283,
+  "phase_early": 400,
+  "phase_late": 400,
+  "phase_mid": 400,
+  "sog1_dependent": 160,
+  "sog1_independent": 132
+ }
+}

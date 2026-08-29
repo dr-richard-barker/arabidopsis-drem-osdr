@@ -158,6 +158,113 @@ no DREM and no TF attribution anywhere in it. Over the
 share raw data but almost no methodology, so the agreement is external corroboration
 rather than a restatement.
 
+\subsection{What the cell-type weighting actually did}
+
+The weighting is a multiplier in $[0,1]$, so every regulator's total edge mass shrinks;
+what re-ranks regulators against one another is shrinking more or less than the typical
+TF. Measured that way, the atlas informs \NumTFsAtlasInformed{} of \NumTFsTotal{} TFs and
+its action is specific rather than diffuse (Figure~\ref{fig:tissue}).
+
+The six most strongly demoted regulators are \textit{FUS3}, ANAC079, ANAC058, ANAC038 and
+ANAC029, together with AT1G04880 --- and every one of them has its expression maximum in a
+silique or developing-seed cluster. The Bourbousse experiment irradiated \emph{seedlings}.
+DAP-seq reports that these factors can bind their motifs, but they are not present in the
+tissue being assayed, and the atlas removes them from contention. The regulators promoted
+in relative terms --- TCP1, LEP, STZ, FAR1, WRKY59, ERF4 --- peak instead in rosette and
+15-day seedling clusters, which is the tissue actually in the tube.
+
+This is worth stating precisely because SOG1 is itself a NAC (ANAC008). The lever is not
+down-weighting a family; it is discriminating \emph{within} one, demoting the seed-restricted
+NACs while leaving the seedling-expressed ones untouched. That is also why the ablation
+left the SOG1 and MYB3R1 attributions unmoved while reassigning the marginal calls: the
+prior only had licence to act where the atlas disagreed with the binding data.
+
+\subsection{Tissue association of the response}
+
+Where the response is expressed was tested directly against the atlas rather than through
+the deconvolution, for a reason worth recording. The per-timepoint NNLS fractions are not
+stable: the median relative swing between adjacent timepoints is \ClusterSwing{} at cluster
+resolution, and aggregating to organ level does \emph{not} fix it (\OrganSwing{}), because
+the fit flips between clusters of the same organ as readily as across organs. The
+time-averaged composition that the weighting consumes is stable (bootstrap CV
+\TimeAveragedCV{}), but no per-timepoint fraction in this study should be read as
+compositional dynamics, and none is.
+
+Testing the gene sets against the atlas expression matrix directly --- no deconvolution ---
+gives a clear split. The MYB3R-repressed arm is strongly and coherently tissue-restricted,
+reaching $z = 26.2$ in silique, $23.3$ in 6-day seedling and $23.2$ in 21-day rosette
+clusters, with 35 of 183 clusters significant. The SOG1-dependent arm is far more diffuse:
+20 of 183 clusters, topping out at $z = 8.7$.
+
+The asymmetry is interpretable and, we think, expected. Only a dividing cell has a G2/M
+programme to shut down, so the repressed arm can only be read where proliferation is
+happening; any cell can mount a damage response, so the activated arm is broadly
+expressed. The radiation response is therefore not uniformly tissue-restricted --- its
+\emph{repressive} half is, and its \emph{activating} half is not.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig6_tissue_association}
+\caption{Tissue attribution. \textbf{Left:} deconvolved organ composition per timepoint ---
+shown to make the instability visible, not to be read as dynamics. \textbf{Centre:}
+enrichment of the SOG1-dependent set across atlas clusters, computed from the atlas
+expression matrix directly. \textbf{Right:} regulators promoted or demoted by the
+weighting relative to the median TF, labelled with the cluster where each peaks; the
+demoted set is dominated by silique-restricted NACs absent from irradiated seedlings.}
+\label{fig:tissue}
+\end{figure}
+
+\subsection{A decoder built on the signature, applied across OSDR}
+
+The wild-type/\textit{sog1-1} contrast defines gene sets no single-genotype experiment
+could: \NumSignatureSogDep{} genes induced in wild type, bound by SOG1, and losing that
+induction in the mutant, against \NumSignatureSogIndep{} induced SOG1 targets that respond
+regardless of genotype, and \NumSignatureMybRep{} MYB3R-repressed genes. Scoring these
+across every \textit{Arabidopsis} study in OSDR with an expression matrix gave
+\NumDecoderContrasts{} contrasts from \NumDecoderStudies{} studies.
+
+Scoring the activated arm alone is not sufficient: several DNA-damage-related mutants
+raise it without any exposure. What identifies acute irradiation is the coordinated
+pattern the source study described --- SOG1 targets up \emph{and} MYB3R targets down at the
+same time --- so the index is the conjunction
+$\min(z_{\text{SOG1-dep}},\, -z_{\text{MYB3R-rep}})$, requiring both. The difference of the
+two arms was tried first and rejected: it promoted six spaceflight and altered-gravity
+contrasts on the strength of the repressed arm alone, with SOG1-dependent $z$ near zero.
+
+At a fixed threshold of $1.96$ --- each arm individually significant, not fitted to these
+data --- the decoder recovers \NumPositivesDetected{} of \NumLabelledPositives{} labelled
+irradiation contrasts with \NumFalsePositives{} false positives among
+\NumOtherExposures{} other exposures (AUC \DecoderAUC{}), and its scores order by dose:
+Co-60 $\gamma$ at $16.8$--$20.3$, mixed radiation $7.8$, 100~cGy $5.2$, and 10~cGy not
+detected. The single miss is that 10~cGy arm, two orders of magnitude below the dose the
+signature was derived at. The \textit{sog1-1} and \textit{myb3r135} genotype contrasts
+score at the opposite extreme ($-20.3$, $-21.3$, $-13.2$), which is the decoder
+recognising the knockouts as the inverse of the response it was built on.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig5_decoder}
+\caption{The radiation decoder. \textbf{Left:} every contrast in the two-arm plane; the
+shaded corner is the decision region, entered only when both arms clear threshold.
+\textbf{Right:} the fourteen highest-scoring contrasts. Labelled irradiation in red.}
+\label{fig:decoder}
+\end{figure}
+
+\subsection{No other OSDR plant study carries the signature}
+
+\NumFalsePositives{} non-radiation contrasts reach the threshold. Spaceflight, altered
+gravity, and every mutant and treatment contrast in the repository fail it. On this
+evidence, and within the limits set out below, spaceflight in these datasets does not
+elicit the acute SOG1-dependent DNA-damage transcriptional programme.
+
+That is not the same as finding nothing. \NumProliferationOnly{} contrasts show a distinct
+and consistent pattern: the MYB3R/G2/M arm repressed with the SOG1 arm flat --- across
+spaceflight and altered-gravity contrasts, a mean MYB3R-arm $z$ of $5.19$ against a mean
+SOG1-arm $z$ of $-0.07$. Read as proliferation slowing without DNA damage, it is
+biologically unremarkable; read as a methodological result it is the whole argument for
+the conjunctive index, because a decoder scoring the repressed arm alone would have
+reported all of it as radiation.
+
 \subsection{Comparison with the published model}
 
 \citet{bourbousse2018sog1} reported \NumPublishedGroups{} co-expressed gene groups from

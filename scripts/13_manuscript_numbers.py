@@ -56,6 +56,9 @@ def main() -> int:
     parsed = load(RESULTS / "drem" / "parsed_summary.json")
     comp = load(RESULTS / "comparison" / "summary.json")
     sib = load(RESULTS / "comparison" / "sibling_summary.json")
+    dec = load(RESULTS / "decoder" / "decoder_report.json")
+    sigqc = load(RESULTS / "decoder" / "signature_qc.json")
+    tis = load(RESULTS / "qc" / "tissue_association_qc.json")
 
     v: dict[str, object] = {}
 
@@ -145,6 +148,31 @@ def main() -> int:
     v["NumSiblingNodes"] = dig(sib, "n_nodes")
     v["NumSiblingModules"] = dig(sib, "n_modules")
     v["NumNodesEnrichingModule"] = dig(sib, "n_nodes_with_significant_module")
+
+    # ---- decoder
+    v["NumSignatureSogDep"] = dig(sigqc, "set_sizes", "sog1_dependent")
+    v["NumSignatureSogIndep"] = dig(sigqc, "set_sizes", "sog1_independent")
+    v["NumSignatureMybRep"] = dig(sigqc, "set_sizes", "myb3r_repressed")
+    v["NumDecoderContrasts"] = sum((dig(dec, "call_counts", default={}) or {}).values()) or None
+    v["NumDecoderStudies"] = dig(load(RESULTS / "decoder" / "scan_qc.json"), "n_studies_scored")
+    perf = dig(dec, "performance", default={}) or {}
+    v["NumLabelledPositives"] = perf.get("n_labelled_positive")
+    v["NumPositivesDetected"] = perf.get("labelled_positives_detected")
+    v["NumOtherExposures"] = perf.get("n_other_exposure")
+    v["NumFalsePositives"] = perf.get("other_exposures_above_threshold")
+    v["DecoderAUC"] = perf.get("auc_vs_all_contrasts")
+    v["NumProliferationOnly"] = dig(dec, "call_counts",
+                                    "G2/M repressed, no DDR (proliferation slowing)")
+    v["NumInverseCalls"] = dig(dec, "call_counts", "inverse (DDR suppressed)")
+
+    # ---- tissue association
+    st = dig(tis, "deconvolution_stability", default={}) or {}
+    v["ClusterSwing"] = st.get("cluster_level_median_relative_swing")
+    v["OrganSwing"] = st.get("organ_level_median_relative_swing")
+    v["TimeAveragedCV"] = st.get("timeaveraged_bootstrap_cv")
+    rw = dig(tis, "reweighting", default={}) or {}
+    v["NumTFsAtlasInformed"] = rw.get("n_atlas_informed")
+    v["NumTFsTotal"] = rw.get("n_tfs")
 
     defined = sum(1 for x in v.values() if x is not None)
     lines = [

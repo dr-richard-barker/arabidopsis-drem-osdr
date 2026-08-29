@@ -49,10 +49,13 @@ results/celltypes/A_primary_sog1-1_fractions.tsv	Cell-type fractions and latent 
 results/celltypes/A_primary_sog1-1_latent.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	2286	b7955988cc1a6ce52f72cb7e86f9a62b5c59a9c91ce7c6fbe049cb70cb3d6268	2026-08-28
 results/celltypes/B_primary_pooled_fractions.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	4991	ccdf36e4d99fee13e8110f0292094ae58ee87fefc1308c7375b74d5ddff8882e	2026-08-28
 results/celltypes/B_primary_pooled_latent.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	949	c0642f3793de5656e6bc403d08097bca0bdacad4ba6cef1c69c6b58f614974e1	2026-08-28
+results/celltypes/tf_reweighting.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	34422	54156d76693eb152a107500adf518ef2ad3cd48bcdb1032d0c51c11de16d0396	2026-08-28
+results/celltypes/tissue_enrichment.tsv	Cell-type fractions and latent trajectories	derived by scripts/05_deconvolve_celltypes.py	CC-BY-4.0	yes	34470	08acf3b80a5865a772fc06b1e61a3933b274d7ff8745bffe2a4df88b834d09f6	2026-08-28
 results/qc/deconvolution_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	3149	b0e771cefbdf4646e3b9d621b2c47d31964d64f5f1a7f7c33d347b6238b586a2	2026-08-28
 results/qc/metadata_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	4380	01e9188958f3ac89ba6c8bddb149572a784f0c120d366f0673eccf1de6dc9821	2026-08-28
 results/qc/sog1_chip_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	1101	333bed6814e2ba6c09965ea29f0fb1952ca7938501996e3828ca57d39d129480	2026-08-28
 results/qc/tf_prior_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	4083	b7516b9abd82c381ca6ddd306f0050d878b56829154b2f2aa05cb8ffa7fd5bd3	2026-08-28
+results/qc/tissue_association_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	5444	935abcbc81b316371e60b25e13e559f56906360a4110e8533add299a5032c3ce	2026-08-28
 results/qc/weighted_prior_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2682	a1ae120ff5a1710c402782bce4e071d68e23859247ad1e1772ecfe2b2af78db4	2026-08-28
 results/drem/parsed/A_holdout_WildType__binding_genes.tsv	Parsed DREM TF scores and gene-to-node assignments	derived by scripts/09_parse_drem_model.py	CC-BY-4.0	yes	58350	60fe79bee3d6c598ef6032e0b4490afb6e8e01773d862514a18d31e09a62e124	2026-08-28
 results/drem/parsed/A_holdout_WildType__binding_tfscores.tsv	Parsed DREM TF scores and gene-to-node assignments	derived by scripts/09_parse_drem_model.py	CC-BY-4.0	yes	303692	cf9172cdf82f5848b97d11548b855a14dce6d98c741e6538ab8bf37ce5e9ebb7	2026-08-28
@@ -94,5 +97,5 @@ results/comparison/genotype_contrast.tsv	Prior ablation and genotype contrast ta
 results/comparison/prior_ablation.tsv	Prior ablation and genotype contrast tables	derived by scripts/10_compare_models.py	CC-BY-4.0	yes	798	0ee95ba920f667145f3ead90b393d9c4bfc46db8a83b11cea6048175b9a37045	2026-08-28
 results/comparison/sibling_crossvalidation.tsv	Prior ablation and genotype contrast tables	derived by scripts/10_compare_models.py	CC-BY-4.0	yes	2981	e796641ceafce81f817c8d07b7c8800a0dfa3a230b422b3e0df03a90696b8cc7	2026-08-28
 vendor/drem.jar	DREM 2.0.7 engine	https://github.com/jernst98/STEM_DREM	GPL-3.0 (downloaded at run time, not redistributed)	no	3310260	16312a6a713238a829abb0e1bf3929f8378216ddb17b57fe30e038e892739530	2026-08-28
-manuscript/manuscript.pdf	Manuscript, PDF	built from manuscript/latex	CC-BY-4.0	yes	398787	ddee436e233422f5594a91fd81ac4b7c5f9aeb9de52d462b52231fefc37b6074	2026-08-28
-manuscript/manuscript.docx	Manuscript, Word	built from manuscript/latex	CC-BY-4.0	yes	352350	9b02ab13d361a1862f6d0a2fc6868ee706b23bdccd8035288f28756e94b3f200	2026-08-28
+manuscript/manuscript.pdf	Manuscript, PDF	built from manuscript/latex	CC-BY-4.0	yes	459700	76c9c606111b76801063e13a11c1b30e2f10d45cb32c587f51fe020de97f31a2	2026-08-28
+manuscript/manuscript.docx	Manuscript, Word	built from manuscript/latex	CC-BY-4.0	yes	688423	e2b1b9138e53ce8c513c8a5095e48fda40f20e1e0eda8789a479392faf3291f8	2026-08-28

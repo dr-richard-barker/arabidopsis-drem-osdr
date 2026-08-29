@@ -119,6 +119,70 @@ at Bonferroni-corrected *p* < 0.05.
 
 ![Prior ablation](figures/fig4_prior_ablation.png)
 
+### The cell-type weighting is specific, not diffuse
+
+The atlas informs 57 of 479 TFs. The six most-demoted regulators — **FUS3, ANAC079,
+ANAC058, ANAC038, ANAC029** — all peak in **silique/developing-seed** clusters. Bourbousse
+irradiated *seedlings*: DAP-seq says these factors can bind, but they aren't in the tissue.
+The relatively promoted ones (TCP1, LEP, STZ, FAR1, WRKY59, ERF4) peak in rosette and
+15-day seedling clusters — the tissue actually assayed.
+
+SOG1 is itself a NAC (ANAC008), so the lever discriminates *within* the family rather than
+against it. That is why the ablation left SOG1 and MYB3R1 untouched while reassigning the
+marginal calls.
+
+**Tissue association** was tested against the atlas expression matrix directly, because
+the per-timepoint deconvolution is not stable (median relative swing 0.60 at cluster
+level; aggregating to organ does **not** help, 0.61 — measured, not assumed). The
+time-averaged composition the weighting consumes *is* stable (bootstrap CV 0.22).
+
+| Gene set | Top clusters | Significant clusters |
+|---|---|---|
+| MYB3R-repressed (G2/M) | silique z=26.2, seedling_6d z=23.3, rosette_21d z=23.2 | 35 / 183 |
+| SOG1-dependent | flower z=8.7, silique z=6.0, seedling_9d z=5.8 | 20 / 183 |
+
+The asymmetry is the point: only dividing cells have a G2/M programme to shut down, so the
+**repressive** arm is tissue-restricted, while any cell can mount a damage response, so the
+**activating** arm is broad.
+
+![Tissue association](figures/fig6_tissue_association.png)
+
+### A radiation decoder, applied across OSDR
+
+The WT/*sog1-1* contrast defines what one genotype cannot: 160 genes induced in WT, bound
+by SOG1, and losing induction in the mutant. Scoring these across all 62 OSDR *Arabidopsis*
+studies gave 49 contrasts from 26 studies.
+
+Scoring the activated arm alone is **not enough** — DNA-damage mutants raise it without any
+exposure. The index is a conjunction requiring both arms:
+
+```
+radiation_index = min( z(SOG1-dependent),  −z(MYB3R-repressed) )
+```
+
+The difference of the two arms was tried first and **rejected**: it promoted six
+spaceflight/altered-gravity contrasts on the repressed arm alone, with SOG1-dependent
+z ≈ 0. Spaceflight represses G2/M because growth slows, not because DNA is damaged.
+
+At a fixed threshold of 1.96 (each arm individually significant, not fitted):
+
+| | result |
+|---|---|
+| labelled irradiation detected | **7 / 8** |
+| false positives among 23 other exposures | **0** |
+| AUC | 0.948 |
+
+Scores order by dose — Co-60 γ 16.8–20.3, mixed radiation 7.8, 100 cGy 5.2, 10 cGy not
+detected — and the `sog1-1` / `myb3r135` genotype contrasts sit at the opposite extreme
+(−20.3, −21.3, −13.2), the decoder recognising the knockouts as the inverse.
+
+**No other OSDR plant study carries the signature.** Spaceflight, altered gravity, and
+every other mutant and treatment contrast fail the threshold. But 16 contrasts show a
+distinct pattern — G2/M repressed with the SOG1 arm flat (mean MYB3R-arm z = 5.19 vs
+SOG1-arm z = −0.07): proliferation slowing without DNA damage.
+
+![Radiation decoder](figures/fig5_decoder.png)
+
 ---
 
 ## Layout
@@ -150,6 +214,9 @@ bash scripts/run_all.sh             # full run
 | `06_weight_tf_prior.py` | **The auto-decoder lever**; writes all three priors |
 | `07`–`09` | DREM inputs → batch run → tidy tables |
 | `10_compare_models.py` | Ablation, genotype contrast, published-model calibration |
+| `11_crossvalidate_sibling.py` | DREM paths vs the sibling repo's WGCNA modules |
+| `15`–`16` | Radiation signature from the WT/`sog1-1` contrast; scan every OSDR plant study |
+| `17`–`18` | Decoder calibration + predictions; tissue attribution and reweighting |
 | `12`–`14` | Figures, manuscript macros, `MANIFEST.tsv` |
 
 ---
@@ -179,6 +246,13 @@ bash scripts/run_all.sh             # full run
 - SOG1 peaks are called from bedGraph coverage by binned enrichment, because GEO
   distributes coverage rather than called peaks for GSE112529. The dual-control
   requirement makes the calls conservative but they are not a MACS analysis of raw reads.
+- The decoder is *Arabidopsis*-only. Of 73 OSDR plant studies, 33 have expression matrices
+  and only two are non-*Arabidopsis* (one *B. rapa*, one tomato); the sibling repo's
+  `ortholog_map.csv` turns out to be 32,834 Arabidopsis-to-itself identity rows, so it
+  provides no cross-species mapping. Scoring those two would need real orthology.
+- "No radiation signature in spaceflight" is bounded by what these datasets sample —
+  mostly 4–12 day seedlings, days to weeks of LEO exposure. It is not a statement about
+  deep-space or chronic high-LET exposure.
 - The atlas signature matrix covers 4,000 highly variable genes, so the lever re-weights
   the subset of edges where cell-type context exists. Genes outside that set are
   cell-type-invariant by construction and pass through unchanged;

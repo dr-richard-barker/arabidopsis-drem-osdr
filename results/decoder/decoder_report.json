@@ -1,0 +1,221 @@
+{
+ "call_counts": {
+  "G2/M repressed, no DDR (proliferation slowing)": 16,
+  "inverse (DDR suppressed)": 7,
+  "no signal": 19,
+  "radiation-like": 7
+ },
+ "generated": "2026-08-28",
+ "index": "min( z(sog1_dependent), -z(myb3r_repressed) )",
+ "index_rejected": {
+  "form": "z(sog1_dependent) - z(myb3r_repressed)",
+  "why_rejected": "Scored six spaceflight/altered-gravity contrasts above threshold on the MYB3R arm alone, with SOG1-dependent z near zero. Spaceflight represses G2/M genes because growth slows, not because DNA is damaged; a difference lets either arm carry the score unaided."
+ },
+ "known_radiation_ranked": [
+  {
+   "accession": "OSD-510",
+   "call": "radiation-like",
+   "index": 20.33,
+   "level": "Cobalt-60 gamma radiation"
+  },
+  {
+   "accession": "OSD-502",
+   "call": "radiation-like",
+   "index": 18.69,
+   "level": "Cobalt-60 gamma radiation"
+  },
+  {
+   "accession": "OSD-508",
+   "call": "radiation-like",
+   "index": 18.27,
+   "level": "Cobalt-60 gamma radiation"
+  },
+  {
+   "accession": "OSD-498",
+   "call": "radiation-like",
+   "index": 16.75,
+   "level": "Cobalt-60 gamma radiation"
+  },
+  {
+   "accession": "OSD-658",
+   "call": "radiation-like",
+   "index": 7.8,
+   "level": "mixed radiation"
+  },
+  {
+   "accession": "OSD-782",
+   "call": "radiation-like",
+   "index": 5.15,
+   "level": "100 {centigray}"
+  },
+  {
+   "accession": "OSD-782",
+   "call": "radiation-like",
+   "index": 2.58,
+   "level": "cesium-137 gamma radiation"
+  },
+  {
+   "accession": "OSD-782",
+   "call": "G2/M repressed, no DDR (proliferation slowing)",
+   "index": -0.74,
+   "level": "10 {centigray}"
+  }
+ ],
+ "negative_controls": [
+  {
+   "accession": "OSD-502",
+   "call": "inverse (DDR suppressed)",
+   "index": -13.15,
+   "level": "myb3r135"
+  },
+  {
+   "accession": "OSD-510",
+   "call": "inverse (DDR suppressed)",
+   "index": -20.3,
+   "level": "sog1-1"
+  },
+  {
+   "accession": "OSD-508",
+   "call": "inverse (DDR suppressed)",
+   "index": -21.25,
+   "level": "sog1-1"
+  }
+ ],
+ "novel_predictions": [],
+ "performance": {
+  "auc_vs_all_contrasts": 0.9482,
+  "labelled_positive_index_range": [
+   -0.74,
+   20.33
+  ],
+  "labelled_positives_detected": 7,
+  "labelled_positives_missed": 1,
+  "n_labelled_positive": 8,
+  "n_other_exposure": 23,
+  "other_exposure_index_range": [
+   -10.36,
+   1.63
+  ],
+  "other_exposures_above_threshold": 0,
+  "positive_definition": "factor in ('ionizing radiation', 'absorbed radiation dose')"
+ },
+ "proliferation_only": [
+  {
+   "accession": "OSD-314",
+   "factor": "altered gravity",
+   "level": "uG",
+   "myb3r_arm_z": 8.52,
+   "sog1_arm_z": 1.63
+  },
+  {
+   "accession": "OSD-281",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 3.25,
+   "sog1_arm_z": 1.13
+  },
+  {
+   "accession": "OSD-314",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 11.4,
+   "sog1_arm_z": 1.11
+  },
+  {
+   "accession": "OSD-427",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 12.41,
+   "sog1_arm_z": 1.03
+  },
+  {
+   "accession": "OSD-678",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 12.22,
+   "sog1_arm_z": 0.49
+  },
+  {
+   "accession": "OSD-314",
+   "factor": "altered gravity",
+   "level": "0.34G by centrifugation",
+   "myb3r_arm_z": 11.65,
+   "sog1_arm_z": 0.34
+  },
+  {
+   "accession": "OSD-223",
+   "factor": "altered gravity",
+   "level": "0.76G by centrifugation",
+   "myb3r_arm_z": 4.73,
+   "sog1_arm_z": 0.16
+  },
+  {
+   "accession": "OSD-223",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 3.89,
+   "sog1_arm_z": -0.06
+  },
+  {
+   "accession": "OSD-406",
+   "factor": "altered gravity",
+   "level": "Suborbital Flight",
+   "myb3r_arm_z": 2.38,
+   "sog1_arm_z": -0.15
+  },
+  {
+   "accession": "OSD-223",
+   "factor": "altered gravity",
+   "level": "uG",
+   "myb3r_arm_z": 2.47,
+   "sog1_arm_z": -0.39
+  },
+  {
+   "accession": "OSD-624",
+   "factor": "altered gravity",
+   "level": "Suborbital Flight",
+   "myb3r_arm_z": 8.3,
+   "sog1_arm_z": -0.54
+  },
+  {
+   "accession": "OSD-782",
+   "factor": "absorbed radiation dose",
+   "level": "10 {centigray}",
+   "myb3r_arm_z": 10.14,
+   "sog1_arm_z": -0.74
+  },
+  {
+   "accession": "OSD-437",
+   "factor": "altered gravity",
+   "level": "1G by centrifugation",
+   "myb3r_arm_z": 13.24,
+   "sog1_arm_z": -0.81
+  },
+  {
+   "accession": "OSD-120",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 5.69,
+   "sog1_arm_z": -0.9
+  },
+  {
+   "accession": "OSD-437",
+   "factor": "spaceflight",
+   "level": "Space Flight",
+   "myb3r_arm_z": 13.18,
+   "sog1_arm_z": -1.1
+  },
+  {
+   "accession": "OSD-437",
+   "factor": "altered gravity",
+   "level": "uG",
+   "myb3r_arm_z": 12.61,
+   "sog1_arm_z": -1.4
+  }
+ ],
+ "rationale": "Acute irradiation moves the SOG1-activated and MYB3R-repressed arms in opposite directions. A constitutive DNA-damage state raises the SOG1 arm without repressing the G2/M arm, so the difference separates exposure from chronic stress.",
+ "threshold": {
+  "basis": "fixed statistical cutoff: both arms individually significant at two-sided p<0.05 (z>=1.96). Not fitted to these data.",
+  "value": 1.96
+ }
+}

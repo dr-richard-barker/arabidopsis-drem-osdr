@@ -61,6 +61,15 @@ else
   echo; echo "skipping DREM fits (--no-drem)"
 fi
 
+step "15-18 radiation decoder and tissue attribution"
+python3 scripts/15_build_radiation_signature.py
+python3 scripts/16_scan_osdr_plants.py
+python3 scripts/17_decoder_report.py
+python3 scripts/18_tissue_association.py
+
+step "11 cross-validate against the sibling analysis"
+python3 scripts/11_crossvalidate_sibling.py || echo "  (sibling repo not present — skipped)"
+
 step "12 figures"
 python3 scripts/12_figures.py || echo "  (figures step skipped)"
 

@@ -1,0 +1,344 @@
+accession	factor	level	n_treated	n_control	gene_set	n_set_genes_measured	n_set_genes_total	mean_rank	z	p_empirical
+OSD-37	spaceflight	Space Flight	28	28	ddr_core	10	11	0.7392	2.634	0.007
+OSD-37	spaceflight	Space Flight	28	28	myb3r_repressed	224	283	0.4714	-1.462	0.14993
+OSD-37	spaceflight	Space Flight	28	28	phase_early	351	400	0.6078	7.283	0.0005
+OSD-37	spaceflight	Space Flight	28	28	phase_late	288	400	0.3891	-6.483	0.0005
+OSD-37	spaceflight	Space Flight	28	28	phase_mid	291	400	0.531	1.864	0.06397
+OSD-37	spaceflight	Space Flight	28	28	sog1_dependent	144	160	0.5498	2.141	0.03348
+OSD-37	spaceflight	Space Flight	28	28	sog1_independent	115	132	0.5383	1.378	0.16992
+OSD-38	spaceflight	Space Flight	3	9	ddr_core	10	11	0.5552	0.592	0.55672
+OSD-38	spaceflight	Space Flight	3	9	myb3r_repressed	268	283	0.5275	1.564	0.11794
+OSD-38	spaceflight	Space Flight	3	9	phase_early	375	400	0.3063	-13.105	0.0005
+OSD-38	spaceflight	Space Flight	3	9	phase_late	348	400	0.361	-8.97	0.0005
+OSD-38	spaceflight	Space Flight	3	9	phase_mid	363	400	0.5012	0.122	0.91054
+OSD-38	spaceflight	Space Flight	3	9	sog1_dependent	152	160	0.4578	-1.828	0.07046
+OSD-38	spaceflight	Space Flight	3	9	sog1_independent	122	132	0.4237	-3.007	0.0025
+OSD-120	spaceflight	Space Flight	36	36	ddr_core	11	11	0.375	-1.488	0.13793
+OSD-120	spaceflight	Space Flight	36	36	myb3r_repressed	248	283	0.396	-5.692	0.0005
+OSD-120	spaceflight	Space Flight	36	36	phase_early	341	400	0.6785	11.871	0.0005
+OSD-120	spaceflight	Space Flight	36	36	phase_late	309	400	0.581	4.897	0.0005
+OSD-120	spaceflight	Space Flight	36	36	phase_mid	339	400	0.3975	-6.701	0.0005
+OSD-120	spaceflight	Space Flight	36	36	sog1_dependent	154	160	0.4796	-0.901	0.37431
+OSD-120	spaceflight	Space Flight	36	36	sog1_independent	105	132	0.6297	4.68	0.0005
+OSD-193	spaceflight	Space Flight	16	16	ddr_core	11	11	0.5687	0.743	0.46177
+OSD-193	spaceflight	Space Flight	16	16	myb3r_repressed	263	283	0.4914	-0.472	0.62419
+OSD-193	spaceflight	Space Flight	16	16	phase_early	347	400	0.544	2.828	0.0065
+OSD-193	spaceflight	Space Flight	16	16	phase_late	347	400	0.5009	0.067	0.93503
+OSD-193	spaceflight	Space Flight	16	16	phase_mid	366	400	0.4808	-1.281	0.18941
+OSD-193	spaceflight	Space Flight	16	16	sog1_dependent	152	160	0.5139	0.573	0.56422
+OSD-193	spaceflight	Space Flight	16	16	sog1_independent	114	132	0.4611	-1.406	0.15842
+OSD-217	spaceflight	Space Flight	6	6	ddr_core	10	11	0.5521	0.561	0.5967
+OSD-217	spaceflight	Space Flight	6	6	myb3r_repressed	277	283	0.4746	-1.486	0.13443
+OSD-217	spaceflight	Space Flight	6	6	phase_early	384	400	0.6467	9.925	0.0005
+OSD-217	spaceflight	Space Flight	6	6	phase_late	380	400	0.4557	-3.037	0.0035
+OSD-217	spaceflight	Space Flight	6	6	phase_mid	375	400	0.4977	-0.157	0.87706
+OSD-217	spaceflight	Space Flight	6	6	sog1_dependent	153	160	0.4764	-1.026	0.30135
+OSD-217	spaceflight	Space Flight	6	6	sog1_independent	124	132	0.5965	3.729	0.0005
+OSD-218	spaceflight	Space Flight	16	16	ddr_core	11	11	0.6242	1.409	0.15592
+OSD-218	spaceflight	Space Flight	16	16	myb3r_repressed	266	283	0.4872	-0.722	0.47426
+OSD-218	spaceflight	Space Flight	16	16	phase_early	350	400	0.5661	4.361	0.0005
+OSD-218	spaceflight	Space Flight	16	16	phase_late	351	400	0.4577	-2.773	0.007
+OSD-218	spaceflight	Space Flight	16	16	phase_mid	364	400	0.5059	0.373	0.71414
+OSD-218	spaceflight	Space Flight	16	16	sog1_dependent	152	160	0.5085	0.351	0.73363
+OSD-218	spaceflight	Space Flight	16	16	sog1_independent	116	132	0.4726	-1.026	0.31434
+OSD-223	altered gravity	0.76G by centrifugation	14	10	ddr_core	11	11	0.3261	-2.031	0.04298
+OSD-223	altered gravity	0.76G by centrifugation	14	10	myb3r_repressed	280	283	0.4217	-4.734	0.0005
+OSD-223	altered gravity	0.76G by centrifugation	14	10	phase_early	385	400	0.4823	-1.195	0.23338
+OSD-223	altered gravity	0.76G by centrifugation	14	10	phase_late	387	400	0.4863	-0.894	0.37481
+OSD-223	altered gravity	0.76G by centrifugation	14	10	phase_mid	381	400	0.4493	-3.495	0.001
+OSD-223	altered gravity	0.76G by centrifugation	14	10	sog1_dependent	155	160	0.5033	0.164	0.85457
+OSD-223	altered gravity	0.76G by centrifugation	14	10	sog1_independent	125	132	0.4343	-2.604	0.01149
+OSD-223	altered gravity	uG	16	10	ddr_core	11	11	0.3118	-2.175	0.02849
+OSD-223	altered gravity	uG	16	10	myb3r_repressed	280	283	0.4575	-2.469	0.01249
+OSD-223	altered gravity	uG	16	10	phase_early	385	400	0.294	-14.336	0.0005
+OSD-223	altered gravity	uG	16	10	phase_late	387	400	0.4858	-0.964	0.34383
+OSD-223	altered gravity	uG	16	10	phase_mid	381	400	0.4391	-4.095	0.0005
+OSD-223	altered gravity	uG	16	10	sog1_dependent	155	160	0.4898	-0.392	0.69965
+OSD-223	altered gravity	uG	16	10	sog1_independent	125	132	0.3676	-5.036	0.0005
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	ddr_core	11	11	0.3215	-2.075	0.04248
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	myb3r_repressed	280	283	0.4892	-0.648	0.52774
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	phase_early	385	400	0.3112	-13.094	0.0005
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	phase_late	387	400	0.5531	3.633	0.0005
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	phase_mid	381	400	0.3708	-8.664	0.0005
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	sog1_dependent	155	160	0.4212	-3.357	0.0015
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	sog1_independent	125	132	0.4144	-3.379	0.001
+OSD-223	spaceflight	Space Flight	30	10	ddr_core	11	11	0.312	-2.183	0.03098
+OSD-223	spaceflight	Space Flight	30	10	myb3r_repressed	280	283	0.4325	-3.891	0.0005
+OSD-223	spaceflight	Space Flight	30	10	phase_early	385	400	0.3582	-9.725	0.0005
+OSD-223	spaceflight	Space Flight	30	10	phase_late	387	400	0.4871	-0.87	0.3923
+OSD-223	spaceflight	Space Flight	30	10	phase_mid	381	400	0.4428	-3.944	0.0005
+OSD-223	spaceflight	Space Flight	30	10	sog1_dependent	155	160	0.4989	-0.063	0.95352
+OSD-223	spaceflight	Space Flight	30	10	sog1_independent	125	132	0.3892	-4.228	0.0005
+OSD-281	spaceflight	Space Flight	16	16	ddr_core	11	11	0.5864	1.007	0.31084
+OSD-281	spaceflight	Space Flight	16	16	myb3r_repressed	264	283	0.4436	-3.245	0.0015
+OSD-281	spaceflight	Space Flight	16	16	phase_early	349	400	0.4926	-0.521	0.5912
+OSD-281	spaceflight	Space Flight	16	16	phase_late	344	400	0.4334	-4.251	0.0005
+OSD-281	spaceflight	Space Flight	16	16	phase_mid	363	400	0.4561	-2.892	0.004
+OSD-281	spaceflight	Space Flight	16	16	sog1_dependent	154	160	0.5264	1.128	0.25087
+OSD-281	spaceflight	Space Flight	16	16	sog1_independent	115	132	0.4537	-1.729	0.08496
+OSD-313	genotype	Nuc1-2 Mutant	6	6	ddr_core	11	11	0.7708	3.058	0.002
+OSD-313	genotype	Nuc1-2 Mutant	6	6	myb3r_repressed	269	283	0.6721	9.93	0.0005
+OSD-313	genotype	Nuc1-2 Mutant	6	6	phase_early	380	400	0.5995	6.911	0.0005
+OSD-313	genotype	Nuc1-2 Mutant	6	6	phase_late	358	400	0.561	4.002	0.0005
+OSD-313	genotype	Nuc1-2 Mutant	6	6	phase_mid	370	400	0.7538	17.118	0.0005
+OSD-313	genotype	Nuc1-2 Mutant	6	6	sog1_dependent	156	160	0.6127	4.917	0.0005
+OSD-313	genotype	Nuc1-2 Mutant	6	6	sog1_independent	126	132	0.5683	2.691	0.008
+OSD-313	genotype	Nuc2-2 Mutant	6	6	ddr_core	11	11	0.558	0.671	0.51224
+OSD-313	genotype	Nuc2-2 Mutant	6	6	myb3r_repressed	269	283	0.537	2.132	0.02949
+OSD-313	genotype	Nuc2-2 Mutant	6	6	phase_early	380	400	0.6538	10.72	0.0005
+OSD-313	genotype	Nuc2-2 Mutant	6	6	phase_late	358	400	0.5313	2.016	0.04448
+OSD-313	genotype	Nuc2-2 Mutant	6	6	phase_mid	370	400	0.5347	2.339	0.01549
+OSD-313	genotype	Nuc2-2 Mutant	6	6	sog1_dependent	156	160	0.5188	0.797	0.42929
+OSD-313	genotype	Nuc2-2 Mutant	6	6	sog1_independent	126	132	0.5536	2.11	0.03398
+OSD-314	altered gravity	0.34G by centrifugation	6	6	ddr_core	11	11	0.4705	-0.328	0.75112
+OSD-314	altered gravity	0.34G by centrifugation	6	6	myb3r_repressed	270	283	0.3049	-11.651	0.0005
+OSD-314	altered gravity	0.34G by centrifugation	6	6	phase_early	377	400	0.5941	6.377	0.0005
+OSD-314	altered gravity	0.34G by centrifugation	6	6	phase_late	353	400	0.4159	-5.414	0.0005
+OSD-314	altered gravity	0.34G by centrifugation	6	6	phase_mid	359	400	0.3893	-7.381	0.0005
+OSD-314	altered gravity	0.34G by centrifugation	6	6	sog1_dependent	153	160	0.5081	0.336	0.73063
+OSD-314	altered gravity	0.34G by centrifugation	6	6	sog1_independent	122	132	0.5201	0.788	0.43728
+OSD-314	altered gravity	uG	5	6	ddr_core	11	11	0.4869	-0.176	0.85307
+OSD-314	altered gravity	uG	5	6	myb3r_repressed	270	283	0.3476	-8.522	0.0005
+OSD-314	altered gravity	uG	5	6	phase_early	377	400	0.3797	-8.157	0.0005
+OSD-314	altered gravity	uG	5	6	phase_late	353	400	0.4309	-4.665	0.0005
+OSD-314	altered gravity	uG	5	6	phase_mid	359	400	0.4206	-5.279	0.0005
+OSD-314	altered gravity	uG	5	6	sog1_dependent	153	160	0.5377	1.628	0.10295
+OSD-314	altered gravity	uG	5	6	sog1_independent	122	132	0.4747	-0.968	0.33033
+OSD-314	spaceflight	Space Flight	11	6	ddr_core	11	11	0.466	-0.38	0.71164
+OSD-314	spaceflight	Space Flight	11	6	myb3r_repressed	270	283	0.2972	-11.401	0.0005
+OSD-314	spaceflight	Space Flight	11	6	phase_early	377	400	0.5197	1.312	0.2039
+OSD-314	spaceflight	Space Flight	11	6	phase_late	353	400	0.4067	-6.224	0.0005
+OSD-314	spaceflight	Space Flight	11	6	phase_mid	359	400	0.3925	-7.009	0.0005
+OSD-314	spaceflight	Space Flight	11	6	sog1_dependent	153	160	0.5253	1.108	0.27386
+OSD-314	spaceflight	Space Flight	11	6	sog1_independent	122	132	0.4936	-0.255	0.7956
+OSD-321	genotype	bzip28-2	8	10	ddr_core	11	11	0.053	-5.115	0.0005
+OSD-321	genotype	bzip28-2	8	10	myb3r_repressed	252	283	0.5984	5.262	0.0005
+OSD-321	genotype	bzip28-2	8	10	phase_early	350	400	0.3913	-6.99	0.0005
+OSD-321	genotype	bzip28-2	8	10	phase_late	317	400	0.5424	2.719	0.0065
+OSD-321	genotype	bzip28-2	8	10	phase_mid	357	400	0.5147	0.966	0.33933
+OSD-321	genotype	bzip28-2	8	10	sog1_dependent	153	160	0.298	-8.6	0.0005
+OSD-321	genotype	bzip28-2	8	10	sog1_independent	116	132	0.4391	-2.309	0.02349
+OSD-321	genotype	bzip60-2	8	10	ddr_core	11	11	0.1032	-4.628	0.0005
+OSD-321	genotype	bzip60-2	8	10	myb3r_repressed	252	283	0.5122	0.664	0.49775
+OSD-321	genotype	bzip60-2	8	10	phase_early	350	400	0.3019	-12.967	0.0005
+OSD-321	genotype	bzip60-2	8	10	phase_late	317	400	0.4559	-2.685	0.007
+OSD-321	genotype	bzip60-2	8	10	phase_mid	357	400	0.412	-5.775	0.0005
+OSD-321	genotype	bzip60-2	8	10	sog1_dependent	153	160	0.2954	-8.814	0.0005
+OSD-321	genotype	bzip60-2	8	10	sog1_independent	116	132	0.3398	-6.093	0.0005
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	ddr_core	11	11	0.091	-4.776	0.0005
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	myb3r_repressed	252	283	0.6183	6.536	0.0005
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	phase_early	350	400	0.3591	-9.034	0.0005
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	phase_late	317	400	0.471	-1.863	0.05747
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	phase_mid	357	400	0.503	0.181	0.85757
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	sog1_dependent	153	160	0.3015	-8.747	0.0005
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	sog1_independent	116	132	0.3772	-4.68	0.0005
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	ddr_core	11	11	0.1414	-4.13	0.0005
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	myb3r_repressed	252	283	0.5549	3.03	0.0035
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	phase_early	350	400	0.4817	-1.226	0.22039
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	phase_late	317	400	0.5451	2.921	0.0045
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	phase_mid	357	400	0.4904	-0.633	0.53623
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	sog1_dependent	153	160	0.28	-9.827	0.0005
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	sog1_independent	116	132	0.4347	-2.375	0.01499
+OSD-321	spaceflight	Space Flight	22	22	ddr_core	11	11	0.5542	0.581	0.57571
+OSD-321	spaceflight	Space Flight	22	22	myb3r_repressed	252	283	0.6855	10.36	0.0005
+OSD-321	spaceflight	Space Flight	22	22	phase_early	350	400	0.3303	-11.191	0.0005
+OSD-321	spaceflight	Space Flight	22	22	phase_late	317	400	0.4427	-3.686	0.001
+OSD-321	spaceflight	Space Flight	22	22	phase_mid	357	400	0.6231	8.201	0.0005
+OSD-321	spaceflight	Space Flight	22	22	sog1_dependent	153	160	0.4369	-2.686	0.0055
+OSD-321	spaceflight	Space Flight	22	22	sog1_independent	116	132	0.4158	-3.056	0.004
+OSD-406	altered gravity	Suborbital Flight	12	12	ddr_core	11	11	0.3548	-1.664	0.09895
+OSD-406	altered gravity	Suborbital Flight	12	12	myb3r_repressed	263	283	0.4584	-2.376	0.01399
+OSD-406	altered gravity	Suborbital Flight	12	12	phase_early	351	400	0.5193	1.23	0.21739
+OSD-406	altered gravity	Suborbital Flight	12	12	phase_late	342	400	0.5865	5.519	0.0005
+OSD-406	altered gravity	Suborbital Flight	12	12	phase_mid	359	400	0.4028	-6.532	0.0005
+OSD-406	altered gravity	Suborbital Flight	12	12	sog1_dependent	153	160	0.4959	-0.147	0.88206
+OSD-406	altered gravity	Suborbital Flight	12	12	sog1_independent	114	132	0.5458	1.71	0.07796
+OSD-406	genotype	sku5	6	18	ddr_core	11	11	0.6509	1.727	0.08646
+OSD-406	genotype	sku5	6	18	myb3r_repressed	263	283	0.6802	10.442	0.0005
+OSD-406	genotype	sku5	6	18	phase_early	351	400	0.3522	-9.827	0.0005
+OSD-406	genotype	sku5	6	18	phase_late	342	400	0.5166	1.04	0.29735
+OSD-406	genotype	sku5	6	18	phase_mid	359	400	0.6687	11.457	0.0005
+OSD-406	genotype	sku5	6	18	sog1_dependent	153	160	0.5593	2.611	0.0075
+OSD-406	genotype	sku5	6	18	sog1_independent	114	132	0.4085	-3.351	0.001
+OSD-411	genotype	pgm-1	32	32	ddr_core	11	11	0.5917	1.065	0.29385
+OSD-411	genotype	pgm-1	32	32	myb3r_repressed	280	283	0.5955	5.426	0.0005
+OSD-411	genotype	pgm-1	32	32	phase_early	387	400	0.4472	-3.658	0.0005
+OSD-411	genotype	pgm-1	32	32	phase_late	390	400	0.5157	1.167	0.24188
+OSD-411	genotype	pgm-1	32	32	phase_mid	388	400	0.5704	4.9	0.0005
+OSD-411	genotype	pgm-1	32	32	sog1_dependent	157	160	0.5524	2.334	0.02149
+OSD-411	genotype	pgm-1	32	32	sog1_independent	129	132	0.4566	-1.732	0.08846
+OSD-411	treatment	Reoriented	32	32	ddr_core	11	11	0.5378	0.424	0.68216
+OSD-411	treatment	Reoriented	32	32	myb3r_repressed	280	283	0.4816	-1.051	0.30835
+OSD-411	treatment	Reoriented	32	32	phase_early	387	400	0.4732	-1.744	0.07796
+OSD-411	treatment	Reoriented	32	32	phase_late	390	400	0.5105	0.728	0.46727
+OSD-411	treatment	Reoriented	32	32	phase_mid	388	400	0.4658	-2.386	0.01899
+OSD-411	treatment	Reoriented	32	32	sog1_dependent	157	160	0.5017	0.113	0.90255
+OSD-411	treatment	Reoriented	32	32	sog1_independent	129	132	0.4723	-1.027	0.30135
+OSD-427	genotype	elp2-5	16	16	ddr_core	11	11	0.7447	2.822	0.004
+OSD-427	genotype	elp2-5	16	16	myb3r_repressed	279	283	0.5788	4.505	0.0005
+OSD-427	genotype	elp2-5	16	16	phase_early	386	400	0.6897	13.219	0.0005
+OSD-427	genotype	elp2-5	16	16	phase_late	389	400	0.5409	2.869	0.008
+OSD-427	genotype	elp2-5	16	16	phase_mid	385	400	0.6849	12.75	0.0005
+OSD-427	genotype	elp2-5	16	16	sog1_dependent	153	160	0.6507	6.446	0.0005
+OSD-427	genotype	elp2-5	16	16	sog1_independent	127	132	0.6128	4.555	0.0005
+OSD-427	genotype	met1-7	16	16	ddr_core	11	11	0.5149	0.165	0.86307
+OSD-427	genotype	met1-7	16	16	myb3r_repressed	279	283	0.651	8.77	0.0005
+OSD-427	genotype	met1-7	16	16	phase_early	386	400	0.6964	13.367	0.0005
+OSD-427	genotype	met1-7	16	16	phase_late	389	400	0.4555	-3.011	0.003
+OSD-427	genotype	met1-7	16	16	phase_mid	385	400	0.6263	8.916	0.0005
+OSD-427	genotype	met1-7	16	16	sog1_dependent	153	160	0.566	2.85	0.0045
+OSD-427	genotype	met1-7	16	16	sog1_independent	127	132	0.6141	4.519	0.0005
+OSD-427	spaceflight	Space Flight	24	24	ddr_core	11	11	0.5943	1.112	0.27486
+OSD-427	spaceflight	Space Flight	24	24	myb3r_repressed	279	283	0.2878	-12.411	0.0005
+OSD-427	spaceflight	Space Flight	24	24	phase_early	386	400	0.4188	-5.794	0.0005
+OSD-427	spaceflight	Space Flight	24	24	phase_late	389	400	0.5075	0.513	0.6057
+OSD-427	spaceflight	Space Flight	24	24	phase_mid	385	400	0.3646	-9.235	0.0005
+OSD-427	spaceflight	Space Flight	24	24	sog1_dependent	153	160	0.5241	1.034	0.31234
+OSD-427	spaceflight	Space Flight	24	24	sog1_independent	127	132	0.547	1.86	0.06747
+OSD-437	altered gravity	1G by centrifugation	8	3	ddr_core	11	11	0.4238	-0.88	0.38881
+OSD-437	altered gravity	1G by centrifugation	8	3	myb3r_repressed	260	283	0.266	-13.237	0.0005
+OSD-437	altered gravity	1G by centrifugation	8	3	phase_early	363	400	0.6797	12.163	0.0005
+OSD-437	altered gravity	1G by centrifugation	8	3	phase_late	320	400	0.4667	-2.087	0.03898
+OSD-437	altered gravity	1G by centrifugation	8	3	phase_mid	362	400	0.3253	-11.857	0.0005
+OSD-437	altered gravity	1G by centrifugation	8	3	sog1_dependent	149	160	0.4805	-0.811	0.4083
+OSD-437	altered gravity	1G by centrifugation	8	3	sog1_independent	119	132	0.5679	2.562	0.0085
+OSD-437	altered gravity	uG	8	3	ddr_core	11	11	0.3886	-1.283	0.1979
+OSD-437	altered gravity	uG	8	3	myb3r_repressed	260	283	0.2737	-12.606	0.0005
+OSD-437	altered gravity	uG	8	3	phase_early	363	400	0.4455	-3.696	0.0005
+OSD-437	altered gravity	uG	8	3	phase_late	320	400	0.4858	-0.906	0.36732
+OSD-437	altered gravity	uG	8	3	phase_mid	362	400	0.3155	-12.374	0.0005
+OSD-437	altered gravity	uG	8	3	sog1_dependent	149	160	0.4672	-1.403	0.16042
+OSD-437	altered gravity	uG	8	3	sog1_independent	119	132	0.4713	-1.087	0.27586
+OSD-437	spaceflight	Space Flight	16	3	ddr_core	11	11	0.4022	-1.142	0.25687
+OSD-437	spaceflight	Space Flight	16	3	myb3r_repressed	260	283	0.2644	-13.18	0.0005
+OSD-437	spaceflight	Space Flight	16	3	phase_early	363	400	0.6097	7.464	0.0005
+OSD-437	spaceflight	Space Flight	16	3	phase_late	320	400	0.4747	-1.59	0.11194
+OSD-437	spaceflight	Space Flight	16	3	phase_mid	362	400	0.3191	-12.012	0.0005
+OSD-437	spaceflight	Space Flight	16	3	sog1_dependent	149	160	0.4747	-1.096	0.26537
+OSD-437	spaceflight	Space Flight	16	3	sog1_independent	119	132	0.529	1.077	0.27986
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	ddr_core	11	11	0.8839	4.413	0.0005
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	myb3r_repressed	283	283	0.2213	-16.749	0.0005
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	phase_early	400	400	0.8645	25.905	0.0005
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	phase_late	400	400	0.449	-3.592	0.0005
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	phase_mid	400	400	0.4948	-0.345	0.72164
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	sog1_dependent	160	160	0.958	19.719	0.0005
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	sog1_independent	132	132	0.8581	14.435	0.0005
+OSD-502	genotype	myb3r135	4	4	ddr_core	11	11	0.2606	-2.731	0.0055
+OSD-502	genotype	myb3r135	4	4	myb3r_repressed	282	283	0.7218	13.155	0.0005
+OSD-502	genotype	myb3r135	4	4	phase_early	398	400	0.4914	-0.619	0.54073
+OSD-502	genotype	myb3r135	4	4	phase_late	398	400	0.5195	1.386	0.16892
+OSD-502	genotype	myb3r135	4	4	phase_mid	399	400	0.6003	6.91	0.0005
+OSD-502	genotype	myb3r135	4	4	sog1_dependent	160	160	0.4053	-4.243	0.0005
+OSD-502	genotype	myb3r135	4	4	sog1_independent	131	132	0.5288	1.12	0.27386
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	ddr_core	11	11	0.9264	4.824	0.0005
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	myb3r_repressed	282	283	0.1782	-18.692	0.0005
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	phase_early	398	400	0.7789	19.577	0.0005
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	phase_late	398	400	0.4308	-4.869	0.0005
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	phase_mid	399	400	0.4471	-3.782	0.0005
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	sog1_dependent	160	160	0.9826	20.896	0.0005
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	sog1_independent	131	132	0.8443	13.632	0.0005
+OSD-508	genotype	sog1-1	18	18	ddr_core	11	11	0.1798	-3.795	0.0005
+OSD-508	genotype	sog1-1	18	18	myb3r_repressed	283	283	0.8411	19.744	0.0005
+OSD-508	genotype	sog1-1	18	18	phase_early	400	400	0.2106	-20.102	0.0005
+OSD-508	genotype	sog1-1	18	18	phase_late	400	400	0.5312	2.2	0.02699
+OSD-508	genotype	sog1-1	18	18	phase_mid	400	400	0.5262	1.819	0.06997
+OSD-508	genotype	sog1-1	18	18	sog1_dependent	160	160	0.0181	-21.253	0.0005
+OSD-508	genotype	sog1-1	18	18	sog1_independent	132	132	0.1574	-13.441	0.0005
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	ddr_core	11	11	0.8335	3.818	0.0005
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	myb3r_repressed	283	283	0.1451	-21.014	0.0005
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	phase_early	400	400	0.805	21.244	0.0005
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	phase_late	400	400	0.4744	-1.779	0.07796
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	phase_mid	400	400	0.46	-2.838	0.0055
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	sog1_dependent	160	160	0.9129	18.266	0.0005
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	sog1_independent	132	132	0.7873	11.188	0.0005
+OSD-510	genotype	sog1-1	24	24	ddr_core	11	11	0.134	-4.277	0.0005
+OSD-510	genotype	sog1-1	24	24	myb3r_repressed	283	283	0.7239	12.983	0.0005
+OSD-510	genotype	sog1-1	24	24	phase_early	400	400	0.3018	-13.997	0.0005
+OSD-510	genotype	sog1-1	24	24	phase_late	400	400	0.6025	7.111	0.0005
+OSD-510	genotype	sog1-1	24	24	phase_mid	400	400	0.4796	-1.448	0.14043
+OSD-510	genotype	sog1-1	24	24	sog1_dependent	160	160	0.0449	-20.3	0.0005
+OSD-510	genotype	sog1-1	24	24	sog1_independent	132	132	0.2312	-10.644	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	ddr_core	11	11	0.8896	4.458	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	myb3r_repressed	283	283	0.1163	-22.556	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	phase_early	400	400	0.8597	25.317	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	phase_late	400	400	0.441	-4.1	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	phase_mid	400	400	0.4429	-4.054	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	sog1_dependent	160	160	0.9689	20.331	0.0005
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	sog1_independent	132	132	0.863	14.483	0.0005
+OSD-518	genotype	lazy1 mutant	7	7	ddr_core	10	11	0.6623	1.751	0.07896
+OSD-518	genotype	lazy1 mutant	7	7	myb3r_repressed	248	283	0.5729	4.024	0.0005
+OSD-518	genotype	lazy1 mutant	7	7	phase_early	351	400	0.6629	10.684	0.0005
+OSD-518	genotype	lazy1 mutant	7	7	phase_late	267	400	0.4356	-3.757	0.001
+OSD-518	genotype	lazy1 mutant	7	7	phase_mid	360	400	0.5756	4.976	0.0005
+OSD-518	genotype	lazy1 mutant	7	7	sog1_dependent	153	160	0.5347	1.531	0.12844
+OSD-518	genotype	lazy1 mutant	7	7	sog1_independent	117	132	0.5774	2.892	0.0055
+OSD-518	genotype	tac1 mutant	7	7	ddr_core	10	11	0.5288	0.28	0.78311
+OSD-518	genotype	tac1 mutant	7	7	myb3r_repressed	248	283	0.5452	2.468	0.01499
+OSD-518	genotype	tac1 mutant	7	7	phase_early	351	400	0.518	1.225	0.22139
+OSD-518	genotype	tac1 mutant	7	7	phase_late	267	400	0.44	-3.439	0.0005
+OSD-518	genotype	tac1 mutant	7	7	phase_mid	360	400	0.5539	3.54	0.0005
+OSD-518	genotype	tac1 mutant	7	7	sog1_dependent	153	160	0.5857	3.664	0.0005
+OSD-518	genotype	tac1 mutant	7	7	sog1_independent	117	132	0.5007	0.035	0.97801
+OSD-519	genotype	puchi-1 mutant	18	18	ddr_core	11	11	0.6325	1.555	0.11744
+OSD-519	genotype	puchi-1 mutant	18	18	myb3r_repressed	261	283	0.4987	-0.08	0.93353
+OSD-519	genotype	puchi-1 mutant	18	18	phase_early	357	400	0.3611	-9.383	0.0005
+OSD-519	genotype	puchi-1 mutant	18	18	phase_late	333	400	0.3968	-6.71	0.0005
+OSD-519	genotype	puchi-1 mutant	18	18	phase_mid	354	400	0.459	-2.709	0.0065
+OSD-519	genotype	puchi-1 mutant	18	18	sog1_dependent	153	160	0.5117	0.507	0.6007
+OSD-519	genotype	puchi-1 mutant	18	18	sog1_independent	113	132	0.3964	-3.708	0.0005
+OSD-522	spaceflight	Space Flight	6	6	ddr_core	8	11	0.7179	2.094	0.02999
+OSD-522	spaceflight	Space Flight	6	6	myb3r_repressed	173	283	0.5891	3.969	0.0005
+OSD-522	spaceflight	Space Flight	6	6	phase_early	300	400	0.6373	8.508	0.0005
+OSD-522	spaceflight	Space Flight	6	6	phase_late	236	400	0.505	0.305	0.76662
+OSD-522	spaceflight	Space Flight	6	6	phase_mid	222	400	0.5395	2.078	0.03898
+OSD-522	spaceflight	Space Flight	6	6	sog1_dependent	122	160	0.509	0.36	0.71764
+OSD-522	spaceflight	Space Flight	6	6	sog1_independent	89	132	0.6001	3.316	0.0015
+OSD-624	altered gravity	Suborbital Flight	18	18	ddr_core	11	11	0.308	-2.181	0.02349
+OSD-624	altered gravity	Suborbital Flight	18	18	myb3r_repressed	275	283	0.3559	-8.297	0.0005
+OSD-624	altered gravity	Suborbital Flight	18	18	phase_early	388	400	0.5616	4.335	0.0005
+OSD-624	altered gravity	Suborbital Flight	18	18	phase_late	375	400	0.4544	-3.104	0.0015
+OSD-624	altered gravity	Suborbital Flight	18	18	phase_mid	377	400	0.3287	-11.753	0.0005
+OSD-624	altered gravity	Suborbital Flight	18	18	sog1_dependent	155	160	0.4878	-0.535	0.62069
+OSD-624	altered gravity	Suborbital Flight	18	18	sog1_independent	123	132	0.5444	1.702	0.08996
+OSD-658	ionizing radiation	mixed radiation	8	6	ddr_core	10	11	0.9165	4.631	0.0005
+OSD-658	ionizing radiation	mixed radiation	8	6	myb3r_repressed	241	283	0.351	-8.154	0.0005
+OSD-658	ionizing radiation	mixed radiation	8	6	phase_early	339	400	0.659	10.594	0.0005
+OSD-658	ionizing radiation	mixed radiation	8	6	phase_late	300	400	0.4985	-0.103	0.93253
+OSD-658	ionizing radiation	mixed radiation	8	6	phase_mid	319	400	0.3444	-9.96	0.0005
+OSD-658	ionizing radiation	mixed radiation	8	6	sog1_dependent	146	160	0.6826	7.799	0.0005
+OSD-658	ionizing radiation	mixed radiation	8	6	sog1_independent	108	132	0.5743	2.708	0.0075
+OSD-678	genotype	phyD mutant	12	24	ddr_core	11	11	0.5687	0.762	0.45077
+OSD-678	genotype	phyD mutant	12	24	myb3r_repressed	266	283	0.49	-0.564	0.57571
+OSD-678	genotype	phyD mutant	12	24	phase_early	379	400	0.4539	-3.144	0.002
+OSD-678	genotype	phyD mutant	12	24	phase_late	339	400	0.5463	2.928	0.0045
+OSD-678	genotype	phyD mutant	12	24	phase_mid	369	400	0.5286	1.99	0.04398
+OSD-678	genotype	phyD mutant	12	24	sog1_dependent	156	160	0.5588	2.587	0.01299
+OSD-678	genotype	phyD mutant	12	24	sog1_independent	120	132	0.5433	1.633	0.10345
+OSD-678	spaceflight	Space Flight	18	18	ddr_core	11	11	0.4324	-0.742	0.45477
+OSD-678	spaceflight	Space Flight	18	18	myb3r_repressed	266	283	0.2815	-12.22	0.0005
+OSD-678	spaceflight	Space Flight	18	18	phase_early	379	400	0.4905	-0.674	0.48576
+OSD-678	spaceflight	Space Flight	18	18	phase_late	339	400	0.4185	-5.484	0.0005
+OSD-678	spaceflight	Space Flight	18	18	phase_mid	369	400	0.3286	-11.348	0.0005
+OSD-678	spaceflight	Space Flight	18	18	sog1_dependent	156	160	0.511	0.487	0.62969
+OSD-678	spaceflight	Space Flight	18	18	sog1_independent	120	132	0.4972	-0.084	0.92604
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	ddr_core	10	11	0.4218	-0.811	0.4083
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	myb3r_repressed	244	283	0.3116	-10.14	0.0005
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	phase_early	358	400	0.6885	12.066	0.0005
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	phase_late	298	400	0.5744	4.358	0.0005
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	phase_mid	347	400	0.3801	-7.848	0.0005
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	sog1_dependent	145	160	0.4823	-0.742	0.45277
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	sog1_independent	115	132	0.6177	4.462	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	ddr_core	10	11	0.8459	3.753	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	myb3r_repressed	244	283	0.297	-11.268	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	phase_early	358	400	0.7391	15.848	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	phase_late	298	400	0.6001	5.855	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	phase_mid	347	400	0.3823	-7.794	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	sog1_dependent	145	160	0.6227	5.154	0.0005
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	sog1_independent	115	132	0.6572	5.905	0.0005
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	ddr_core	10	11	0.7229	2.459	0.01849
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	myb3r_repressed	244	283	0.3005	-11.027	0.0005
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	phase_early	358	400	0.7237	14.492	0.0005
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	phase_late	298	400	0.5916	5.486	0.0005
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	phase_mid	347	400	0.379	-8.046	0.0005
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	sog1_dependent	145	160	0.5628	2.578	0.0095
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	sog1_independent	115	132	0.6445	5.418	0.0005

@@ -108,6 +108,38 @@ uniform and their edges are passed through unchanged. \NumWeightedEdgesInformed{
 (\PctWeightedEdgesInformed{}\%) are atlas-informed and
 \PctWeightedEdgesChanged{}\% move by more than $0.01$.
 
+\subsection{Radiation signature and decoder}
+
+Gene sets were derived from the two-genotype arms. A gene is \emph{SOG1-dependent} when it
+reaches $|\log_2 \mathrm{FC}| \ge 1$ in wild type, is a SOG1 ChIP target, and its
+\textit{sog1-1} amplitude is below 40\% of its wild-type amplitude --- a genetic criterion,
+not a correlation with exposure. The contrast set (\emph{SOG1-independent}) holds induced
+SOG1 targets that respond in both genotypes.
+
+Each OSDR study was scored on every contrast its metadata supports: for each factor, any
+level matching a control vocabulary (ground control, non-irradiated, mock, untreated, zero
+dose) defines the reference and every other level of that factor is scored against it.
+Factors describing what a sample \emph{is} rather than what was done to it --- organ,
+tissue, age, ecotype --- are excluded. Genes are ranked by $\log_2$ fold change and a set's
+mean normalised rank is compared with 2,000 size-matched random sets from the same
+ranking, giving a $z$-score and an empirical $p$. Ranks, rather than fold-change
+thresholds, keep the score comparable across platforms and sequencing depths.
+
+The decision index is the conjunction $\min(z_{\text{SOG1-dep}}, -z_{\text{MYB3R-rep}})$ at
+a fixed threshold of $1.96$, so both arms must be individually significant. The threshold
+is statistical rather than fitted: a threshold placed between the labelled classes is
+hostage to OSDR's positives including a 10~cGy exposure that produces no response.
+
+\subsection{Tissue attribution}
+
+Tissue association was tested against the atlas expression matrix directly, not through
+the deconvolution. Each gene's cluster profile is scaled to its own maximum, a set's mean
+scaled expression per cluster is compared with 1,000 size-matched random sets, and the
+result is a per-cluster $z$ and empirical $p$. Deconvolution stability was measured as the
+median relative change in fraction between adjacent timepoints, restricted to compartments
+carrying at least 2\% mass, and the time-averaged composition was bootstrapped over
+timepoints.
+
 \subsection{Model fitting and comparison}
 
 Models were fitted with DREM~2.0.7 \citep{dremsoftware} in batch mode

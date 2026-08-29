@@ -1,0 +1,50 @@
+accession	factor	level	sog1_arm	myb3r_arm	sog1_dependent	myb3r_repressed	ddr_core	phase_early	phase_mid	radiation_index	is_radiation_factor	call	novel_prediction
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	20.331	22.556	20.331	-22.556	4.458	25.317	-4.054	20.331	True	radiation-like	False
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	20.896	18.692	20.896	-18.692	4.824	19.577	-3.782	18.692	True	radiation-like	False
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	18.266	21.014	18.266	-21.014	3.818	21.244	-2.838	18.266	True	radiation-like	False
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	19.719	16.749	19.719	-16.749	4.413	25.905	-0.345	16.749	True	radiation-like	False
+OSD-658	ionizing radiation	mixed radiation	7.799	8.154	7.799	-8.154	4.631	10.594	-9.96	7.799	True	radiation-like	False
+OSD-782	absorbed radiation dose	100 {centigray}	5.154	11.268	5.154	-11.268	3.753	15.848	-7.794	5.154	True	radiation-like	False
+OSD-782	ionizing radiation	cesium-137 gamma radiation	2.578	11.027	2.578	-11.027	2.459	14.492	-8.046	2.578	True	radiation-like	False
+OSD-314	altered gravity	uG	1.628	8.522	1.628	-8.522	-0.176	-8.157	-5.279	1.628	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-37	spaceflight	Space Flight	2.141	1.462	2.141	-1.462	2.634	7.283	1.864	1.462	False	no signal	False
+OSD-281	spaceflight	Space Flight	1.128	3.245	1.128	-3.245	1.007	-0.521	-2.892	1.128	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-314	spaceflight	Space Flight	1.108	11.401	1.108	-11.401	-0.38	1.312	-7.009	1.108	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-427	spaceflight	Space Flight	1.034	12.411	1.034	-12.411	1.112	-5.794	-9.235	1.034	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-678	genotype	phyD mutant	2.587	0.564	2.587	-0.564	0.762	-3.144	1.99	0.564	False	no signal	False
+OSD-678	spaceflight	Space Flight	0.487	12.22	0.487	-12.22	-0.742	-0.674	-11.348	0.487	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-193	spaceflight	Space Flight	0.573	0.472	0.573	-0.472	0.743	2.828	-1.281	0.472	False	no signal	False
+OSD-218	spaceflight	Space Flight	0.351	0.722	0.351	-0.722	1.409	4.361	0.373	0.351	False	no signal	False
+OSD-314	altered gravity	0.34G by centrifugation	0.336	11.651	0.336	-11.651	-0.328	6.377	-7.381	0.336	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-223	altered gravity	0.76G by centrifugation	0.164	4.734	0.164	-4.734	-2.031	-1.195	-3.495	0.164	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-411	treatment	Reoriented	0.113	1.051	0.113	-1.051	0.424	-1.744	-2.386	0.113	False	no signal	False
+OSD-519	genotype	puchi-1 mutant	0.507	0.08	0.507	-0.08	1.555	-9.383	-2.709	0.08	False	no signal	False
+OSD-223	spaceflight	Space Flight	-0.063	3.891	-0.063	-3.891	-2.183	-9.725	-3.944	-0.063	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-406	altered gravity	Suborbital Flight	-0.147	2.376	-0.147	-2.376	-1.664	1.23	-6.532	-0.147	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-223	altered gravity	uG	-0.392	2.469	-0.392	-2.469	-2.175	-14.336	-4.095	-0.392	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-624	altered gravity	Suborbital Flight	-0.535	8.297	-0.535	-8.297	-2.181	4.335	-11.753	-0.535	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-782	absorbed radiation dose	10 {centigray}	-0.742	10.14	-0.742	-10.14	-0.811	12.066	-7.848	-0.742	True	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-437	altered gravity	1G by centrifugation	-0.811	13.237	-0.811	-13.237	-0.88	12.163	-11.857	-0.811	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-120	spaceflight	Space Flight	-0.901	5.692	-0.901	-5.692	-1.488	11.871	-6.701	-0.901	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-217	spaceflight	Space Flight	-1.026	1.486	-1.026	-1.486	0.561	9.925	-0.157	-1.026	False	no signal	False
+OSD-437	spaceflight	Space Flight	-1.096	13.18	-1.096	-13.18	-1.142	7.464	-12.012	-1.096	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-437	altered gravity	uG	-1.403	12.606	-1.403	-12.606	-1.283	-3.696	-12.374	-1.403	False	G2/M repressed, no DDR (proliferation slowing)	False
+OSD-38	spaceflight	Space Flight	-1.828	-1.564	-1.828	1.564	0.592	-13.105	0.122	-1.828	False	no signal	False
+OSD-313	genotype	Nuc2-2 Mutant	0.797	-2.132	0.797	2.132	0.671	10.72	2.339	-2.132	False	no signal	False
+OSD-518	genotype	tac1 mutant	3.664	-2.468	3.664	2.468	0.28	1.225	3.54	-2.468	False	no signal	False
+OSD-223	genotype	InsP 5-ptase Transgenic	-3.357	0.648	-3.357	-0.648	-2.075	-13.094	-8.664	-3.357	False	no signal	False
+OSD-522	spaceflight	Space Flight	0.36	-3.969	0.36	3.969	2.094	8.508	2.078	-3.969	False	no signal	False
+OSD-518	genotype	lazy1 mutant	1.531	-4.024	1.531	4.024	1.751	10.684	4.976	-4.024	False	no signal	False
+OSD-427	genotype	elp2-5	6.446	-4.505	6.446	4.505	2.822	13.219	12.75	-4.505	False	no signal	False
+OSD-411	genotype	pgm-1	2.334	-5.426	2.334	5.426	1.065	-3.658	4.9	-5.426	False	no signal	False
+OSD-321	genotype	bzip28-2	-8.6	-5.262	-8.6	5.262	-5.115	-6.99	0.966	-8.6	False	inverse (DDR suppressed)	False
+OSD-321	genotype	bzip28-2 bzip60-1	-8.747	-6.536	-8.747	6.536	-4.776	-9.034	0.181	-8.747	False	inverse (DDR suppressed)	False
+OSD-427	genotype	met1-7	2.85	-8.77	2.85	8.77	0.165	13.367	8.916	-8.77	False	no signal	False
+OSD-321	genotype	bzip60-2	-8.814	-0.664	-8.814	0.664	-4.628	-12.967	-5.775	-8.814	False	no signal	False
+OSD-321	genotype	ire1a-4 ire1b-2	-9.827	-3.03	-9.827	3.03	-4.13	-1.226	-0.633	-9.827	False	inverse (DDR suppressed)	False
+OSD-313	genotype	Nuc1-2 Mutant	4.917	-9.93	4.917	9.93	3.058	6.911	17.118	-9.93	False	no signal	False
+OSD-321	spaceflight	Space Flight	-2.686	-10.36	-2.686	10.36	0.581	-11.191	8.201	-10.36	False	inverse (DDR suppressed)	False
+OSD-406	genotype	sku5	2.611	-10.442	2.611	10.442	1.727	-9.827	11.457	-10.442	False	no signal	False
+OSD-502	genotype	myb3r135	-4.243	-13.155	-4.243	13.155	-2.731	-0.619	6.91	-13.155	False	inverse (DDR suppressed)	False
+OSD-510	genotype	sog1-1	-20.3	-12.983	-20.3	12.983	-4.277	-13.997	-1.448	-20.3	False	inverse (DDR suppressed)	False
+OSD-508	genotype	sog1-1	-21.253	-19.744	-21.253	19.744	-3.795	-20.102	1.819	-21.253	False	inverse (DDR suppressed)	False

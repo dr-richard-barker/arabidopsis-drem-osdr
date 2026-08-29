@@ -1,0 +1,218 @@
+{
+ "arm": "A_primary_WildType",
+ "deconvolution_stability": {
+  "cluster_level_median_relative_swing": 0.6,
+  "n_clusters": 183,
+  "n_clusters_above_2pct": 10,
+  "n_compartments_in_cv": 10,
+  "n_organs": 10,
+  "n_organs_above_2pct": 5,
+  "organ_aggregation_helps": false,
+  "organ_level_median_relative_swing": 0.609,
+  "organ_means": {
+   "flower": 0.0228,
+   "rosette_21d": 0.7709,
+   "seed_3d": 0.01,
+   "seed_425d": 0.0443,
+   "seedling_15d": 0.072,
+   "seedling_6d": 0.0556,
+   "silique": 0.0122,
+   "stem": 0.012
+  },
+  "timeaveraged_bootstrap_cv": 0.218,
+  "what_is_stable": "Neither per-timepoint resolution is stable; the time-averaged composition used by the weighting is. See timeaveraged_bootstrap_cv."
+ },
+ "generated": "2026-08-28",
+ "reweighting": {
+  "median_absolute_shrinkage_log2": -0.15,
+  "most_demoted": [
+   {
+    "TF": "AT3G26790",
+    "relative_weight_change": -0.1158442126136611,
+    "symbol": "FUS3",
+    "top_cluster": "silique_18"
+   },
+   {
+    "TF": "AT5G07680",
+    "relative_weight_change": -0.10488044591183107,
+    "symbol": "ANAC079",
+    "top_cluster": "silique_22"
+   },
+   {
+    "TF": "AT3G18400",
+    "relative_weight_change": -0.10013240324535871,
+    "symbol": "anac058",
+    "top_cluster": "silique_13"
+   },
+   {
+    "TF": "AT2G24430",
+    "relative_weight_change": -0.08878587419689313,
+    "symbol": "ANAC038",
+    "top_cluster": "seedling_9d_14"
+   },
+   {
+    "TF": "AT1G04880",
+    "relative_weight_change": -0.08643089836074924,
+    "symbol": "",
+    "top_cluster": "flower_9"
+   },
+   {
+    "TF": "AT1G69490",
+    "relative_weight_change": -0.06922058249363447,
+    "symbol": "ANAC029",
+    "top_cluster": "silique_16"
+   }
+  ],
+  "most_promoted": [
+   {
+    "TF": "AT3G15210",
+    "relative_weight_change": 0.03095289643403093,
+    "symbol": "ATERF-4",
+    "top_cluster": "seedling_15d_14"
+   },
+   {
+    "TF": "AT2G21900",
+    "relative_weight_change": 0.04002811288829995,
+    "symbol": "ATWRKY59",
+    "top_cluster": "silique_14"
+   },
+   {
+    "TF": "AT5G22500",
+    "relative_weight_change": 0.041194012908862335,
+    "symbol": "FAR1",
+    "top_cluster": "seedling_15d_16"
+   },
+   {
+    "TF": "AT1G27730",
+    "relative_weight_change": 0.047500879130113555,
+    "symbol": "STZ",
+    "top_cluster": "seedling_15d_14"
+   },
+   {
+    "TF": "AT5G13910",
+    "relative_weight_change": 0.04976376172276337,
+    "symbol": "LEP",
+    "top_cluster": "seedling_15d_18"
+   },
+   {
+    "TF": "AT1G67260",
+    "relative_weight_change": 0.10140443874724808,
+    "symbol": "TCP1",
+    "top_cluster": "rosette_30d_8"
+   }
+  ],
+  "n_atlas_informed": 57,
+  "n_relatively_demoted": 3,
+  "n_relatively_promoted": 1,
+  "n_tfs": 479,
+  "note": "Context is a multiplier in [0,1], so absolute edge mass can only shrink; TFs are re-ranked by shrinking more or less than the median, which is what changes a DREM attribution."
+ },
+ "stability_caveat": "Per-timepoint fractions are not stable enough to read as compositional dynamics, at cluster OR organ resolution — aggregating to organ does not help, which was measured rather than assumed. The time-averaged composition that the weighting consumes is stable (see timeaveraged_bootstrap_cv). Tissue attribution in this study therefore rests on the signature-gene enrichment, which uses the atlas expression matrix directly and involves no deconvolution.",
+ "top_enriched": [
+  {
+   "cluster": "silique_6",
+   "gene_set": "myb3r_repressed",
+   "organ": "silique",
+   "p_empirical": 0.001,
+   "z": 26.225
+  },
+  {
+   "cluster": "seedling_6d_10",
+   "gene_set": "myb3r_repressed",
+   "organ": "seedling_6d",
+   "p_empirical": 0.001,
+   "z": 23.271
+  },
+  {
+   "cluster": "rosette_21d_16",
+   "gene_set": "myb3r_repressed",
+   "organ": "rosette_21d",
+   "p_empirical": 0.001,
+   "z": 23.21
+  },
+  {
+   "cluster": "rosette_30d_13",
+   "gene_set": "myb3r_repressed",
+   "organ": "rosette_30d",
+   "p_empirical": 0.001,
+   "z": 19.961
+  },
+  {
+   "cluster": "seed_3d_12",
+   "gene_set": "myb3r_repressed",
+   "organ": "seed_3d",
+   "p_empirical": 0.001,
+   "z": 18.71
+  },
+  {
+   "cluster": "flower_12",
+   "gene_set": "sog1_dependent",
+   "organ": "flower",
+   "p_empirical": 0.001,
+   "z": 8.72
+  },
+  {
+   "cluster": "silique_12",
+   "gene_set": "sog1_dependent",
+   "organ": "silique",
+   "p_empirical": 0.001,
+   "z": 5.984
+  },
+  {
+   "cluster": "seedling_9d_0",
+   "gene_set": "sog1_independent",
+   "organ": "seedling_9d",
+   "p_empirical": 0.002,
+   "z": 5.894
+  },
+  {
+   "cluster": "seedling_9d_12",
+   "gene_set": "sog1_dependent",
+   "organ": "seedling_9d",
+   "p_empirical": 0.004,
+   "z": 5.827
+  },
+  {
+   "cluster": "rosette_30d_1",
+   "gene_set": "sog1_independent",
+   "organ": "rosette_30d",
+   "p_empirical": 0.003,
+   "z": 5.573
+  },
+  {
+   "cluster": "seedling_6d_15",
+   "gene_set": "sog1_independent",
+   "organ": "seedling_6d",
+   "p_empirical": 0.002,
+   "z": 5.407
+  },
+  {
+   "cluster": "rosette_30d_16",
+   "gene_set": "sog1_dependent",
+   "organ": "rosette_30d",
+   "p_empirical": 0.001,
+   "z": 5.295
+  },
+  {
+   "cluster": "seedling_9d_18",
+   "gene_set": "sog1_independent",
+   "organ": "seedling_9d",
+   "p_empirical": 0.001,
+   "z": 4.801
+  },
+  {
+   "cluster": "rosette_30d_10",
+   "gene_set": "sog1_dependent",
+   "organ": "rosette_30d",
+   "p_empirical": 0.003,
+   "z": 4.461
+  },
+  {
+   "cluster": "rosette_21d_2",
+   "gene_set": "sog1_independent",
+   "organ": "rosette_21d",
+   "p_empirical": 0.004,
+   "z": 4.454
+  }
+ ]
+}
