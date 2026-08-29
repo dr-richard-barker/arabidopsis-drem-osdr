@@ -75,12 +75,15 @@ abundance.
 
 Three explanations were available for the flight null, and the data separate them.
 
-\textbf{Radiation quality is not the reason.} The matched within-study comparison of gamma
-against Fe-56 HZE ions places the difference inside the range of variation between two
-gamma irradiations in different laboratories. At the level this assay measures, ground
-gamma is not demonstrably a poor model of particle radiation, and every quality tested
-fires the same conserved DNA-damage core. We had expected the opposite and pre-registered
-the test that refuted it.
+\textbf{Radiation quality is not demonstrably the reason, but neither is it excluded.} The
+matched within-study comparison of gamma against Fe-56 HZE ions places the difference
+inside the range of variation between two gamma irradiations in different laboratories.
+That comparison, however, has little power: two accessions of the same published
+experiment correlate at \SameExperimentRho{}, so the reproducibility floor of the
+measurement is close to the effect being sought. We expected quality to matter and
+pre-registered a test that did not support it; we report it as an unresolved question
+rather than as a refutation. Every quality tested does fire the same conserved DNA-damage
+core.
 
 \textbf{Dose is the reason.} The model was trained on 6-day seedlings given
 \TrainingDoseGy{}~Gy of Co-60 in ten minutes. An ISS plant experiment receives
@@ -130,18 +133,20 @@ being separate databases, and SOG1 is a plant-specific NAC with no animal homolo
 
 The quality test rests on a single matched pair, whose arms also differ in absorbed dose
 (100~Gy gamma against 30~Gy Fe-56, chosen for comparable biological effect), so dose and
-quality are not fully separable even there; a null from one comparison is weak evidence of
-absence. The only simulated-GCR study, OSD-658, is excluded from every quality comparison
-because it irradiated dry dormant seed while all others used hydrated tissue --- its
-divergence would confound developmental state with radiation quality. NSRL's sequential
-beams approximate a chronic mixed field rather than reproducing it.
+quality are not fully separable even there. With \NumRadContrasts{} radiation contrasts
+and a reproducibility floor of \SameExperimentRho{} between two accessions of one
+experiment, this design cannot resolve a quality effect of plausible size in either
+direction. NSRL's sequential beams also approximate a chronic mixed field rather than
+reproducing it. Settling the question would need matched high-LET and low-LET arms at
+matched dose, in one laboratory, with replication across experiments.
 
 The detection floor is measured for acute exposure delivered in seconds. ISS exposure is
 chronic and roughly \DoseRateRatio{} times slower, where repair keeps pace, so the true
 chronic floor is plausibly higher still --- which widens the gap rather than narrowing it.
 The ISS dose rate is crew-module dosimetry, not a dosimeter inside the plant hardware, and
 local shielding will differ. The dose points also come from two studies using different
-material (dry seeds for the GCR arm, 4-week-old plants for the $^{137}$Cs arm), so the
+material (flask-grown seedlings for the GCR arm, 4-week-old plants for the $^{137}$Cs
+arm), so the
 fitted floor is a cross-study estimate rather than a single titration; the observed
 bracket of \DoseNotDetected{}--\DoseDetected{}~cGy, read directly off the data, is the more
 reliable quantity.

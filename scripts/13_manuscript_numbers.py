@@ -303,6 +303,11 @@ def main() -> int:
     v["TrainingDoseCgy"] = dig(qual, "dose_gap", "training_dose_cgy")
     v["TrainingToIssFold"] = dig(qual, "dose_gap", "fold")
     v["NumTfsResponsive"] = dig(qual, "matched_test", "n_tfs")
+    v["SameExperimentRho"] = dig(qual, "power", "same_experiment_rho")
+    v["ScatterMagRho"] = dig(qual, "power", "scatter_vs_response_magnitude_rho")
+    v["ScatterMagP"] = dig(qual, "power", "scatter_vs_response_magnitude_p")
+    v["NumRadContrasts"] = dig(qual, "arm_invariance", "by_quality") and sum(
+        v2[1] for v2 in (dig(qual, "arm_invariance", "by_quality") or {}).values())
 
     defined = sum(1 for x in v.values() if x is not None)
     lines = [

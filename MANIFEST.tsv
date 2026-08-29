@@ -55,7 +55,7 @@ results/qc/deconvolution_qc.json	Quality-control reports for every pipeline stag
 results/qc/dose_response_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2240	73ec96bc9dc268db44072d504d4ced278f9be7199d2b37f3b13d58206893ed1a	2026-08-29
 results/qc/drem_projection_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	1675	f78368e86589556a447a64ba34965eb3e8ddc1ffcb412695f0619ee55a0100f9	2026-08-29
 results/qc/metadata_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	4380	01e9188958f3ac89ba6c8bddb149572a784f0c120d366f0673eccf1de6dc9821	2026-08-29
-results/qc/radiation_quality_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2250	10806691025892132fb80dd9897445f235022002ba446457df135a4f2120fb4c	2026-08-29
+results/qc/radiation_quality_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2680	ab8e30a52b7bffaba86db3c5c2507b426d76745950252e9fdc597ef8ca6b10cd	2026-08-29
 results/qc/sog1_chip_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	1101	333bed6814e2ba6c09965ea29f0fb1952ca7938501996e3828ca57d39d129480	2026-08-29
 results/qc/tf_activity_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	2374	93a70c8f6c990651394e8df0d3434a0291608d4864e1983bf0eb92fd6a0703cc	2026-08-29
 results/qc/tf_prior_qc.json	Quality-control reports for every pipeline stage	derived by the pipeline	CC-BY-4.0	yes	4083	b7516b9abd82c381ca6ddd306f0050d878b56829154b2f2aa05cb8ffa7fd5bd3	2026-08-29
@@ -102,5 +102,5 @@ results/comparison/genotype_contrast.tsv	Prior ablation and genotype contrast ta
 results/comparison/prior_ablation.tsv	Prior ablation and genotype contrast tables	derived by scripts/10_compare_models.py	CC-BY-4.0	yes	798	0ee95ba920f667145f3ead90b393d9c4bfc46db8a83b11cea6048175b9a37045	2026-08-29
 results/comparison/sibling_crossvalidation.tsv	Prior ablation and genotype contrast tables	derived by scripts/10_compare_models.py	CC-BY-4.0	yes	2981	e796641ceafce81f817c8d07b7c8800a0dfa3a230b422b3e0df03a90696b8cc7	2026-08-29
 vendor/drem.jar	DREM 2.0.7 engine	https://github.com/jernst98/STEM_DREM	GPL-3.0 (downloaded at run time, not redistributed)	no	3310260	16312a6a713238a829abb0e1bf3929f8378216ddb17b57fe30e038e892739530	2026-08-29
-manuscript/manuscript.pdf	Manuscript, PDF	built from manuscript/latex	CC-BY-4.0	yes	631059	20d11ca3b0dfd9f2ad8da56456b08e4bf08dd8b92c79baf4b599833dad2f5fe8	2026-08-29
-manuscript/manuscript.docx	Manuscript, Word	built from manuscript/latex	CC-BY-4.0	yes	1359780	b0b8b69dc302c2d5d65abeb4e5b088bd93b8def507bc6ce78ea78d85610b6d76	2026-08-29
+manuscript/manuscript.pdf	Manuscript, PDF	built from manuscript/latex	CC-BY-4.0	yes	632509	5833a13c32caa6e4fe00d5fc61dd638af5edf8afcbc018635288878b04bb5f85	2026-08-29
+manuscript/manuscript.docx	Manuscript, Word	built from manuscript/latex	CC-BY-4.0	yes	1360025	e7e8a3c7c8e6ff01e1b74b1074dda92b40f266691cbda10c29d9f7a47bc10e72	2026-08-29

@@ -186,9 +186,9 @@ SOG1-arm z = −0.07): proliferation slowing without DNA damage.
 ### Is terrestrial gamma the wrong *kind* of radiation? We tested it — no.
 
 The obvious explanation for the flight null is that ground gamma studies don't model space
-radiation. **OSD-320 tests this cleanly**: the same study irradiated 6-day seedlings at
-Brookhaven with *both* Cs-137 gamma and 1 GeV/n Fe-56 HZE ions — same tissue, same
-facility, same dose rate, same harvest times.
+radiation. **OSD-320 tests this cleanly**: the same study irradiated 8-day-old Ws/*atm-1*
+seedlings at Brookhaven with *both* Cs-137 gamma (100 Gy) and 1 GeV/n Fe-56 HZE ions
+(30 Gy) — same tissue, same facility, same 7 Gy/min dose rate, same harvest times.
 
 Across responsive TFs the two arms correlate at **ρ = 0.31**. The honest reference is how
 well two *gamma* irradiations in different labs agree: **mean 0.43, range 0.07–0.66**. The
@@ -197,12 +197,18 @@ below it (one-sided p = 0.25).
 
 We pre-registered that the quality claim required the matched pair in the *lower tail*.
 It isn't. Comparing against the baseline *mean* would have passed — which is exactly why
-that test was rejected in advance. Full-profile TF correlation is dominated by study-level
-noise: **OSD-498 and OSD-508, two accessions of the same published experiment, correlate
-at 0.07.**
+that test was rejected in advance.
 
-All three qualities present — photon, HZE particle, simulated GCR — fire both arms of the
-decoder. The conserved DNA-damage core doesn't care what delivers the energy.
+**But the baseline is the real finding.** OSD-498 and OSD-508 are two accessions of the
+*same published experiment* and their TF profiles correlate at **0.045** — the
+reproducibility floor of this measurement. Response magnitude doesn't explain the scatter
+either (ρ=0.16, p=0.42). With 8 radiation contrasts, study-to-study variance is as large as
+any quality effect this design could resolve.
+
+So the honest answer is two-sided: **no evidence** that quality explains the flight null,
+and **no power to exclude** it. What is clear is that all three qualities — photon, HZE
+particle, simulated GCR — fire both arms of the decoder. The conserved DNA-damage core
+doesn't care what delivers the energy.
 
 ![Radiation quality](figures/fig12_radiation_quality.png)
 

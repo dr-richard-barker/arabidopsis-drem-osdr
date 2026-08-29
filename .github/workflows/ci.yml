@@ -44,6 +44,12 @@ jobs:
       - name: No undefined citations
         run: python3 scripts/check_citations.py
 
+      - name: Study-claim patterns reject their counterfactuals
+        run: python3 scripts/check_study_claims.py --self-test
+
+      - name: Manuscript study descriptions match the OSDR record
+        run: python3 scripts/check_study_claims.py
+
   manuscript:
     runs-on: ubuntu-latest
     timeout-minutes: 30

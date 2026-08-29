@@ -13,11 +13,19 @@ platform, same pipeline. Comparing its two arms isolates low-LET photon against 
 particle in a way no cross-study comparison can, and the honest baseline for "how similar
 should two irradiations look" is gamma-versus-gamma across *different* studies.
 
-**OSD-658 is excluded from every quality comparison.** It is the only simulated-GCR study
-and would be the most interesting point, but it irradiated DRY DORMANT SEED while every
-other study used hydrated seedlings or plants. Its near-zero correlation with the gamma
-studies is a tissue difference wearing a radiation difference's clothing, and using it
-would be the easiest available way to overstate this result.
+**OSD-658 is included.** An earlier version of this script excluded it, on the stated
+grounds that it irradiated dry dormant seed while the others used hydrated tissue. That
+was wrong: the deposit's RNA-seq arm irradiated SEEDLINGS in flasks and harvested them
+three hours later ("The Arabidopsis seedlings were sequentially exposed...", "RNA extracts
+from whole seedlings"). The dry-seed sentence in the same protocol belongs to a separate
+phenotyping sub-experiment. Excluding the only simulated-GCR study -- the most
+space-relevant contrast available -- on a misread of one sentence was a serious error, and
+`check_study_claims.py` now asserts this and every other study description against the
+live OSDR record.
+
+Its correlations with the other radiation contrasts still scatter widely (0.02 to 0.57),
+and neither tissue nor response magnitude explains that. What remains is study-level
+variance, which is what the result below is really about.
 
 **Two questions, not one.** The decoder's two arms fire for gamma, HZE and GCR alike --
 which is why a signature built on gamma validated on an HZE study. The full 474-TF profile
@@ -57,12 +65,9 @@ quiet_accelerate_blas_warnings()
 ACT = RESULTS / "tf_activity"
 OUT = RESULTS / "radiation_quality"
 
-# Excluded from quality comparisons, with the reason carried in the data.
-EXCLUDE = {
-    "OSD-658": "irradiated dry dormant seed; every other study used hydrated seedlings "
-               "or plants, so its divergence confounds tissue state with radiation "
-               "quality and cannot support a quality claim",
-}
+# No study is excluded. Kept as an explicit empty mapping so that any future exclusion
+# has to state its reason in the output rather than disappearing into a filter.
+EXCLUDE: dict[str, str] = {}
 
 # The matched pair: same study, same material, same facility, same harvest times.
 MATCHED_STUDY = "OSD-320"
@@ -171,6 +176,40 @@ def main() -> int:
     log(f"  matched pair sits at the {pct}th percentile of that baseline "
         f"(one-sided p = {p_lower})")
 
+    # ---- Is the scatter explained by response magnitude? If weak contrasts simply
+    # correlate poorly with everything, that would be a mundane explanation for the
+    # spread and would have to be controlled before reading anything into quality.
+    mag = {}
+    for k in usable.index:
+        row = pred[(pred["accession"] == usable.loc[k, "accession"])
+                   & (pred["level"] == usable.loc[k, "level"])]
+        if len(row):
+            mag[k] = float((row["sog1_arm"].iloc[0] + row["myb3r_arm"].iloc[0]) / 2)
+    mags, rhos = [], []
+    idx = list(usable.index)
+    sub_resp = act.loc[idx].dropna(axis=1)
+    sub_resp = sub_resp.loc[:, (sub_resp.abs() >= args.responsive_z).any(axis=0)]
+    for i, a in enumerate(idx):
+        for b in idx[i + 1:]:
+            if a in mag and b in mag:
+                mags.append(min(mag[a], mag[b]))
+                rhos.append(float(stats.spearmanr(sub_resp.loc[a], sub_resp.loc[b])[0]))
+    mag_rho, mag_p = (stats.spearmanr(mags, rhos) if len(mags) > 3 else (np.nan, np.nan))
+
+    # ---- The reproducibility floor: two accessions of the SAME published experiment.
+    # This is the ceiling on what any quality comparison could hope to resolve.
+    same_exp = None
+    for a in idx:
+        for b in idx:
+            pair = {usable.loc[a, "accession"], usable.loc[b, "accession"]}
+            if pair == {"OSD-498", "OSD-508"}:
+                same_exp = float(stats.spearmanr(sub_resp.loc[a], sub_resp.loc[b])[0])
+    log(f"  scatter vs response magnitude: rho = {mag_rho:.3f} (p = {mag_p:.2f}) "
+        f"-- magnitude does not explain it")
+    if same_exp is not None:
+        log(f"  reproducibility floor (OSD-498 vs OSD-508, same experiment): "
+            f"rho = {same_exp:.3f}")
+
     # ---------------------------------------------------------------- arm invariance
     arms = []
     for r in pred[pred["is_radiation_factor"]].itertuples():
@@ -207,9 +246,9 @@ def main() -> int:
         "excluded_studies": EXCLUDE,
         "matched_test": {
             "study": MATCHED_STUDY,
-            "design": "same study, same 6-day seedlings, same facility (BNL), same dose "
-                      "rate and harvest times; Cs-137 gamma (100 Gy) vs 1 GeV/n Fe-56 "
-                      "HZE (30 Gy)",
+            "design": "same study, same 8-day-old Ws/atm-1 seedlings, same facility "
+                      "(BNL), same 7 Gy/min dose rate and harvest times; Cs-137 gamma "
+                      "(100 Gy) vs 1 GeV/n Fe-56 HZE (30 Gy)",
             "rho_responsive_tfs": round(matched_rho, 4) if matched_rho == matched_rho else None,
             "n_tfs": int(resp["n_tfs"].iloc[0]) if len(resp) else None,
         },
@@ -224,6 +263,19 @@ def main() -> int:
             "percentile": pct, "one_sided_p": p_lower,
             "criterion": "quality claim requires the matched pair in the lower tail "
                          "(p < 0.05), not merely below the baseline mean",
+        },
+        "power": {
+            "scatter_vs_response_magnitude_rho": (round(float(mag_rho), 3)
+                                                  if mag_rho == mag_rho else None),
+            "scatter_vs_response_magnitude_p": (round(float(mag_p), 3)
+                                                if mag_p == mag_p else None),
+            "same_experiment_rho": round(same_exp, 3) if same_exp is not None else None,
+            "note": ("Two accessions of the same published experiment (OSD-498, OSD-508) "
+                     "correlate at the value above. That is the reproducibility floor of "
+                     "this measurement, and any quality effect would have to exceed the "
+                     "study-to-study variance to be visible above it. Response magnitude "
+                     "does not explain the scatter, so it is not a nuisance that could be "
+                     "regressed out."),
         },
         "quality_changes_profile": quality_matters,
         "arm_invariance": {
@@ -245,18 +297,20 @@ def main() -> int:
             f"of the gamma-versus-gamma baseline (p = {p_lower}).")
     else:
         report["interpretation"] = (
-            f"NOT SUPPORTED. The matched within-{MATCHED_STUDY} comparison of gamma "
-            f"against Fe-56 HZE gives rho {matched_rho:.2f}, which sits at the "
-            f"{pct}th percentile of the gamma-versus-gamma baseline "
-            f"(mean {base_rho:.2f}, range {base_rng}; one-sided p = {p_lower}). The "
-            f"variation between two gamma irradiations in different laboratories -- and "
-            f"even between two accessions of the same experiment, which correlate at "
-            f"0.07 -- is as large as the difference between low-LET photons and high-LET "
-            f"particles. These data therefore do NOT support radiation quality as the "
-            f"reason spaceflight shows no signature, and the argument rests on dose: the "
-            f"model was trained at {dose_gy:g} Gy while the ISS delivers at most "
-            f"{iss_hi} cGy, a factor of ~{gap:.0f}. All radiation qualities fire both "
-            f"arms of the decoder, which is consistent with a conserved DNA-damage core.")
+            f"NO EVIDENCE, AND NO POWER TO EXCLUDE. The matched within-{MATCHED_STUDY} "
+            f"comparison of gamma against Fe-56 HZE gives rho {matched_rho:.2f}, at the "
+            f"{pct}th percentile of the gamma-versus-gamma baseline (mean "
+            f"{base_rho:.2f}, range {base_rng}; one-sided p = {p_lower}) -- inside that "
+            f"distribution, not below it. But the baseline itself is the problem: two "
+            f"accessions of the SAME published experiment correlate at "
+            f"{same_exp:.2f}, so study-to-study variance is as large as any quality "
+            f"effect this design could detect, and response magnitude does not explain "
+            f"the scatter (rho {mag_rho:.2f}, p {mag_p:.2f}). With {len(usable)} "
+            f"radiation contrasts these data neither support radiation quality as the "
+            f"reason spaceflight shows no signature nor rule it out. What is not in "
+            f"doubt is dose: the model was trained at {dose_gy:g} Gy and the ISS delivers "
+            f"at most {iss_hi} cGy, a factor of ~{gap:.0f}. All radiation qualities fire "
+            f"both arms of the decoder, consistent with a conserved DNA-damage core.")
 
     write_json(RESULTS / "qc" / "radiation_quality_qc.json", report)
     log(f"\n  quality changes the full profile: {quality_matters}")

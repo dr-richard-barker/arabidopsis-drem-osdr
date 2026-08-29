@@ -420,8 +420,9 @@ below.}
 \subsection{The two arms have different dose thresholds}
 
 The ground irradiation studies define what the assay can see. OSD-782 exposed 4-week-old
-plants in a $^{137}$Cs irradiator at 1.4~cGy~s$^{-1}$ (10 and 100~cGy); OSD-658 exposed dry
-seeds to simulated galactic cosmic rays at NSRL (40 and 80~cGy). OSD-658's dose arms were
+plants in a $^{137}$Cs irradiator at 1.4~cGy~s$^{-1}$ (10 and 100~cGy); OSD-658 exposed flask-grown seedlings to sequential ion
+beams simulating the galactic cosmic-ray spectrum at NSRL (40 and 80~cGy), harvesting
+three hours later. OSD-658's dose arms were
 initially invisible to the pipeline because it records its unirradiated samples as
 \texttt{\{Not Applicable\}} rather than 0~cGy, leaving its dose factor with no internal
 reference; a cross-factor control fallback recovers them.
@@ -467,9 +468,10 @@ is the total mission dose accumulated by the ISS missions in this corpus.}
 
 If ground irradiation were simply the wrong kind of radiation, that would explain the
 absence of a flight signature without invoking dose at all. The corpus permits a direct
-test. OSD-320 irradiated 6-day-old seedlings at Brookhaven with \emph{both} Cs-137 gamma
-and 1~GeV/n Fe-56 HZE ions, at the same dose rate and the same harvest times: one study,
-one tissue, one platform, differing only in the particle. Comparing its two arms isolates
+test. OSD-320 irradiated 8-day-old Ws and \textit{atm-1} seedlings at Brookhaven with
+\emph{both} Cs-137 gamma (100~Gy) and 1~GeV/n Fe-56 HZE ions (30~Gy), at the same
+7~Gy~min$^{-1}$ dose rate and the same harvest times: one study, one tissue, one platform,
+differing only in the particle. Comparing its two arms isolates
 low-LET photon against high-LET particle in a way no cross-study comparison can.
 
 Across the \NumTfsResponsive{} responsive transcription factors the two arms correlate at
@@ -482,16 +484,22 @@ mean $\rho = \BaselineGammaRho{}$ over \BaselineGammaPairs{} pairs, ranging from
 
 We had pre-specified that the quality claim required the matched pair to fall in the lower
 tail, and it does not. Comparing it against the baseline \emph{mean} would have passed,
-which is precisely why that test was rejected in advance: the baseline is enormously
-dispersed, and OSD-498 and OSD-508 --- two accessions of the same published experiment ---
-correlate at only $0.07$. Full-profile TF correlation is dominated by study-level
-variation, not by the particle.
+which is precisely why that test was rejected in advance.
 
-Two things follow. Ground gamma irradiation is not demonstrably a poor model of particle
-radiation at the level this assay measures; and all three radiation qualities present
-here, photon, HZE particle and simulated GCR, fire both arms of the decoder's signature,
-which is what allowed a gamma-derived signature to validate on an HZE study. The conserved
-DNA-damage core behaves the same way whatever delivers the energy.
+The more important finding is what the baseline itself says about this design's power.
+OSD-498 and OSD-508 are two accessions of the \emph{same published experiment}, and their
+TF profiles correlate at only \SameExperimentRho{}. That is the reproducibility floor of
+the measurement. Response magnitude does not explain the scatter either
+($\rho = \ScatterMagRho{}$, $p = \ScatterMagP{}$), so it is not a nuisance that could be
+regressed away. With \NumRadContrasts{} radiation contrasts, study-to-study variance is as
+large as any quality effect this comparison could resolve.
+
+The honest conclusion is therefore two-sided: these data give \emph{no evidence} that
+radiation quality explains the flight null, and \emph{no power to exclude} it. What they
+do show is that all three qualities present --- photon, HZE particle and simulated GCR ---
+fire both arms of the decoder's signature, which is what allowed a gamma-derived signature
+to validate on an HZE study. The conserved DNA-damage core behaves the same way whatever
+delivers the energy; whether the wider regulatory response does cannot be settled here.
 
 \begin{figure}[t]
 \centering

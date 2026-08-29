@@ -14,7 +14,8 @@ steeply above it. Quoting one floor for "the radiation signature" would be wrong
 diagnostic arm and the sensitive arm are different arms.
 
 **The dose points come from different studies.** OSD-782 irradiated 4-week-old plants with
-a 137Cs source at 1.4 cGy/s; OSD-658 irradiated dry seeds with simulated GCR at NSRL. The
+a 137Cs source at 1.4 cGy/s; OSD-658 irradiated flask-grown seedlings with sequential ion
+beams simulating the GCR spectrum at NSRL, harvesting three hours later. The
 fit is therefore a cross-study estimate, not a titration, and the confidence interval is
 bootstrapped over the points rather than reported as a regression standard error.
 

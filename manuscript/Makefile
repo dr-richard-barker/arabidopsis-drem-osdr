@@ -45,6 +45,8 @@ manuscript.docx: $(SRC) $(BIB)
 check:
 	cd .. && $(PY) scripts/check_references.py --check
 	cd .. && $(PY) scripts/check_citations.py
+	cd .. && $(PY) scripts/check_study_claims.py --self-test
+	cd .. && $(PY) scripts/check_study_claims.py
 
 clean:
 	cd $(DIR) && latexmk -C $(TEX).tex 2>/dev/null || true

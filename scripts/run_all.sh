@@ -91,7 +91,8 @@ python3 scripts/13_manuscript_numbers.py
 step "14 manifest"
 python3 scripts/14_manifest.py
 
-step "references"
+step "references and study claims"
 python3 scripts/check_references.py
+python3 scripts/check_study_claims.py
 
 echo; echo "done. Build the manuscript with:  cd manuscript && make pdf docx"
