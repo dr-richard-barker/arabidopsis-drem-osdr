@@ -183,6 +183,46 @@ SOG1-arm z = −0.07): proliferation slowing without DNA damage.
 
 ![Radiation decoder](figures/fig5_decoder.png)
 
+### Is terrestrial gamma the wrong *kind* of radiation? We tested it — no.
+
+The obvious explanation for the flight null is that ground gamma studies don't model space
+radiation. **OSD-320 tests this cleanly**: the same study irradiated 6-day seedlings at
+Brookhaven with *both* Cs-137 gamma and 1 GeV/n Fe-56 HZE ions — same tissue, same
+facility, same dose rate, same harvest times.
+
+Across responsive TFs the two arms correlate at **ρ = 0.31**. The honest reference is how
+well two *gamma* irradiations in different labs agree: **mean 0.43, range 0.07–0.66**. The
+matched HZE pair sits at the **20th percentile** of that — inside the distribution, not
+below it (one-sided p = 0.25).
+
+We pre-registered that the quality claim required the matched pair in the *lower tail*.
+It isn't. Comparing against the baseline *mean* would have passed — which is exactly why
+that test was rejected in advance. Full-profile TF correlation is dominated by study-level
+noise: **OSD-498 and OSD-508, two accessions of the same published experiment, correlate
+at 0.07.**
+
+All three qualities present — photon, HZE particle, simulated GCR — fire both arms of the
+decoder. The conserved DNA-damage core doesn't care what delivers the energy.
+
+![Radiation quality](figures/fig12_radiation_quality.png)
+
+### So why does spaceflight show nothing? Dose, and the magnetosphere
+
+The DREM model was trained on **100 Gy** Co-60 delivered in ten minutes (parsed from the
+OSD-508 protocol, not assumed). An ISS plant experiment receives **0.39–2.48 cGy** over
+1–10 weeks — **~4,000× less dose at ~10⁶ lower dose rate**.
+
+And that low dose is not incidental: the ISS orbits deep inside the magnetosphere, where
+the geomagnetic cutoff deflects lower-rigidity particles and residual exposure is dominated
+by trapped protons in the South Atlantic Anomaly plus a strongly modulated GCR component
+([Reitz 2008](https://doi.org/10.1016/j.zemedi.2008.06.015)); beyond it that shielding is
+absent ([Slaba 2025](https://doi.org/10.1038/s41526-025-00459-y)).
+
+**The inversion worth stating:** for radiation specifically, LEO is a *shielded* environment
+and a poor analogue of deep space. A ground GCR simulator like NSRL may model the
+deep-space particle spectrum better than the ISS does. A negative radiation result from ISS
+plants is evidence about low Earth orbit — not about a Mars transit.
+
 ### Can we conclude ISS plants carry no radiation biomarkers?
 
 **Yes — and here is the dose at which we could have seen one.** OSD-658 and OSD-782 are
@@ -282,6 +322,7 @@ bash scripts/run_all.sh             # full run
 | `19`–`20` | TF-activity matrix (analytic null); per-TF mission-level tests with FDR |
 | `21`–`22` | Mission-grouped classifier + platform control; DREM trajectory projection |
 | `23` | Dose-response, detection floor, and ISS mission dose |
+| `24` | Radiation quality: matched HZE-vs-gamma test against a gamma baseline |
 | `12`–`14` | Figures, manuscript macros, `MANIFEST.tsv` |
 
 ---

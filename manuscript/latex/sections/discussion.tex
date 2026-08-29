@@ -71,6 +71,40 @@ floor two orders of magnitude below this one --- direct damage markers such as
 $\gamma$-H2AX foci or mutation accumulation, rather than steady-state transcript
 abundance.
 
+\subsection*{Why terrestrial irradiation did not predict the flight response}
+
+Three explanations were available for the flight null, and the data separate them.
+
+\textbf{Radiation quality is not the reason.} The matched within-study comparison of gamma
+against Fe-56 HZE ions places the difference inside the range of variation between two
+gamma irradiations in different laboratories. At the level this assay measures, ground
+gamma is not demonstrably a poor model of particle radiation, and every quality tested
+fires the same conserved DNA-damage core. We had expected the opposite and pre-registered
+the test that refuted it.
+
+\textbf{Dose is the reason.} The model was trained on 6-day seedlings given
+\TrainingDoseGy{}~Gy of Co-60 in ten minutes. An ISS plant experiment receives
+\IssDoseLo{}--\IssDoseHi{}~cGy over one to ten weeks: roughly \TrainingToIssFold{} times
+less dose, delivered some \DoseRateRatio{} times more slowly. The gap is not marginal, and
+no signature calibrated at that exposure could be expected to report this one.
+
+\textbf{And the ISS is the wrong place to look for it.} That the flight dose is small is
+not an accident of mission length; it is what the Earth's magnetic field does. The station
+orbits deep inside the magnetosphere, where the geomagnetic cutoff deflects lower-rigidity
+particles and the residual exposure is dominated by trapped protons encountered in the
+South Atlantic Anomaly together with a strongly modulated galactic cosmic-ray component
+\citep{reitz2008leo}. Beyond the magnetosphere that protection is absent, and measurements
+from Earth to lunar distance during Artemis-I show how different the field becomes
+\citep{slaba2025artemis}.
+
+The inversion is worth stating plainly, because it runs against the intuition that
+spaceflight data are the gold standard for space radiation biology. For \emph{radiation}
+specifically, low Earth orbit is a poor analogue of deep space --- it is a shielded
+environment --- and a ground-based mixed-field simulator such as NSRL may model the
+deep-space particle spectrum considerably better than the ISS does. A negative radiation
+result from ISS plants is therefore evidence about low Earth orbit, and carries little
+information about the exposures a Mars transit would impose.
+
 \subsection*{Limitations}
 
 The single-nucleus atlas is developmental and unirradiated, so deconvolution assumes
@@ -93,6 +127,14 @@ The spaceflight corpus is Arabidopsis-only, and not by choice: Ensembl returns n
 Arabidopsis-to-mouse orthologues for SOG1, MYB3R1 or E2F3, plant and vertebrate Compara
 being separate databases, and SOG1 is a plant-specific NAC with no animal homolog. The
 132 mouse and 29 human spaceflight studies in OSDR cannot be scored on these regulators.
+
+The quality test rests on a single matched pair, whose arms also differ in absorbed dose
+(100~Gy gamma against 30~Gy Fe-56, chosen for comparable biological effect), so dose and
+quality are not fully separable even there; a null from one comparison is weak evidence of
+absence. The only simulated-GCR study, OSD-658, is excluded from every quality comparison
+because it irradiated dry dormant seed while all others used hydrated tissue --- its
+divergence would confound developmental state with radiation quality. NSRL's sequential
+beams approximate a chronic mixed field rather than reproducing it.
 
 The detection floor is measured for acute exposure delivered in seconds. ISS exposure is
 chronic and roughly \DoseRateRatio{} times slower, where repair keeps pace, so the true

@@ -313,6 +313,38 @@ def fig_dose_response() -> None:
     save(fig, "fig11_dose_response")
 
 
+def fig_radiation_quality() -> None:
+    """Figure 12: the matched HZE-vs-gamma pair against the gamma-vs-gamma baseline."""
+    qc = RESULTS / "qc" / "radiation_quality_qc.json"
+    cpath = RESULTS / "radiation_quality" / "quality_correlations.tsv"
+    if not (qc.exists() and cpath.exists()):
+        log("  fig12 skipped: run 24_radiation_quality.py first")
+        return
+    rep = json.loads(qc.read_text())
+    c = pd.read_csv(cpath, sep="\t")
+    r = c[c["scope"] == "responsive_tfs"]
+    base = r[(~r["same_study"]) & (r["same_quality"])
+             & (r["quality_a"] == "low-LET photon")]["spearman_rho"]
+    matched = rep["matched_test"]["rho_responsive_tfs"]
+
+    fig, ax = plt.subplots(figsize=(7.0, 4.0), constrained_layout=True)
+    ax.hist(base, bins=10, range=(0, 0.75), color="#a0aec0", alpha=0.85,
+            label=f"gamma vs gamma, different studies (n={len(base)})")
+    ax.axvline(matched, color="#c53030", lw=2.2,
+               label=f"matched gamma vs Fe-56 HZE, same study ({matched:.2f})")
+    ax.axvline(float(base.mean()), color="0.35", ls="--", lw=1.2,
+               label=f"baseline mean ({base.mean():.2f})")
+    ax.set_xlabel("Spearman correlation of the full TF-activity profile")
+    ax.set_ylabel("number of study pairs")
+    pct = rep["matched_pair_vs_baseline"]["percentile"]
+    pv = rep["matched_pair_vs_baseline"]["one_sided_p"]
+    ax.set_title("Radiation quality does not explain the flight null:\n"
+                 f"the matched HZE pair sits at the {pct:g}th percentile of the "
+                 f"gamma baseline (p = {pv})", fontsize=9.5)
+    ax.legend(fontsize=7, frameon=False)
+    save(fig, "fig12_radiation_quality")
+
+
 def main() -> int:
     log("rendering figures")
     fig_cohort_design()
@@ -321,6 +353,7 @@ def main() -> int:
     fig_ablation()
     fig_tf_flight()
     fig_dose_response()
+    fig_radiation_quality()
     return 0
 
 

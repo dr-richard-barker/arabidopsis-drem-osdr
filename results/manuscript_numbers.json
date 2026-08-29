@@ -1,9 +1,13 @@
 {
  "generated": "2026-08-29",
- "n_defined": 117,
- "n_total": 117,
+ "n_defined": 128,
+ "n_total": 128,
  "values": {
   "AblationTestType": "2way",
+  "BaselineGammaHi": 0.661,
+  "BaselineGammaLo": 0.068,
+  "BaselineGammaPairs": 15,
+  "BaselineGammaRho": 0.4289,
   "ClfAUC": 0.9927,
   "ClfGroups": 22,
   "ClfNullMean": 0.4482,
@@ -24,6 +28,9 @@
   "IssDoseRate": 0.355,
   "LowDoseMybArm": 10.141,
   "LowDoseSogArm": -0.72,
+  "MatchedHzeRho": 0.3145,
+  "MatchedP": 0.25,
+  "MatchedPercentile": 20.0,
   "MybFlightQ": 0.89,
   "MybFlightZ": "-0.3231",
   "MybRadZ": "-3.7724",
@@ -92,6 +99,7 @@
   "NumTFsSigFlightVsRad": 54,
   "NumTFsTested": 474,
   "NumTFsTotal": 479,
+  "NumTfsResponsive": 317,
   "NumWTGenesAssigned": 1410,
   "NumWTNodes": 15,
   "NumWTSplits": 7,
@@ -119,6 +127,9 @@
   "TissueMybTopOrgan": "silique",
   "TissueSogSigClusters": 20,
   "TissueSogTop": 8.7,
-  "TissueSogTopOrgan": "flower"
+  "TissueSogTopOrgan": "flower",
+  "TrainingDoseCgy": 10000.0,
+  "TrainingDoseGy": 100.0,
+  "TrainingToIssFold": 4024.0
  }
 }

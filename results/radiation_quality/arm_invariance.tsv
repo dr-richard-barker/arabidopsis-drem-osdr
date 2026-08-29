@@ -1,0 +1,9 @@
+accession	level	quality	sog1_arm	myb3r_arm	both_arms_significant
+OSD-510	Cobalt-60 gamma radiation	low-LET photon	20.77	22.53	True
+OSD-502	Cobalt-60 gamma radiation	low-LET photon	21.72	19.41	True
+OSD-508	Cobalt-60 gamma radiation	low-LET photon	18.3	20.57	True
+OSD-498	Cobalt-60 gamma radiation	low-LET photon	19.67	16.56	True
+OSD-320	Cesium-137 gamma radiation	low-LET photon	17.56	14.29	True
+OSD-320	Fe-56 ion radiation	high-LET particle	16.81	14.01	True
+OSD-658	mixed radiation	mixed field (simulated GCR)	7.67	8.28	True
+OSD-782	cesium-137 gamma radiation	low-LET photon	2.63	10.92	True

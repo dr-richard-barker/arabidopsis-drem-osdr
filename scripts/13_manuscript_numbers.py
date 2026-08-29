@@ -66,6 +66,7 @@ def main() -> int:
     clf = load(RESULTS / "tf_activity" / "classifier_report.json")
     proj = load(RESULTS / "qc" / "drem_projection_qc.json")
     dose = load(RESULTS / "qc" / "dose_response_qc.json")
+    qual = load(RESULTS / "qc" / "radiation_quality_qc.json")
 
     v: dict[str, object] = {}
 
@@ -289,6 +290,19 @@ def main() -> int:
                     v[f"{key}FlightQ"] = round(float(r["flight_q"]), 2)
                 except (ValueError, TypeError):
                     pass
+
+    # ---- radiation quality
+    v["MatchedHzeRho"] = dig(qual, "matched_test", "rho_responsive_tfs")
+    v["BaselineGammaRho"] = dig(qual, "baseline_gamma_vs_gamma_across_studies", "mean_rho")
+    brng = dig(qual, "baseline_gamma_vs_gamma_across_studies", "range") or [None, None]
+    v["BaselineGammaLo"], v["BaselineGammaHi"] = brng[0], brng[1]
+    v["BaselineGammaPairs"] = dig(qual, "baseline_gamma_vs_gamma_across_studies", "n_pairs")
+    v["MatchedPercentile"] = dig(qual, "matched_pair_vs_baseline", "percentile")
+    v["MatchedP"] = dig(qual, "matched_pair_vs_baseline", "one_sided_p")
+    v["TrainingDoseGy"] = dig(qual, "dose_gap", "training_dose_gy")
+    v["TrainingDoseCgy"] = dig(qual, "dose_gap", "training_dose_cgy")
+    v["TrainingToIssFold"] = dig(qual, "dose_gap", "fold")
+    v["NumTfsResponsive"] = dig(qual, "matched_test", "n_tfs")
 
     defined = sum(1 for x in v.values() if x is not None)
     lines = [

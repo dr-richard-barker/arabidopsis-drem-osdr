@@ -70,6 +70,55 @@ where the evidence was marginal and holds where it was strong.
 \input{sections/results}
 \input{sections/discussion}
 
+\section*{Conclusions}
+
+A single-cell atlas can act on a DREM model rather than on its annotation, through the
+score column the engine already reads. Doing so on an \textit{Arabidopsis}
+$\gamma$-irradiation pseudo-time-series reproduces the published SOG1/MYB3R regulatory
+logic, and the atlas acts specifically: it demotes seed-restricted NAC regulators absent
+from irradiated seedlings while leaving SOG1, itself a NAC, untouched.
+
+Turning that model into a decoder and applying it across NASA's Open Science Data
+Repository gives a negative result, and the value of the negative result depends entirely
+on knowing what would have counted as a positive one. No OSDR plant study outside the
+irradiation cohort carries the coordinated signature; no DREM transcription factor is
+altered in spaceflight at 5\% FDR; and no flight contrast resembles any phase of the
+radiation trajectory, while irradiation contrasts trace it to a clear peak.
+
+Current ISS plant transcriptomes therefore carry no detectable radiation-damage biomarker
+as this analysis defines one. The reason is dose, not radiation quality: a matched
+comparison of $\gamma$ against Fe-56 HZE ions places the difference inside the range of
+variation between two $\gamma$ irradiations in different laboratories, whereas the model's
+training exposure exceeds the largest ISS mission dose by a factor of
+\TrainingToIssFold{}. Low Earth orbit is a magnetically shielded environment, and for
+radiation biology specifically it is a poor analogue of deep space.
+
+The practical consequence is that a transcriptomic radiation biomarker developed on acute
+ground irradiation should not be expected to report LEO exposure, and its absence in
+flight data is not evidence of radiation safety. Detecting radiation effects in ISS plant
+material will require assays with floors orders of magnitude lower than steady-state
+transcript abundance.
+
+\section*{Author contributions}
+
+\textbf{TODO: author contributions.} R.J.B. conceived and performed the analysis and wrote
+the manuscript.
+
+\section*{Competing interests}
+
+The authors declare no competing interests.
+
+\section*{Funding}
+
+\textbf{TODO: funding sources and grant numbers.}
+
+\section*{Acknowledgements}
+
+We thank the investigators who deposited the studies analysed here, and NASA's Open
+Science Data Repository and GeneLab for curating and publishing them. This work reuses
+DREM~2.0.7, distributed by the Ernst laboratory under GPL-3.0.
+\textbf{TODO: further acknowledgements.}
+
 \section*{Data and code availability}
 All analysis code, harmonised metadata and derived tables are at
 \url{https://github.com/dr-richard-barker/arabidopsis-drem-osdr} and archived at Zenodo

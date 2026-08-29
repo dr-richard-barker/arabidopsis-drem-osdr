@@ -1,0 +1,52 @@
+{
+ "arm_invariance": {
+  "all_qualities_fire_both_arms": true,
+  "by_quality": {
+   "high-LET particle": [
+    1,
+    1
+   ],
+   "low-LET photon": [
+    6,
+    6
+   ],
+   "mixed field (simulated GCR)": [
+    1,
+    1
+   ]
+  }
+ },
+ "baseline_gamma_vs_gamma_across_studies": {
+  "mean_rho": 0.4289,
+  "n_pairs": 15,
+  "note": "hugely dispersed -- OSD-498 and OSD-508 are two accessions of the same published experiment and correlate at 0.07, so full-profile correlation is dominated by study-level noise",
+  "range": [
+   0.068,
+   0.661
+  ]
+ },
+ "dose_gap": {
+  "fold": 4024.0,
+  "iss_max_mission_cgy": 2.485,
+  "parsed_from": "OSD-508",
+  "training_dose_cgy": 10000.0,
+  "training_dose_gy": 100.0
+ },
+ "excluded_studies": {
+  "OSD-658": "irradiated dry dormant seed; every other study used hydrated seedlings or plants, so its divergence confounds tissue state with radiation quality and cannot support a quality claim"
+ },
+ "generated": "2026-08-29",
+ "interpretation": "NOT SUPPORTED. The matched within-OSD-320 comparison of gamma against Fe-56 HZE gives rho 0.31, which sits at the 20.0th percentile of the gamma-versus-gamma baseline (mean 0.43, range [0.068, 0.661]; one-sided p = 0.25). The variation between two gamma irradiations in different laboratories -- and even between two accessions of the same experiment, which correlate at 0.07 -- is as large as the difference between low-LET photons and high-LET particles. These data therefore do NOT support radiation quality as the reason spaceflight shows no signature, and the argument rests on dose: the model was trained at 100 Gy while the ISS delivers at most 2.485 cGy, a factor of ~4024. All radiation qualities fire both arms of the decoder, which is consistent with a conserved DNA-damage core.",
+ "matched_pair_vs_baseline": {
+  "criterion": "quality claim requires the matched pair in the lower tail (p < 0.05), not merely below the baseline mean",
+  "one_sided_p": 0.25,
+  "percentile": 20.0
+ },
+ "matched_test": {
+  "design": "same study, same 6-day seedlings, same facility (BNL), same dose rate and harvest times; Cs-137 gamma (100 Gy) vs 1 GeV/n Fe-56 HZE (30 Gy)",
+  "n_tfs": 317,
+  "rho_responsive_tfs": 0.3145,
+  "study": "OSD-320"
+ },
+ "quality_changes_profile": false
+}

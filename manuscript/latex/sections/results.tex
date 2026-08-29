@@ -116,47 +116,6 @@ bifurcations and should not be read as rates.}
 \label{fig:ablation}
 \end{figure}
 
-\subsection{The genotype contrast recovers the published regulatory logic}
-
-The cohort's built-in positive control is decisive. Under all three priors, SOG1 ranks
-\textbf{first} of the \NumPriorTFs{} scored TFs in the wild-type model. In
-\textit{sog1-1} it collapses --- to rank \SogOneRankMutFlat{} under the flat prior and
-\SogOneRankMutWeighted{} under the cell-type-weighted prior (Table~\ref{tab:genotype}).
-MYB3R1 ranks \MybThreeRRankWTFlat{} in wild type and is retained in the mutant, as
-expected for a repressor whose activity does not depend on SOG1.
-
-This reproduces the regulatory logic \citet{bourbousse2018sog1} reported --- SOG1 as the
-major activator, MYB3R as the major repressors --- from an independently reconstructed
-pipeline, and it does so through the TF attribution rather than through expression alone.
-Note that the attribution is only possible because SOG1 edges were added from ChIP-seq:
-with the DAP-seq prior alone, SOG1 has no edges and could not have been ranked at all.
-
-\begin{table}[t]
-\centering
-\caption{SOG1 rank among \NumPriorTFs{} scored transcription factors. Lower is more
-significant; the mutant is the negative control.}
-\label{tab:genotype}
-\begin{tabular}{lrr}
-\toprule
-Prior & Wild type & \textit{sog1-1} \\
-\midrule
-flat     & \SogOneRankWTFlat{}     & \SogOneRankMutFlat{} \\
-weighted & \SogOneRankWTWeighted{} & \SogOneRankMutWeighted{} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Independent corroboration from a different method}
-
-The sibling analysis in \texttt{Plant\_response\_to\_radiation} models an overlapping set
-of OSDR studies with a Gaussian-process autoencoder and WGCNA co-expression modules, with
-no DREM and no TF attribution anywhere in it. Over the
-\NumSharedGenesWithSibling{} genes both analyses modelled,
-\NumNodesEnrichingModule{} of \NumSiblingNodes{} DREM nodes enrich one of the
-\NumSiblingModules{} WGCNA modules at Bonferroni-corrected $p < 0.05$. The two methods
-share raw data but almost no methodology, so the agreement is external corroboration
-rather than a restatement.
-
 \subsection{What the cell-type weighting actually did}
 
 The weighting is a multiplier in $[0,1]$, so every regulator's total edge mass shrinks;
@@ -213,6 +172,69 @@ weighting relative to the median TF, labelled with the cluster where each peaks;
 demoted set is dominated by silique-restricted NACs absent from irradiated seedlings.}
 \label{fig:tissue}
 \end{figure}
+
+\subsection{The genotype contrast recovers the published regulatory logic}
+
+The cohort's built-in positive control is decisive. Under all three priors, SOG1 ranks
+\textbf{first} of the \NumPriorTFs{} scored TFs in the wild-type model. In
+\textit{sog1-1} it collapses --- to rank \SogOneRankMutFlat{} under the flat prior and
+\SogOneRankMutWeighted{} under the cell-type-weighted prior (Table~\ref{tab:genotype}).
+MYB3R1 ranks \MybThreeRRankWTFlat{} in wild type and is retained in the mutant, as
+expected for a repressor whose activity does not depend on SOG1.
+
+This reproduces the regulatory logic \citet{bourbousse2018sog1} reported --- SOG1 as the
+major activator, MYB3R as the major repressors --- from an independently reconstructed
+pipeline, and it does so through the TF attribution rather than through expression alone.
+Note that the attribution is only possible because SOG1 edges were added from ChIP-seq:
+with the DAP-seq prior alone, SOG1 has no edges and could not have been ranked at all.
+
+\begin{table}[t]
+\centering
+\caption{SOG1 rank among \NumPriorTFs{} scored transcription factors. Lower is more
+significant; the mutant is the negative control.}
+\label{tab:genotype}
+\begin{tabular}{lrr}
+\toprule
+Prior & Wild type & \textit{sog1-1} \\
+\midrule
+flat     & \SogOneRankWTFlat{}     & \SogOneRankMutFlat{} \\
+weighted & \SogOneRankWTWeighted{} & \SogOneRankMutWeighted{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Comparison with the published model}
+
+\citet{bourbousse2018sog1} reported \NumPublishedGroups{} co-expressed gene groups from
+six timepoints of OSD-510. Our flat-prior wild-type model over the pooled, denser series
+yields \NumWTNodes{} nodes across \NumWTSplits{} splits from
+\NumWTGenesAssigned{} assigned genes. These counts are not expected to be identical: the
+pooled series adds the 10 and 45~min timepoints and draws on three accessions rather than
+one, and DREM's node count responds to both. The comparison is reported for calibration.
+
+\begin{table}[t]
+\centering
+\caption{Cohort composition, measured from the OSDR metadata API.}
+\label{tab:cohorts}
+\begin{tabular}{llrl}
+\toprule
+Cohort & Studies & Timepoints & Span \\
+\midrule
+A ($\gamma$-irradiation) & \NumCohortAStudies{} & \NumCohortATimepoints{} & 10 min -- 72 h \\
+B (spaceflight)          & \NumCohortBStudies{} & \NumCohortBTimepoints{} & 4 -- 8 d \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Independent corroboration from a different method}
+
+The sibling analysis in \texttt{Plant\_response\_to\_radiation} models an overlapping set
+of OSDR studies with a Gaussian-process autoencoder and WGCNA co-expression modules, with
+no DREM and no TF attribution anywhere in it. Over the
+\NumSharedGenesWithSibling{} genes both analyses modelled,
+\NumNodesEnrichingModule{} of \NumSiblingNodes{} DREM nodes enrich one of the
+\NumSiblingModules{} WGCNA modules at Bonferroni-corrected $p < 0.05$. The two methods
+share raw data but almost no methodology, so the agreement is external corroboration
+rather than a restatement.
 
 \subsection{A decoder built on the signature, applied across OSDR}
 
@@ -425,7 +447,9 @@ Placing the spaceflight corpus against that floor requires a dose, not a duratio
 (VSS~Unity, Unity~22) and three studies spanning two resupply flights with no resolvable
 duration are excluded and reported separately rather than pooled.
 
-The highest ISS mission dose is therefore \FoldBelowFloor{}$\times$ below
+The DREM model itself was trained at \TrainingDoseGy{}~Gy, parsed from the OSD-508
+protocol rather than assumed --- \TrainingToIssFold{} times the largest ISS mission dose in
+this corpus. The highest ISS mission dose is \FoldBelowFloor{}$\times$ below
 \DoseNotDetected{}~cGy --- the dose at which the DNA-damage arm already fails to register
 --- and is delivered at a dose rate roughly \DoseRateRatio{} times lower, chronically
 rather than in seconds.
@@ -439,25 +463,42 @@ is the total mission dose accumulated by the ISS missions in this corpus.}
 \label{fig:dose}
 \end{figure}
 
-\subsection{Comparison with the published model}
+\subsection{Radiation quality does not explain the flight null}
 
-\citet{bourbousse2018sog1} reported \NumPublishedGroups{} co-expressed gene groups from
-six timepoints of OSD-510. Our flat-prior wild-type model over the pooled, denser series
-yields \NumWTNodes{} nodes across \NumWTSplits{} splits from
-\NumWTGenesAssigned{} assigned genes. These counts are not expected to be identical: the
-pooled series adds the 10 and 45~min timepoints and draws on three accessions rather than
-one, and DREM's node count responds to both. The comparison is reported for calibration.
+If ground irradiation were simply the wrong kind of radiation, that would explain the
+absence of a flight signature without invoking dose at all. The corpus permits a direct
+test. OSD-320 irradiated 6-day-old seedlings at Brookhaven with \emph{both} Cs-137 gamma
+and 1~GeV/n Fe-56 HZE ions, at the same dose rate and the same harvest times: one study,
+one tissue, one platform, differing only in the particle. Comparing its two arms isolates
+low-LET photon against high-LET particle in a way no cross-study comparison can.
 
-\begin{table}[t]
+Across the \NumTfsResponsive{} responsive transcription factors the two arms correlate at
+$\rho = \MatchedHzeRho{}$. The relevant question is whether that is low, and the honest
+reference is how well two \emph{gamma} irradiations in different laboratories agree:
+mean $\rho = \BaselineGammaRho{}$ over \BaselineGammaPairs{} pairs, ranging from
+\BaselineGammaLo{} to \BaselineGammaHi{}. The matched HZE comparison sits at the
+\MatchedPercentile{}th percentile of that distribution (one-sided $p = \MatchedP{}$)
+--- inside it, not below it (Figure~\ref{fig:quality}).
+
+We had pre-specified that the quality claim required the matched pair to fall in the lower
+tail, and it does not. Comparing it against the baseline \emph{mean} would have passed,
+which is precisely why that test was rejected in advance: the baseline is enormously
+dispersed, and OSD-498 and OSD-508 --- two accessions of the same published experiment ---
+correlate at only $0.07$. Full-profile TF correlation is dominated by study-level
+variation, not by the particle.
+
+Two things follow. Ground gamma irradiation is not demonstrably a poor model of particle
+radiation at the level this assay measures; and all three radiation qualities present
+here, photon, HZE particle and simulated GCR, fire both arms of the decoder's signature,
+which is what allowed a gamma-derived signature to validate on an HZE study. The conserved
+DNA-damage core behaves the same way whatever delivers the energy.
+
+\begin{figure}[t]
 \centering
-\caption{Cohort composition, measured from the OSDR metadata API.}
-\label{tab:cohorts}
-\begin{tabular}{llrl}
-\toprule
-Cohort & Studies & Timepoints & Span \\
-\midrule
-A ($\gamma$-irradiation) & \NumCohortAStudies{} & \NumCohortATimepoints{} & 10 min -- 72 h \\
-B (spaceflight)          & \NumCohortBStudies{} & \NumCohortBTimepoints{} & 4 -- 8 d \\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=0.72\linewidth]{../figures/fig12_radiation_quality}
+\caption{Radiation quality tested against the flight null. The matched gamma-versus-HZE
+comparison within OSD-320 falls inside the distribution of gamma-versus-gamma correlations
+between different studies, not below it.}
+\label{fig:quality}
+\end{figure}
+

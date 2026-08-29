@@ -49,6 +49,8 @@ DOIS = {
     "berardini2015tair": ("10.1002/dvg.22877", "Berardini", 2015),
     "love2014deseq2": ("10.1186/s13059-014-0550-8", "Love", 2014),
     "yoshida2022iss": ("10.1016/j.heliyon.2022.e10266", "Yoshida", 2022),
+    "reitz2008leo": ("10.1016/j.zemedi.2008.06.015", "Reitz", 2008),
+    "slaba2025artemis": ("10.1038/s41526-025-00459-y", "Slaba", 2025),
 }
 
 # No DOI exists for these; the URL is what a reader must check.
