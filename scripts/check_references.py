@@ -51,6 +51,7 @@ DOIS = {
     "yoshida2022iss": ("10.1016/j.heliyon.2022.e10266", "Yoshida", 2022),
     "reitz2008leo": ("10.1016/j.zemedi.2008.06.015", "Reitz", 2008),
     "slaba2025artemis": ("10.1038/s41526-025-00459-y", "Slaba", 2025),
+    "fengler2015": ("10.1155/2015/547495", "Fengler", 2015),
 }
 
 # No DOI exists for these; the URL is what a reader must check.
@@ -77,7 +78,10 @@ def esc(s: str) -> str:
 
 def strip_tags(s: str) -> str:
     import re
-    return re.sub(r"<[^>]+>", "", str(s))
+    # Replace with a space, not nothing: CrossRef marks up species names inline, so
+    # "of<i>Arabidopsis thaliana</i>Semisolid" collapses to "ofArabidopsis thalianaSemisolid"
+    # if the tags are simply deleted, and that lands verbatim in the printed bibliography.
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", str(s))).strip()
 
 
 def fetch(doi: str) -> dict | None:

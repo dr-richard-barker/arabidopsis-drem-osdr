@@ -19,7 +19,7 @@
  "baseline_gamma_vs_gamma_across_studies": {
   "mean_rho": 0.4201,
   "n_pairs": 15,
-  "note": "hugely dispersed -- OSD-498 and OSD-508 are two accessions of the same published experiment and correlate at 0.07, so full-profile correlation is dominated by study-level noise",
+  "note": "hugely dispersed -- OSD-498 and OSD-508 are two accessions of the same published experiment and correlate at 0.045, so full-profile correlation is dominated by study-level noise",
   "range": [
    0.045,
    0.641
@@ -33,7 +33,7 @@
   "training_dose_gy": 100.0
  },
  "excluded_studies": {},
- "generated": "2026-08-29",
+ "generated": "2026-09-02",
  "interpretation": "NO EVIDENCE, AND NO POWER TO EXCLUDE. The matched within-OSD-320 comparison of gamma against Fe-56 HZE gives rho 0.31, at the 20.0th percentile of the gamma-versus-gamma baseline (mean 0.42, range [0.045, 0.641]; one-sided p = 0.25) -- inside that distribution, not below it. But the baseline itself is the problem: two accessions of the SAME published experiment correlate at 0.04, so study-to-study variance is as large as any quality effect this design could detect, and response magnitude does not explain the scatter (rho 0.16, p 0.42). With 8 radiation contrasts these data neither support radiation quality as the reason spaceflight shows no signature nor rule it out. What is not in doubt is dose: the model was trained at 100 Gy and the ISS delivers at most 2.485 cGy, a factor of ~4024. All radiation qualities fire both arms of the decoder, consistent with a conserved DNA-damage core.",
  "matched_pair_vs_baseline": {
   "criterion": "quality claim requires the matched pair in the lower tail (p < 0.05), not merely below the baseline mean",

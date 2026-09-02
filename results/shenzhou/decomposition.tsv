@@ -1,0 +1,4 @@
+contrast	treated	control	meaning	n_treated	n_control	n_genes	sog1_arm	myb3r_arm	n_sog1_genes	n_myb3r_genes	radiation_index	call
+non_microgravity_spaceflight	FC	GS	in-flight 1g centrifuge vs ground 1g: everything about the mission except weightlessness, including radiation	2	2	14007	-2.021	5.437	78	137	-2.021	no signal
+microgravity_alone	FS	FC	microgravity vs in-flight 1g: weightlessness with radiation and mission environment held constant	2	2	14007	-0.826	-7.327	78	137	-7.327	no signal
+total_flight_effect	FS	GS	microgravity flight vs ground: the confounded contrast every other study in this corpus measures	2	2	14007	-2.493	-0.965	78	137	-2.493	no signal

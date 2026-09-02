@@ -67,6 +67,7 @@ def main() -> int:
     proj = load(RESULTS / "qc" / "drem_projection_qc.json")
     dose = load(RESULTS / "qc" / "dose_response_qc.json")
     qual = load(RESULTS / "qc" / "radiation_quality_qc.json")
+    shen = load(RESULTS / "qc" / "shenzhou_qc.json")
 
     v: dict[str, object] = {}
 
@@ -308,6 +309,20 @@ def main() -> int:
     v["ScatterMagP"] = dig(qual, "power", "scatter_vs_response_magnitude_p")
     v["NumRadContrasts"] = dig(qual, "arm_invariance", "by_quality") and sum(
         v2[1] for v2 in (dig(qual, "arm_invariance", "by_quality") or {}).values())
+
+    # ---- Shenzhou-8 in-flight 1g decomposition
+    cons = {c["contrast"]: c for c in (dig(shen, "contrasts", default=[]) or [])}
+    for key, pre in (("non_microgravity_spaceflight", "NonUg"),
+                     ("microgravity_alone", "UgOnly"),
+                     ("total_flight_effect", "TotalFlight")):
+        c = cons.get(key)
+        if c:
+            v[f"Shen{pre}Sog"] = c["sog1_arm"]
+            v[f"Shen{pre}Myb"] = c["myb3r_arm"]
+            v[f"Shen{pre}Index"] = c["radiation_index"]
+    v["ShenDoseCgy"] = dig(shen, "mission", "estimated_dose_cgy")
+    v["ShenMissionDays"] = dig(shen, "mission", "days")
+    v["ShenNArrays"] = len(dig(shen, "design", default=[]) or []) or None
 
     defined = sum(1 for x in v.values() if x is not None)
     lines = [

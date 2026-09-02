@@ -79,6 +79,14 @@ python3 scripts/23_dose_response.py
 step "24 radiation quality: does LET explain the flight null?"
 python3 scripts/24_radiation_quality.py
 
+step "25 Shenzhou-8: decompose flight with an in-flight 1g control"
+python3 scripts/25_shenzhou_decomposition.py || \
+  echo "  (needs R with Bioconductor affy + ath1121501cdf — skipped)"
+
+step "26 B. rapa orthologs by DIAMOND reciprocal best hit"
+python3 scripts/26_brapa_orthologs.py || \
+  echo "  (needs diamond and the B_rappa_LLGCSS CDS — skipped)"
+
 step "11 cross-validate against the sibling analysis"
 python3 scripts/11_crossvalidate_sibling.py || echo "  (sibling repo not present — skipped)"
 

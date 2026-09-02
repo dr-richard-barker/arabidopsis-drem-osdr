@@ -63,6 +63,21 @@ the ISS radiation effect below our floor rather than demonstrating that no damag
 Transcription is a poor dosimeter at ISS dose rates, where repair keeps pace with damage
 and no acute programme is triggered.
 
+One design objection deserves a direct answer: every OSDR flight contrast confounds
+weightlessness with the rest of the mission, so an absent radiation signature could in
+principle mean a microgravity response was masking one. The Shenzhou-8 experiment, which
+carried an in-flight 1\,g centrifuge, lets that be checked. Separating the mission into a
+non-microgravity term and a microgravity term leaves the radiation index below threshold in
+both (\ShenNonUgIndex{} and \ShenUgOnlyIndex{}), so the flight null is not an artefact of
+the confound. It is also no more than a consistency check, since that mission's
+\ShenDoseCgy{}\,cGy sits far below the assay's floor and predicts a null on dose alone.
+What the decomposition does show is that the confound is real for other quantities: the
+MYB3R/G2--M arm moves in opposite directions in the two terms and nearly cancels when they
+are summed. An absent signal in a flight-versus-ground contrast can therefore be a
+cancellation rather than a quiet pathway, and only an in-flight 1\,g control can tell the
+two apart. That the ISS corpus contains no such control is a limitation of the corpus, not
+of the analysis.
+
 Two consequences follow for practice. A transcriptomic radiation biomarker developed on
 acute ground irradiation should not be expected to report LEO exposure, and its absence in
 flight data should not be read as evidence of radiation safety. And if a radiation

@@ -1,0 +1,105 @@
+{
+ "accession": "E-MTAB-2518",
+ "caveats": {
+  "dose": "A 5-day mission accumulates about 0.18 cGy, roughly 225x below this assay's demonstrated 40 cGy floor. A null in the non-microgravity term is therefore predicted by dose alone and is not evidence about radiation damage.",
+  "replication": "Two arrays per condition, and they are FRONT and REAR positions within one hardware container. They are positional replicates, not biological ones, so a between-condition difference cannot be separated from a between-flask one.",
+  "tissue": "Cell culture, not seedlings. Every other contrast in this corpus uses whole plants or seedlings, so this is not directly comparable to them."
+ },
+ "contrasts": [
+  {
+   "call": "no signal",
+   "contrast": "non_microgravity_spaceflight",
+   "control": "GS",
+   "meaning": "in-flight 1g centrifuge vs ground 1g: everything about the mission except weightlessness, including radiation",
+   "myb3r_arm": 5.437,
+   "n_control": 2,
+   "n_genes": 14007,
+   "n_myb3r_genes": 137,
+   "n_sog1_genes": 78,
+   "n_treated": 2,
+   "radiation_index": -2.021,
+   "sog1_arm": -2.021,
+   "treated": "FC"
+  },
+  {
+   "call": "no signal",
+   "contrast": "microgravity_alone",
+   "control": "FC",
+   "meaning": "microgravity vs in-flight 1g: weightlessness with radiation and mission environment held constant",
+   "myb3r_arm": -7.327,
+   "n_control": 2,
+   "n_genes": 14007,
+   "n_myb3r_genes": 137,
+   "n_sog1_genes": 78,
+   "n_treated": 2,
+   "radiation_index": -7.327,
+   "sog1_arm": -0.826,
+   "treated": "FS"
+  },
+  {
+   "call": "no signal",
+   "contrast": "total_flight_effect",
+   "control": "GS",
+   "meaning": "microgravity flight vs ground: the confounded contrast every other study in this corpus measures",
+   "myb3r_arm": -0.965,
+   "n_control": 2,
+   "n_genes": 14007,
+   "n_myb3r_genes": 137,
+   "n_sog1_genes": 78,
+   "n_treated": 2,
+   "radiation_index": -2.493,
+   "sog1_arm": -2.493,
+   "treated": "FS"
+  }
+ ],
+ "design": [
+  {
+   "arm": "FS",
+   "array": "FS_front",
+   "condition": "space flight microgravity",
+   "position": "front"
+  },
+  {
+   "arm": "FS",
+   "array": "FS_rear",
+   "condition": "space flight microgravity",
+   "position": "rear"
+  },
+  {
+   "arm": "FC",
+   "array": "FC_front",
+   "condition": "1g in-flight reference centrifuge",
+   "position": "front"
+  },
+  {
+   "arm": "FC",
+   "array": "FC_rear",
+   "condition": "1g in-flight reference centrifuge",
+   "position": "rear"
+  },
+  {
+   "arm": "GS",
+   "array": "GS_front",
+   "condition": "1g ground control",
+   "position": "front"
+  },
+  {
+   "arm": "GS",
+   "array": "GS_rear",
+   "condition": "1g ground control",
+   "position": "rear"
+  }
+ ],
+ "generated": "2026-09-02",
+ "interpretation": "Neither half of the flight effect carries the radiation signature (non-microgravity term index -2.021, microgravity term -7.327; threshold 1.96). Given the mission dose that is the expected result and adds no independent evidence about radiation. What the decomposition does show is which half of the flight environment moves the transcriptome at all.",
+ "material": "11-day-old Arabidopsis thaliana Col-0 semisolid callus culture (SDRF material type 'cell')",
+ "mission": {
+  "days": 5,
+  "dose_basis": "0.355 mGy/day (Yoshida et al. 2022), as used throughout",
+  "estimated_dose_cgy": 0.177,
+  "name": "Shenzhou-8 (SIMBOX)"
+ },
+ "platform": "Affymetrix ATH1-121501 (A-AFFY-2), RMA",
+ "publication_doi": "10.1155/2015/547495",
+ "source": "ArrayExpress/BioStudies; not present in NASA OSDR"
+}

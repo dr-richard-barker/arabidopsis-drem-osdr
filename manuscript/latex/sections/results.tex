@@ -510,3 +510,52 @@ between different studies, not below it.}
 \label{fig:quality}
 \end{figure}
 
+
+\subsection{An in-flight 1\,g control separates the two halves of the flight effect}
+
+Every contrast considered so far confounds weightlessness with the rest of the mission.
+A flight-versus-ground comparison cannot say whether an absent radiation signature means
+radiation left no mark or means a microgravity response masked one. The Shenzhou-8 SIMBOX
+experiment \citep{fengler2015} resolves that confound, because it flew a 1\,g reference
+centrifuge alongside the microgravity samples: \ShenNArrays{} ATH1 arrays spanning
+microgravity flight, in-flight 1\,g, and ground 1\,g. We re-processed the raw
+intensity files from ArrayExpress and scored the three contrasts with the same conjunctive
+index used throughout (Figure~\ref{fig:shenzhou}).
+
+Neither half of the flight effect carries the radiation signature. The non-microgravity
+term --- in-flight 1\,g against ground, which contains the radiation exposure, launch and
+containment but not weightlessness --- scores \ShenNonUgIndex{}, and the microgravity term
+scores \ShenUgOnlyIndex{}, both far below the threshold of 1.96. This is the expected
+result and we claim nothing from it: a \ShenMissionDays{}-day mission accumulates about
+\ShenDoseCgy{}\,cGy, some two orders of magnitude below the 40\,cGy floor at which the
+assay is demonstrably sensitive. A null here is predicted by dose alone.
+
+The decomposition is nonetheless informative, because the two halves move the
+proliferation arm in opposite directions. The MYB3R/G2--M arm scores \ShenNonUgMyb{} in
+the non-microgravity term --- G2--M transcripts depressed relative to ground --- and
+\ShenUgOnlyMyb{} in the microgravity term, the same transcripts elevated under
+weightlessness relative to the in-flight centrifuge. In the confounded flight-versus-ground
+contrast the two nearly cancel, to \ShenTotalFlightMyb{}. The one arm of our signature that
+is unambiguously tissue-restricted and proliferation-linked is therefore not quiet during
+spaceflight; it is being pushed both ways at once by components of the flight environment
+that a conventional design sums together. That offers a concrete mechanism for the weak
+G2--M signal we observe across the OSDR flight corpus, where mission-level contrasts are
+all of the confounded kind.
+
+Three structural limits bound this. The two arrays per condition are front and rear
+positions within a single hardware container, so they are positional rather than biological
+replicates and a between-condition difference cannot be cleanly separated from a
+between-container one; the material is semisolid callus culture rather than seedlings, unlike every
+other contrast in this corpus; and the experiment is a single mission. The opposing-signs
+observation is a hypothesis this design can raise but not test.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.75\linewidth]{../figures/fig13_shenzhou_decomposition}
+\caption{The Shenzhou-8 in-flight 1\,g control splits the flight effect into a
+non-microgravity term and a microgravity term. Neither carries the radiation signature, at
+a mission dose far below the assay's floor. The MYB3R/G2--M arm moves in opposite
+directions in the two terms and nearly cancels in the confounded flight-versus-ground
+contrast.}
+\label{fig:shenzhou}
+\end{figure}

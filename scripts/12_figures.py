@@ -345,6 +345,37 @@ def fig_radiation_quality() -> None:
     save(fig, "fig12_radiation_quality")
 
 
+def fig_shenzhou() -> None:
+    """Figure 13: the in-flight 1g decomposition."""
+    path = RESULTS / "shenzhou" / "decomposition.tsv"
+    if not path.exists():
+        log("  fig13 skipped: run 25_shenzhou_decomposition.py first")
+        return
+    d = pd.read_csv(path, sep="\t")
+    label = {"non_microgravity_spaceflight": "flight 1g vs ground\n(mission minus\nweightlessness)",
+             "microgravity_alone": "microgravity vs\nflight 1g\n(weightlessness alone)",
+             "total_flight_effect": "flight vs ground\n(the confounded\ncontrast)"}
+    d = d.set_index("contrast").loc[list(label)]
+
+    fig, ax = plt.subplots(figsize=(7.6, 4.2), constrained_layout=True)
+    x = np.arange(len(d))
+    w = 0.36
+    ax.bar(x - w / 2, d["sog1_arm"], w, label="SOG1 / DNA-damage arm", color="#c53030")
+    ax.bar(x + w / 2, d["myb3r_arm"], w, label="MYB3R / G2-M arm", color="#2f855a")
+    ax.axhline(0, color="0.5", lw=0.9)
+    for y in (1.96, -1.96):
+        ax.axhline(y, ls="--", lw=0.9, color="0.6")
+    ax.text(len(d) - 0.5, 2.15, "z = 1.96", fontsize=7, color="0.4", ha="right")
+    ax.set_xticks(x)
+    ax.set_xticklabels([label[i] for i in d.index], fontsize=8)
+    ax.set_ylabel("arm activity (z)")
+    ax.set_title("Shenzhou-8: the two halves of the flight effect oppose each other\n"
+                 "on proliferation, and neither carries the radiation signature",
+                 fontsize=9.5)
+    ax.legend(fontsize=8, frameon=False, loc="lower left")
+    save(fig, "fig13_shenzhou_decomposition")
+
+
 def main() -> int:
     log("rendering figures")
     fig_cohort_design()
@@ -354,6 +385,7 @@ def main() -> int:
     fig_tf_flight()
     fig_dose_response()
     fig_radiation_quality()
+    fig_shenzhou()
     return 0
 
 

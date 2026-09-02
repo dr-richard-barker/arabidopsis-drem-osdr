@@ -212,6 +212,34 @@ doesn't care what delivers the energy.
 
 ![Radiation quality](figures/fig12_radiation_quality.png)
 
+### An in-flight 1 g control: is the flight null an artefact of the confound?
+
+Every OSDR flight contrast confounds weightlessness with the rest of the mission, so an
+absent radiation signature could in principle be a microgravity response masking one. The
+Shenzhou-8 SIMBOX experiment ([E-MTAB-2518](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-2518),
+Fengler et al. 2015) flew a **1 g reference centrifuge alongside the microgravity samples**,
+which lets the mission be split in two.
+
+| Contrast | SOG1 arm | MYB3R / G2-M arm | radiation index |
+|---|---|---|---|
+| flight 1 g vs ground — mission *minus* weightlessness | −2.02 | **+5.44** | −2.02 |
+| microgravity vs flight 1 g — weightlessness alone | −0.83 | **−7.33** | −7.33 |
+| flight vs ground — the confounded contrast | −2.49 | −0.97 | −2.49 |
+
+The radiation index stays below threshold in **both** halves, so the flight null is not an
+artefact of the confound. That is only a consistency check: at ~0.18 cGy over 5 days the
+mission sits far below the assay's floor and a null is predicted by dose alone.
+
+What the split *does* show is that the confound is real for other quantities. The
+MYB3R/G2-M arm moves in **opposite directions** in the two terms and nearly cancels when
+they are summed — so an absent signal in a flight-versus-ground contrast can be a
+cancellation rather than a quiet pathway. Caveats are structural and stated with every
+number: the two arrays per condition are front/rear positions in one hardware container
+(positional, not biological, replicates), the material is semisolid callus culture, and it
+is a single mission.
+
+![Shenzhou decomposition](figures/fig13_shenzhou_decomposition.png)
+
 ### So why does spaceflight show nothing? Dose, and the magnetosphere
 
 The DREM model was trained on **100 Gy** Co-60 delivered in ten minutes (parsed from the
@@ -329,6 +357,8 @@ bash scripts/run_all.sh             # full run
 | `21`–`22` | Mission-grouped classifier + platform control; DREM trajectory projection |
 | `23` | Dose-response, detection floor, and ISS mission dose |
 | `24` | Radiation quality: matched HZE-vs-gamma test against a gamma baseline |
+| `25` | Shenzhou-8 (E-MTAB-2518): decompose flight using its in-flight 1 g centrifuge |
+| `26` | *B. rapa* → Arabidopsis orthologs by DIAMOND reciprocal best hit |
 | `12`–`14` | Figures, manuscript macros, `MANIFEST.tsv` |
 
 ---

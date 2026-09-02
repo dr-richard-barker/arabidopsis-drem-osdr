@@ -125,6 +125,14 @@ FORBIDDEN: list[tuple[str, str]] = [
 
 MANUSCRIPT_FILES = ["manuscript/latex/main.tex", "README.md"]
 
+# The scan covers scripts/ too. Both errors it guards against were written into script
+# docstrings *before* they reached the manuscript -- 24_radiation_quality.py carried the
+# OSD-320 "6-day-old" figure for several revisions after the manuscript was corrected --
+# so a manuscript-only scan lets the wrong description survive where the next author will
+# read it. This file is the sole exemption: it must hold the patterns to test them.
+SCAN_DIRS = ["manuscript/latex/sections", "scripts"]
+SCAN_EXEMPT = {"scripts/check_study_claims.py"}
+
 
 def scan_forbidden() -> list[tuple[str, str, str]]:
     """Manuscript-side check: descriptions known to be wrong must not reappear."""
@@ -134,10 +142,15 @@ def scan_forbidden() -> list[tuple[str, str, str]]:
         f = ROOT / rel
         if f.exists():
             texts[rel] = f.read_text(errors="replace")
-    sec = ROOT / "manuscript" / "latex" / "sections"
-    if sec.is_dir():
-        for f in sorted(sec.glob("*.tex")):
-            texts[str(f.relative_to(ROOT))] = f.read_text(errors="replace")
+    for d in SCAN_DIRS:
+        base = ROOT / d
+        if not base.is_dir():
+            continue
+        for f in sorted(base.iterdir()):
+            rel = str(f.relative_to(ROOT))
+            if f.suffix not in (".tex", ".py") or rel in SCAN_EXEMPT:
+                continue
+            texts[rel] = f.read_text(errors="replace")
 
     hits = []
     for rel, raw in texts.items():

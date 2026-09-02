@@ -6,19 +6,20 @@ dose is simply too low for this assay (dose), or gamma irradiation on the ground
 good model of the particle radiation encountered in space (quality). This script tests the
 second.
 
-**The design that isolates quality.** OSD-320 irradiated 6-day-old Arabidopsis seedlings
-at Brookhaven with BOTH Cs-137 gamma (100 Gy) and 1 GeV/n Fe-56 HZE ions (30 Gy), at the
+**The design that isolates quality.** OSD-320 irradiated Arabidopsis seedlings plated
+eight days before exposure, in the Ws and atm-1 backgrounds, at Brookhaven with BOTH
+Cs-137 gamma (100 Gy) and 1 GeV/n Fe-56 HZE ions (30 Gy), at the
 same dose rate, harvesting at the same five times. Same laboratory, same material, same
 platform, same pipeline. Comparing its two arms isolates low-LET photon against high-LET
 particle in a way no cross-study comparison can, and the honest baseline for "how similar
 should two irradiations look" is gamma-versus-gamma across *different* studies.
 
-**OSD-658 is included.** An earlier version of this script excluded it, on the stated
-grounds that it irradiated dry dormant seed while the others used hydrated tissue. That
-was wrong: the deposit's RNA-seq arm irradiated SEEDLINGS in flasks and harvested them
-three hours later ("The Arabidopsis seedlings were sequentially exposed...", "RNA extracts
-from whole seedlings"). The dry-seed sentence in the same protocol belongs to a separate
-phenotyping sub-experiment. Excluding the only simulated-GCR study -- the most
+**OSD-658 is included.** An earlier version of this script excluded it, on a misreading
+of its tissue type. The deposit's RNA-seq arm irradiated SEEDLINGS in flasks and harvested
+them three hours later ("The Arabidopsis seedlings were sequentially exposed...", "RNA
+extracts from whole seedlings"), and OSDR's own `material type` field reads Whole Organism.
+The sentence that was misread belongs to a separate phenotyping sub-experiment in the same
+deposit. Excluding the only simulated-GCR study -- the most
 space-relevant contrast available -- on a misread of one sentence was a serious error, and
 `check_study_claims.py` now asserts this and every other study description against the
 live OSDR record.
@@ -33,8 +34,8 @@ is a different quantity, and both are computed.
 
 **The test is a percentile, not a mean.** Comparing the matched pair against the MEAN of
 the gamma-versus-gamma baseline is far too permissive: the baseline is enormously
-dispersed (rho 0.07 to 0.66), and two accessions of the SAME published experiment
-correlate at 0.07. Against that spread almost any value is "below the mean". What the
+dispersed (rho 0.045 to 0.64), and two accessions of the SAME published experiment
+correlate at 0.045. Against that spread almost any value is "below the mean". What the
 claim needs is for the matched HZE pair to fall in the lower tail of the baseline
 distribution, so the test is its percentile rank with a one-sided permutation p-value.
 
@@ -256,8 +257,9 @@ def main() -> int:
             "mean_rho": round(base_rho, 4) if base_rho == base_rho else None,
             "range": base_rng, "n_pairs": int(base.size),
             "note": "hugely dispersed -- OSD-498 and OSD-508 are two accessions of the "
-                    "same published experiment and correlate at 0.07, so full-profile "
-                    "correlation is dominated by study-level noise",
+                    f"same published experiment and correlate at "
+                    f"{'n/a' if same_exp is None else format(same_exp, '.3f')}, so "
+                    "full-profile correlation is dominated by study-level noise",
         },
         "matched_pair_vs_baseline": {
             "percentile": pct, "one_sided_p": p_lower,

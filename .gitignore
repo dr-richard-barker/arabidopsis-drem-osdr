@@ -13,6 +13,20 @@ data/tf_prior/weighted/
 data/osdr/arabidopsis_factor_values.csv
 vendor/*.jar
 
+# Shenzhou-8 raw arrays (ArrayExpress E-MTAB-2518) and the RMA helper script 25 writes.
+data/arrayexpress/*.CEL
+data/arrayexpress/*.annot.gz
+data/arrayexpress/_rma.R
+
+# B. rapa orthology: proteomes, DIAMOND databases and raw hit tables are all rebuilt by
+# scripts/26_brapa_orthologs.py. The RBH map itself IS versioned -- it is small, it is the
+# actual product, and the BioMart route that would otherwise regenerate it is broken.
+data/brapa/*.fa
+data/brapa/*.fa.gz
+data/brapa/*.dmnd
+data/brapa/fwd.tsv
+data/brapa/rev.tsv
+
 # DREM run products: model.txt and the parsed tables are versioned, the bulky
 # intermediates are not.
 results/drem/inputs/
