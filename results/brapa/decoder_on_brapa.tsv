@@ -1,0 +1,4 @@
+contrast	n_samples	sog1_arm	myb3r_arm	n_sog1_genes	n_myb3r_genes	radiation_index	call
+40 vs 0 cGy, all genotypes	39	0.647	0.307	119	220	0.307	no signal
+40 vs 0 cGy, WT	20	0.176	-1.007	119	220	-1.007	no signal
+40 vs 0 cGy, antho_less	19	0.158	2.353	119	220	0.158	no signal

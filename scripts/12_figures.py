@@ -376,6 +376,69 @@ def fig_shenzhou() -> None:
     save(fig, "fig13_shenzhou_decomposition")
 
 
+def fig_brapa() -> None:
+    """Figure 14: the three B. rapa aims, and why two of them cannot be read."""
+    d1 = RESULTS / "brapa" / "decoder_on_brapa.tsv"
+    qcp = RESULTS / "qc" / "brapa_aims_qc.json"
+    if not (d1.exists() and qcp.exists()):
+        log("  fig14 skipped: run 27_brapa_aims.py first")
+        return
+    a1 = pd.read_csv(d1, sep="\t")
+    qc = json.loads(qcp.read_text())
+    scr = pd.read_csv(RESULTS / "brapa" / "flight_screen.tsv", sep="\t")
+
+    fig, ax = plt.subplots(1, 3, figsize=(13.2, 4.1), constrained_layout=True)
+
+    # A -- the Arabidopsis decoder projected onto B. rapa
+    x = np.arange(len(a1))
+    w = 0.36
+    ax[0].bar(x - w / 2, a1["sog1_arm"], w, label="SOG1 arm", color="#c53030")
+    ax[0].bar(x + w / 2, a1["myb3r_arm"], w, label="MYB3R arm", color="#2f855a")
+    ax[0].axhline(1.96, ls="--", lw=0.9, color="0.6")
+    ax[0].axhline(0, color="0.5", lw=0.9)
+    ax[0].set_xticks(x)
+    ax[0].set_xticklabels([c.split(", ")[-1] for c in a1["contrast"]], fontsize=8)
+    ax[0].set_ylabel("arm activity (z)")
+    ax[0].set_title("A. Arabidopsis decoder on\nB. rapa 40 cGy GCR", fontsize=9.5)
+    ax[0].legend(fontsize=7.5, frameon=False)
+
+    # B -- the native signature's positive control
+    irr = scr["factor"].astype(str).str.contains("ionizing radiation|radiation dose",
+                                                 case=False, na=False)
+    # Both series must share one x axis: these are ranks within the SAME sorted list, so
+    # giving each its own arange would move the irradiations away from their real ranks.
+    rank = np.arange(len(scr))
+    ax[1].scatter(rank[(~irr).values], scr.loc[~irr, "brapa_index"], s=13,
+                  color="0.75", label="other contrasts")
+    ax[1].scatter(rank[irr.values], scr.loc[irr, "brapa_index"], s=34,
+                  color="#b7791f", marker="D", label="labelled irradiation")
+    ax[1].axhline(1.96, ls="--", lw=0.9, color="0.6")
+    ax[1].axhline(0, color="0.5", lw=0.9)
+    ax[1].set_xlabel("contrast (ranked)")
+    ax[1].set_ylabel("B. rapa-native index")
+    ax[1].set_title("B. The native signature fails its\npositive control (0/12 detected)",
+                    fontsize=9.5)
+    ax[1].legend(fontsize=7.5, frameon=False, loc="lower left")
+
+    # C -- why aim 3 cannot be read
+    rel = qc["aim3_concordance"]["contrast_reliability"]
+    obs = {r["scope"]: r["spearman_rho"] for r in qc["aim3_concordance"]["rows"]}
+    cap = qc["aim3_concordance"]["attenuation_cap"]
+    labels = ["B. rapa\nself-reliability", "OSD-658\nself-reliability",
+              "attenuation\ncap", "observed\ncross-species"]
+    vals = [(rel["brapa_40cGy"] or {}).get("mean", 0),
+            (rel["osd658_40cGy"] or {}).get("mean", 0), cap,
+            obs.get("all_shared_orthologs", 0)]
+    ax[2].bar(labels, vals, color=["#2b6cb0", "#2b6cb0", "#718096", "#c53030"])
+    ax[2].axhline(0, color="0.5", lw=0.9)
+    ax[2].set_ylabel("Spearman rho")
+    ax[2].set_ylim(-0.15, 0.35)
+    ax[2].tick_params(axis="x", labelsize=7.5)
+    ax[2].set_title("C. Aim 3 has no power: neither\ncontrast reproduces itself",
+                    fontsize=9.5)
+    save(fig, "fig14_brapa_aims")
+
+
 def main() -> int:
     log("rendering figures")
     fig_cohort_design()
@@ -386,6 +449,7 @@ def main() -> int:
     fig_dose_response()
     fig_radiation_quality()
     fig_shenzhou()
+    fig_brapa()
     return 0
 
 

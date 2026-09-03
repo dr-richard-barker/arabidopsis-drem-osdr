@@ -559,3 +559,63 @@ directions in the two terms and nearly cancels in the confounded flight-versus-g
 contrast.}
 \label{fig:shenzhou}
 \end{figure}
+
+\subsection{A second species, and the limits of cross-species screening}
+
+If terrestrial Arabidopsis is the wrong training material, the obvious remedy is a second
+species irradiated with simulated GCR. A \textit{Brassica rapa} experiment provides one:
+\BrapaNLibraries{} leaf libraries at 0 or 40 cGy simulated GCR, wild-type or
+anthocyanin-less, in two preservatives. Its 40 cGy arm is matched to OSD-658's lower arm in
+both dose and radiation quality, which makes it the only cross-species replicate of a
+simulated-GCR plant exposure we could find.
+
+Comparing the two species first required orthology, and the route normally used for it does
+not work. Ensembl Plants exposes no Arabidopsis-homolog attribute for \textit{B. rapa}, and
+the query fails with an explicit \texttt{NOT FOUND}. Reciprocal best hit against the TAIR10
+proteome gives \BrapaRbhPairs{} one-to-one pairs where the pre-existing mapping reached
+\BrapaBiomartGenes{} genes, lifting coverage of the DREM transcription factors to
+\BrapaTfMapped{} of \BrapaTfTotal{} and making both SOG1 and MYB3R1 reachable for the first
+time. The map agrees with Ensembl's own one-way assignment on \BrapaEnsemblAgree{}\% of the
+genes where both make a call.
+
+The Arabidopsis-trained decoder does not fire on \textit{B. rapa} at 40 cGy: in wild type
+the SOG1 arm reaches \BrapaWtSog{} and the MYB3R arm \BrapaWtMyb{}, for an index of
+\BrapaWtIndex{} against a threshold of 1.96 (Figure~\ref{fig:brapa}A). Read alone that
+looks like a clean cross-species negative. Two controls show it cannot be read alone.
+
+First, a signature derived from the \textit{B. rapa} data itself fails its positive
+control. Scoring \BrapaScreenContrasts{} contrasts across \BrapaScreenStudies{} OSDR
+studies, it detects \BrapaPosCtrlDetected{} of \BrapaPosCtrlTotal{} labelled irradiations,
+and scores \emph{worst of all} on a 100 Gy gamma exposure (\BrapaPosCtrlWorst{};
+Figure~\ref{fig:brapa}B). A signature that cannot see 100 Gy tells us nothing by failing to
+see spaceflight, so its null across the flight corpus is a failed instrument rather than a
+result.
+
+Second, the gene-level cross-species comparison has no power, and the reason is
+measurable. Splitting each contrast against itself gives a reliability of \BrapaRelBrapa{}
+for \textit{B. rapa} and \BrapaRelOsd{} for OSD-658 --- that is, the OSD-658 40 cGy
+contrast does not reproduce itself. Classical attenuation caps any correlation between two
+such contrasts at \BrapaAttenCap{}. The observed cross-species value over
+\BrapaSharedGenes{} shared orthologs is \BrapaCrossRho{}, which is what that cap predicts
+whatever the underlying biology does (Figure~\ref{fig:brapa}C). This says nothing about
+whether the DNA-damage response is conserved; it says these two datasets cannot be compared
+gene by gene.
+
+The contrast between the three results is itself the useful finding. Rank-based scoring
+over hundreds of genes survives noise that destroys per-gene correlation, which is why the
+decoder result is readable while the concordance test is not. A cross-species radiation
+screen is a reasonable idea, but it needs contrasts that reproduce themselves: more
+biological replication per dose arm, and matched harvest timing, before the comparison is
+worth repeating.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig14_brapa_aims}
+\caption{Cross-species testing against a \textit{B. rapa} simulated-GCR experiment.
+\textbf{A}. The Arabidopsis-trained decoder does not fire at 40 cGy in either genotype.
+\textbf{B}. A \textit{B. rapa}-native signature fails its positive control: the labelled
+irradiations (diamonds) are scattered through the ranking rather than at its top.
+\textbf{C}. Neither contrast reproduces itself, so the attenuation cap on any cross-species
+correlation is near zero and the observed value carries no information.}
+\label{fig:brapa}
+\end{figure}

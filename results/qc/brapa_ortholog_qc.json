@@ -3,26 +3,33 @@
   "MYB3R1": true,
   "SOG1": true,
   "drem_tfs": [
-   429,
+   426,
    474
   ],
   "myb3r_repressed": [
-   240,
+   237,
    283
   ],
   "sog1_dependent": [
-   140,
+   130,
    160
   ]
+ },
+ "ensembl_defline_comparison": {
+  "n_agree": 18051,
+  "n_both_called": 18689,
+  "n_ensembl_calls": 37902,
+  "note": "Ensembl's defline is a one-way BLAST best hit, not a reciprocal one, so disagreement is expected where a B. rapa paralogue's best Arabidopsis hit does not reciprocate. This is a concordance check against an independent source, not a gold standard.",
+  "pct_agree": 96.6
  },
  "existing_biomart_map_genes": 3511,
  "generated": "2026-09-02",
  "method": "reciprocal best hit, DIAMOND blastx/blastp, identity >= 50.0%, e-value <= 1e-5",
- "n_arabidopsis_loci": 19496,
- "n_brapa_loci": 40492,
- "n_forward_hits": 39153,
- "n_rbh_pairs": 19496,
- "n_reverse_hits": 25789,
+ "n_arabidopsis_loci": 18770,
+ "n_brapa_loci": 41018,
+ "n_forward_hits": 38233,
+ "n_rbh_pairs": 18770,
+ "n_reverse_hits": 25467,
  "n_tair_proteins": 27628,
  "why_not_a_database": "Ensembl Plants BioMart has no athaliana homolog attributes for brapa_eg_gene and the plants FTP has no homology TSV for this pair; the B_rappa_LLGCSS repo contains an empty brapa_to_arabidopsis_orthologs.tsv holding that same error"
 }

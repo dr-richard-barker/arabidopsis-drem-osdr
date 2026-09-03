@@ -1,0 +1,86 @@
+accession	factor	level	n_treated	n_control	induced_arm	repressed_arm	n_induced_genes	n_repressed_genes	brapa_index	call
+OSD-320	ionizing radiation	Cesium-137 gamma radiation	18	8	1.167	2.011	171	167	1.167	no signal
+OSD-296	genotype	cop-1	12	12	0.977	1.216	171	167	0.977	no signal
+OSD-281	spaceflight	Space Flight	16	16	1.189	0.642	200	200	0.642	no signal
+OSD-17	spaceflight	Space Flight	12	12	1.764	0.436	171	167	0.436	no signal
+OSD-147	genotype	ARG1 KO	8	10	0.273	0.265	171	167	0.265	no signal
+OSD-223	genotype	InsP 5-ptase Transgenic	20	20	0.556	0.22	200	200	0.22	no signal
+OSD-510	ionizing radiation	Cobalt-60 gamma radiation	24	24	1.398	0.026	200	200	0.026	no signal
+OSD-205	genotype	HSFA2 KO	6	10	-0.045	1.8	171	167	-0.045	no signal
+OSD-121	spaceflight	Space Flight	9	9	2.747	-0.078	171	167	-0.078	no signal
+OSD-44	genotype	act2-3	6	6	-0.238	0.292	171	167	-0.238	no signal
+OSD-427	spaceflight	Space Flight	24	24	-0.073	-0.293	200	200	-0.293	no signal
+OSD-437	spaceflight	Space Flight	16	3	-0.324	0.454	200	200	-0.324	no signal
+OSD-782	ionizing radiation	cesium-137 gamma radiation	24	12	-0.397	0.725	200	200	-0.397	no signal
+OSD-314	altered gravity	uG	5	6	2.501	-0.459	200	200	-0.459	no signal
+OSD-502	ionizing radiation	Cobalt-60 gamma radiation	4	4	2.839	-0.538	200	200	-0.538	no signal
+OSD-510	genotype	sog1-1	24	24	1.513	-0.61	200	200	-0.61	no signal
+OSD-346	altered gravity	0.64G by centrifugation	3	14	-0.623	2.368	200	200	-0.623	no signal
+OSD-406	genotype	sku5	6	18	2.141	-0.63	200	200	-0.63	no signal
+OSD-434	time	last-actuated KFT	3	3	-0.102	-0.775	198	199	-0.775	no signal
+OSD-428	time	actuated immediately after the microgravity exposure 	3	3	-0.887	-0.662	198	199	-0.887	no signal
+OSD-518	genotype	lazy1 mutant	7	7	-0.904	-0.633	200	200	-0.904	no signal
+OSD-223	spaceflight	Space Flight	30	10	4.782	-0.919	200	200	-0.919	no signal
+OSD-314	altered gravity	0.34G by centrifugation	6	6	1.701	-0.95	200	200	-0.95	no signal
+OSD-223	altered gravity	0.76G by centrifugation	14	10	4.127	-0.953	200	200	-0.953	no signal
+OSD-223	altered gravity	uG	16	10	5.024	-1.023	200	200	-1.023	no signal
+OSD-658	ionizing radiation	mixed radiation	8	6	0.933	-1.095	200	200	-1.095	no signal
+OSD-428	altered gravity	Gravity, Altered	6	3	-0.971	-1.125	198	199	-1.125	no signal
+OSD-782	absorbed radiation dose	100 {centigray}	12	12	1.076	-1.126	200	200	-1.126	no signal
+OSD-427	genotype	elp2-5	16	16	0.362	-1.15	200	200	-1.15	no signal
+OSD-314	spaceflight	Space Flight	11	6	2.274	-1.161	200	200	-1.161	no signal
+OSD-411	genotype	pgm-1	32	32	-0.924	-1.171	200	200	-1.171	no signal
+OSD-320	genotype	atm-1	20	24	-1.202	0.22	171	167	-1.202	no signal
+OSD-313	genotype	Nuc1-2 Mutant	6	6	0.809	-1.239	200	200	-1.239	no signal
+OSD-498	ionizing radiation	Cobalt-60 gamma radiation	8	8	-0.584	-1.249	200	200	-1.249	no signal
+OSD-282	treatment	Anoxia-treated	2	2	-1.272	0.901	171	167	-1.272	no signal
+OSD-7	spaceflight	Space Flight	18	18	-0.457	-1.286	171	167	-1.286	no signal
+OSD-782	absorbed radiation dose	10 {centigray}	12	12	-1.328	2.02	200	200	-1.328	no signal
+OSD-38	spaceflight	Space Flight	3	9	1.689	-1.364	200	200	-1.364	no signal
+OSD-320	ionizing radiation	Fe-56 ion radiation	18	8	-1.405	-1.074	171	167	-1.405	no signal
+OSD-658	absorbed radiation dose*	80 {centigray}	4	6	-1.426	0.167	200	200	-1.426	no signal
+OSD-296	genotype	uvr-8	12	12	2.031	-1.441	171	167	-1.441	no signal
+OSD-321	genotype	bzip28-2	8	10	1.038	-1.445	200	200	-1.445	no signal
+OSD-508	genotype	sog1-1	18	18	-0.565	-1.456	200	200	-1.456	no signal
+OSD-428	time	actuated after level flight had been maintained for about a minute and a half after the parabola	3	3	-0.766	-1.46	198	199	-1.46	no signal
+OSD-434	altered gravity	Gravity, Altered	6	3	-1.618	-1.198	198	199	-1.618	no signal
+OSD-658	absorbed radiation dose*	40 {centigray}	4	6	2.446	-1.688	200	200	-1.688	no signal
+OSD-120	spaceflight	Space Flight	36	36	1.017	-1.738	200	200	-1.738	no signal
+OSD-624	altered gravity	Suborbital Flight	18	18	-1.755	-1.678	200	200	-1.755	no signal
+OSD-518	genotype	tac1 mutant	7	7	-1.851	-0.931	200	200	-1.851	no signal
+OSD-406	altered gravity	Suborbital Flight	12	12	-1.853	0.836	200	200	-1.853	no signal
+OSD-678	spaceflight	Space Flight	18	18	-1.865	0.897	200	200	-1.865	no signal
+OSD-147	spaceflight	Space Flight	9	9	-0.569	-1.889	171	167	-1.889	no signal
+OSD-282	treatment	Heat and anoxia-treated	2	2	-2.1	-0.682	171	167	-2.1	no signal
+OSD-411	treatment	Reoriented	32	32	5.196	-2.11	200	200	-2.11	no signal
+OSD-205	spaceflight	Space Flight	8	8	-0.466	-2.127	171	167	-2.127	no signal
+OSD-519	genotype	puchi-1 mutant	18	18	5.07	-2.135	200	200	-2.135	no signal
+OSD-502	genotype	myb3r135	4	4	-1.096	-2.175	200	200	-2.175	no signal
+OSD-434	time	first-actuated KFT	3	3	-2.376	-1.228	198	199	-2.376	no signal
+OSD-437	altered gravity	uG	8	11	2.377	-2.465	200	200	-2.465	no signal
+OSD-282	treatment	heat-treated	2	2	-2.514	-0.149	171	167	-2.514	no signal
+OSD-678	genotype	phyD mutant	12	24	3.232	-2.517	200	200	-2.517	no signal
+OSD-346	altered gravity	uG	6	14	1.73	-2.543	200	200	-2.543	no signal
+OSD-321	genotype	ire1a-4 ire1b-2	8	10	3.439	-2.554	200	200	-2.554	no signal
+OSD-427	genotype	met1-7	16	16	-2.706	-0.194	200	200	-2.706	no signal
+OSD-346	altered gravity	0.3G by centrifugation	2	14	1.819	-2.924	200	200	-2.924	no signal
+OSD-522	spaceflight	Space Flight	6	6	3.728	-3.032	200	200	-3.032	no signal
+OSD-508	ionizing radiation	Cobalt-60 gamma radiation	32	4	-3.075	-0.405	200	200	-3.075	no signal
+OSD-251	altered gravity	0.57G by centrifugation	4	3	-3.295	1.977	200	200	-3.295	no signal
+OSD-193	spaceflight	Space Flight	16	16	-3.351	2.661	200	200	-3.351	no signal
+OSD-218	spaceflight	Space Flight	16	16	-3.481	4.067	200	200	-3.481	no signal
+OSD-321	spaceflight	Space Flight	22	22	5.335	-3.503	200	200	-3.503	no signal
+OSD-251	altered gravity	0.09G by centrifugation	3	3	-3.824	3.395	200	200	-3.824	no signal
+OSD-251	altered gravity	0.18G by centrifugation	3	3	-3.853	5.174	200	200	-3.853	no signal
+OSD-346	altered gravity	0.5G by centrifugation	2	14	5.691	-3.974	200	200	-3.974	no signal
+OSD-44	spaceflight	Space Flight	6	6	-4.118	-0.524	171	167	-4.118	no signal
+OSD-321	genotype	bzip28-2 bzip60-1	10	10	4.147	-4.148	200	200	-4.148	no signal
+OSD-346	altered gravity	0.38G by centrifugation	4	14	4.314	-4.322	200	200	-4.322	no signal
+OSD-251	altered gravity	0.36G by centrifugation	3	3	-4.412	2.622	200	200	-4.412	no signal
+OSD-346	altered gravity	0.25G by centrifugation	2	14	-4.537	-0.858	200	200	-4.537	no signal
+OSD-313	genotype	Nuc2-2 Mutant	6	6	-4.618	1.634	200	200	-4.618	no signal
+OSD-217	spaceflight	Space Flight	6	6	-5.45	2.453	200	200	-5.45	no signal
+OSD-346	altered gravity	0.65G by centrifugation	3	14	1.425	-5.915	200	200	-5.915	no signal
+OSD-251	altered gravity	uG	4	3	-5.995	4.39	200	200	-5.995	no signal
+OSD-321	genotype	bzip60-2	8	10	6.691	-6.059	200	200	-6.059	no signal
+OSD-37	spaceflight	Space Flight	28	28	-6.567	3.589	200	200	-6.567	no signal

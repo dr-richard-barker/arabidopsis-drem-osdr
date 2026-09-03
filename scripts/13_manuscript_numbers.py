@@ -68,6 +68,8 @@ def main() -> int:
     dose = load(RESULTS / "qc" / "dose_response_qc.json")
     qual = load(RESULTS / "qc" / "radiation_quality_qc.json")
     shen = load(RESULTS / "qc" / "shenzhou_qc.json")
+    brap = load(RESULTS / "qc" / "brapa_aims_qc.json")
+    bortho = load(RESULTS / "qc" / "brapa_ortholog_qc.json")
 
     v: dict[str, object] = {}
 
@@ -323,6 +325,34 @@ def main() -> int:
     v["ShenDoseCgy"] = dig(shen, "mission", "estimated_dose_cgy")
     v["ShenMissionDays"] = dig(shen, "mission", "days")
     v["ShenNArrays"] = len(dig(shen, "design", default=[]) or []) or None
+
+    # ---- B. rapa cross-species aims
+    v["BrapaRbhPairs"] = dig(bortho, "n_rbh_pairs")
+    v["BrapaBiomartGenes"] = dig(bortho, "existing_biomart_map_genes")
+    cov = dig(bortho, "coverage", default={}) or {}
+    if isinstance(cov.get("drem_tfs"), list):
+        v["BrapaTfMapped"], v["BrapaTfTotal"] = cov["drem_tfs"]
+    v["BrapaEnsemblAgree"] = dig(bortho, "ensembl_defline_comparison", "pct_agree")
+    v["BrapaNLibraries"] = dig(brap, "design", "n_libraries")
+    for r in (dig(brap, "aim1_decoder_on_brapa", default=[]) or []):
+        if r.get("contrast", "").endswith("WT"):
+            v["BrapaWtSog"] = r["sog1_arm"]
+            v["BrapaWtMyb"] = r["myb3r_arm"]
+            v["BrapaWtIndex"] = r["radiation_index"]
+    v["BrapaScreenContrasts"] = dig(brap, "aim2_native_signature", "n_contrasts_scored")
+    v["BrapaScreenStudies"] = dig(brap, "aim2_native_signature", "n_studies")
+    pc = dig(brap, "aim2_native_signature", "positive_control", default={}) or {}
+    v["BrapaPosCtrlDetected"] = pc.get("n_detected")
+    v["BrapaPosCtrlTotal"] = pc.get("n_labelled_irradiations")
+    v["BrapaPosCtrlWorst"] = pc.get("worst_index")
+    rel = dig(brap, "aim3_concordance", "contrast_reliability", default={}) or {}
+    v["BrapaRelBrapa"] = (rel.get("brapa_40cGy") or {}).get("mean")
+    v["BrapaRelOsd"] = (rel.get("osd658_40cGy") or {}).get("mean")
+    v["BrapaAttenCap"] = dig(brap, "aim3_concordance", "attenuation_cap")
+    for r in (dig(brap, "aim3_concordance", "rows", default=[]) or []):
+        if r.get("scope") == "all_shared_orthologs":
+            v["BrapaCrossRho"] = r["spearman_rho"]
+            v["BrapaSharedGenes"] = r["n_genes"]
 
     defined = sum(1 for x in v.values() if x is not None)
     lines = [

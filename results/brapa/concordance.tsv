@@ -1,0 +1,4 @@
+scope	n_genes	spearman_rho	p
+all_shared_orthologs	13565	-0.0485	1.53823547701909e-08
+sog1_dependent	114	-0.0002	0.9981232255259249
+myb3r_repressed	194	-0.1846	0.009953364388921445

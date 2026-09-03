@@ -87,6 +87,10 @@ step "26 B. rapa orthologs by DIAMOND reciprocal best hit"
 python3 scripts/26_brapa_orthologs.py || \
   echo "  (needs diamond and the B_rappa_LLGCSS CDS — skipped)"
 
+step "27 B. rapa cross-species aims"
+python3 scripts/27_brapa_aims.py || \
+  echo "  (needs the B_rappa_LLGCSS counts — skipped)"
+
 step "11 cross-validate against the sibling analysis"
 python3 scripts/11_crossvalidate_sibling.py || echo "  (sibling repo not present — skipped)"
 

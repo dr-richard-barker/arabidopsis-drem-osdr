@@ -240,6 +240,41 @@ is a single mission.
 
 ![Shenzhou decomposition](figures/fig13_shenzhou_decomposition.png)
 
+### A second species: *B. rapa* under simulated GCR
+
+If terrestrial Arabidopsis gamma is the wrong training material, a second species irradiated
+with **simulated GCR at 40 cGy** — dose- and quality-matched to OSD-658's lower arm — is the
+obvious test. First it needed orthology, and the usual route is broken: Ensembl Plants has no
+Arabidopsis-homolog attribute for *B. rapa*, which is why `annotation/brapa_to_arabidopsis_orthologs.tsv`
+in the LLGCSS repo is an empty file holding that error. DIAMOND reciprocal best hit fixes it:
+
+| | existing BioMart map | RBH (`scripts/26`) |
+|---|---|---|
+| B. rapa genes mapped | 3,511 | **18,770** |
+| DREM TFs reachable | 21% | **426/474** |
+| SOG1 / MYB3R1 | ✗ ✗ | **✓ ✓** |
+| agreement with Ensembl's own call | — | 96.6% |
+
+**The result is honest but not decisive, and the controls say why.**
+
+- **Aim 1** — the Arabidopsis decoder does **not** fire on *B. rapa* at 40 cGy (WT index −1.01
+  vs threshold 1.96). Readable, because the decoder is a validated instrument.
+- **Aim 2** — a *B. rapa*-native signature screened over 85 contrasts in 39 OSDR studies finds
+  nothing in spaceflight, **but fails its positive control**: it detects 0/12 labelled
+  irradiations and scores *worst of all* on a 100 Gy gamma exposure (−3.08). A signature that
+  cannot see 100 Gy tells us nothing by failing to see spaceflight. Reported as a failed
+  instrument, not a result.
+- **Aim 3** — gene-level cross-species concordance has **no power**. Split against itself, the
+  OSD-658 40 cGy contrast reproduces at 0.006 and *B. rapa* at 0.079, so attenuation caps any
+  correlation between them at **0.02**. The observed −0.05 is exactly what that predicts. This
+  says nothing about conservation; it says these two datasets cannot be compared gene by gene.
+
+Rank scoring over hundreds of genes survives noise that per-gene correlation does not — which
+is why aim 1 is readable and aim 3 is not. The binding constraint is **replication per dose
+arm**, not species choice.
+
+![B. rapa aims](figures/fig14_brapa_aims.png)
+
 ### So why does spaceflight show nothing? Dose, and the magnetosphere
 
 The DREM model was trained on **100 Gy** Co-60 delivered in ten minutes (parsed from the
@@ -359,6 +394,7 @@ bash scripts/run_all.sh             # full run
 | `24` | Radiation quality: matched HZE-vs-gamma test against a gamma baseline |
 | `25` | Shenzhou-8 (E-MTAB-2518): decompose flight using its in-flight 1 g centrifuge |
 | `26` | *B. rapa* → Arabidopsis orthologs by DIAMOND reciprocal best hit |
+| `27` | Three cross-species aims against the *B. rapa* simulated-GCR experiment |
 | `12`–`14` | Figures, manuscript macros, `MANIFEST.tsv` |
 
 ---
