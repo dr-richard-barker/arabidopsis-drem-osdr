@@ -223,10 +223,15 @@ def main() -> int:
         ax.scatter(d.loc[m, "sog1_dependent"], d.loc[m, "myb3r_repressed"],
                    s=36, alpha=0.85, label=g, color=c, edgecolor="white", linewidth=0.6,
                    zorder=3)
-    # Label only the extremes, offset apart so they do not collide.
-    for r, dy in zip(d.head(4).itertuples(), (10, -4, -14, -24)):
+    # Label only the extremes. Fixed point offsets collided (OSD-498 over OSD-510), so the
+    # labels are stacked in data space, in the points' own vertical order, with leaders.
+    top4 = d.head(4).sort_values("myb3r_repressed", ascending=False)
+    label_x = float(top4["sog1_dependent"].min()) - 0.15 * lim
+    for r, ly in zip(top4.itertuples(), np.linspace(-0.6 * lim, -0.95 * lim, len(top4))):
         ax.annotate(r.accession, (r.sog1_dependent, r.myb3r_repressed), fontsize=6.5,
-                    xytext=(-34, dy), textcoords="offset points", color="#742a2a")
+                    xytext=(label_x, ly), textcoords="data", ha="right", va="center",
+                    color="#742a2a",
+                    arrowprops=dict(arrowstyle="-", lw=0.5, color="#742a2a", alpha=0.6))
     for r in d.tail(2).itertuples():
         ax.annotate(f"{r.accession} {r.level}", (r.sog1_dependent, r.myb3r_repressed),
                     fontsize=6.5, xytext=(8, 2), textcoords="offset points", color="#553c9a")

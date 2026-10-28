@@ -22,7 +22,7 @@
 driving bifurcations in a cross-study \textit{Arabidopsis} irradiation
 pseudo-time-series}
 
-\author{Richard J. Barker\thanks{Center of Space Exploration (CoSE).
+\author{Richard J. Barker\thanks{Collaborative Science Environment Inc. (CoSE).
 Correspondence: \texttt{dr.richard.barker@gmail.com}} \\
 \small \textbf{TODO: co-author list}}
 
@@ -52,16 +52,18 @@ positive control: the canonical DNA-damage response is induced across all
 \NumSentinelsResponding{} sentinel genes in wild type and collapses in the mutant.
 Turning the two-genotype contrast into a decoder and scoring it across every
 \textit{Arabidopsis} study in the repository recovers \NumPositivesDetected{} of
-\NumLabelledPositives{} labelled irradiation contrasts with \NumFalsePositives{} false
-positives, ordered by dose, and finds no other OSDR plant study carrying the signature.
+\NumLabelledPositives{} labelled irradiation contrasts, ordered by dose, and calls
+\NumNovelRadiationCalls{} non-radiation contrasts radiation-like: an in-flight 0.38\,g
+centrifuge contrast (OSD-346) and an \textit{ARG1} knockout (OSD-147).
 No DREM transcription factor is altered in spaceflight and no flight contrast matches any
 phase of the radiation trajectory --- but the assay's diagnostic arm needs
 \DoseDetected{}~cGy while ISS missions deliver \IssDoseLo{}--\IssDoseHi{}~cGy, so that
 null bounds the effect rather than excluding damage.
 Of \NumAblationSplits{} bifurcations in the wild-type model,
 \NumAblationSplitsChanged{} change their top-ranked regulator with the prior --- but not
-the canonical ones: SOG1 ranks first of \NumPriorTFs{} TFs in wild type under every
-prior and falls to rank \SogOneRankMutWeighted{} in \textit{sog1-1}. Attribution moves
+the canonical ones: SOG1 ranks first of \NumTFsRanked{} TFs in wild type under every
+prior and falls to rank \SogOneTfRankMutWeighted{} in \textit{sog1-1} under the
+cell-type-weighted prior. Attribution moves
 where the evidence was marginal and holds where it was strong.
 \end{abstract}
 
@@ -80,15 +82,18 @@ from irradiated seedlings while leaving SOG1, itself a NAC, untouched.
 
 Turning that model into a decoder and applying it across NASA's Open Science Data
 Repository gives a negative result, and the value of the negative result depends entirely
-on knowing what would have counted as a positive one. No OSDR plant study outside the
-irradiation cohort carries the coordinated signature; no DREM transcription factor is
+on knowing what would have counted as a positive one. Outside the labelled irradiations
+the coordinated signature is called in only \NumNovelRadiationCalls{} contrasts --- one
+in-flight partial-gravity centrifuge level (OSD-346, 0.38\,g) and one mutant (OSD-147,
+\textit{ARG1} knockout), at radiation indices of \NovelGravityIndex{} and
+\NovelGenotypeIndex{} against a threshold of 1.96; no DREM transcription factor is
 altered in spaceflight at 5\% FDR; and no flight contrast resembles any phase of the
 radiation trajectory, while irradiation contrasts trace it to a clear peak.
 
 Current ISS plant transcriptomes therefore carry no detectable radiation-damage biomarker
 as this analysis defines one. The reason is dose, not radiation quality: a matched
 comparison of $\gamma$ against Fe-56 HZE ions places the difference inside the range of
-variation between two $\gamma$ irradiations in different laboratories, whereas the model's
+variation between pairs of $\gamma$-irradiation contrasts from different accessions, whereas the model's
 training exposure exceeds the largest ISS mission dose by a factor of
 \TrainingToIssFold{}. Low Earth orbit is a magnetically shielded environment, and for
 radiation biology specifically it is a poor analogue of deep space.
@@ -123,10 +128,11 @@ DREM~2.0.7, distributed by the Ernst laboratory under GPL-3.0.
 All analysis code, harmonised metadata and derived tables are at
 \url{https://github.com/dr-richard-barker/arabidopsis-drem-osdr} and archived at Zenodo
 (\textbf{TODO: DOI}). Primary data are NASA OSDR studies OSD-193, 218, 281, 437, 498,
-502, 508, 510 and 782 \citep{osdr}; DAP-seq binding from GEO GSE60143
+502, 508, 510 and 782 \citep{osdr}; the \textit{Brassica rapa} simulated-GCR libraries
+are \textbf{TODO: accession and citation for the B.~rapa dataset}; DAP-seq binding from GEO GSE60143
 \citep{geo_gse60143,omalley2016cistrome}; SOG1 ChIP-seq from GSE112529
 \citep{geo_gse112529,bourbousse2018sog1}; the single-nucleus atlas from GSE226097
-\citep{geo_gse226097,lee2023atlas}. DREM 2.0.7 is distributed by the Ernst laboratory
+\citep{geo_gse226097,lee2025atlas}. DREM 2.0.7 is distributed by the Ernst laboratory
 under GPL-3.0 \citep{dremsoftware} and is downloaded, not redistributed, by this
 pipeline.
 

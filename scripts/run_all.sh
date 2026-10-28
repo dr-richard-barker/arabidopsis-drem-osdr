@@ -57,6 +57,7 @@ if [ -z "$NO_DREM" ]; then
   python3 scripts/09_parse_drem_model.py
   step "10 compare models"
   python3 scripts/10_compare_models.py
+  python3 scripts/10b_genotype_rank_per_tf.py
 else
   echo; echo "skipping DREM fits (--no-drem)"
 fi

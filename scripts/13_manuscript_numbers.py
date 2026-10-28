@@ -154,6 +154,25 @@ def main() -> int:
         v["SogOneRankMutWeighted"] = _g("weighted", "SOG1", "sog1_best_rank")
         v["MybThreeRRankWTFlat"] = _g("flat", "MYB3R1", "wt_best_rank")
 
+    # The ranks above are over TF-branch ROWS (a vsOthers split has 3 x 479 of them), so
+    # they cannot be quoted as a rank "among N TFs". 10b collapses each split to one score
+    # per TF; these are the ranks the prose quotes.
+    ppath = RESULTS / "comparison" / "genotype_rank_per_tf.tsv"
+    if ppath.exists():
+        prow = list(_csv.DictReader(ppath.read_text().splitlines(), delimiter="\t"))
+        def _p(prior, tf, field):
+            for r in prow:
+                if r["prior"] == prior and r["TF"] == tf and r[field] not in ("", "NaN"):
+                    return int(float(r[field]))
+            return None
+        for prior, tag in (("flat", "Flat"), ("binding", "Binding"), ("weighted", "Weighted")):
+            v[f"SogOneTfRankWT{tag}"] = _p(prior, "SOG1", "wt_rank_among_tfs")
+            v[f"SogOneTfRankMut{tag}"] = _p(prior, "SOG1", "sog1_rank_among_tfs")
+            v[f"MybThreeRTfRankWT{tag}"] = _p(prior, "MYB3R1", "wt_rank_among_tfs")
+            v[f"MybThreeRTfRankMut{tag}"] = _p(prior, "MYB3R1", "sog1_rank_among_tfs")
+        v["NumTFsRanked"] = _p("flat", "SOG1", "wt_n_tfs_in_split")
+        v["NumTFBranchRows"] = _p("weighted", "SOG1", "sog1_rows_in_split")
+
     # ---- sibling cross-validation
     v["NumSharedGenesWithSibling"] = dig(sib, "n_shared_genes")
     v["NumSiblingNodes"] = dig(sib, "n_nodes")
@@ -175,6 +194,17 @@ def main() -> int:
     v["NumProliferationOnly"] = dig(dec, "call_counts",
                                     "G2/M repressed, no DDR (proliferation slowing)")
     v["NumInverseCalls"] = dig(dec, "call_counts", "inverse (DDR suppressed)")
+    # Non-radiation contrasts the decoder calls radiation-like. The prose must name them;
+    # an earlier draft said none existed while this list held two.
+    novel = dig(dec, "novel_predictions", default=[]) or []
+    v["NumNovelRadiationCalls"] = len(novel)
+    def _novel(acc, level):
+        for p_ in novel:
+            if p_.get("accession") == acc and p_.get("level") == level:
+                return p_.get("index")
+        return None
+    v["NovelGravityIndex"] = _novel("OSD-346", "0.38G by centrifugation")
+    v["NovelGenotypeIndex"] = _novel("OSD-147", "ARG1 KO")
 
     # ---- tissue association
     st = dig(tis, "deconvolution_stability", default={}) or {}

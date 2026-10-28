@@ -1,0 +1,7 @@
+prior	test_type	TF	locus	wt_rank_among_tfs	wt_n_tfs_in_split	wt_rows_in_split	sog1_rank_among_tfs	sog1_n_tfs_in_split	sog1_rows_in_split
+flat	vsOthers	SOG1	AT1G25580	1	479	1437	233	479	1437
+flat	vsOthers	MYB3R1	AT4G32730	2	479	1437	1	479	1437
+binding	2way	SOG1	AT1G25580	1	479	479	6	479	479
+binding	2way	MYB3R1	AT4G32730	1	479	479	1	479	479
+weighted	vsOthers	SOG1	AT1G25580	1	479	1437	294	479	1437
+weighted	vsOthers	MYB3R1	AT4G32730	5	479	1437	6	479	1437

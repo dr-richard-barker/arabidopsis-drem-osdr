@@ -44,7 +44,9 @@ DOIS = {
     "omalley2016cistrome": ("10.1016/j.cell.2016.04.038", "O'Malley", 2016),
     "jin2017planttfdb": ("10.1093/nar/gkw982", "Jin", 2016),
     "brooks2021connectf": ("10.1093/plphys/kiaa012", "Brooks", 2020),
-    "lee2023atlas": ("10.1101/2023.03.23.533992", "Lee", 2023),
+    # The GSE226097 atlas, cited in its published form (Nature Plants 2025) rather than
+    # the 2023 bioRxiv preprint it first appeared as (10.1101/2023.03.23.533992).
+    "lee2025atlas": ("10.1038/s41477-025-02072-z", "Lee", 2025),
     "yoshiyama2009sog1": ("10.1073/pnas.0810304106", "Yoshiyama", 2009),
     "berardini2015tair": ("10.1002/dvg.22877", "Berardini", 2015),
     "love2014deseq2": ("10.1186/s13059-014-0550-8", "Love", 2014),

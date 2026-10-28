@@ -47,9 +47,11 @@ what a transcriptomic radiation biomarker can be expected to report from a LEO m
 \subsection*{Do ISS plants carry radiation-damage biomarkers?}
 
 On the evidence assembled here, no. Across \NumFlightContrasts{} flight and
-altered-gravity contrasts spanning \NumMissions{} missions, no contrast engages the
-coordinated SOG1/MYB3R response, no DREM transcription factor is altered at 5\% FDR, and
-the TF-activity profile of flight matches no phase of the radiation trajectory. Current
+altered-gravity contrasts spanning \NumMissions{} mission groups, one contrast crosses the
+threshold of the coordinated SOG1/MYB3R index --- the 0.38\,g centrifuge level of OSD-346,
+not reproduced by its neighbouring gravity levels and provisional pending a re-score of
+that study's controls --- no DREM transcription factor is altered at 5\% FDR, and the
+TF-activity profile of flight matches no phase of the radiation trajectory. Current
 ISS plant transcriptomes carry no detectable radiation-damage biomarker as this analysis
 defines one.
 
@@ -63,10 +65,12 @@ the ISS radiation effect below our floor rather than demonstrating that no damag
 Transcription is a poor dosimeter at ISS dose rates, where repair keeps pace with damage
 and no acute programme is triggered.
 
-One design objection deserves a direct answer: every OSDR flight contrast confounds
+One design objection deserves a direct answer: most OSDR flight contrasts confound
 weightlessness with the rest of the mission, so an absent radiation signature could in
-principle mean a microgravity response was masking one. The Shenzhou-8 experiment, which
-carried an in-flight 1\,g centrifuge, lets that be checked. Separating the mission into a
+principle mean a microgravity response was masking one. OSD-251 and OSD-346 already supply
+in-flight 1\,g centrifuge contrasts, which isolate weightlessness and partial gravity with
+radiation held constant, but they have no ground arm. The Shenzhou-8 experiment, which
+carried an in-flight 1\,g centrifuge and a ground control, lets the full split be checked. Separating the mission into a
 non-microgravity term and a microgravity term leaves the radiation index below threshold in
 both (\ShenNonUgIndex{} and \ShenUgOnlyIndex{}), so the flight null is not an artefact of
 the confound. It is also no more than a consistency check, since that mission's
@@ -75,8 +79,8 @@ What the decomposition does show is that the confound is real for other quantiti
 MYB3R/G2--M arm moves in opposite directions in the two terms and nearly cancels when they
 are summed. An absent signal in a flight-versus-ground contrast can therefore be a
 cancellation rather than a quiet pathway, and only an in-flight 1\,g control can tell the
-two apart. That the ISS corpus contains no such control is a limitation of the corpus, not
-of the analysis.
+two apart. In the ISS corpus that control exists only in OSD-251 and OSD-346, which lack a
+ground arm, so the non-microgravity half of the decomposition rests on Shenzhou-8 alone.
 
 Two consequences follow for practice. A transcriptomic radiation biomarker developed on
 acute ground irradiation should not be expected to report LEO exposure, and its absence in
@@ -92,7 +96,9 @@ Three explanations were available for the flight null, and the data separate the
 
 \textbf{Radiation quality is not demonstrably the reason, but neither is it excluded.} The
 matched within-study comparison of gamma against Fe-56 HZE ions places the difference
-inside the range of variation between two gamma irradiations in different laboratories.
+inside the range of variation between pairs of gamma-irradiation contrasts from different
+accessions (\BaselineGammaPairs{} pairs, six of which come from the single Bourbousse
+experiment).
 That comparison, however, has little power: two accessions of the same published
 experiment correlate at \SameExperimentRho{}, so the reproducibility floor of the
 measurement is close to the effect being sought. We expected quality to matter and
@@ -103,8 +109,11 @@ core.
 \textbf{Dose is the reason.} The model was trained on 6-day seedlings given
 \TrainingDoseGy{}~Gy of Co-60 in ten minutes. An ISS plant experiment receives
 \IssDoseLo{}--\IssDoseHi{}~cGy over one to ten weeks: roughly \TrainingToIssFold{} times
-less dose, delivered some \DoseRateRatio{} times more slowly. The gap is not marginal, and
+less dose, delivered some $4 \times 10^{7}$ times more slowly. The gap is not marginal, and
 no signature calibrated at that exposure could be expected to report this one.
+% 100 Gy at 10 Gy/min (OSD-508 protocol) = 16.7 cGy/s; ISS 0.355 mGy/day = 4.11e-7 cGy/s
+% (results/qc/dose_response_qc.json, gap.iss_dose_rate_cgy_per_s); ratio = 4.06e7.
+% \DoseRateRatio (3e6) is against OSD-782's 1.4 cGy/s and is used for the floor only.
 
 \textbf{And the ISS is the wrong place to look for it.} That the flight dose is small is
 not an accident of mission length; it is what the Earth's magnetic field does. The station
@@ -142,9 +151,10 @@ assumption, and it is an assumption, not a finding.
 Replication is modest: two biological replicates per genotype--timepoint cell in OSD-508
 and OSD-510.
 
-Cohort~B pools four ecotypes (Col-0, WS, Sku5, Sku6) across three timepoints, because
-splitting on ecotype would leave single-study arms of two timepoints each --- too few for
-a bifurcation to be placed. Ecotype is therefore uncontrolled within that cohort.
+Cohort~B pools two ecotypes (Col-0, WS) and two root-skewing mutants (\textit{sku5} in
+WS, \textit{sku6} in Col-0) across three timepoints, because splitting on genotype would
+leave single-study arms of two timepoints each --- too few for a bifurcation to be placed.
+Ecotype and genotype are therefore uncontrolled within that cohort.
 
 SOG1 binding was called from bedGraph coverage with a binned enrichment test rather than
 from a dedicated peak caller, because GEO distributes coverage rather than called peaks
@@ -176,8 +186,10 @@ fitted floor is a cross-study estimate rather than a single titration; the obser
 bracket of \DoseNotDetected{}--\DoseDetected{}~cGy, read directly off the data, is the more
 reliable quantity.
 
-The effective sample size for the flight analysis is \NumMissionObservations{} missions,
-several contributing a single study. TF target sets also overlap heavily, so a coefficient
+The effective sample size for the flight analysis is \NumMissionObservations{} mission
+groups, several contributing a single study; one of them is an ``unknown'' bucket holding
+the two F-104 parabolic-flight studies (OSD-428, OSD-434), which OSDR records without a
+mission name. TF target sets also overlap heavily, so a coefficient
 or an activity score identifies a target set rather than a transcription factor acting
 alone.
 

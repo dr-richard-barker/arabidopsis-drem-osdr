@@ -18,7 +18,8 @@ laboratories. We state this explicitly because it bounds the claim. The cross-st
 element of cohort~A is OSD-782, and OSD-782 alone.
 
 The spaceflight cohort is thinner: \NumCohortBSamples{} samples over only
-\NumCohortBTimepoints{} timepoints (4, 6 and 8~d) across four ecotypes. It is reported as
+\NumCohortBTimepoints{} timepoints (4, 6 and 8~d) across two ecotypes (Col-0 and WS) and
+two root-skewing mutants (\textit{sku5} in WS, \textit{sku6} in Col-0). It is reported as
 a generalisation test, not as a co-equal result.
 
 \begin{figure}[t]
@@ -37,8 +38,8 @@ After within-study referencing and offset removal, all \NumSentinelsResponding{}
 DNA-damage sentinel genes exceed 2-fold induction in the wild-type arm, tracing a clean
 rise--peak--decay kinetic, peaking at 3~h and decaying by 24~h (Figure~\ref{fig:sentinels}).
 
-In \textit{sog1-1} the same genes are flat, with only
-\NumSentinelsRespondingMutant{} reaching 2-fold and RAD51 losing almost all of its induction.
+In \textit{sog1-1} the early response is absent: no sentinel reaches 2-fold before 24~h,
+when only \NumSentinelsRespondingMutant{} do, and RAD51 loses almost all of its induction.
 The pipeline therefore recovers the central genetic finding of
 \citet{bourbousse2018sog1} --- that the response is SOG1-dependent --- before any
 regulatory model is fitted. This is the strongest available evidence that the
@@ -50,7 +51,7 @@ the harmonisation has access to genotype.
 \includegraphics[width=\linewidth]{../figures/fig2_sentinel_kinetics}
 \caption{DNA-damage sentinel kinetics after cross-study harmonisation. All
 \NumSentinelsResponding{} sentinels exceed 2-fold induction in wild type and trace a
-rise--peak--decay curve; the same genes are flat in \textit{sog1-1}. No step in the
+rise--peak--decay curve; in \textit{sog1-1} none reaches 2-fold before 24~h. No step in the
 harmonisation has access to genotype.}
 \label{fig:sentinels}
 \end{figure}
@@ -123,13 +124,16 @@ what re-ranks regulators against one another is shrinking more or less than the 
 TF. Measured that way, the atlas informs \NumTFsAtlasInformed{} of \NumTFsTotal{} TFs and
 its action is specific rather than diffuse (Figure~\ref{fig:tissue}).
 
-The six most strongly demoted regulators are \textit{FUS3}, ANAC079, ANAC058, ANAC038 and
-ANAC029, together with AT1G04880 --- and every one of them has its expression maximum in a
-silique or developing-seed cluster. The Bourbousse experiment irradiated \emph{seedlings}.
-DAP-seq reports that these factors can bind their motifs, but they are not present in the
-tissue being assayed, and the atlas removes them from contention. The regulators promoted
-in relative terms --- TCP1, LEP, STZ, FAR1, WRKY59, ERF4 --- peak instead in rosette and
-15-day seedling clusters, which is the tissue actually in the tube.
+The six most strongly demoted regulators are \textit{FUS3}, ANAC079, ANAC058, ANAC038,
+AT1G04880 and ANAC029. Four of the six (\textit{FUS3}, ANAC079, ANAC058, ANAC029) have their
+expression maximum in a silique cluster; ANAC038 peaks in a 9-day seedling cluster and
+AT1G04880 in a flower cluster. The Bourbousse experiment irradiated \emph{seedlings}, so for
+the four silique-restricted factors DAP-seq reports that they can bind their motifs while
+the atlas says they are not present in the tissue being assayed. At the script's own
+threshold of a 0.1 change relative to the median TF, three regulators are demoted
+(\textit{FUS3}, ANAC079, ANAC058) and one is promoted (TCP1, peaking in a 30-day rosette
+cluster); the next five (LEP, STZ, FAR1, WRKY59, ERF4) shrink only slightly less than the
+median, and four of them peak in 15-day seedling clusters, WRKY59 in a silique cluster.
 
 This is worth stating precisely because SOG1 is itself a NAC (ANAC008). The lever is not
 down-weighting a family; it is discriminating \emph{within} one, demoting the seed-restricted
@@ -175,12 +179,17 @@ demoted set is dominated by silique-restricted NACs absent from irradiated seedl
 
 \subsection{The genotype contrast recovers the published regulatory logic}
 
-The cohort's built-in positive control is decisive. Under all three priors, SOG1 ranks
-\textbf{first} of the \NumPriorTFs{} scored TFs in the wild-type model. In
-\textit{sog1-1} it collapses --- to rank \SogOneRankMutFlat{} under the flat prior and
-\SogOneRankMutWeighted{} under the cell-type-weighted prior (Table~\ref{tab:genotype}).
-MYB3R1 ranks \MybThreeRRankWTFlat{} in wild type and is retained in the mutant, as
-expected for a repressor whose activity does not depend on SOG1.
+The cohort's built-in positive control is decisive. Ranks are taken among the
+\NumTFsRanked{} TFs DREM scores, after collapsing each split to one score per TF (its best
+branch; \texttt{scripts/10b\_genotype\_rank\_per\_tf.py}), because a one-versus-others split
+lists every TF once per branch (\NumTFBranchRows{} rows). Under all three priors, SOG1 ranks
+\textbf{first} in the wild-type model. In \textit{sog1-1} it collapses --- to rank
+\SogOneTfRankMutFlat{} under the flat prior and \SogOneTfRankMutWeighted{} under the
+cell-type-weighted prior --- and falls less far, to rank \SogOneTfRankMutBinding{}, under
+the binding prior (Table~\ref{tab:genotype}). MYB3R1 ranks \MybThreeRTfRankWTFlat{},
+\MybThreeRTfRankWTBinding{} and \MybThreeRTfRankWTWeighted{} in wild type and
+\MybThreeRTfRankMutFlat{}, \MybThreeRTfRankMutBinding{} and \MybThreeRTfRankMutWeighted{} in
+the mutant, as expected for a repressor whose activity does not depend on SOG1.
 
 This reproduces the regulatory logic \citet{bourbousse2018sog1} reported --- SOG1 as the
 major activator, MYB3R as the major repressors --- from an independently reconstructed
@@ -190,15 +199,17 @@ with the DAP-seq prior alone, SOG1 has no edges and could not have been ranked a
 
 \begin{table}[t]
 \centering
-\caption{SOG1 rank among \NumPriorTFs{} scored transcription factors. Lower is more
-significant; the mutant is the negative control.}
+\caption{SOG1 rank among the \NumTFsRanked{} transcription factors DREM scores, one
+score per TF per split (its best branch), best split shown. Lower is more significant; the
+mutant is the negative control.}
 \label{tab:genotype}
 \begin{tabular}{lrr}
 \toprule
 Prior & Wild type & \textit{sog1-1} \\
 \midrule
-flat     & \SogOneRankWTFlat{}     & \SogOneRankMutFlat{} \\
-weighted & \SogOneRankWTWeighted{} & \SogOneRankMutWeighted{} \\
+flat     & \SogOneTfRankWTFlat{}     & \SogOneTfRankMutFlat{} \\
+binding  & \SogOneTfRankWTBinding{}  & \SogOneTfRankMutBinding{} \\
+weighted & \SogOneTfRankWTWeighted{} & \SogOneTfRankMutWeighted{} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -272,12 +283,22 @@ shaded corner is the decision region, entered only when both arms clear threshol
 \label{fig:decoder}
 \end{figure}
 
-\subsection{No other OSDR plant study carries the signature}
+\subsection{Two non-radiation contrasts cross the threshold}
 
-\NumFalsePositives{} non-radiation contrasts reach the threshold. Spaceflight, altered
-gravity, and every mutant and treatment contrast in the repository fail it. On this
-evidence, and within the limits set out below, spaceflight in these datasets does not
-elicit the acute SOG1-dependent DNA-damage transcriptional programme.
+\NumNovelRadiationCalls{} non-radiation contrasts are called radiation-like. One is an
+exposure: the 0.38\,g in-flight centrifuge level of OSD-346, scored against the onboard
+1\,g centrifuge (index \NovelGravityIndex{}); it is the single false positive among
+\NumOtherExposures{} other exposures counted above. The other is a genotype contrast, the
+\textit{ARG1} knockout in OSD-147 (index \NovelGenotypeIndex{}). Every other spaceflight,
+altered-gravity, mutant and treatment contrast fails the threshold, including the other
+five partial-gravity levels and the microgravity level of OSD-346. On this evidence, and
+within the limits set out below, spaceflight in these datasets does not elicit the acute
+SOG1-dependent DNA-damage transcriptional programme. The isolated OSD-346 0.38\,g call is
+not reproduced by its neighbouring gravity levels and is reported rather than interpreted;
+it is also provisional, because the control pattern that admits the onboard 1\,g
+centrifuge also matches ``0.1G by centrifugation'', so OSD-346's control pool mixes 1\,g
+and 0.1\,g samples (and \textit{phyA} with \textit{phyB} mutants, while the 0.38\,g samples
+are all \textit{phyA}). \textbf{TODO: re-score OSD-346 with the 1\,g level alone.}
 
 A weaker pattern is present in a minority of contrasts and should be stated as such.
 \NumFlightProliferationOnly{} of \NumFlightArmContrasts{} flight and altered-gravity contrasts show
@@ -286,8 +307,8 @@ whole, however, the mean MYB3R-arm $z$ is only \FlightMybArmMean{} against a mea
 $z$ of \FlightSogArmMean{}: below significance, and not a population-level effect.
 
 An earlier version of this analysis, run before the corpus was widened to include the
-Affymetrix studies and the onboard-centrifuge gravity series, reported a flight MYB3R-arm
-mean of $5.19$. That value did not survive the larger corpus and is corrected here. The
+Affymetrix studies and the onboard-centrifuge gravity series, reported a much larger flight
+MYB3R-arm mean. That value did not survive the larger corpus and is corrected here. The
 methodological point it was used to make does survive and is independent of it: a decoder
 scoring the repressed arm alone would call these contrasts radiation, which is the whole
 argument for requiring both arms.
@@ -297,13 +318,15 @@ argument for requiring both arms.
 The decoder scored a fixed gene signature. A stronger test is to ask what the model's
 \emph{regulators} are doing, one at a time, across every flight dataset the repository
 holds. Two changes to the acquisition widened the corpus first: admitting the onboard
-1G-centrifuge control (which recovers OSD-251 and OSD-346, the only studies with a
-within-flight gravity gradient) and reading GeneLab's Affymetrix tables, which carry AGI
+1G-centrifuge control (which recovers OSD-251 and OSD-346, all-flight gravity-gradient
+studies whose only control is that centrifuge) and reading GeneLab's Affymetrix tables, which carry AGI
 loci in a \texttt{TAIR} column and so need no probeset mapping. That yields
 \NumTFContrasts{} contrasts from \NumTFStudies{} studies ---
 \NumRnaSeqContrasts{} RNA-seq and \NumMicroarrayContrasts{} microarray --- of which
 \NumFlightContrasts{} are flight or altered-gravity contrasts spanning
-\NumMissions{} missions.
+\NumMissions{} mission groups. One of those groups is an ``unknown'' bucket holding
+OSD-428 and OSD-434, the two F-104 Starfighter parabolic flights, which OSDR records
+without a mission name.
 
 Each of \NumTFFeatures{} DREM transcription factors becomes a feature: its target set
 scored against the contrast's fold-change ranking. Mixing platforms is admissible only
@@ -320,7 +343,8 @@ RNA-seq transfers to an unseen platform.
 
 Studies sharing a mission share hardware, launch and ground handling, so contrasts were
 averaged within mission before testing: the effective $n$ is \NumMissionObservations{}
-missions, not \NumFlightContrasts{} contrasts.
+mission groups (including the ``unknown'' parabolic-flight bucket), not
+\NumFlightContrasts{} contrasts.
 
 Of \NumTFsTested{} transcription factors, \textbf{\NumTFsSigFlight{}} show a significant
 shift in spaceflight at 5\% FDR. The result is not an artefact of a powerless test: the
@@ -348,9 +372,10 @@ logistic regression separates flight from irradiation contrasts at
 AUC \ClfAUC{}, against a null of \ClfNullMean{} $\pm$ \ClfNullSD{}
 ($p = \ClfP{}$).
 
-That null had to be rebuilt. Permuting labels \emph{within} each mission returned a null
-AUC of $0.993 \pm 0.000$ --- identical to the observed value --- because a mission's label is
-constant within it, so shuffling inside a group changes nothing. The exchangeable unit in
+That null had to be rebuilt. Permuting labels \emph{within} each mission cannot produce a
+null: a mission's label is constant within it, so every within-mission shuffle leaves the
+labels, and therefore the AUC, unchanged (an earlier run recorded $0.993 \pm 0.000$;
+\textbf{TODO: no current output file holds that value}). The exchangeable unit in
 a grouped design with group-constant labels is the group, and permuting the group-to-label
 assignment gives the null quoted above.
 
@@ -476,8 +501,10 @@ low-LET photon against high-LET particle in a way no cross-study comparison can.
 
 Across the \NumTfsResponsive{} responsive transcription factors the two arms correlate at
 $\rho = \MatchedHzeRho{}$. The relevant question is whether that is low, and the honest
-reference is how well two \emph{gamma} irradiations in different laboratories agree:
-mean $\rho = \BaselineGammaRho{}$ over \BaselineGammaPairs{} pairs, ranging from
+reference is how well two \emph{gamma} irradiation contrasts from different accessions
+agree: mean $\rho = \BaselineGammaRho{}$ over \BaselineGammaPairs{} pairs of the six
+low-LET photon contrasts, six of those pairs being within the single Bourbousse experiment
+(OSD-498, 502, 508, 510) and nine crossing laboratories, ranging from
 \BaselineGammaLo{} to \BaselineGammaHi{}. The matched HZE comparison sits at the
 \MatchedPercentile{}th percentile of that distribution (one-sided $p = \MatchedP{}$)
 --- inside it, not below it (Figure~\ref{fig:quality}).
@@ -513,11 +540,14 @@ between different studies, not below it.}
 
 \subsection{An in-flight 1\,g control separates the two halves of the flight effect}
 
-Every contrast considered so far confounds weightlessness with the rest of the mission.
-A flight-versus-ground comparison cannot say whether an absent radiation signature means
-radiation left no mark or means a microgravity response masked one. The Shenzhou-8 SIMBOX
-experiment \citep{fengler2015} resolves that confound, because it flew a 1\,g reference
-centrifuge alongside the microgravity samples: \ShenNArrays{} ATH1 arrays spanning
+Most flight contrasts considered so far confound weightlessness with the rest of the
+mission. A flight-versus-ground comparison cannot say whether an absent radiation signature
+means radiation left no mark or means a microgravity response masked one. OSD-251 and
+OSD-346 already isolate one half of that question: they are scored against an onboard
+1\,g centrifuge, so their microgravity and partial-gravity contrasts hold radiation and the
+mission environment constant. Having no ground arm in OSDR, they cannot supply the other
+half. The Shenzhou-8 SIMBOX experiment \citep{fengler2015} supplies both, because it flew a
+1\,g reference centrifuge alongside the microgravity samples and kept a ground control: \ShenNArrays{} ATH1 arrays spanning
 microgravity flight, in-flight 1\,g, and ground 1\,g. We re-processed the raw
 intensity files from ArrayExpress and scored the three contrasts with the same conjunctive
 index used throughout (Figure~\ref{fig:shenzhou}).
@@ -563,7 +593,8 @@ contrast.}
 \subsection{A second species, and the limits of cross-species screening}
 
 If terrestrial Arabidopsis is the wrong training material, the obvious remedy is a second
-species irradiated with simulated GCR. A \textit{Brassica rapa} experiment provides one:
+species irradiated with simulated GCR. A \textit{Brassica rapa} experiment
+(\textbf{TODO: accession and citation}) provides one:
 \BrapaNLibraries{} leaf libraries at 0 or 40 cGy simulated GCR, wild-type or
 anthocyanin-less, in two preservatives. Its 40 cGy arm is matched to OSD-658's lower arm in
 both dose and radiation quality, which makes it the only cross-species replicate of a

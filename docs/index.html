@@ -56,7 +56,8 @@
     <p class="sub">Recovered before any regulatory model is fitted.</p>
     <p>After cross-study harmonisation, all six canonical DNA-damage sentinel genes exceed 2-fold
       induction in wild type and trace a clean rise–peak–decay kinetic. In <em>sog1-1</em>, a
-      knockout of the master regulator, the same genes are flat. No step in the harmonisation sees
+      knockout of the master regulator, none reaches 2-fold before 24&nbsp;h, and only four do
+      at 24&nbsp;h. No step in the harmonisation sees
       genotype, so this is the strongest available evidence that the assembled series measures
       biology rather than batch structure.</p>
     <p style="margin-top:18px"><img src="fig2_sentinel_kinetics.png" alt="DNA-damage sentinel gene trajectories in wild type and sog1-1" style="max-width:100%;height:auto;border-radius:8px"></p>
@@ -92,7 +93,7 @@
       <tr><th>What</th><th>Where</th></tr>
       <tr><td>Whole pipeline, end to end</td><td><code>bash scripts/run_all.sh</code></td></tr>
       <tr><td>Resolve every URL, download nothing</td><td><code>bash scripts/run_all.sh --dry-run</code></td></tr>
-      <tr><td>Numbered acquisition &amp; analysis steps</td><td><code>scripts/00_</code>–<code>14_</code></td></tr>
+      <tr><td>Numbered acquisition &amp; analysis steps</td><td><code>scripts/00_</code>–<code>27_</code></td></tr>
       <tr><td>Quality-control report per stage</td><td><code>results/qc/</code></td></tr>
       <tr><td>Manuscript, PDF and Word from one source</td><td><code>cd manuscript &amp;&amp; make pdf docx</code></td></tr>
       <tr><td>Provenance, licence and SHA-256 per file</td><td><code>MANIFEST.tsv</code></td></tr>
